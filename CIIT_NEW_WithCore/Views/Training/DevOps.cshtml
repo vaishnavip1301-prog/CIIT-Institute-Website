@@ -1,0 +1,659 @@
+﻿
+@{
+    ViewData["Title"] = "DevOps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>  
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+<div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+ <div class="container" style="padding-left:2%;max-width:100%">
+     <div class="row">
+
+
+        <div class="col-md-8" style="padding-left:2%;">
+        
+            <h2>Masters Course in DevOps with AWS</h2>
+
+                <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
+                BinaryBrains DevOps with AWS Course is ideal for both freshers and experienced professionals interested in building a career as a DevOps expert.
+            </p>
+          
+            <p style="line-height: 1.7;margin-top:5%">
+                Master DevOps with BinaryBrain’s hands-on training program! Learn industry-leading tools like Git, Jenkins, Docker, Ansible, Terraform, Kubernetes, Prometheus, and Grafana through expert-led live sessions. Gain real-world experience with projects and master DevOps best practices—including Continuous Integration, Configuration Management, and Continuous Monitoring—to become a certified DevOps professional.
+            </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+                       
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Course Duration:<br />
+                                        3 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Language:<br />
+                                        English & Hindi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                   
+            </div>
+        </div>
+            <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+        </div>
+    
+ </div>
+</div>
+
+<div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+    <div class="container" style="padding-left:2%;max-width:100%">
+        <div class="row">
+
+    <div class="col-md-8">
+        <h3>Master's Program in DevOps with AWS</h3>
+            <br />
+
+        <p>
+                The DevOps with AWS course at BinaryBrains is designed to provide you with in-depth knowledge and hands-on experience in implementing DevOps practices using Amazon Web Services. This course covers essential DevOps tools and methodologies integrated with AWS cloud solutions to automate infrastructure, streamline development workflows, and enhance deployment efficiency.
+        </p>
+        <br/>
+        <p>
+                You'll gain expertise in CI/CD pipelines, infrastructure as code (IaC), containerization, monitoring, and security using industry-leading tools such as AWS CodePipeline, CodeDeploy, CloudFormation, Docker, Kubernetes, and Terraform. Our curriculum is tailored to help you master real-world DevOps scenarios and align with industry best practices.
+        </p>
+        <br/>
+        <p>
+                With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in cloud-based DevOps.
+        </p>
+        <br/>
+        <div class="row">
+            <div class="col-md-1">
+                    <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+            </div>
+              <div class="col-md-4">
+                    <p style="">Weekdays (Mon-Fri) - 3 Months </p>
+                    <p>
+                        Weekends (Sat & Sun) - 5 Months
+                    </p>
+              </div>
+                <div class="col-md-4">
+                     <i class="bi-star-fill" style="color:orange"></i> 
+                        <i class="bi-star-fill" style="color:orange"></i>
+                        <i class="bi-star-fill" style="color:orange"></i>
+                        <i class="bi-star-fill" style="color:orange"></i>
+                        <i class="bi-star-fill" style="color:orange"></i>
+                    <span>(5/5 Rating)</span>
+                </div>
+        </div>
+        <div class="row" style="padding-top:4%">
+
+                        <div class="col-md-2" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                    <div class="card-body">
+                                        <a href="#" style="color:white" >Enquiry Now</a>
+                                    </div>
+                            </div>
+                    </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Download Brochure</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body" style="position:center">
+                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
+
+                                </div>
+                            </div>
+                        </div>
+                 
+        </div>
+
+    </div>
+            <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                <img src="/assets/technologies/devops.png" style="height:300px;width:100%" alt="devops" />
+                <br />
+                <h4> Course Information</h4>
+                <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                <p> <i class="bi-stack" style="color:orange"></i> <b>Training Level:</b> Intermediate</p>
+                <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English & Hindi</p>
+                <p>
+
+                </p>
+    </div>
+        </div>
+
+    </div>
+</div>
+    @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+    <div class="container" style="padding-left:2%;max-width:100%">
+        <div class="row">
+
+            <div class="col-md-12">
+             
+                <h3>Course Description</h3>
+                    <br />
+
+                <p>
+                    Embark on a comprehensive 3-month journey into the world of DevOps, where you’ll master the tools, processes, and practices essential for bridging the gap between software development and IT operations. This course is designed to equip you with the skills needed to automate and streamline software delivery, enhance collaboration, and improve the efficiency of your IT infrastructure.
+                </p>
+                <br />
+                <br />
+
+                <h3>Course Highlights:</h3>
+                    <br />
+
+                <ul>
+                    <li>
+                        <p>  <b>Introduction to DevOps:</b> Understand the core principles and practices of DevOps, including Continuous Integration, Continuous Delivery, and Infrastructure as Code.
+                                <br />
+                                <br />
+                            </p>
+
+                    </li>
+                    <li>
+                        <p> 
+                        <b>Version Control with Git:</b> Learn how to manage and track code changes efficiently using Git, an essential tool for collaboration and source control in DevOps.
+                                <br />
+                                <br />
+
+                            </p>
+
+                    </li>
+                    <li>
+                        <p>
+                                <b>CI/CD Pipelines:</b> Master the creation and management of Continuous Integration and Continuous Deployment pipelines using tools like Jenkins, GitLab CI, and CircleCI.
+                                <br />
+                                <br />
+                        </p>
+
+                        </li>
+                    <li>
+                        <p>
+                                <b>Configuration Management:</b> Gain hands-on experience with tools like Ansible, Puppet, and Chef to automate and manage infrastructure configurations.
+                                <br />
+                                <br />
+                        </p>
+                        
+                    </li>
+                    <li>
+                        <p>
+                                <b>Containerization with Docker:</b> Dive into containerization technology using Docker to create, deploy, and manage containerized applications.
+                                <br />
+
+                                <br />
+                        </p>
+                     
+                    </li>
+                    <li>
+                            <p>
+                        <b>Orchestration with Kubernetes:</b> Explore Kubernetes for automating the deployment, scaling, and management of containerized applications.
+                                <br />
+                                <br />
+                            </p>
+                    </li>
+                    <li>
+                            <p>
+                        <b>Monitoring and Logging:</b> Learn how to monitor and log applications and infrastructure using tools like Prometheus, Grafana, and ELK Stack.
+                                <br />
+                                <br />
+                            </p>
+                    </li>
+                    <li>
+                            <p>
+
+                        <b>AWS Cloud Platform:</b> Get introduced to AWS cloud platform focusing on deploying and managing AWS DevOps solutions in the AWS platform.
+                                <br />
+                                <br />
+                            </p>
+                    </li>
+                    <li>
+                            <p>
+
+                        <b>Security in DevOps:</b> Understand the importance of security in the DevOps lifecycle and how to implement security practices seamlessly.
+                                <br />
+                                <br />
+                            </p>
+                    </li>
+                    <li>
+                            <p>
+
+                        <b>Project Work:</b> Work on real-world projects to apply the concepts learned throughout the course and build a strong portfolio.
+                                <br />
+                                <br />
+                            </p>
+                    </li>
+                </ul>
+                  
+                <p>
+                        By the end of this DevOps Course, you’ll be well-prepared to take on roles such as DevOps Engineer, Site Reliability Engineer (SRE), or Cloud Engineer, and drive innovation and efficiency in any organization.
+                </p>
+
+                   <div style="margin-top:2%">
+                        <h3>What Will You Learn?</h3>
+                        <br />
+
+                        <p>
+                            In this DevOps course, you’ll master essential practices including Continuous Integration, Continuous Delivery, and Infrastructure as Code. Learn to manage version control with Git, build CI/CD pipelines, and automate configuration using tools like Ansible and Docker. Gain expertise in container orchestration with Kubernetes, and implement monitoring and security practices. By the end, you’ll be equipped with practical skills and a portfolio of real-world projects to excel in DevOps roles.
+
+                        </p>
+                   </div>
+                    <div style="margin-top:2%">
+                    <h3>
+                        Who can do?
+                    <br/>
+                    </h3>
+                        <br />
+
+                    <p>
+                        Our DevOps course is perfect for IT professionals, software developers, system administrators, and anyone looking to enhance their skills in automation, cloud management, and continuous deployment.
+
+                    </p>
+                    </div>
+                    <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%"> 
+                    <h3>
+                        Job Opportunities
+                    </h3>
+                    <br/>
+                    <p>
+                        Completing a DevOps course opens doors to high-demand roles such as:
+
+                    </p>
+                        <br />
+                     
+                  <ol>
+                      <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                DevOps Engineer
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+
+                            Cloud Engineer
+                        </li>
+                        <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                Site Reliability Engineer
+                        </li>
+                        <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                Automation Engineer
+                        </li>
+                        <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                Infrastructure Engineer
+                        </li>
+                  </ol>
+                        These positions offer opportunities in top tech companies and startups worldwide.
+
+                  </div>
+            </div>
+                       </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/Companies.cshtml")
+
+
+    <div style="height:auto;width:100%;padding-top:2%;text-align:justify;font-size:18px;font-family:'Bookman Old Style';">
+        <div class="container" style="padding-left:2%;max-width:100%">
+
+            <div class="col-md-12" style="text-align:center">
+                <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;max-width:100%">
+                    @* <h3><span style="color:#007CC3">Join</span>. <span style="color:orange">Learn</span>. <span style="color:green">Succeed</span>.</h3> *@
+                    <h2>
+                        <span style="color:orange">Our Success Lies In Our Learner's, Success Stories</span>
+                    </h2>
+                    <p>Explore our student's experiences and discover how we've helped them achieve their goals through excellence and dedication.</p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Vaibhav Saykar </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        One off the best institutes then other training institutions and specially for those students who wants to start their career for IT. i hope everyone can join with us Ciit training institute, recently I have placed so special thanks to all CIIT TEAM always support, gaide and give 🙏
+                                        
+                                    </p>
+                                    <a href="https://share.google/pAHN0VDrJdXHvgIsN" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Saurabh Lonkar</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        Learning at CIIT  has been a truly rewarding experience. Trainers are very good — knowledgeable, approachable, and always ready to help. Each topic is explained clearly, and special attention is given to doubt-solving, which really helps in building a strong foundation.  
+                                           
+                                    </p>
+                                    <a href="https://share.google/bjQseEXwoBLIhvkQs" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Ajay Wagh</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I recently completed the .NET Full Stack Developer course at CIIT Training Institute, and it was an excellent experience! The course content was practical and well-organized, helping me build strong development skills and real-time project
+                                    </p>
+                                    <a href="https://share.google/t4ZUPeWZBXPRk8KIh" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Kalyani Dhavale</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I’m truly grateful for your mentorship throughout my journey with Python Selenium automation. Your deep expertise, structured guidance, and hands-on approach made complex concepts easy to understand. You not only helped me strengthen my technical skills ...
+                                    </p>
+                                    <a href="https://share.google/UZ0Su5d5xR6B1cZKu" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Anil Kamble</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I had enrolled in October 2024 .Net Full stack Web Development batch. It is really fantastic learning experience.
+
+                                       
+
+                                        Mocks interview, topic revison, conceptual and practical approach with one to one doubt solving of mentors are really admirable.
+                                    </p>
+                                    <a href="https://share.google/Pbg3OONFQwAMrtvQJ" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Sagar Vyavhare</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I had an excellent experience at CIIT Training Institute. The .NET Full Stack Developer course with React was comprehensive and well-structured. Special thanks to Leena Ma'am and Yuvaraj Sir for their expert guidance and hands-on approach...
+                                    </p>
+                                    <a href="https://share.google/eonYQfEOuKpExsM8X" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Lubna Patel</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        As a Full Stack Development student at CIIT Training Institute, I can confidently say they provide excellent training from basics to advanced levels. With hands-on projects and internship opportunities, it's a great place to start your career in top companies.
+                                    </p>
+                                    <a href="https://share.google/LwEbn4Zm9mJaKeBmm" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange"> PRAJWAL DIVEKAR </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        CIIT Training Institute is a great place to learn and grow, especially for those who want to start from basic to advance .
+                                        they focus on providing best quality knowledge on the courses you choose with hands-on on projects and internship opportunities that helps to build real-world skills
+                                    </p>
+                                    <a href="https://share.google/t82AZdm7dlXxhp7Yw" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                   
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white mb-4">
+                            <div class="card-body" style="height:350px;font-size:medium">
+
+                                <div>
+                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                </div>
+                                <div class="cource-det">
+                                    <h6 style="color:orange">Shesh Kumar Dwivedi</h6>
+
+                                </div>
+                                <p style="padding:7px;text-align:justify;color:black">
+                                    CIIT Training Institute offers excellent training in .NET Full-Stack Development. The instructors are knowledgeable and have designed a curriculum that covers everything from the basics to advanced topics. The hands-on projects are great for building practical skills...
+
+                                </p>
+                                <a href="https://share.google/ES8DGk5a1H40IGEF6" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white mb-4">
+                            <div class="card-body" style="height:350px;font-size:medium">
+
+                                <div>
+                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                </div>
+                                <div class="cource-det">
+                                    <h6 style="color:orange">Pooja Miglani</h6>
+
+                                </div>
+                                <p style="padding:7px;text-align:justify;color:black">
+                                    CIIT Training Institute is one of its kind.
+                                    There are well trained and qualified trainers who give in depth explanation about topics . Hands on experience and practical knowledge and information is also provided by the trainers.The training is given keeping...
+                                </p>
+                                <a href="https://share.google/uruGlBaHkSo1H2bnA" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white mb-4">
+                            <div class="card-body" style="height:350px;font-size:medium">
+
+                                <div>
+                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                </div>
+                                <div class="cource-det">
+                                    <h6 style="color:orange">Meghna Nazare </h6>
+
+                                </div>
+                                <p style="padding:7px;text-align:justify;color:black">
+                                    Great Place for learning! Best corporate training institute... Convenient batches are provided.... You will get to learn from scratch and the best thing is you can reach out to staff at any time if you have any doubts... Weekly mocks helps out to decide on what topics to emphasize more...
+                                     
+                                </p>
+                                <a href="https://share.google/EgZJz6gQOVsYmzWWe" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card text-white mb-4">
+                            <div class="card-body" style="height:350px;font-size:medium">
+
+                                <div>
+                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                </div>
+                                <div class="cource-det">
+                                    <h6 style="color:orange">
+                                            Rutuja Bodke
+                                    </h6>
+
+                                </div>
+                                <p style="padding:7px;text-align:justify;color:black">
+                                        It has a great experience of learning with CIIT Training Institute . Special thanks to Swapnil sir who has taught us from basic .the way of his teaching is simple so that I can understand everything easily . Also thanks to yuvraj sir who gave more knowledge about current...
+                                </p>
+                                    
+                                    <a href="https://share.google/9oPIwzqEDgswI421J" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("~/Views/Shared/JoinTrainSuccess.cshtml")
+
+
+
+</div>
