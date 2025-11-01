@@ -1,421 +1,525 @@
 ﻿@{
-    ViewData["Title"] = "Python Full Stack Development";
+    ViewData["Title"] = "DevOps";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <style>
-
-    nav > .nav.nav-tabs {
-        border: none;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
     }
 
-    nav > div a.nav-item.nav-link,
-    nav > div a.nav-item.nav-link.active {
-        border: none;
-        padding: 18px 25px;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
     }
 
-        nav > div a.nav-item.nav-link.active:after {
-            content: "";
-            position: relative;
-            bottom: -60px;
-            left: -50%;
-            border: 15px solid transparent;
-            border-top-color: #e74c3c;
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
         }
 
-    .tab-content {
-        background: #fdfdfd;
-        line-height: 25px;
-        border: 1px solid #ddd;
-        border-top: 5px solid #e74c3c;
-        border-bottom: 5px solid #e74c3c;
-        padding: 30px 25px;
-    }
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
 
-    nav > div a.nav-item.nav-link:hover,
-    nav > div a.nav-item.nav-link:focus {
-        border: none;
-        background: #e74c3c;
-        color: #fff;
-        border-radius: 0;
-        transition: background 0.20s linear;
-    }
-
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
 
 </style>
 
-<div class="container" style="padding-top:80px;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
-    <img src="~/assets/courses/Python.jpg" style="height:200px;width:100%" />
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
 
-    <h4 style="margin-top:2%;text-align:left">
-
-        Annually over 1000 ambitious students embark on their journey to success as Python Developers securing coveted positions in the thriving IT industry.
-    </h4>
-    <div>
-        <p>
-            Python is a world’s fastest growing and most popular programming language used by software engineers, machine learning engineers, data scientist, etc. Python is a general-purpose, versatile and popular programming language. It’s great as a first language because it is concise and easy to read, and it is also a good language to have in any programmer’s stack as it can be used for everything from web development to software development and scientific applications.
-
-        </p>
-        <p>
-            Python is an important programming language that any developer should know. Many programmers use this language to build websites, create learning algorithms, and perform other important tasks. But trying to learn Python can be intimidating, frustrating, and difficult, especially if you’re not sure how to approach it.
-
-
-        </p>
-        <p>
-            <h4>Reasons for Python's popularity</h4>
-        </p>
-        <p>
-            <ul>
-                <li>
-                    <b>Open Source</b>
-                    <p>
-                        Yes, the best part about python is that it is an open source language that makes it highly popular and available among others. On top of that, the codes being open source can be used by anyone publicly on the net. It is also easy to work on the code or even modify it as per the requirement.
-                    </p>
-                <li>
-                    <b> High-level programming language</b>
-                    <p>
-                        With Python, the code looks very close to how humans think. For this purpose, it must abstract the details of the computer from you: memory management, pointers,… Hence, it is slower than “lower-level language” like C;
-
-                    </p>
-
-                </li>
-                <li>
-                    <b>  Cross-platform language</b>
-                    <p>
-                        Another of the best feature about python is that it is extremely diverse when it comes to the operating system. In simple words, python can be used for any type of operating system such as Linus, Windows, Ubuntu, etc. Hence, one can easily run off a software without worrying about system support. It can be interpreted in the language with the help of a portable feature that makes it beneficial to use. In brief, write code on the Mac platform and run it smoothly on Windows as well. There is no need to write a code in multiple languages with it.
-
-                    </p>
-                    </li>
-                <li>
-                    <b>Python is interpreted and not compiled</b>
-                    <p>
-                        Sure, this statement is a gross simplification but it’s somehow correct. During the execution, Python code is interpreted at runtime instead of being compiled to native code at compile time;
-                    </p>
-                    </li>
-
-                <li>
-                    <b>Python is a dynamically typed language</b>
-                    <p>
-                        don’t have to declare the variable type like String, boolean or int. The less you do, the more your computer has to work. For each attribute access, tons of lookup is required. In addition, being very dynamic makes it incredibly hard to optimize Python;
-            </p>
-                    </ul>
-        </p>
-    </div>
-    <div>
-        <p>At CIIT Training Institute, we offer comprehensive Python training tailored for both freshers and seasoned professionals. With a track record of empowering over 10,000 students in Python technology, we've paved the path for countless aspirants to land their dream roles as Python Developers in top-tier companies.</p>
-        <p>Our Python training program features an up-to-date syllabus and hands-on experience with live projects. We guarantee that upon completion of the training, students will possess the skills to independently develop projects. They'll be fully equipped to showcase their expertise confidently in the professional realm.</p>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Why CIIT?</h4>
-        </div>
-        <ul style="font-size:14px;list-style:none;margin-top:2%">
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Latest Curriculum</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Highly Experienced Trainers</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Chance to work with our development team</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Practically Work on Projects & Case Studies</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Real time project Training</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Weekly Mock & HR Interviews </h6></li>
-            @* <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li> *@
-        </ul>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Course Curriculum</h4>
-        </div>
-
-        <p style="margin-top:2%">This Python Full Stack Development course is designed for individuals eager to build their own projects from the ground up. CIIT serves as an excellent platform for those aspiring to forge a boundless career as a Python Developer in the IT industry.</p>
-    </div>
-    <div>
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
 
 
-
-        <div class="" style="text-align:justify;font-family:'Bookman Old Style'">
-            <h4 style="margin-top:2%">Various Python Courses offered by CIIT Training Institute</h4>
-
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+        <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
-                <div class="col-md-9">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 ">
-                        <nav>
-                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Python Development <br />With Stipend</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Full Stack Development</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Python for Working<br /> Professionals</a>
-                            </div>
-                        </nav>
-                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="padding:2%">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card border-primary shadow-sm  mb-4">
-                                            <div class="card-body">
-                                                <h4 style="color:#e74c3c">CIIT Gaurantee for Quality Training and Live Project with 100% Job Placement</h4>
-                                                <br />
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                <p class="card-text" style="padding-left:10%"> 4 Months Training and gauranteed job from 5th month</p>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Projects</li>
-                                                </ul>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> TypeScript</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular Latest/ReactJs Latest</li>
 
-                                                        </ul>
-                                                        <hr />
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Oracle - SQL,PLSQL</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> NoSQL - MongoDB </li>
-                                                        </ul>
-                                                        <hr />
 
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Python </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Core Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Object Oriented Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Science Libraries - Numpy,Pandas,Matplotlib,Scipy,Scikit-learn</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Analysis Libraries - Scipy,Scikit-learn,Numpy,Pandas,Matplotlib</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning & AI</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> DJango</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Tableau </li>
-                                                        </ul>
-                                                        <hr />
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> File Handling</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Exception Handling</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Modules and Packages</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Regular Expressions</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Control Flow</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Working with Libraries and Frameworks</li>
-                                                        </ul>
+                <div class="col-md-8" style="padding-left:2%;">
 
-                                                        <hr />
+                    <h2>
+                       Python Full Stack Development with Industry-Ready Skills with CIIT
+                    </h2>
 
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 2 Real Time Projects</li>
-                                                           
+                    <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
+                        CIIT's Python Full Stack Developer Training is ideal for both freshers and working professionals interested in building a career as a Python full stack developer.
+                    </p>
+                    <p style="text-align:center;font-size:22px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Full-stack developers handle both front-end and back-end development, creating fully functional web applications. Python is an excellent choice for full-stack development due to its simple syntax, readability, and vast ecosystem of frameworks and libraries.
+                    </p>
+                    <br/>
+                    <p>
 
-                                                        </ul>
-                                                        <hr />
+                        CIIT's Python full-stack developer is a web developer who uses Python as their main programming language to handle all aspects of building a web application. They build the user interface that is the front end as well as the back end of the website where server logic is stored using Python. For front-end development, they generally use languages like HTML, CSS, and JavaScript but now a new front-end Python framework is also used which is named PyScript. For the backend tasks frameworks like Django or Flask are used. These developers bridge the gap between the client and the server which ensures the website is fully functional across the entire application.
 
-                                                    </li>
+                    </p>
 
-                                                </ul>
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
 
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Course Duration:<br />
+                                        6 Months
+                                    </a>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding:2%">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="padding:2%">
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Outcomes of the Java Full Stack Training</h4>
+                    <p>
+                        <ul>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Strong foundation in Python programming , Django and Flask</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Ability to build scalable web and cross platform applications</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Hands-on experience with latest VS Code,RDBMS,MongoDB,Swagger,Postman </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Practical knowledge of OOPs, collections, Python, Django, Flask, React,Web Apis and many more </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Integration of AI ML into projects</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Preparation for Python Full Stack Developer Interviews</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Improved career opportunities with higher salary packages</li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in python technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+                    @*  <div class="row" style="padding-top:4%">
+
+                        <div class="col-md-2" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Enquiry Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Download Brochure</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body" style="position:center">
+                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> *@
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container" style="max-width:100%">
+                    <div class="row">
+                        <div class="col-md-12 mb-5">
+                            <div class="card text-white mb-4">
+                                <div class="card-body">
                                     <div class="row">
-                                        <div class="col-12">
-                                            <div class="card border-primary shadow-sm  mb-4">
-                                                <div class="card-body">
-                                                    <h4 style="color:#e74c3c">CIIT Gaurantee for Quality Training and Live Project with 100% Job Placement</h4>
-                                                    <br />
-                                                    <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                    <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                    <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                    <p class="card-text" style="padding-left:10%"> 4 Months Training and gauranteed job from 5th month</p>
-                                                    <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                    <ul style="padding-left:10%">
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                        <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Projects</li>
-                                                    </ul>
-                                                    <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                    <ul style="padding-left:10%">
-                                                        <li>
-                                                            <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                            <ul style="padding-left:10%">
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> TypeScript</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular Latest/ReactJs Latest</li>
+                                        <div class="col-auto">
 
-                                                            </ul>
-                                                            <hr />
-                                                        </li>
-                                                        <li>
-                                                            <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                            <ul style="padding-left:10%">
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Oracle - SQL,PLSQL</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> NoSQL - MongoDB </li>
-                                                            </ul>
-                                                            <hr />
-
-                                                        </li>
-                                                        <li>
-                                                            <h6><i class="fas fa-book" style="color:#e74c3c"></i> Python </h6>
-                                                            <ul style="padding-left:10%">
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Core Python</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Object Oriented Python</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Science Libraries - Numpy,Pandas,Matplotlib,Scipy,Scikit-learn</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Analysis Libraries - Scipy,Scikit-learn,Numpy,Pandas,Matplotlib</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning & AI</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> DJango</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Tableau </li>
-
-
-                                                            </ul>
-                                                            <hr />
-
-                                                        </li>
-                                                        <li>
-                                                            <h6><i class="fas fa-book" style="color:#e74c3c"></i> Methodoligies </h6>
-                                                            <ul style="padding-left:10%">
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> POSTMAN</li>
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> GitHub</li>
-
-                                                            </ul>
-                                                            <hr />
-
-                                                        </li>
-                                                        <li>
-                                                            <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project </h6>
-                                                            <ul style="padding-left:10%">
-                                                                <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 2 Real Time Projects</li>
-
-
-                                                            </ul>
-                                                            <hr />
-
-                                                        </li>
-
-                                                    </ul>
-
-                                                </div>
-                                            </div>
+                                            <img src="~/assets/money_back_guarantee.jpg" style="height:150px;width:150px;" />
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="col">
+                                            <h2 style="color:orange"> 100% Money Back Guarantee </h2>
 
-
-                            </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding:2%">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card border-primary shadow-sm  mb-4">
-                                            <div class="card-body">
-                                                <h4 style="color:#e74c3c">CIIT Gaurantee for real time industry  training with live project</h4>
-                                                <br />
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                <p class="card-text" style="padding-left:10%">Any Graduate,Non IT / IT professionals</p>
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                <p class="card-text" style="padding-left:10%"> 2-3 Months</p>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Placements</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Job Gurantee</li>
-                                                     </ul>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Training Topics</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Python</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Basics of Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Core Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Advance Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Science Libray</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Tableau</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> WxPython</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Anaconda</li>
-
-                                                        </ul>
-                                                        <hr />
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Database</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> NoSQL(MongoDB)</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 1 Real Time Project</li>
-                                                           
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    
-
-                                                </ul>
-
-                                            </div>
+                                            <p class="card-text" style="color:#007CC3">
+                                                <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
 
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h2>
+                                    <span style="color:orange">
+                                        Why Python is the Future of Enterprise App Development?
+                                    </span>
+                                </h2>
+                            </div>
+                            <h5 class="card-title" style="color:orange;">Easy to Learn</h5>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Python is an easy language to master. This is chiefly because of its resemblance to the English language. Python’s syntax is characterized by very few rules and special cases. It’s safe to say that in Python the focus is on what you want to do with the code, not on language intricacies. Anybody can master Python easily. With practice, newbies can build a basic game in mere days using python. Another attractive aspect of this programming language is its efficiency and readability.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Cross-Platform and Open Source</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                It’s been more than 20 years since this language has been running cross-platform and open source. Be it Linux, Windows or MacOS, Python code works on every platform. Another remarkable thing about Python is that it’s supported by decades of bug-squashing and kink-straightening which ensures that its code works as intended whenever the user runs it.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Versatile Language and Platform</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Python remains very relevant today as it can be used in any operations scenario or software development, be it in managing local and cloud infrastructure, working against a SQL database, developing a custom function for Hive & Pig, supporting object-oriented design or even developing a small tool for the user.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Vast Libraries</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Python is supported by PyPI which has 85,000+ python scripts and modules accessible to the user. These modules provide pre-packaged functionality available to the users in their local Python environment. It can solve diverse problems such as executing advanced data analytics like developing REStful web services or sentiment analysis and establishing computer vision.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Career Growth Opportunities</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Flexibility</h5>
+                            <p style="text-align:left;color:#007CC3">
+                                Python has several powerful applications integrated with other programming languages. Details about these are given as follows:
+                                <ul style="text-align:left;color:#007CC3" class="mb-3">
+                                    <li>.Net and C# compatible: IronPython</li>
+                                    <li>A version with C: CPython</li>
+                                    <li>Python combined with Ruby: RubyPython</li>
+                                    <li>Python integrated with Java: Jython</li>
+                                    <li>Python written with Objective C toolkits: PyObjc</li>
+                                </ul>    
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">High Salary</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The salary of Python engineers is comparatively higher as compared to others in the industry. In the United States, a Python developer earns an average of $116,028 per year. This high earning potential is a result of Python's widespread adoption across various industries, including finance, technology, healthcare, and more.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Scripting and Automation</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                What most people don’t know about Python is that it can be used as a scripting language. In scripting, the code is written in script form and gets executed. So the code is read and interpreted by the machine and errors are checked during runtime. After the code is checked, it can be used many times. It is also possible to automate specific tasks in a problem by automation.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Artificial Intelligence</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Artificial Intelligence (AI) is a pivotal domain where Python shines. Python's libraries like TensorFlow and Keras enable the implementation of complex machine learning and deep learning algorithms. These libraries are widely used in AI applications such as natural language processing (NLP), where Python's NLTK and spaCy excel in tasks like sentiment analysis and language translation. In computer vision, Python's OpenCV library is a go-to tool for tasks like image recognition and object detection.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
+    </div>
 
 
+    @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
 
 
-                <div class="col-md-3">
-                    @Html.Partial("PartialView")
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
 
+                <div class="col-md-12">
+
+                    @* <h3 style="color:orange">Why Learn .NET in 2025?</h3>
+                    <br />
+
+                    <p>
+                        The future of .Net development is exceptionally bright, with a strong focus on cross-platform capabilities and cloud-based solutions.
+
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Flexibility and Diverse Career Paths</b> :
+                                You could become a web developer, desktop application developer, or even specialize in game development.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Financial Viability and Salary Prospects</b> :
+                                <b>Entry-level developers</b> earn an average of<b> Rs.5–8 LPA</b>, with <b>experienced professionals</b> earning upwards of <b>Rs.16–24 LPA</b>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Demand for .Net Developers</b> :
+                                From startups to Fortune 500 companies, there's a growing demand for skilled .Net developers.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Web and Cloud Development</b> :
+                                Microsoft Azure, a leading cloud platform, has over 200+ services integrated with .NET, enabling developers to build scalable and secure solutions.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Cross-Platform Development</b> :
+                                .NET developers can now build cross-platform applications that run on Windows, Linux, and macOS, as well as mobile applications with Xamarin.
+                            </li>
+
+                        </ul>
+                    </p>
+                    <br />
+                    <br />
+ *@
+                    <h3 style="color:orange">Course Highlights:</h3>
+                    <br />
+
+                    <ul>
+                        <li>
+                            <p>
+                                <b>Introduction to Java:</b> Understand the core applications , actual market need,java & its framweork, soring boot.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Frontend Technologies:</b> Understand HTML, CSS, and JavaScript,Angular,React for creating responsive and interactive user interfaces.
+                                <br />
+                                <br />
+
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Backend Technologies:</b> Gain proficiency in backend development using Core Java, Jdbc,Hibernate, Jsp,Servlet,Spring Framework,String MVC,Spring Boot, Oracle and MySql for data storage and retrieval.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Database Integration:</b>  Learn how to integrate MySql,Oracle databases with Java applications for managing data using Jdbc,Hibernate.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Full Stack Development:</b> Develop skills in building end-to-end web applications, including frontend and backend components.
+                                <br />
+
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Version Control:</b> Understand the importance of version control systems like Git for managing codebase changes.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <b>Deployment and Hosting:</b> Explore techniques for deploying Java applications to web servers and hosting platforms.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Security Considerations:</b>  Learn about security measures and best practices for securing Java applications
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Testing and Debugging:</b> Develop skills in testing and debugging Java applications to ensure functionality and reliability.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Project Development:</b> Work on real-world projects and hands-on exercises to apply learned concepts and techniques in practical scenarios.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                    </ul>
+
+                    <p>
+                        By the end of this Java Full Stack Development Course, you’ll be well-prepared to take on roles such as JavaDeveloper, Java Full Stack Developer,Junior Java Developer,Mid-Level Java Developer,Senior Java Developer,Back-End Java Developer,Front-End Java Developer, and drive innovation and efficiency in any organization.
+                    </p>
+
+                    <div style="margin-top:2%">
+                        <h3 style="color:orange">What Will You Learn?</h3>
+                        <br />
+
+                        <p>
+                            In this Java Full Stack Development course, you’ll  learn UI, Back-end, database, version control, server and APIs. This training will help you to understand Spring Boot, Web API, Angular or React.
+                        </p>
+                    </div>
+                    <div style="margin-top:2%">
+                        <h3 style="color:orange">
+                            Who can do?
+                            <br />
+                        </h3>
+                        <br />
+
+                        <p>
+                            Our Java Training course is perfect for freshers, Non-IT candidates, IT professionals, software developers, system administrators, and anyone looking to enhance their skills  as a developer and other.
+
+                        </p>
+                    </div>
+                    <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                        <h3 style="color:orange">
+                            Java Career Path
+                        </h3>
+                        <br />
+                        <p>
+                            Completing a Java course opens doors to high-demand roles such as:
+
+                        </p>
+                        <br />
+
+                        <ol>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Entry-Level</b> : Junior Software Engineer, Java Intern
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+
+                                <b>Mid-Level</b> : Java Full Stack Developer, Software Engineer, Java Developer
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Senior-Level</b> : Senior Java Developer, Java Tech Lead, Java Consultant, Project Lead
+
+
+                        </ol>
+                        These positions offer opportunities in top tech companies and startups worldwide.
+
+                    </div>
                 </div>
-
-        </div>
+            </div>
         </div>
     </div>
-</div>
 
+
+    @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+ 
+    
+</div>
+  
+ 
