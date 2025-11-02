@@ -21,7 +21,17 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
+    <script>
+        $(document).ready(function () {
+            $('.dropdown').hover(function () {
+                $(this).addClass('show');
+                $(this).find('.dropdown-menu').addClass('show');
+            }, function () {
+                $(this).removeClass('show');
+                $(this).find('.dropdown-menu').removeClass('show');
+            });
+        });
+    </script>
     <style>
         .select2-container .select2-selection--single {
             height: 34px !important;
@@ -43,6 +53,9 @@
         }
 
     </style>
+
+    <link rel="stylesheet" href="~/css/style.css">
+
 </head>
 <body>
     <div class="whatsapp-icon" style="margin-left:15px">
@@ -57,54 +70,137 @@
     <marquee style="background-color:#223d50">
         <h4 style="color:white">Welcome To CIIT Training Institute</h4>
     </marquee>
-    <header class="header_section" style="background-color:#f4f4f4;font-size:14px;font-family: 'Bookman Old Style'">
-        <div class="container-fluid" style="height:80px;padding-top:10px">
+
+ 
             @* <nav class="navbar navbar-expand-lg custom_nav-container "> *@
-            <nav class="navbar navbar-expand-lg custom_nav-container">
-                <a href="/">
+    <nav class="navbar sticky-top navbar-expand-lg custom_nav-container mb-2">
+                <div class="container">
+            <a href="/" class="navbar-brand">
 
-                    <img src="~/assets/mainlogo.png" alt="" style="height:70px;width:auto; position: absolute; top: 0; left: 0;">
+                <img src="~/assets/mainlogo.png" alt="" style="height:70px;width:auto; position: absolute; top: 0; left: 0;">
 
 
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class=""> </span>
-                </button>
+            </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto" >
+                            <li class="nav-item">
+                        <a class="nav-link" style="font-size:16px;color:#007CC3;font:bold;" href="/about-ciit"> About Us</a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" style="font-size:16px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">Training Programs</a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav  ml-auto ">
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/about-ciit"> About Us</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/latest-training-with-live-project">Training Courses</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/ciit-events"> Gallery</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/ciit-blogs">Blogs</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/out-students-placed-in-top-companies"> Placements</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/great-successful-career-with-ciit"> Career</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/contact-us">Contact Us</a></b>
-                        </li>
-                        <li class="nav-item">
-                            <b><a class="nav-link" href="/Enquiry/Index">Enquiry Form</a></b>
-                        </li>
-                     @*    <li class="nav-item">
-                            <b><a class="nav-link" href="/Main/OnlineTraining">OnlineTraining</a></b>
-                        </li> *@
-                    </ul>
+                        <ul class="dropdown-menu" style="background-color:#007CC3">
+                           
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" style="color:white;font-size:16px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Dot Net Training 
+                                </a>
+
+                                <ul class="dropdown-menu" style="background-color:#007CC3">
+                                    <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With Azure</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With Azure + AI</a></li>
+                                    <li><a class="dropdown-item" href="#">Dot Net Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Advance Dot Net Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Dot Net Core + Angular</a></li>
+                                    <li><a class="dropdown-item" href="#">Dot Net Core + React</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" style="color:white;font-size:16px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Java Training
+                                </a>
+
+                                <ul class="dropdown-menu" style="background-color:#007CC3">
+                                    <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With AWS</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With AWS + AI</a></li>
+                                    <li><a class="dropdown-item" href="#">Java Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Advance Java Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Spring Boot + ReactJs</a></li>
+                                    <li><a class="dropdown-item" href="#">Spring Boot + Angular</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" style="color:white;font-size:16px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Python Training
+                                </a>
+
+                                <ul class="dropdown-menu" style="background-color:#007CC3">
+                                    <li><a class="dropdown-item" href="#">Full Stack Development</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With AWS</a></li>
+                                    <li><a class="dropdown-item" href="#">Full Stack Development With AWS + AI</a></li>
+                                    <li><a class="dropdown-item" href="#">Python Web Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Data Science Training</a></li>
+                                    <li><a class="dropdown-item" href="#">Django/Flask ReactJs</a></li>
+                                    <li><a class="dropdown-item" href="#">Django/Flask + Angular</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" style="color:white;font-size:16px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   MERN/ MEAN
+                                </a>
+
+                                <ul class="dropdown-menu" style="background-color:#007CC3">
+                                    <li><a class="dropdown-item" href="#">MERN Stack Development</a></li>
+                                    <li><a class="dropdown-item" href="#">MERN Stack Development With AWS</a></li>
+                                    <li><a class="dropdown-item" href="#">MERN Stack Development With AWS + AI</a></li>
+                                    <li><a class="dropdown-item" href="#">NodeJs</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" style="color:white;font-size:16px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   PHP Training
+                                </a>
+
+                                <ul class="dropdown-menu" style="background-color:#007CC3">
+                                    <li><a class="dropdown-item" href="#">PHP Full Stack Development</a></li>
+                                    <li><a class="dropdown-item" href="#">PHP + Wordpress</a></li>
+                                    <li><a class="dropdown-item" href="#">PHP + Angular</a></li>
+                                    <li><a class="dropdown-item" href="#">PHP + React</a></li>
+                                    <li><a class="dropdown-item" href="#">PHP + Codeigniter</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">Data Science</a></li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">Data Analytics</a></li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">Digital Marketing</a></li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">UI-UX Training</a></li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">Corporate Training</a></li>
+                            <li><a class="dropdown-item" href="#" style="font-size:16px;">College Internship Training</a></li>
+
+                        </ul>
+                    </li>
+
+                            <li class="nav-item">
+                        <a class="nav-link" href="/ciit-events" style="font-size:16px;"> Gallery</a>
+                            </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="/ciit-blogs" style="font-size:16px;"> Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/out-students-placed-in-top-companies" style="font-size:16px;"> Placements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/great-successful-career-with-ciit" style="font-size:16px;"> Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact-us" style="font-size:16px;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Enquiry/Index" style="font-size:16px;">Enquiry Form</a>
+                    </li>
+ 
+                        </ul>
+                        
+                    </div>
                 </div>
             </nav>
-        </div>
-    </header>
+ 
+   
     <div style="">
         @RenderBody()
     </div>
@@ -119,7 +215,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <b>Hadapsar</b>
                             <div>
-                                Office #2, 1st floor, Manisha Blitz, Hadapsar, Near Shankar Math, Pune, Maharashtra 411013
+                                Office #2, 1st floor, Manisha Blitz, Hadapsar, Near Shankar Math, Pune, Maharashtra-411013
                                 <br />+91-7028565830<br>
                                 +91-9975751649<br>
                             </div>
@@ -131,7 +227,20 @@
                             <b>Vimannagar</b>
                             <div>
                                 Office no 3A, 1st floor, Prakash Developers, Near Hotel Rasika, Pune Nagar Road, Vadgaon Sheri, Pune -411014<br />
-                                +91-7028561830
+                             +91-7028561830<br>
+                                +91-7028565830<br>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <b>Baramati</b>
+                            <div>
+                                Najmi Complex.Opposite Bus Stand,Indapur Road.
+                                Baramati-413102
+                                <br />+91-7378565351<br>
+                                +91-7028565830<br>
                             </div>
                         </div>
                         <hr />
@@ -177,7 +286,7 @@
                     <h2>Working Hours</h2>
 
                     <div class="row">
-                        <div class="col-md-">
+                        <div class="col-md-6">
                             <p style="margin-right: 10px;margin-left:10px">Monday</p>
                             <p style="margin-right: 10px;margin-left:10px">Tuesday</p>
                             <p style="margin-right: 10px;margin-left:10px">Wednesday</p>
@@ -186,7 +295,7 @@
                             <p style="margin-right: 10px;margin-left:10px">Saturday</p>
                             <p style="margin-left:10px">Sunday</p>
                         </div>
-                        <div class="col-md-">
+                        <div class="col-md-6">
                             <p style="margin-right: 10px;">6 AM - 10 PM</p>
                             <p style="margin-right: 10px;">6 AM - 10 PM</p>
                             <p style="margin-right: 10px;">6 AM - 10 PM</p>

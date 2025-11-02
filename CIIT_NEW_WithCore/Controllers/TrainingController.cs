@@ -44,9 +44,15 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("DevOps-Training-With-Live-Project")]
+        [Route("AzureDevOps-Training-With-Live-Project")]
 
         public IActionResult DevOpsTraining()
+        {
+            return View();
+        }
+        [Route("AWSDevOps-Training-With-Live-Project")]
+
+        public IActionResult AWSDevOpsTraining()
         {
             return View();
         }

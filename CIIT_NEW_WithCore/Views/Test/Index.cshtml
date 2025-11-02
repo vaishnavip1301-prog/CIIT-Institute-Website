@@ -1,280 +1,108 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	//ViewData["Title"] = "Index";
+	 Layout = null;
 }
-<link href="~/carofiles/css/bootstrap.min.css" rel="stylesheet" />
-<script src="~/carofiles/js/bootstrap.bundle.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Website: divinectorweb.com
+    Subscribe Us: https://www.youtube.com/c/Divinector
+    Support Us: https://www.buymeacoffee.com/divinector
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Multi level Drop down Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
 
-<div class="container-lg my-3">
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Carousel indicators -->
-        <ol class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-        </ol>
-            <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Vaibhav Saykar </h6>
+</head>
+<body>
 
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    One off the best institutes then other training institutions and specially for those students who wants to start their career for IT. i hope everyone can join with us Ciit training institute, recently I have placed so special thanks to all CIIT TEAM always support, gaide and give 🙏
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                                </p>
-                                <a href="https://share.google/pAHN0VDrJdXHvgIsN" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Saurabh Lonkar</h6>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
 
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    Learning at CIIT  has been a truly rewarding experience. Trainers are very good — knowledgeable, approachable, and always ready to help. Each topic is explained clearly, and special attention is given to doubt-solving, which really helps in building a strong foundation.
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
 
-                                </p>
-                                <a href="https://share.google/bjQseEXwoBLIhvkQs" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Service Name</a></li>
+                            <li><a class="dropdown-item" href="#">Service Name</a></li>
+                            <li><a class="dropdown-item" href="#">Service Name</a></li>
+                            <li><a class="dropdown-item" href="#">Service Name</a></li>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
+                            <li class="nav-item dropend">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Service Name
+                                </a>
 
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Ajay Wagh</h6>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
 
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    I recently completed the .NET Full Stack Developer course at CIIT Training Institute, and it was an excellent experience! The course content was practical and well-organized, helping me build strong development skills and real-time project
-                                </p>
-                                <a href="https://share.google/t4ZUPeWZBXPRk8KIh" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <li class="nav-item dropend">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Service Name
+                                        </a>
 
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Kalyani Dhavale</h6>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                            <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                            <li><a class="dropdown-item" href="#">Service Name</a></li>
 
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    I’m truly grateful for your mentorship throughout my journey with Python Selenium automation. Your deep expertise, structured guidance, and hands-on approach made complex concepts easy to understand. You not only helped me strengthen my technical skills ...
-                                </p>
-                                <a href="https://share.google/UZ0Su5d5xR6B1cZKu" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                            <li class="nav-item dropend">
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Service Name
+                                                </a>
 
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Anil Kamble</h6>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                                    <li><a class="dropdown-item" href="#">Service Name</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    I had enrolled in October 2024 .Net Full stack Web Development batch. It is really fantastic learning experience.
+                    <li class="nav-item">
+                        <a class="nav-link">Portfolio</a>
+                    </li>
 
-
-
-                                    Mocks interview, topic revison, conceptual and practical approach with one to one doubt solving of mentors are really admirable.
-                                </p>
-                                <a href="https://share.google/Pbg3OONFQwAMrtvQJ" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Sagar Vyavhare</h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    I had an excellent experience at CIIT Training Institute. The .NET Full Stack Developer course with React was comprehensive and well-structured. Special thanks to Leena Ma'am and Yuvaraj Sir for their expert guidance and hands-on approach...
-                                </p>
-                                <a href="https://share.google/eonYQfEOuKpExsM8X" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Lubna Patel</h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    As a Full Stack Development student at CIIT Training Institute, I can confidently say they provide excellent training from basics to advanced levels. With hands-on projects and internship opportunities, it's a great place to start your career in top companies.
-                                </p>
-                                <a href="https://share.google/LwEbn4Zm9mJaKeBmm" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange"> PRAJWAL DIVEKAR </h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    CIIT Training Institute is a great place to learn and grow, especially for those who want to start from basic to advance .
-                                    they focus on providing best quality knowledge on the courses you choose with hands-on on projects and internship opportunities that helps to build real-world skills
-                                </p>
-                                <a href="https://share.google/t82AZdm7dlXxhp7Yw" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-               <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Shesh Kumar Dwivedi</h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    CIIT Training Institute offers excellent training in .NET Full-Stack Development. The instructors are knowledgeable and have designed a curriculum that covers everything from the basics to advanced topics. The hands-on projects are great for building practical skills...
-
-                                </p>
-                                <a href="https://share.google/ES8DGk5a1H40IGEF6" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Pooja Miglani</h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    CIIT Training Institute is one of its kind.
-                                    There are well trained and qualified trainers who give in depth explanation about topics . Hands on experience and practical knowledge and information is also provided by the trainers.The training is given keeping...
-                                </p>
-                                <a href="https://share.google/uruGlBaHkSo1H2bnA" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">Meghna Nazare </h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    Great Place for learning! Best corporate training institute... Convenient batches are provided.... You will get to learn from scratch and the best thing is you can reach out to staff at any time if you have any doubts... Weekly mocks helps out to decide on what topics to emphasize more...
-
-                                </p>
-                                <a href="https://share.google/EgZJz6gQOVsYmzWWe" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card text-white mb-4">
-                            <div class="card-body" style="height:350px;font-size:medium">
-
-                                <div>
-                                    <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
-                                </div>
-                                <div class="cource-det">
-                                    <h6 style="color:orange">
-                                        Rutuja Bodke
-                                    </h6>
-
-                                </div>
-                                <p style="padding:7px;text-align:justify;color:black">
-                                    It has a great experience of learning with CIIT Training Institute . Special thanks to Swapnil sir who has taught us from basic .the way of his teaching is simple so that I can understand everything easily . Also thanks to yuvraj sir who gave more knowledge about current...
-                                </p>
-
-                                <a href="https://share.google/9oPIwzqEDgswI421J" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
-
-                            </div>
-                        </div>
-                    </div>
-               </div>
+                    <li class="nav-item">
+                        <a class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
             </div>
         </div>
-
-        <!-- Carousel controls -->
-        <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
-</div>
+    </nav>
+</body>
+</html>
