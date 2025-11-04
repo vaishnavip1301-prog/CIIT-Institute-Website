@@ -4,5 +4,778 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>JavaFullStrackDevelopment</h1>
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h2>
+                        Master Java Full Stack Development with Industry-Ready Skills with CIIT
+                    </h2>
+
+                    <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
+                        CIIT's Java Full Stack Training is ideal for both freshers and working professionals interested in building a career as a Java full stack developer.
+                    </p>
+                    <p style="text-align:center;font-size:22px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Become a job-ready Java Full Stack Developer by mastering frontend frameworks React or Angular, backend technologies Java, Spring Boot, and Hibernate, and RDBMS, DevOps, and cloud deployment. Build and deploy real-world applications with industry-relevant projects to accelerate your career.
+                    </p>
+                    <p>
+
+                        CIIT's Java Full Stack Development course offers an ideal opportunity for individuals passionate about building projects from the ground up. CIIT serves as an excellent platform for those aspiring for boundless opportunities in the IT industry as a Java Full Stack Developer.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Course Duration:<br />
+                                        6 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Outcomes of the Java Full Stack Training</h4>
+                    <p>
+                        <ul>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Strong foundation in Java programming and Spring Boot</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Ability to build scalable web and cross platform applications</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Hands-on experience with latest Eclipse, Jdk,STS and RBDMS </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Practical knowledge of OOPs, collections, JDBC,Hibernate,Jsp, Servlet,Spring Boot and many more </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Integration of AI ML into projects</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Preparation for Java Developer Interviews</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Improved career opportunities with higher salary packages</li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in java technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+                    @*  <div class="row" style="padding-top:4%">
+
+                        <div class="col-md-2" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Enquiry Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Download Brochure</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body" style="position:center">
+                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> *@
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container" style="max-width:100%">
+                    <div class="row">
+                        <div class="col-md-12 mb-5">
+                            <div class="card text-white mb-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto">
+
+                                            <img src="~/assets/money_back_guarantee.jpg" style="height:150px;width:150px;" />
+                                        </div>
+                                        <div class="col">
+                                            <h2 style="color:orange"> 100% Money Back Guarantee </h2>
+
+                                            <p class="card-text" style="color:#007CC3">
+                                                <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h2>
+                                    <span style="color:orange">
+                                        Why Java is the Future of Enterprise App Development?
+                                    </span>
+                                </h2>
+                            </div>
+                            <h5 class="card-title" style="color:orange;">Platform Independence and Cross-Platform Consistency</h5>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Java’s “Write Once, Run Anywhere” (WORA) capability allows your applications to run smoothly across various platforms with the Java Virtual Machine (JVM). This cross-platform consistency reduces your costs, ensures wider market reach and simplifies maintenance, ultimately contributing to increased profitability of your business.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Scalability and High Performance</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Java is highly capable of handling high traffic and large data volumes, supporting application performance and responsiveness, even under demanding workloads. Its ability to scale allows your applications to adapt to increasing demands without performance degradation, supporting business growth and continuity. Java’s automatic Just-In-Time (JIT) compilation and performance optimization techniques further improve its performance.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Strong Security Framework</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Java prioritizes security with features like a secure class loading mechanism, bytecode verification, sandboxing, and a comprehensive set of security APIs. This strong security framework minimizes the risk of security breaches, protects sensitive data and guarantees business continuity by maintaining the integrity and confidentiality of your applications.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Greater Project Ownership</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                They are capable of understanding and managing every layer of a software project, from designing the user interface to integrating with databases and deploying to servers. This leads to better control and deeper involvement in projects.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Career Growth Opportunities</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Compatibility with Modern Trends</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Java is well-suited for modern development, with strong support for cloud-native architectures through frameworks like MicroProfile, Spring Boot and Quarkus. These enable containerization and smooth deployment on major cloud platforms. Java also extends into artificial intelligence (AI) and machine learning (ML) with various libraries, such as Deeplearning4j, LangChain4J and OpenNLP . It also supports serverless computing.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Skilled Talent Pool and Cost-Effectiveness</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The abundance of skilled Java developers worldwide makes it easier to find and hire qualified professionals to develop, manage and support enterprise applications. While hiring experienced Java developers with specialized skills can be costly, the overall cost-effectiveness of Java development, considering factors like productivity, code reuse and long-term maintainability, makes it a viable choice for your business when seeking to optimize development costs.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Long-Term Support and Future-Oriented</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                With the backing of large vendors like Oracle, Azul, IBM and Red Hat, as well as non commercial organisations such as the Eclipse Foundation, Java benefits from long-term support and continuous development. This broad acceptance help ensures that Java will continue to have resources to remain relevant and be supported for years to come. These elements can give organizations a unique level of confidence when it comes to investing in Java-based technologies and solutions.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Integration and Interoperability</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Java’s extensive ecosystem and compatibility with various platforms and technologies enable smooth integration with existing systems and third-party services. This interoperability guarantees your business can use existing investments, connect disparate systems and build comprehensive solutions that meet your unique business requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    @* <h3 style="color:orange">Why Learn .NET in 2025?</h3>
+                    <br />
+
+                    <p>
+                        The future of .Net development is exceptionally bright, with a strong focus on cross-platform capabilities and cloud-based solutions.
+
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Flexibility and Diverse Career Paths</b> :
+                                You could become a web developer, desktop application developer, or even specialize in game development.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Financial Viability and Salary Prospects</b> :
+                                <b>Entry-level developers</b> earn an average of<b> Rs.5–8 LPA</b>, with <b>experienced professionals</b> earning upwards of <b>Rs.16–24 LPA</b>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Demand for .Net Developers</b> :
+                                From startups to Fortune 500 companies, there's a growing demand for skilled .Net developers.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Web and Cloud Development</b> :
+                                Microsoft Azure, a leading cloud platform, has over 200+ services integrated with .NET, enabling developers to build scalable and secure solutions.
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Cross-Platform Development</b> :
+                                .NET developers can now build cross-platform applications that run on Windows, Linux, and macOS, as well as mobile applications with Xamarin.
+                            </li>
+
+                        </ul>
+                    </p>
+                    <br />
+                    <br />
+ *@
+                    <h3 style="color:orange">Course Highlights:</h3>
+                    <br />
+
+                    <ul>
+                        <li>
+                            <p>
+                                <b>Introduction to Java:</b> Understand the core applications , actual market need,java & its framweork, soring boot.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Frontend Technologies:</b> Understand HTML, CSS, and JavaScript,Angular,React for creating responsive and interactive user interfaces.
+                                <br />
+                                <br />
+
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Backend Technologies:</b> Gain proficiency in backend development using Core Java, Jdbc,Hibernate, Jsp,Servlet,Spring Framework,String MVC,Spring Boot, Oracle and MySql for data storage and retrieval.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Database Integration:</b>  Learn how to integrate MySql,Oracle databases with Java applications for managing data using Jdbc,Hibernate.
+                                <br />
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Full Stack Development:</b> Develop skills in building end-to-end web applications, including frontend and backend components.
+                                <br />
+
+                                <br />
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                <b>Version Control:</b> Understand the importance of version control systems like Git for managing codebase changes.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <b>Deployment and Hosting:</b> Explore techniques for deploying Java applications to web servers and hosting platforms.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Security Considerations:</b>  Learn about security measures and best practices for securing Java applications
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Testing and Debugging:</b> Develop skills in testing and debugging Java applications to ensure functionality and reliability.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+
+                                <b>Project Development:</b> Work on real-world projects and hands-on exercises to apply learned concepts and techniques in practical scenarios.
+                                <br />
+                                <br />
+                            </p>
+                        </li>
+                    </ul>
+
+                    <p>
+                        By the end of this Java Full Stack Development Course, you’ll be well-prepared to take on roles such as JavaDeveloper, Java Full Stack Developer,Junior Java Developer,Mid-Level Java Developer,Senior Java Developer,Back-End Java Developer,Front-End Java Developer, and drive innovation and efficiency in any organization.
+                    </p>
+
+                    <div style="margin-top:2%">
+                        <h3 style="color:orange">What Will You Learn?</h3>
+                        <br />
+
+                        <p>
+                            In this Java Full Stack Development course, you’ll  learn UI, Back-end, database, version control, server and APIs. This training will help you to understand Spring Boot, Web API, Angular or React.
+                        </p>
+                    </div>
+                    <div style="margin-top:2%">
+                        <h3 style="color:orange">
+                            Who can do?
+                            <br />
+                        </h3>
+                        <br />
+
+                        <p>
+                            Our Java Training course is perfect for freshers, Non-IT candidates, IT professionals, software developers, system administrators, and anyone looking to enhance their skills  as a developer and other.
+
+                        </p>
+                    </div>
+                    <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                        <h3 style="color:orange">
+                            Java Career Path
+                        </h3>
+                        <br />
+                        <p>
+                            Completing a Java course opens doors to high-demand roles such as:
+
+                        </p>
+                        <br />
+
+                        <ol>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Entry-Level</b> : Junior Software Engineer, Java Intern
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+
+                                <b>Mid-Level</b> : Java Full Stack Developer, Software Engineer, Java Developer
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>
+                                <b>Senior-Level</b> : Senior Java Developer, Java Tech Lead, Java Consultant, Project Lead
+
+
+                        </ol>
+                        These positions offer opportunities in top tech companies and startups worldwide.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="height:auto;width:100%;padding-top:2%;text-align:justify;font-size:18px;font-family:'Bookman Old Style';">
+        <div class="container" style="padding-left:2%;max-width:100%">
+
+            <div class="col-md-12" style="text-align:center">
+                <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;max-width:100%">
+                    @* <h3><span style="color:#007CC3">Join</span>. <span style="color:orange">Learn</span>. <span style="color:green">Succeed</span>.</h3> *@
+                    <h2>
+                        <span style="color:orange">Our Success Lies In Our Learner's, Success Stories</span>
+                    </h2>
+                    <p>Explore our student's experiences and discover how we've helped them achieve their goals through excellence and dedication.</p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Vaibhav Saykar </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        One off the best institutes then other training institutions and specially for those students who wants to start their career for IT. i hope everyone can join with us Ciit training institute, recently I have placed so special thanks to all CIIT TEAM always support, gaide and give 🙏
+
+                                    </p>
+                                    <a href="https://share.google/pAHN0VDrJdXHvgIsN" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Saurabh Lonkar</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        Learning at CIIT  has been a truly rewarding experience. Trainers are very good — knowledgeable, approachable, and always ready to help. Each topic is explained clearly, and special attention is given to doubt-solving, which really helps in building a strong foundation.
+
+                                    </p>
+                                    <a href="https://share.google/bjQseEXwoBLIhvkQs" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Ajay Wagh</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I recently completed the .NET Full Stack Developer course at CIIT Training Institute, and it was an excellent experience! The course content was practical and well-organized, helping me build strong development skills and real-time project
+                                    </p>
+                                    <a href="https://share.google/t4ZUPeWZBXPRk8KIh" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Kalyani Dhavale</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I’m truly grateful for your mentorship throughout my journey with Python Selenium automation. Your deep expertise, structured guidance, and hands-on approach made complex concepts easy to understand. You not only helped me strengthen my technical skills ...
+                                    </p>
+                                    <a href="https://share.google/UZ0Su5d5xR6B1cZKu" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Anil Kamble</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I had enrolled in October 2024 .Net Full stack Web Development batch. It is really fantastic learning experience.
+
+
+
+                                        Mocks interview, topic revison, conceptual and practical approach with one to one doubt solving of mentors are really admirable.
+                                    </p>
+                                    <a href="https://share.google/Pbg3OONFQwAMrtvQJ" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Sagar Vyavhare</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        I had an excellent experience at CIIT Training Institute. The .NET Full Stack Developer course with React was comprehensive and well-structured. Special thanks to Leena Ma'am and Yuvaraj Sir for their expert guidance and hands-on approach...
+                                    </p>
+                                    <a href="https://share.google/eonYQfEOuKpExsM8X" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Lubna Patel</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        As a Full Stack Development student at CIIT Training Institute, I can confidently say they provide excellent training from basics to advanced levels. With hands-on projects and internship opportunities, it's a great place to start your career in top companies.
+                                    </p>
+                                    <a href="https://share.google/LwEbn4Zm9mJaKeBmm" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange"> PRAJWAL DIVEKAR </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        CIIT Training Institute is a great place to learn and grow, especially for those who want to start from basic to advance .
+                                        they focus on providing best quality knowledge on the courses you choose with hands-on on projects and internship opportunities that helps to build real-world skills
+                                    </p>
+                                    <a href="https://share.google/t82AZdm7dlXxhp7Yw" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Shesh Kumar Dwivedi</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        CIIT Training Institute offers excellent training in .NET Full-Stack Development. The instructors are knowledgeable and have designed a curriculum that covers everything from the basics to advanced topics. The hands-on projects are great for building practical skills...
+
+                                    </p>
+                                    <a href="https://share.google/ES8DGk5a1H40IGEF6" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Pooja Miglani</h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        CIIT Training Institute is one of its kind.
+                                        There are well trained and qualified trainers who give in depth explanation about topics . Hands on experience and practical knowledge and information is also provided by the trainers.The training is given keeping...
+                                    </p>
+                                    <a href="https://share.google/uruGlBaHkSo1H2bnA" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">Meghna Nazare </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        Great Place for learning! Best corporate training institute... Convenient batches are provided.... You will get to learn from scratch and the best thing is you can reach out to staff at any time if you have any doubts... Weekly mocks helps out to decide on what topics to emphasize more...
+
+                                    </p>
+                                    <a href="https://share.google/EgZJz6gQOVsYmzWWe" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white mb-4">
+                                <div class="card-body" style="height:350px;font-size:medium">
+
+                                    <div>
+                                        <img src="~/assets/PlacementPhotos/male.png" style="height:120px;width:120px;" />
+                                    </div>
+                                    <div class="cource-det">
+                                        <h6 style="color:orange">
+                                            Rutuja Bodke
+                                        </h6>
+
+                                    </div>
+                                    <p style="padding:7px;text-align:justify;color:black">
+                                        It has a great experience of learning with CIIT Training Institute . Special thanks to Swapnil sir who has taught us from basic .the way of his teaching is simple so that I can understand everything easily . Also thanks to yuvraj sir who gave more knowledge about current...
+                                    </p>
+
+                                    <a href="https://share.google/9oPIwzqEDgswI421J" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/JoinTrainSuccess.cshtml")
+
+
+
+    </div>
+</div>
+
 
