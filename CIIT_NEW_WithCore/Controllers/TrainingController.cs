@@ -106,30 +106,30 @@ namespace CIIT_NEW_WithCore.Controllers
             return View();
         }
 
-        [Route("Excel")]
+        [Route("Excel-Training")]
         public IActionResult Excel()
         {
             return View();
         }
 
-        [Route("PowerBi")]
+        [Route("PowerBi-Training-With-Live-Project")]
         public IActionResult Powerbi()
         {
             return View();
         }
 
-        [Route("Nodejs")]
+        [Route("Nodejs-Training-With-Live-Project")]
         public IActionResult NodeJS()
         {
             return View();
         }
 
-        [Route("Angular")]
+        [Route("Angular-Training-With-Live-Project")]
         public IActionResult Angular()
         {
             return View();
         }
-
+        [Route("DevOps-Training")]
         public IActionResult DevOps()
         {
             return View();
