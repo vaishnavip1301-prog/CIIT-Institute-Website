@@ -45,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.8.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.0" />
@@ -68,15 +67,12 @@
     <Folder Include="wwwroot\Videos\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <!--<ProjectReference Include="..\..\ERPSystem_Models\ERPSystem_Models.csproj" />
-    <ProjectReference Include="..\..\ERPSystem_Services\ERPSystem_Services.csproj" />-->
-  </ItemGroup>
-
-  <ItemGroup>
-    <!--<Reference Include="arithmaticoperator3">
+  <ItemGroup><!--<Reference Include="arithmaticoperator3">
       <HintPath>..\..\..\..\Desktop\ddl files\arithmaticoperator3.dll</HintPath>
     </Reference>-->
+  
+    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Models\ERP_Models.csproj" />
+    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Services\ERP_Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,7 @@
 using CIIT_NEW_WithCore.Models;
+using ERP_Services.Implementations;
+using ERP_Services.Interfaces;
+
 //using ERPSystem_Models;
 //using ERPSystem_Services.Implementations;
 //using ERPSystem_Services.Interfaces;
@@ -15,10 +18,15 @@ builder.Services.AddControllersWithViews();
  
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 //builder.Services.AddTransient<IEnquiryService, EnquiryService>();
-//builder.Services.AddTransient<IMasterService, MasterService>();
+builder.Services.AddTransient<IMasterService, MasterService>();
 //builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-//builder.Services.AddTransient<IExtraService, ExtraService>();
-//builder.Services.AddTransient<IBatchService, BatchService>();
+builder.Services.AddTransient<IExtraService, ExtraService>();
+builder.Services.AddTransient<IBatchService, BatchService>();
+builder.Services.AddTransient<IBranchService, BranchService>();
+builder.Services.AddTransient<ITopicService, TopicService>();
+builder.Services.AddTransient<ICourseService, CourseService>();
+builder.Services.AddTransient<IEnquiryService, EnquiryService>();
+
 //builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 //builder.Services.AddTransient<ITrainerService, TrainerService>();
 //builder.Services.AddTransient<IStudentService, StudentService>();

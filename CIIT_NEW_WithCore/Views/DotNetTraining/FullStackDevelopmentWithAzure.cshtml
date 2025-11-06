@@ -1,8 +1,784 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "FullStackDevelopmentWithAzure";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>FullStackDevelopmentWithAzure</h1>
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h2>
+                        Learn Latest Dot Net Full Stack Developer With Azure DevOps 
+                    </h2>
+
+                    <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
+                        CIIT's Dot Net with Azure DevOps Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer With Azure as well as Azure DevOps.
+                    </p>
+                    <p style="text-align:center;font-size:22px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        NET and Azure are closely integrated, providing a comprehensive platform for building, deploying, and managing modern cloud applications. Azure is the recommended cloud platform for .NET developers due to its native support for .NET and integration with Visual Studio tools.
+                    </p>
+                    <p>
+                        CIIT's .NET with Azure course offers an ideal opportunity for individuals passionate about building projects from the ground up. CIIT serves as an excellent platform for those aspiring for boundless opportunities in the IT industry as a Dot Net with Azure DevOps.
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Course Duration:<br />
+                                        6 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="mb-3">What can you accomplish at the end of training?</h4>
+                    <h6>Unlock Career Growth with Full-Stack .NET Core Developer</h6>
+                    <p>
+                        <ul>
+                            <li><i class="bi-star-fill" style="color:orange"></i>  Get Hike in Your Salary up to <b>₹30 LPA</b></li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> Combining .NET development with Azure expertise makes you a valuable asset, more career opportunities.
+                            </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> You can transition into a variety of roles, such as an Azure Architect or a senior Azure specialist, with competitive salaries.</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Fast-Track Your Career with Fortune 500+ Companies</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Build Real-world Projects  using .Net Core & Azure DevOps  </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Preparation for .NET  Developer as well as for DevOps Interviews</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Get Priority in job</li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        Take the next step to become a job-ready Full-Stack .NET Developer with Azure today!
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+                    @*  <div class="row" style="padding-top:4%">
+
+                        <div class="col-md-2" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Enquiry Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Download Brochure</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body" style="position:center">
+                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> *@
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/Courses/azuredotnet.png" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container" style="max-width:100%">
+                    <div class="row">
+                        <div class="col-md-12 mb-5">
+                            <div class="card text-white mb-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto">
+
+                                            <img src="~/assets/money_back_guarantee.jpg" style="height:150px;width:150px;" />
+                                        </div>
+                                        <div class="col">
+                                            <h2 style="color:orange"> 100% Money Back Guarantee </h2>
+
+                                            <p class="card-text" style="color:#007CC3">
+                                                <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h2>
+                                    <span style="color:orange">
+                                        Benefits of .NET Full-Stack Development with Azure
+                                    </span>
+                                </h2>
+                            </div>
+                            <h5 class="card-title" style="color:orange;">Scalability and Reliability</h5>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Azure provides robust infrastructure for building highly scalable and available applications.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Increased Productivity</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                .NET and Azure offer a comprehensive ecosystem with tools and services that streamline development and deployment.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Seamless Cloud Integration</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                .NET Core is cloud-native, designed to integrate effortlessly with Azure services. This simplifies deployment, management, and monitoring of AI solutions in the cloud or at the edge.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Greater Project Ownership</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Leverage Azure's cloud-native services for features like serverless computing, microservices, and managed databases.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Career Growth Opportunities</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
+                            </p>
+                            <h5 class="card-title" style="color:orange">Integration and Ecosystem</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Seamless integration between .NET applications and various Azure services.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Security and Compliance</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Azure offers extensive security features and compliance certifications.
+                            </p>
+
+                          
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h3 class="mb-4" style="color:orange">
+                                        Average Salaries in the United States
+ 
+                                </h3>
+
+                                <h5 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h5>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    $80,000 - $100,000+
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Mid-Level (3-7 years)</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    $120,000 - $160,000
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    $150,000 - $250,000+
+                                </p>
+                               
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4" style="color:orange">
+                                        Average Salaries in India
+
+ 
+                                </h3>
+                                <p>
+                                    In India, the average salary for a .NET Azure Developer typically ranges from ₹3.0 Lakhs to ₹20.0 Lakhs per year, depending on experience and location.
+                                </p>
+                                <h5 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h5>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    ₹3 - ₹7 LPA (Lakhs per Annum)
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Mid-Level (3-7 years)</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹7 - ₹20 LPA
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Senior/Lead (5+ years, Architect roles)</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹25 - ₹50+ LPA, potentially up to ₹1 Crore in top companies
+                                </p>
+                               
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4" style="color:orange">
+                                        Key factors in India
+                                </h3>
+
+                                <h5 class="card-title" style="color:orange;">Location</h5>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Cities like Bangalore, Pune, and Hyderabad are major tech centers with competitive salaries.
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Company Type</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Product-based companies and large consulting firms often pay significantly more than smaller IT services firms. For instance, the average salary for a full stack developer at Microsoft India is much higher than the national average.
+                                </p>
+
+                                <h5 class="card-title" style="color:orange">Certifications</h5>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Having an Azure certification can boost a developer's salary potential, with certified professionals often commanding higher pay.
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <h3 style="color:orange">Who can learn this course?</h3>
+                    <br />
+
+                    <p>
+                        A career focused on .NET and Azure is best for individuals who want to work on enterprise-scale, secure, and highly integrated software solutions within the Microsoft ecosystem. This path offers a wide range of opportunities for various professionals
+
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Existing .NET/C# Developers</b> :
+                                    <span>
+                                        This is the most direct audience. Developers already proficient in C# and the .NET framework can extend their skill sets to build intelligent applications using familiar tools and seamlessly integrate with Azure AI services and the Semantic Kernel SDKs.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>IT Professionals and System Administrators</b> :
+                                    <span>
+                                        Individuals managing on-premise infrastructure can transition into cloud roles by learning Azure administration. This path is ideal for those interested in managing identities, virtual networks, storage, and security in a cloud environment.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>AI Engineers & Data Scientists</b> :
+                                    <span>
+                                        Professionals focused on building, training, and deploying machine learning models can use Azure Machine Learning and the .NET platform for deploying and integrating those models into enterprise-level applications
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Cloud Professionals (Azure Administrators & Architects)</b> :
+                                    <span>
+                                        Individuals focused on cloud infrastructure and solutions architecture can learn how to design and manage scalable, secure, and cost-effective AI solutions within the Azure environment
+
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>DevOps Engineers</b> :
+                                    <span>
+                                        The integration between .NET, Azure, and Azure DevOps tools (like Azure Pipelines and Boards) makes this a strong choice for those interested in designing and implementing CI/CD pipelines, automation, and release management.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Students & Career Changers</b> :
+                                    <span>
+                                        Individuals with a foundational understanding of computer science and basic programming principles can start with fundamental certifications (like Azure AI Fundamentals or Azure Fundamentals) to enter the growing field of AI and cloud computing.
+                                    </span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </p>
+                    <br />
+                    <br />
+
+                    <h3 style="color:orange">Course Highlights:</h3>
+                    <br />
+
+                    <ul class="list-group mb-4">
+
+                        <li>
+                            <h5 style="color:orange"><i class="bi-star-fill" style="color:orange"></i>.Back-End Development</h5>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>C# and ASP.NET Core:</b> Used to build powerful and scalable web APIs, microservices, and server-side logic.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Entity Framework Core:</b>  n ORM (Object-Relational Mapper) for interacting with databases like SQL Server, Azure SQL Database, or other managed database services on Azure.
+
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>API Development:</b>  Creating RESTful APIs to expose data and functionality to the front-end and other services.
+
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Microservices Architecture:</b>  Designing and implementing applications as a collection of loosely coupled, independently deployable services, often containerized with Docker and orchestrated with Kubernetes (Azure Kubernetes Service - AKS).
+
+                                    </p>
+                                </li>
+                            </ul>
+
+
+                        </li>
+
+                        <li>
+                            <h5 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Front-End Development</h5>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>Website Design:</b> Understand HTML,Css and Bootstrap  for creating responsive and interactive user interfaces
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Modern JavaScript Frameworks:</b> Integrating with frameworks like React, Angular, or Vue.js for building dynamic and interactive user interfaces.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Azure Static Web Apps:</b> A service for hosting static web applications, often used for single-page applications (SPAs) built with front-end frameworks
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h5 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Azure Cloud Services</h5>
+                            <ul>
+                                <li>
+                                    <b>Application Hosting</b>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Azure App Service :</b>
+                                                    <span>For hosting web applications, APIs, and mobile backends.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Azure Functions :</b>
+                                                    <span>For building serverless applications and executing event-driven code.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Azure Kubernetes Service (AKS) :</b>
+                                                    <span>For deploying and managing containerized applications at scale.</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Data Storage</b>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Azure SQL Database :</b>
+                                                    <span>Managed relational database service.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Azure Storage Accounts :</b>
+                                                    <span>For storing various data types like blobs, files, queues, and tables.</span>
+                                                </p>
+                                            </li>
+                                           
+                                        </ul>
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>DevOps and CI/CD</b>
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Azure DevOps:</b>
+                                                    <span>Provides tools for version control (Azure Repos), continuous integration and continuous delivery (Azure Pipelines), and project management.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Security and Management:</b>
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                <b>Azure Key Vault</b> :
+                                                                <span>
+                                                                    For securely storing and managing secrets, keys, and certificates.
+                                                                </span>
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                <b>Azure Monitor and Application Insights</b> :
+                                                                <span>
+                                                                    For monitoring application performance and health.
+                                                                </span>
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                <b>Microsoft Entra ID (formerly Azure Active Directory) </b> :
+                                                                <span>
+                                                                    For identity and access management.
+                                                                </span>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </p>
+                                            </li>
+
+                                        </ul>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </li>
+                        
+                    </ul>
+
+
+
+                    <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                        <h3 style="color:orange">
+                            Dot Net Career Path
+                        </h3>
+                        <br />
+                        <p>
+                            Combining expertise in .NET, Azure offers substantial career benefits, including high demand, diverse job opportunities, increased earning potential, and future-proofing your skills in a rapidly evolving tech landscape.
+
+                        </p>
+                        <br />
+                        <h5>High Demand and Job Opportunities</h5>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Growing Need for AI Integration</b> :
+                                    <span>
+                                        Companies across almost every industry (healthcare, finance, retail, manufacturing) are integrating AI into their operations to improve efficiency and make better decisions, driving the need for developers who can bridge traditional application development with machine learning capabilities.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>"Full-Stack" AI Developers</b> :
+                                    <span>
+                                        The traditional developer role has evolved. Employers increasingly seek engineers who can handle the full lifecycle of an application—from front-end to back-end, cloud deployment, and emerging tech like AI/ML.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Diverse Job Roles</b> :
+                                    <span>
+                                        A combined skill set opens doors to various specialized and high-value roles, including:
+                                        <ul>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> AI/ML Engineer</b></li>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> Azure AI Engineer</b></li>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> .NET AI Lead/Architect</b></li>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> Data Scientist (specializing in deployment on Azure ML)</b></li>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> Cloud Solution Architect</b></li>
+                                            <li><b><i class="bi-check-circle-fill" style="color:orange"></i> MLOps Engineer (specializing in streamlining model management with Azure MLOps tools) </b></li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </li>
+
+
+                        </ol>
+
+                        <h5>Increased Earning Potential</h5>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <span>
+                                        The specialized nature of these skills translates into a significant salary advantage.
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Higher Salaries</b> :
+                                                    <span>
+                                                        Professionals combining .NET, Azure, and AI/ML expertise generally command higher salaries compared to developers with a single specialization.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Salary Hike Potential</b> :
+                                                    <span>
+                                                        Certifications like Azure AI Engineer or Data Scientist can often lead to a 10-25% salary increase.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Competitive Edge</b> :
+                                                    <span>
+                                                        With 95% of Fortune 500 companies using Azure, the demand for certified professionals is high, giving them a competitive advantage in the job market.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </li>
+
+
+
+                        </ol>
+
+
+                        <h5>
+                            Career Growth and Future-Proofing
+                        </h5>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <span>
+                                        The rapid pace of innovation in AI and cloud computing means skills in these areas will remain relevant for the foreseeable future
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Alignment with Industry Trends</b> :
+                                                    <span>
+                                                        Learning these technologies ensures your skills align with current and future industry demands for intelligent, data-driven solutions.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Versatility</b> :
+                                                    <span>
+                                                        The ability to build, deploy, and manage applications that leverage powerful AI services (like Generative AI via Azure OpenAI, computer vision, NLP, etc.) makes a professional a valuable asset across various business functions.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Global Opportunities</b> :
+                                                    <span>
+                                                        Microsoft certifications and expertise are recognized globally, potentially opening up international job opportunities and the flexibility to work in various locations and industries
+                                                    </span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </li>
+
+
+
+                        </ol>
+
+                        <p>
+                            In essence, a skill set combining .NET, Azure, and AI/ML allows for significant career acceleration, providing the technical foundation to work on cutting-edge projects that shape the future of technology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+
+    @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+
+</div>
+
+
+
 
