@@ -32,7 +32,7 @@
             });
         });
     </script>
-    <style>
+   <style>
         .select2-container .select2-selection--single {
             height: 34px !important;
         }
@@ -52,10 +52,9 @@
             width: 0%;
         }
 
-    </style>
+    </style>  
 
-    <link rel="stylesheet" href="~/css/style.css">
-
+  
 </head>
 <body>
     <div class="whatsapp-icon" style="margin-left:15px">
@@ -72,134 +71,8 @@
     </marquee>
 
     <div class="container-fluid mb-4">
-            @* <nav class="navbar navbar-expand-lg custom_nav-container "> *@
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-4">
-            
-            <a href="/" class="navbar-brand">
+            @Html.Partial("~/Views/Shared/NavbarView.cshtml")
 
-                <img src="~/assets/mainlogo.png" alt="" style="height:70px;width:auto;">
-
-
-            </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto" >
-                            <li class="nav-item">
-                        <a class="nav-link" style="font:bold;font-size:12px;" href="/about-ciit"> About Us</a>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" style="font-size:12px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">Training Programs</a>
-
-                        <ul class="dropdown-menu" style="background-color:white">
-                           
-                            <li class="nav-item dropend">
-                                <a class="nav-link dropdown-toggle" style="color:black;font-size:12px;" href="/Dot-Net-Training-With-Live-Project" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Dot Net Training 
-                                </a>
-
-
-                                <ul class="dropdown-menu" style="background-color:white">
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-Training-With-Live-Project">Full Stack Development</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Training-With-Live-Project">Full Stack Development With Azure</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project">Full Stack Development With Azure + AI</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Training">Dot Net Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Advance-Dot-Net-Full-Training">Advance Dot Net Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Angular-Training">Dot Net Core + Angular</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-React-Training">Dot Net Core + React</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropend">
-                                <a class="nav-link dropdown-toggle" style="color:black;font-size:12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Java Training
-                                </a>
-
-                                <ul class="dropdown-menu" style="background-color:white">
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-Training-With-Live-Project">Full Stack Development</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-With-Aws-Training-With-Live-Project">Full Stack Development With AWS</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-With-Aws-Ai-Training-With-Live-Project">Full Stack Development With AWS + AI</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Training">Java Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Advance-Java-Training">Advance Java Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/SpringBoot-With-ReactJs-Training-With-Live-Project">Spring Boot + ReactJs</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/SpringBoot-With-Angular-Training-With-Live-Project  ">Spring Boot + Angular</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropend">
-                                <a class="nav-link dropdown-toggle" style="color:black;font-size:12px;" style="color:black;font-size:12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Python Training
-                                </a>
-
-                                <ul class="dropdown-menu" style="background-color:white">
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development-Training-With-Live-Project">Full Stack Development</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development--With-Aws-Training-With-Live-Project">Full Stack Development With AWS</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development--With-Aws-Ai-Training-With-Live-Project">Full Stack Development With AWS + AI</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Web-Training">Python Web Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="#">Data Science Training</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Dejango-Flask-Reactjs-Web-Training">Django/Flask ReactJs</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Dejango-Flask-Angular-Web-Training">Django/Flask + Angular</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropend" style="background-color:white">
-                                <a class="nav-link dropdown-toggle" style="font-size:12px;color:black;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   MERN/ MEAN
-                                </a>
-
-                                <ul class="dropdown-menu" style="background-color:white">
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Training-With-Live-Project">MERN Stack Development</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Aws-Training-With-Live-Project">MERN Stack Development With AWS</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Aws-Ai-Training-With-Live-Project">MERN Stack Development With AWS + AI</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/NodeJs-Training-With-Live-Project">NodeJs</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropend">
-                                <a class="nav-link dropdown-toggle" style="font-size:12px;color:black;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   PHP Training
-                                </a>
-
-                                <ul class="dropdown-menu" style="background-color:white">
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Full-Stack-Development-Training-With-Live-Project">PHP Full Stack Development</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-WordPress-Training-With-Live-Project">PHP + Wordpress</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Angular-Training-With-Live-Project">PHP + Angular</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-ReactJs-Training-With-Live-Project">PHP + React</a></li>
-                                    <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Codeiegniter-Training-With-Live-Project">PHP + Codeigniter</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Data-Science-Training-With-Live-Project" style="font-size:12px;">Data Science</a></li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Data-Analyst-Training-With-Live-Project" style="font-size:12px;">Data Analytics</a></li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Digital-Marketing-Training-With-Live-Project" style="font-size:12px;">Digital Marketing</a></li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/UI-UX-Training-With-Live-Project" style="font-size:12px;">UI-UX Training</a></li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Corporate-Training-With-Live-Project" style="font-size:12px;">Corporate Training</a></li>
-                            <li><a class="dropdown-item" style="color:black;font-size:12px;" href="/Internship-With-Live-Project" style="font-size:12px;">College Internship Training</a></li>
-
-                        </ul>
-                    </li>
-
-                            <li class="nav-item">
-                        <a class="nav-link" href="/ciit-events" style="font-size:12px;"> Gallery</a>
-                            </li>
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="/ciit-blogs" style="font-size:12px;"> Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/out-students-placed-in-top-companies" style="font-size:12px;"> Placements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/great-successful-career-with-ciit" style="font-size:12px;"> Career</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact-us" style="font-size:12px;">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Enquiry/Index" style="font-size:12px;">Enquiry Form</a>
-                    </li>
- 
-                        </ul>
-                        
-                    </div>
-              
-            </nav>
     </div>
 
 

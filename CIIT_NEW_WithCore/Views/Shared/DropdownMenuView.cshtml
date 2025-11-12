@@ -1,0 +1,178 @@
+﻿<style>
+    .dropdown-item {
+        color: black
+    }
+
+    .dropdown .dropdown-menu {
+        display: none;
+        background: #212529;
+    }
+
+    .dropdown:hover > .dropdown-menu,
+    .dropend:hover > .dropdown-menu {
+        display: block;
+        margin-top: .1em;
+        margin-left: .1em;
+    }
+
+    @Html.Raw("@")media screen and (min-width:769px) {
+        .dropend:hover > .dropdown-menu
+
+    {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+
+    .dropend .dropdown-toggle {
+        margin-left: .5em;
+    }
+
+    }
+</style>
+
+<style>
+   
+    /* Style the tab */
+    .tab {
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 30%;
+        height: auto;
+    }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 10px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current "tab button" class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        float: left;
+        padding: 0px 12px;
+        border: 1px solid #ccc;
+        width: 70%;
+        border-left: none;
+        height: auto;
+        display: none;
+    }
+
+    /* Clear floats after the tab */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+<ul class="dropdown-menu" style="background-color:white;width:500px;">
+
+    <li class="nav-item dropend">
+        <div class="tab">
+            <button class="tablinks" onmouseover="openCity(event, 'DotNet')">Dot Net</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Java')">Java</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Python')">Python</button>
+            <button class="tablinks" onmouseover="openCity(event, 'PHP')">Php</button>
+            <button class="tablinks" onmouseover="openCity(event, 'MEARN')">MEAN/MERN</button>
+            <button class="tablinks" onmouseover="openCity(event, 'DataScience')">Data Science</button>
+            <button class="tablinks" onmouseover="openCity(event, 'DataAnalytics')">Data Analytics</button>
+        </div>
+        <div id="DotNet" class="tabcontent">
+            <h6>Dot Net</h6>
+            <div><a class="dropdown-item" style="color:black;" href="/Dot-Net-Full-Strack-Development-Training-With-Live-Project">Full Stack Development</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Training-With-Live-Project">Full Stack Development With Azure</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project">Full Stack Development With Azure + AI</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Training">Dot Net Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Advance-Dot-Net-Full-Training">Advance Dot Net Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Angular-Training">Dot Net Core + Angular</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-React-Training">Dot Net Core + React</a></div>
+
+        </div>
+        <div id="Java" class="tabcontent">
+            <h6>Java</h6>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-Training-With-Live-Project">Full Stack Development</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-With-Aws-Training-With-Live-Project">Full Stack Development With AWS</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Full-Strack-Development-With-Aws-Ai-Training-With-Live-Project">Full Stack Development With AWS + AI</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Java-Training">Java Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Advance-Java-Training">Advance Java Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/SpringBoot-With-ReactJs-Training-With-Live-Project">Spring Boot + ReactJs</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/SpringBoot-With-Angular-Training-With-Live-Project  ">Spring Boot + Angular</a></div>
+
+        </div>
+        <div id="Python" class="tabcontent">
+            <h3>Python</h3>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development-Training-With-Live-Project">Full Stack Development</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development--With-Aws-Training-With-Live-Project">Full Stack Development With AWS</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Full-Stack-Development--With-Aws-Ai-Training-With-Live-Project">Full Stack Development With AWS + AI</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Web-Training">Python Web Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="#">Data Science Training</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Dejango-Flask-Reactjs-Web-Training">Django/Flask ReactJs</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Python-Dejango-Flask-Angular-Web-Training">Django/Flask + Angular</a></div>
+
+        </div>
+        <div id="MEARN" class="tabcontent">
+            <h3>MEARN</h3>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Training-With-Live-Project">MERN Stack Development</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Aws-Training-With-Live-Project">MERN Stack Development With AWS</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/MEAN-Full-Stack-Development-Aws-Ai-Training-With-Live-Project">MERN Stack Development With AWS + AI</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/NodeJs-Training-With-Live-Project">NodeJs</a></div>
+
+        </div>
+        <div id="PHP" class="tabcontent">
+            <h3>PHP</h3>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Full-Stack-Development-Training-With-Live-Project">PHP Full Stack Development</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-WordPress-Training-With-Live-Project">PHP + Wordpress</a></div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Angular-Training-With-Live-Project">PHP + Angular</a></div>
+            <div>
+                <a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-ReactJs-Training-With-Live-Project">PHP + React</a>
+            </div>
+            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Php-Codeiegniter-Training-With-Live-Project">PHP + Codeigniter</a></div>
+
+        </div>
+        <div id="DataScience" class="tabcontent">
+            <h3>Data Science</h3>
+            <div>Data Science is the capital of Japan.</div>
+        </div>
+        <div id="DataAnalytics" class="tabcontent">
+            <h3>Data Analytics</h3>
+            <div>Data Analytics is the capital of Japan.</div>
+        </div>
+
+        <div class="clearfix"></div>
+    </li>
+</ul>
+
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+</script>

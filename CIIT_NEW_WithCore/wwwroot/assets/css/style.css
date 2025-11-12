@@ -221,7 +221,7 @@ Description: This Template is created for web template
 /*Main carousel images on screen*/
 .carousel-item {
     position: relative;
-    z-index: -1;
+  
 }
 
     .carousel-item::after {
