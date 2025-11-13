@@ -148,7 +148,7 @@
                     </p>
                     <br />
                     <p>
-                        .NET Core with Angular stack is a powerful and highly relevant combination, offering excellent and stable career opportunities in the software development industry.
+                        .NET Core with Angular is a powerful and highly relevant combination, offering excellent and stable career opportunities in the software development industry.
                     </p>
                     <br />
                     <div class="row">
@@ -171,33 +171,7 @@
                             <span>(5/5 Rating)</span>
                         </div>
                     </div>
-                    @*  <div class="row" style="padding-top:4%">
-
-                        <div class="col-md-2" style="width:auto;">
-                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
-                                <div class="card-body">
-                                    <a href="#" style="color:white">Enquiry Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3" style="width:auto;">
-                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
-                                <div class="card-body">
-                                    <a href="#" style="color:white">Download Brochure</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3" style="width:auto;">
-                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
-                                <div class="card-body" style="position:center">
-                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> *@
+                    
 
                 </div>
                 <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
@@ -212,31 +186,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="container" style="max-width:100%">
-                    <div class="row">
-                        <div class="col-md-12 mb-5">
-                            <div class="card text-white mb-4">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-
-                                            <img src="~/assets/money_back_guarantee.jpg" style="height:150px;width:150px;" />
-                                        </div>
-                                        <div class="col">
-                                            <h5 style="color:orange"> 100% Money Back Guarantee </h5>
-
-                                            <p class="card-text" style="color:#007CC3">
-                                                <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
             @Html.Partial("~/Views/Shared/Companies.cshtml")
 
             <div class="container" style="padding-left:2%;max-width:100%">
@@ -386,11 +336,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+     
     @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
-    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-family:'Bookman Old Style'">
-        <div class="container" style="padding-left:2%;max-width:100%">
+     <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
                 <div class="col-md-12">
                     <h5 style="color:orange">Why Learn .NET Core + Angular in 2025?</h5>
@@ -575,14 +523,15 @@
                 </div>
             </div>
         </div>
-    </div>
+  
 
 
 
     @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
 
 
-
+        </div>
+    </div>
 </div>
 
 
