@@ -1,0 +1,817 @@
+﻿@{
+    ViewData["Title"] = "AWS DevOps with Job Assurance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'" ">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8" style="padding-left:2%;">
+                    <h4>
+                        Learn AWS DevOps with interactive labs and personalized guidance that prepares you for real jobs.
+                    </h4>
+                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                        The demand for skilled AWS DevOps professionals is high globally, offering significant career mobility and competitive salaries.
+                    </p>
+                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        The future scope for AWS DevOps is very strong, driven by high demand for faster software delivery, automation, and integrated security across all industries. As organizations globally accelerate their digital transformation, expertise in AWS DevOps remains a highly sought-after and future-proof career path
+                    </p>
+                    <p>
+                        CIIT's Training for AWS DevOps with AI integration (AIOps) primarily focuses on two areas: using built-in AI assistance in DevOps processes and implementing Machine Learning Operations (MLOps), which applies DevOps principles to the machine learning lifecycle.
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        6 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5 class="mb-3">What can you accomplish at the end of training?</h5>
+                    <p>
+                        After completing AWS DevOps with AI integration training, you will achieve the ability to design, implement, and manage intelligent, automated software delivery and machine learning systems that drive business value
+                    </p>
+                    <p>
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Intelligent Monitoring:</b><span>Implement systems using tools like AWS Monitor and Application Insights for automated anomaly detection and predictive failure analysis.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Collaboration:</b><span>Bridge the gap between data scientists (who build models) and IT operations teams (who deploy them) by providing a standardized, automated platform for model deployment.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Operational Automation:</b><span> Design self-healing infrastructure where AI automatically detects issues and triggers automated remediation actions, reducing downtime and operational costs.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Access to Specialized Roles:</b><span>You will qualify for high-demand roles such as AIOps Engineer, MLOps Engineer, DevSecOps Specialist, and AI Cloud Architect.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Certification Readiness:</b><span>
+                                        CIIT's training prepares you for advanced certifications, validating your expertise in both DevOps practices and AWS AI services.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>High-Impact Skillset:</b><span>You will possess skills that enable organizations to move from reactive IT operations to proactive, predictive systems, delivering better software faster.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Optimized Pipelines:</b><span>Use AI-driven analytics to identify bottlenecks in CI/CD pipelines, optimize build times, and improve resource utilization.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Automated Model Lifecycle:</b><span>Implement systems using tools like AWS Monitor and Application Insights for automated anomaly detection and predictive failure analysis.</span>
+                                </p>
+                            </li>
+                            <li>
+
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Intelligent Monitoring:</b><span>esign and implement end-to-end MLOps pipelines using AWS Machine Learning and AWS Pipelines to train, test, and deploy ML models reliably and at scale.</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        Ultimately, you will be equipped to engineer smarter, more resilient, and self-optimizing systems that incorporate intelligence into every stage of the software delivery pipeline.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange;"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+                    @*  <div class="row" style="padding-top:4%">
+
+                        <div class="col-md-2" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Enquiry Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white">Download Brochure</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;width:auto;border-radius:20px 20px 20px 20px">
+                                <div class="card-body" style="position:center">
+                                    <a href="#" style="color:white;text-align:center">Available Batches</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> *@
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/Courses/AWSdotnet.png" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        Benefits of AWS DevOps with AI Integration
+                                    </span>
+                                </h5>
+                            </div>
+                            <p>
+                                Integrating AI into AWS DevOps offers substantial career benefits, positioning professionals at the forefront of the tech industry. Key advantages include access to specialized and lucrative job roles, high demand in the job market, and the development of future-proof skills that drive innovation and operational efficiency.
+                            </p>
+                            <h6 class="card-title" style="color:orange;">High and Growing Demand</h6>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                The demand for professionals with a hybrid skill set of DevOps and AI is increasing rapidly as companies globally integrate intelligent automation into their processes. This creates a supply/demand gap that benefits skilled professionals.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Future-Proof Skills</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                AI is not replacing DevOps; it is elevating the field. Professionals who adapt and learn AIOps and MLOps are building skills that will remain essential for the next decade, ensuring career security in a rapidly evolving landscape.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Competitive Compensation</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Expertise in this integrated domain commands a premium. Professionals with AI-DevOps knowledge can expect significantly higher salaries (an average increase of 25-40%) compared to those with only traditional DevOps skills.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Global Opportunities</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                These skills are relevant across industries—from finance and healthcare to e-commerce—and sought after by top companies globally, including in major tech hubs.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Career Growth Opportunities</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Having expertise across various technologies opens up several career paths, including roles like AIOps Engineer, MLOps Engineer, DevSecOps Engineer (AI-Powered), Cloud Automation Specialist/Architect or Site Reliability Engineer (SRE). Over time, they can even move into leadership or consulting positions.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Salary Breakdown by Experience (India)
+                                </h5>
+                                <p>
+                                    The average salary for an AWS DevOps professional in India is approximately ₹27.3 lakhs per year, with the top 10% earning over ₹40.0 lakhs annually. While a specific "average salary with AI integration" is not distinctly tracked across all general profiles, integrating AI/ML skills can lead to higher-paying specialist roles and put you in a higher salary bracket.
+                                </p>
+                                <h6 class="card-title" style="color:orange;">Fresher/Junior Level (0-2 years)</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Average salaries range from approximately <b>₹4.0 lakhs</b> to <b>₹8.0 lakhs</b> per year.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Mid-Level (3-5 years)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Professionals in this range can expect an average of <b>₹10.0 lakhs</b> to <b>₹15.0 lakhs</b> per year.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Senior/Architect Level (8+ years)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Highly experienced professionals, especially those in architect or lead roles, can earn upwards of <b>₹21.0 lakhs</b> to over <b>₹40.0 lakhs</b> annually.
+                                </p>
+
+                            </div>
+
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Impact of AI/ML Integration Skills
+                                </h5>
+                                <p>
+                                    Salaries are heavily influenced by specialized, in-demand skills. While general AWS DevOps roles have a broad salary range, integrating AI and Machine Learning (ML) skills can increase earning potential:
+                                </p>
+                                <h6 class="card-title" style="color:orange;">Higher-Paying Roles</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Roles that combine DevOps with data science and AI, such as MLOps Engineer or Senior Data Engineer, are among the higher-paying positions.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Specific Examples</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    An MLOps Engineer role was reported with a salary around <b>₹11.4 lakhs</b> per year, even with relatively less experience.
+                                </p>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    A Senior Data Engineer with AWS ML skills had a reported CTC of over <b>₹40.2 lakhs</b> per year.
+                                </p>
+                                <h6 class="card-title" style="color:orange">Skill Demand</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    The ability to integrate AWS Machine Learning (AWS ML) Studio, data factory, and other AI services into the CI/CD pipeline is a valuable skill set that makes candidates more competitive and command higher salaries.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Who can learn AWS DevOps with AI course?</h5>
+                        <br />
+
+                        <p>
+                            A wide range of IT professionals can learn to use AI within AWS DevOps, provided they have a foundational understanding of the software development lifecycle and cloud concepts.
+
+                            <ul>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Developers</b> :
+                                        <span>
+                                            To streamline code collaboration, automate builds, and leverage AI for code generation and vulnerability analysis.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>DevOps Engineers</b> :
+                                        <span>
+                                            To design and implement robust CI/CD pipelines, manage infrastructure as code, and integrate AI into monitoring and feedback loops.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>AI Engineers & Data Scientists</b> :
+                                        <span>
+                                            To operationalize machine learning models (MLOps/GenAIOps), manage the model lifecycle, and integrate AI solutions with existing applications using AWS services.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Quality Assurance (QA) Engineers</b> :
+                                        <span>
+                                            To plan, execute, and automate testing processes, potentially using AI to summarize vulnerabilities and suggest remediation.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>IT Professionals & System Administrators</b> :
+                                        <span>
+                                            To manage infrastructure, configure environments, and monitor application performance with AI-driven insights.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Project Managers & QA Engineers</b> :
+                                        <span>
+                                            To plan and track project progress using AWS Boards and integrate AI in the testing process.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Students & Career Changers</b> :
+                                        <span>
+                                            Individuals with a foundational understanding of computer science and basic programming principles can start with fundamental certifications (like AWS AI Fundamentals or AWS Fundamentals) to enter the growing field of AI and cloud computing.
+                                        </span>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul class="list-group mb-4">
+
+                            <li>
+                                <h6 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Foundational DevOps on AWS</h6>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <b>Introduction to DevOps & AWS:</b>Principles of Agile and DevOps, and an overview of AWS services relevant to the SDLC.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Version Control:</b>Mastering Git and AWS Repos/GitHub for source code management, including advanced branching strategies and pull requests.
+
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>AWS Boards:</b>Utilizing Agile, Scrum, and Kanban methodologies for project planning, tracking, and backlog management.
+
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Infrastructure as Code (IaC):</b>Automating infrastructure provisioning using Terraform and ARM templates, managed within AWS Pipelines.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Monitoring and Logging:</b>Implementing observability and performance management using Amazon CloudWatch and AWS X-Ray.
+
+                                        </p>
+                                    </li>
+                                </ul>
+
+
+                            </li>
+
+                            <li>
+                                <h6 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Docker and Containerization</h6>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <b>Docker Fundamentals:</b>Understanding containerization, Docker architecture (images, containers, registries), and creating Dockerfiles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>AWS Container Registry (ACR):</b>Building, tagging, and pushing custom Docker images to a private registry within AWS.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Multi-Container Architectures:</b>Using Docker Compose for defining and running multi-container applications locally.
+                                        </p>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h6 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Kubernetes (K8s) and Orchestration</h6>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <b>Kubernetes Core Concepts:</b> Architecture (pods, nodes, services, deployments, ReplicaSets), networking, and storage in a K8s cluster.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>AWS Kubernetes Service (AKS):</b> Creating and managing AKS clusters, configuring kubectl CLI, and deploying applications to AKS.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Advanced K8s Management:</b> Implementing deployment strategies (rolling updates, blue-green), using Helm charts for package management, and managing persistent volumes and secrets with AWS Key Vault integration.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Integrating AI into the DevOps Pipeline</h6>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <b>AI-Assisted Development:</b> Leveraging generative AI tools like GitHub Copilot to generate code, create Dockerfiles, and generate Kubernetes YAML configurations based on natural language prompts.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Intelligent CI/CD:</b>
+                                            <ul>
+                                                <li>
+                                                    <b>Predictive Analytics:</b> <span>Using AI models to analyze past build data and logs to predict potential build or test failures before they occur.</span>
+                                                </li>
+                                                <li>
+                                                    <b>Automated Testing:</b> <span>Utilizing AI to prioritize or quarantine flaky tests, improve test coverage, and automate the generation of test scripts.</span>
+                                                </li>
+                                            </ul>
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>AI in Container Operations:</b>
+                                            <ul>
+                                                <li>
+                                                    <b>Introduction to AI on AWS:</b> <span> Overview of AI/ML concepts and relevant AWS AI services (e.g., Amazon Bedrock, Amazon SageMaker).</span>
+
+                                                </li>
+                                                <li>
+                                                    <b>AI-Assisted Development:</b> <span> Leveraging generative AI for coding assistance, documentation, and generating infrastructure-as-code configurations.</span>
+                                                </li>
+                                                <li>
+                                                    <b>Intelligent Resource Allocation:</b> <span>Applying AI algorithms to optimize K8s resource requests and limits (CPU/memory) based on usage patterns, preventing over or under-provisioning.</span>
+                                                </li>
+                                                <li>
+                                                    <b>Anomaly Detection & Self-Healing:</b> <span>Integrating AI-powered monitoring (like AWS Monitor with AI plugins) to detect anomalies in real time and trigger automated self-healing actions (e.g., automated rollbacks, restarting failed pods).</span>
+                                                </li>
+                                            </ul>
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>MLOps (Machine Learning Operations):</b> Integrating the ML lifecycle into DevOps practices using tools like Kubeflow for deploying, managing, and monitoring ML models within K8s clusters.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Building Generative AI Applications:</b> Using Large Language Models (LLMs) via Amazon Bedrock to enhance applications with customized text generation.Learning prompt engineering fundamentals and managing prompts within DevOps workflows.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                AWS DevOps with AI Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                A career path in AWS DevOps with AI typically evolves from a foundational engineering role into specialized and leadership positions focused on integrating machine learning and intelligent automation into the software delivery lifecycle.
+
+                            </p>
+                            <br />
+                            <h6>
+                                <i class="bi-star-fill" style="color:orange"></i> Phase 1: Foundation (Junior Roles)
+                            </h6>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+
+                                        <b>Role</b> :
+                                        <span>
+                                            Junior DevOps Engineer, Associate Cloud Engineer
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Focus</b> :
+                                        <span>
+                                            Mastering basic AWS services, Git, CI/CD pipelines, and writing basic infrastructure scripts.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>AI Exposure</b> :
+                                        <span>
+                                            Learning to use AI as a productivity tool (e.g., using GitHub Copilot for coding assistance)
+
+                                        </span>
+                                    </p>
+                                </li>
+
+
+                            </ol>
+
+                            <h6>
+                                <i class="bi-star-fill" style="color:orange"></i> Phase 2: Specialization (Mid-Level Roles)
+                            </h6>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+
+                                        <b>Role</b> :
+                                        <span>
+                                            DevOps Engineer, Site Reliability Engineer (SRE), Cloud Automation Engineer
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Focus</b> :
+                                        <span>
+                                            Designing complex YAML pipelines, implementing IaC (Terraform), managing Docker and Kubernetes (AKS), and setting up comprehensive monitoring and logging with AWS Monitor.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>AI Exposure</b> :
+                                        <span>
+                                            Integrating MLOps principles, deploying ML models via pipelines, and implementing AI-driven monitoring and analytics.
+                                        </span>
+                                    </p>
+                                </li>
+
+
+                            </ol>
+
+                            <h6>
+                                <i class="bi-star-fill" style="color:orange"></i> Phase 3: Advanced Integration (Senior Roles)
+                            </h6>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+
+                                        <b>Role</b> :
+                                        <span>
+                                            Senior DevOps Engineer, MLOps Engineer, Cloud Architect, AI/DevOps Specialist
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Focus</b> :
+                                        <span>
+                                            Leading architecture design, optimizing container orchestration with AI-driven resource management, ensuring DevSecOps compliance, and mentoring junior staff.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>AI Exposure</b> :
+                                        <span>
+                                            Developing AI-powered automation scripts, building custom AI solutions for proactive system monitoring, and integrating the AWS OpenAI Service into enterprise applications.
+                                        </span>
+                                    </p>
+                                </li>
+
+
+                            </ol>
+
+                            <h6>
+                                <i class="bi-star-fill" style="color:orange"></i> Phase 4: Leadership and Strategy (Leadership Roles)
+                            </h6>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+                                        <b>Role</b> :
+                                        <span>
+                                            DevOps Manager, VP of Engineering, Chief Technology Officer (CTO), AI Strategy Lead
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Focus</b> :
+                                        <span>
+                                            Defining the long-term AI strategy for the engineering organization, focusing on governance, ethics, and maximizing ROI through intelligent automation and process optimization.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>AI Exposure</b> :
+                                        <span>
+                                            Developing AI-powered automation scripts, building custom AI solutions for proactive system monitoring, and integrating the AWS OpenAI Service into enterprise applications.
+                                        </span>
+                                    </p>
+                                </li>
+
+
+                            </ol>
+                            <p>
+                                This career path offers opportunities to become a versatile professional capable of streamlining operations and building intelligent systems that drive business value
+                            </p>
+
+                            <h5 style="color:orange">
+                                Key Skills to Develop Along the Path
+                            </h5>
+                            <br />
+                            <p>
+                                To advance along this path, focus on continuously developing expertise in these areas:
+                            </p>
+
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+
+                                        <b>AWS Platforms</b> :
+                                        <span>
+                                            Deep expertise in relevant AWS services for computing, monitoring, and AI.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Automation</b> :
+                                        <span>
+                                            Mastery of scripting languages (Python, PowerShell, Bash) and automation tools (Ansible, Terraform).
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>AI & Machine Learning</b> :
+                                        <span>
+                                            Understanding ML lifecycles, MLOps principles, and using AWS AI tools.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Soft Skills</b> :
+                                        <span>
+                                            Strong problem-solving, collaboration, communication, and leadership abilities.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+
+                                        <b>Container Technology</b> :
+                                        <span>
+                                            Docker, Kubernetes (AKS), and Helm for modern application deployment.
+                                        </span>
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+        </div>
+    </div>
+</div>
+
+
+
+
