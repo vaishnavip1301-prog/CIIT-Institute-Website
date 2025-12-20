@@ -9,5 +9,9 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
+        public IActionResult TabDemo()
+        {
+            return View();
+        }
     }
 }
