@@ -67,12 +67,4 @@
     <Folder Include="wwwroot\Videos\" />
   </ItemGroup>
 
-  <ItemGroup><!--<Reference Include="arithmaticoperator3">
-      <HintPath>..\..\..\..\Desktop\ddl files\arithmaticoperator3.dll</HintPath>
-    </Reference>-->
-  
-    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Models\ERP_Models.csproj" />
-    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Services\ERP_Services.csproj" />
-  </ItemGroup>
-
 </Project>
