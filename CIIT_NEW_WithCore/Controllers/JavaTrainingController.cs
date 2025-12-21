@@ -30,17 +30,17 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("Advance-Java-Training")]
+        [Route("Advance-Java-Training-For-Professionals")]
         public IActionResult AdvanceJavaTraining()
         {
             return View();
         }
-        [Route("SpringBoot-With-ReactJs-Training-With-Live-Project")]
+        [Route("Spring-Boot-With-ReactJs-Training-With-Live-Project")]
         public IActionResult SpringBootWithReactJs()
         {
             return View();
         }
-        [Route("SpringBoot-With-Angular-Training-With-Live-Project")]
+        [Route("Spring-Boot-With-Angular-Training-With-Live-Project")]
         public IActionResult SpringBootWithAngular()
         {
             return View();

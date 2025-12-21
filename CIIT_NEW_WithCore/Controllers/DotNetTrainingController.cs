@@ -29,17 +29,17 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("Advance-Dot-Net-Full-Training")]
+        [Route("Advance-Dot-Net-Full-Training-For-Professionals")]
         public IActionResult AdvanceDotNetTraining()
         {
             return View();
         }
-        [Route("Dot-Net-Full-Angular-Training")]
+        [Route("Dot-Net-With-Angular-Training")]
         public IActionResult DotNetTrainingAngular()
         {
             return View();
         }
-        [Route("Dot-Net-Full-React-Training")]
+        [Route("Dot-Net-With-React-Training")]
         public IActionResult DotNetTrainingReact()
         {
             return View();
