@@ -1,8 +1,665 @@
-﻿
-@{
-    ViewData["Title"] = "MEANFullStackDevelopmentWithAwsAi";
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>MEANFullStackDevelopmentWithAwsAi</h1>
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest MEAN/MERN  on job training & get placed as a MEAN/MERN Stack Developer
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's MEAN/MERN  Full Stack Development Training is ideal for both freshers and working professionals interested in building a career as a MEAN/MERN  full stack developer.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        The demand for MEAN/MERN Stack developers is high, particularly in enterprise environments (e.g., finance, healthcare, e-commerce) due to MEAN/MERN 's stability, scalability, and robust ecosystem
+                    </p>
+                    <p>
+
+                        CIIT's A career in MEAN/MERN  full stack development offers numerous benefits, primarily driven by the ability to work on all layers of a software application, from the front-end user interface to the back-end logic and databases. This comprehensive skill set makes developers highly versatile and valuable to employers.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Outcomes of the MEAN/MERN Stack Training</h5>
+                    <p>
+                        Both stacks utilize JavaScript end-to-end, which streamlines development and significantly reduces the time-to-market for modern web products.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>High Salary Potential</b> :
+                                <p style="margin-left:2%">
+                                    As of 2025, entry-level MERN/MEAN developers in India typically earn between ₹3.5 LPA and ₹7 LPA. Experienced senior developers (5+ years) can command salaries ranging from ₹20 LPA to over ₹35 LPA, especially those with AI integration expertise
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Job Market Versatility</b> :
+                                <p style="margin-left:2%">
+                                    Mastering these stacks qualifies professionals for varied roles, including Full-Stack Developer, UI/UX Specialist, Backend Engineer, and Cloud Architect.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Reduced Development Costs</b> :
+                                <p style="margin-left:2%">
+                                    By hiring "full-stack" developers who can handle both front-end and back-end tasks, businesses can reduce their workforce needs and overall licensing fees since all components are open-source.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Scalability for Startups</b> :
+                                <p style="margin-left:2%">
+                                    MERN is a primary choice for 2025 startups to build Minimum Viable Products (MVPs) quickly due to its flexibility and high-performance rendering for single-page applications.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Global Opportunities</b> :
+                                <p style="margin-left:2%">
+                                    Due to the universal nature of JavaScript, developers are increasingly finding remote work with international firms, sometimes earning 2x–4x more than domestic counterparts.
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Full Stack MEAN/MERN  Stack Developer?
+                                    </span>
+                                </h5>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">Unified Language (JavaScript)</h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                Developers only need to know JavaScript, simplifying development, reducing context switching, and enabling code reuse across the entire stack (Frontend, Backend, Database).
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development & Productivity</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                The consistent language and powerful libraries (like React's component-based approach) lead to quicker development cycles, rapid prototyping, and faster time-to-market.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">High Scalability</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                MongoDB's flexible schema and Node.js's event-driven architecture allow for building applications that handle high traffic and grow easily.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development and Troubleshooting</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                A deep understanding of the entire application lifecycle enables developers to make faster, more informed technical decisions and quickly pinpoint and resolve issues across different system layers, leading to improved project efficiency and quicker delivery times.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Cost-Effective & Open Source</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                All components are open-source, meaning no licensing fees, and companies can hire JavaScript experts rather than multiple specialists, saving money.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Strong Performance</h5>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Node.js offers non-blocking I/O, ensuring efficient handling of many concurrent connections, while MongoDB is fast for data operations.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Robust Community & Support</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Active communities provide extensive documentation, tutorials, and third-party libraries, making it easier to find solutions and build complex features.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Flexibility & Portability</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Accommodates various deployment options (cloud platforms) and offers consistency across different environments, simplifying migrations.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Seamless Data Handling</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Uses JSON throughout, eliminating the need for data reformatting as it moves between the database and the UI, ensuring consistent data flow.
+                            </p>
+
+                            <p>
+                                MEAN/MERN stack development offers benefits like faster, unified JavaScript development, reducing costs and time-to-market by using one language across front-end (React/Angular), back-end (Node/Express), and database (MongoDB). Key advantages include scalability, high performance, cost-effectiveness (open-source, no licensing fees), strong community support, and flexibility for building dynamic, interactive web apps.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn MEAN/MERN  in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2025,2026, learning the MERN stack—comprising MongoDB, Express.js, React, and Node.js—remains a strategic career choice due to its efficiency and high market demand. Because every component is based on JavaScript, you can manage the entire development lifecycle (frontend, backend, and database) using a single programming language.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Rapid Career Growth & High Demand</b> :
+                                    <ul>
+                                        <li>
+                                            <b>Job Market Growth:</b>
+                                            <p style="margin-left:2%">
+                                                Jobs for full-stack and Node.js developers are projected to increase by 17–20% between 2025 and 2026.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Projections (India):</b>
+                                            <p style="margin-left:2%">
+                                                While 2025 entry-level salaries range from <b>₹3.5–₹6 LPA</b>, 2026 projections suggest a shift toward the higher end (₹6–₹8 LPA) for freshers with strong project portfolios.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Abundant Remote Work:</b>
+                                            <p style="margin-left:2%">
+                                                MERN skills are among the most sought-after for remote job openings globally, offering greater flexibility and higher compensation
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Technical Efficiency & Speed
+                                    </b> :
+                                    <ul>
+                                        <li>
+                                            <b>Unified JavaScript Stack:</b>
+                                            <p style="margin-left:2%">
+                                                You eliminate "context switching" between different languages. A single language for frontend (React) and backend (Node/Express) leads to faster development cycles and easier debugging.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Reusable Components:</b>
+                                            <p style="margin-left:2%">
+                                                React’s component-based architecture allows you to reuse code, significantly reducing the time required to build and maintain complex user interfaces.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Real-Time Capabilities:</b>
+                                            <p style="margin-left:2%">
+                                                The event-driven, non-blocking nature of Node.js makes MERN ideal for 2026's high-demand features, such as real-time dashboards, chat apps, and live collaboration tools.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Future-Proof Technology Integration:
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>AI-Readiness:</b>
+                                            <p style="margin-left:2%">
+                                                MERN developers who integrate AI tools (like OpenAI APIs or GitHub Copilot) are seeing <b>20–40% higher salaries</b> in 2025.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Cloud-Native Design:</b>
+                                            <p style="margin-left:2%">
+                                                MERN integrates seamlessly with modern cloud platforms like <b>AWS, Google Cloud, and Azure</b>, which is critical as most enterprises move toward serverless and edge computing.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Strong Community Support:</b>
+                                            <p style="margin-left:2%">
+                                                With millions of developers worldwide, you have access to extensive documentation, open-source libraries, and instant community support for any technical hurdle.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Advanced Modern Features
+
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>Next.js Adoption:</b>
+                                            <p style="margin-left:2%">
+                                                Many 2026 MERN roadmaps emphasize learning Next.js alongside React for improved SEO and server-side rendering (SSR).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Progressive Web Apps (PWAs):</b>
+                                            <p style="margin-left:2%">
+                                                MERN is a leading stack for building PWAs that provide offline-first, installable experiences similar to native mobile apps.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Unified Development Pipelines:</b>
+                                            <p style="margin-left:2%">
+                                                Courses in 2026 now focus heavily on CI/CD pipelines (GitHub Actions, Docker) as standard requirements for professional MERN roles.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </p>
+                        <p>
+                            In 2026, the <b>MERN stack (MongoDB, Express.js, React, Node.js)</b> remains a top career choice due to its high adaptability to new technological trends like Artificial Intelligence (AI) and Cloud-Native architectures.
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Phase 1: Web Foundations & JavaScript (Months 1–2) : </b>
+                                    <span>Before the core stack, you must master the fundamental languages of the web: </span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>HTML5 & CSS3</b> :
+                                                <span>Semantic tags, Flexbox, CSS Grid, and responsive design for mobile.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>JavaScript (ES6+)</b> :
+                                                <span>Variables, arrow functions, destructuring, promises, and async/await.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>Version Control</b> :
+                                                <span>Professional Git workflows, including branching, merging, and pull requests on GitHub.</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Phase 2: Frontend Mastery with React (Months 2–3) : </b>
+                                    <span>Mastery of server-side programming using the MEAN/MERN  ecosystem.</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>Core Concepts</b> :
+                                                <span>JSX syntax, components (functional and class), and Props vs. State.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>React Hooks</b> :
+                                                <span>Deep dive into useState, useEffect, useContext, useRef, and the new React 19 Actions API.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>State Management</b> :
+                                                <span>Transitioning from simple context to Redux Toolkit or Zustand for large-scale apps.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>React Router</b> :
+                                                <span>Setting up navigation, nested routes, and protected paths for user authentication.</span>
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Phase 3: Backend & Database (Months 3–4)  </b>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>Node.js & Express.js</b> :
+                                                <span>Event loops, middleware creation, and building secure RESTful APIs.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>MongoDB & Mongoose</b> :
+                                                <span>NoSQL data modeling, CRUD operations, indexing for performance, and schema validation with Mongoose ODM.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>Authentication & Security</b> :
+                                                <span>Implementing JWT (JSON Web Tokens), password hashing with bcrypt, and CORS management.</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Phase 4: Advanced Integrations & AI (Months 5–6) </b>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>AI Power-ups</b> :
+                                                <span> Integrating pre-trained models via APIs (OpenAI, Hugging Face) and using GitHub Copilot or AI-powered testing.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>Real-time & Performance</b> :
+                                                <span>Adding real-time communication via Socket.io and learning alternative query languages like GraphQL. </span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>TypeScript</b> :
+                                                <span>Converting JavaScript projects to TypeScript for enterprise-grade type safety.  </span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Phase 5: Deployment & DevOps  : </b>
+                                    <ul>
+                                        <li>
+                                            <b>Cloud Hosting</b>:
+                                            <p>
+                                                Deploying frontends on Vercel/Netlify and backends on AWS (EC2, S3), Render, or Railway.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Containerization</b>:
+                                            <p>
+                                                Basic Docker for creating portable application environments.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>CI/CD</b>:
+                                            <p>
+                                                Automating workflows using GitHub Actions for continuous integration and deployment.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+
+                        </ul>
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                In 2025, MERN stack development is one of the most accessible pathways into the tech industry, open to individuals from diverse professional and educational backgrounds. Because the entire stack uses JavaScript, the learning curve is significantly lower than for multi-language stacks.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Students & Fresh Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Particularly those with degrees in Computer Science, IT, or Engineering, though a formal degree is not mandatory for employment if a strong portfolio exists.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Career Changers (Non-Technical)</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals from non-tech fields like sales, finance, or BPO are increasingly transitioning into development through structured 2025 bootcamps and online certifications.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Working Professionals:</b> :
+                                        <p style="margin-left:2%">
+                                            Existing software testers, frontend developers, or mobile developers who want to upskill into "Full-Stack" roles to increase their market value and salary potential.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Entrepreneurs</b> :
+                                        <p style="margin-left:2%">
+                                            Business owners seeking the technical know-how to build their own Minimum Viable Products (MVPs) or better manage remote development teams.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                MEAN/MERN  Full Stack Developer Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                The career path for a MEAN/MERN  full stack developer offers significant growth potential, typically progressing from entry-level coding roles to senior technical leadership or management positions.
+                            </p>
+                            <p>
+                                The career path generally follows a structured ladder, with increasing responsibilities and skill requirements at each stage:
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:15%">Stage </th>
+                                        <th style="width:15%">Salary </th>
+                                        <th style="width:30%">Example Roles </th>
+                                        <th style="width:30%">Key Focus & Skills </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entry Level(0–2 years)</td>
+                                        <td>₹3.5 LPA to ₹7 LPA</td>
+                                        <td>Junior MERN/MEAN Developer, Front-end/Back-end Developer, UI/UX Designer.</td>
+                                        <td>Master JavaScript (ES6+), core stack components (MongoDB, Express, React/Angular, Node), and basic version control using Git.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mid Level(2–5 Years)</td>
+                                        <td>₹6 LPA to ₹12 LPA</td>
+                                        <td>Full Stack Engineer, Senior MERN/MEAN Developer.</td>
+                                        <td>Advanced state management (Redux/Zustand), RESTful API design, database optimization (aggregation pipelines), and security protocols like JWT and OAuth.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior Level(5–8+ Years)</td>
+                                        <td>₹12 LPA to ₹25 LPA,</td>
+                                        <td>Tech Lead, Software Architect, Engineering Manager</td>
+                                        <td>System architecture, microservices, cloud-native development (AWS/Azure), containerization (Docker/Kubernetes), and mentoring junior staff.</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
 

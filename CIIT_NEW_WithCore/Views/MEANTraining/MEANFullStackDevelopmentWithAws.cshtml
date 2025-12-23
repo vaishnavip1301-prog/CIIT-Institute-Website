@@ -1,8 +1,674 @@
-﻿
-@{
-    ViewData["Title"] = "MEANFullStackDevelopmentWithAws";
+﻿@{
+    ViewData["Title"] = "FullStackDevelopmentWithAzure";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>MEANFullStackDevelopmentWithAws</h1>
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'" ">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest MEAN/MERN  Stack Developer With AWS DevOps
+                    </h4>
+
+                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                        CIIT's MEAN/MERN  Full Stack Development with AWS Training with Live Project is designed to equip individuals with the skills needed to become a full-stack MEAN/MERN  developer, with a specific focus on integrating and deploying applications on Amazon Web Services (AWS) cloud platform, and including practical experience through a live project.
+                    </p>
+                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Our Full Stack with AWS training aims to prepare individuals for roles as MEAN/MERN Stack Developers with cloud expertise, enabling them to design, develop, deploy, and maintain robust and scalable applications on the AWS platform.
+                    </p>
+                    <p>
+                        CIIT's MEAN/MERN  with AWS course offers an ideal opportunity for individuals passionate about building projects from the ground up. CIIT serves as an excellent platform for those aspiring for boundless opportunities in the IT industry as a MEAN/MERN  full stack with AWS DevOps.
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        6 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <h5>Career & Professional Outcomes of  MEAN/MERN Stack with AWS Training</h5>
+                    <p>
+                        <ul>
+                            <li>
+                                <b><i class="bi-star-fill" style="color:orange"></i> Versatility : </b>
+                                <p style="margin-left:2%">
+                                    Graduates become "all-rounders" capable of contributing to any part of a project, making them highly valuable to employers across various industries like finance, e-commerce, and healthcare.
+                                </p>
+                            <li>
+                            <li>
+                                <b><i class="bi-star-fill" style="color:orange"></i> Enhanced Job Opportunities : </b>
+                                <p style="margin-left:2%">
+                                    The comprehensive skill set increases employability, opening doors to various roles, including:
+                                </p>
+
+                                <ul>
+                                    <li><b>Full Stack Developer</b></li>
+                                    <li>
+                                        <b>
+                                            MEAN/MERN Stack  Developer
+                                        </b>
+                                    </li>
+                                    <li><b>Cloud Engineer</b></li>
+                                    <li><b>DevOps Engineer</b></li>
+                                    <li><b>Software Engineer</b></li>
+                                    <li><b>Technical Architect</b></li>
+                                </ul>
+
+
+                            <li>
+                            <li>
+                                <b><i class="bi-star-fill" style="color:orange"></i> Career Advancement : </b>
+                                <p style="margin-left:2%">
+                                    A deep understanding of the entire development lifecycle positions developers for faster career growth and leadership roles, such as Technical Lead or Solution Architect.
+                                </p>
+                            <li>
+                            <li>
+                                <b><i class="bi-star-fill" style="color:orange"></i> Competitive Compensation : </b>
+                                <p style="margin-left:2%">
+                                    Due to the high demand for versatile developers, professionals in this field often command competitive salaries.
+                                </p>
+                            <li>
+
+                            <li>
+                                <b><i class="bi-star-fill" style="color:orange"></i> Certification Readiness : </b>
+                                <p style="margin-left:2%">
+                                    The curriculum often prepares individuals for industry-recognized certifications, such as the AWS Certified Developer – Associate exam, which validates expertise and enhances professional credibility.
+                                </p>
+                            <li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        The outcomes of MEAN/MERN  Full Stack Development with AWS training are a comprehensive technical skill set, diverse career opportunities, and the ability to design and deploy scalable applications on the cloud.
+
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange;"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/Courses/azuredotnet.png" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Full Stack MEAN/MERN Stack Developer with AWS?
+                                    </span>
+                                </h5>
+
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Demand and Job Opportunities</h6>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Companies across industries (finance, healthcare, e-commerce) actively seek professionals who can manage the entire application lifecycle, from front-end design to cloud deployment.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Increased Versatility</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                You become an "all-rounder" capable of working on any part of a project, reducing a company's reliance on multiple specialized developers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Competitive Salaries</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Due to their wide-ranging skills and ability to handle multiple tasks (potentially reducing the need to hire multiple specialists), MEAN/MERN stack developers with AWS often command higher salaries compared to specialized only front-end , back-end or only full stack developers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Career Growth</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                This comprehensive skill set provides a strong foundation for advancement into leadership roles like Technical Lead, Software Architect, or DevOps Engineer.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Job Security and Flexibility</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                MEAN/MERN Stack is a stable, widely used enterprise language, and cloud computing is the industry standard, making this a future-proof skill set. Expertise also opens up a wide range of remote work and freelance opportunities.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Industry Credibility</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Obtaining an AWS Certified Developer – Associate certification validates your expertise and makes you a more attractive candidate to employers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Adaptability to New Technologies</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Full stack developers are accustomed to continuous learning across various technologies, which makes them highly adaptable to new frameworks, tools, and industry trends, future-proofing their careers.
+
+
+                            </p>
+                            <h6 class="card-title" style="color:orange">End-to-End Project Ownership</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                You gain complete creative control and a holistic understanding of the project's architecture, allowing you to make faster, more informed technical decisions and manage the entire workflow efficiently.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Scalability and Performance</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                You gain complete creative control and a holistic understanding of the project's architecture, allowing you to make faster, more informed technical decisions and manage the entire workflow efficiently.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Cost Efficiency</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                By utilizing the AWS "pay-as-you-go" model and services like AWS Lambda (serverless computing), you can optimize infrastructure costs by paying only for the resources you consume.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Streamlined Development (DevOps)</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                You learn to implement efficient CI/CD pipelines using AWS tools like CodePipeline and CodeBuild, enabling automated testing and deployment, which speeds up the development lifecycle.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Freelance and Remote Work Options</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The ability to independently build and manage entire applications makes full stack developers well-suited for freelance opportunities and a popular choice for startups and small businesses looking for cost-effective solutions.
+                            </p>
+
+                            <p style="text-align:left;color:#007CC3">
+                                Combining MEAN/MERN Stack development skills with Amazon Web Services (AWS) expertise offers significant benefits, including enhanced career opportunities, higher earning potential, and the ability to build, deploy, and manage highly scalable, reliable, and cost-effective cloud-based applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Average Salaries in the United States
+
+                                </h5>
+                                <p>In the U.S., the combination of MEAN/MERN Stack and AWS is highly valued, leading to substantial compensation. </p>
+
+                                <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    $70,000 - $90,000
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Mid-Level (3-6 years)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    $90,000 - $150,000
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    $150,000 - $250,000+
+                                </p>
+
+                            </div>
+
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Average Salaries in India
+
+
+                                </h5>
+
+                                <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    ₹3 - ₹8 LPA (Lakhs per Annum)
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Mid-Level (3-6 years)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹8 - ₹20 LPA
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Senior/Lead (6+ years, Architect roles)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹25 - ₹50+ LPA, potentially up to ₹1 Crore in top companies
+                                </p>
+
+                            </div>
+
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Key factors in India
+                                </h5>
+                                <h6 class="card-title" style="color:orange;">Experience Level</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Salaries increase with more years of experience. Entry-level positions will naturally offer lower compensation than senior or lead roles.
+                                </p>
+                                <h6 class="card-title" style="color:orange;">Location</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Cities like Bangalore, Pune, and Hyderabad are major tech centers with competitive salaries.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Company Size and Type</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Large corporations or tech giants may offer higher salaries and more comprehensive benefits packages than smaller companies or startups.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Specific AWS Skills</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Proficiency in advanced AWS services (e.g., Lambda, Kubernetes, advanced security services) can command higher salaries.
+
+                                </p>
+                                <h6 class="card-title" style="color:orange">Additional Skills</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Expertise in other relevant technologies like microservices, containerization (Docker), and specific frontend frameworks (React, Angular) can also increase earning potential.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Who can learn this course?</h5>
+                        <br />
+
+                        <p>
+                            Anyone with a keen interest in software development can learn MEAN/MERN stack with AWS. There are no strict prerequisites, but a basic understanding of programming logic is helpful.
+
+                            <ul>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Aspiring Software Developers</b> :
+                                        <span>
+                                            Beginners interested in building end-to-end applications and deploying them on the cloud.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Existing Developers</b> :
+                                        <span>
+                                            Those with experience in specific areas (e.g., front-end, back-end, or basic MEAN/MERN ) looking to expand their skill set to become full stack and cloud-proficient.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Engineering Graduates</b> :
+                                        <span>
+                                            Recent graduates from fields like Computer Science or IT who want to make themselves industry-ready.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Cloud Enthusiasts</b> :
+                                        <span>
+                                            Individuals interested in learning how to integrate robust back-end systems with powerful AWS cloud services.
+
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Career Changers</b> :
+                                        <span>
+                                            Professionals from non-IT backgrounds with a passion for technology, as many institutes offer comprehensive training from the basics.
+                                        </span>
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Basic and Advanced  MNodeJs : </b> Foundational knowledge of NodeJs,ExpressJs programming, including Object-Oriented Programming (OOP) concepts, exception handling, async, await, and some extra latest features.
+
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Front-End Development:</b>Proficiency in building dynamic user interfaces using core web technologies and modern frameworks:
+                                    <ul>
+                                        <li>
+                                            <b>HTML5, CSS3, JavaScript (ES6+) : </b>
+                                            <span>The building blocks for web page structure, styling, and interactivity.</span>
+                                        </li>
+                                        <li>
+                                            <b>Front-End Frameworks : </b>
+                                            <span>Hands-on experience with popular frameworks like <b>React</b> or <b>Angular</b> for building single-page applications and complex UIs.</span>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Back-End Development : </b>Mastering server-side logic and application architecture:
+                                    <ul>
+                                        <li>
+                                            <b>NodeJs and ExpressJs : </b>
+                                            <span>Building robust and scalable applications and RESTful APIs with the leading MEAN/MERN  frameworks, including NodeJs and ExpressJs Security (JWT), and NodeJs and ExpressJs Data ORM.</span>
+                                        </li>
+                                        <li>
+                                            <b>Microservices : </b>
+                                            <span>Understanding and implementing microservices architecture using NodeJs and ExpressJs for building resilient and independently deployable services.</span>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Database Management: </b>Skills in managing and interacting with various databases:
+                                    <ul>
+                                        <li>
+                                            <b>SQL/NoSQL : </b>
+                                            <span>Working with relational databases like <b>MySQL</b> and <b>Oracle</b>, and NoSQL databases such as <b>MongoDB</b>.</span>
+                                        </li>
+                                        <li>
+                                            <b>ORM Tools : </b>
+                                            <span>Using <b>NodeJs</b> (Rest API) for seamless object-relational mapping.</span>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>AWS Cloud Integration : </b>Practical experience in deploying and managing applications on Amazon Web Services:
+                                    <ul>
+                                        <li>
+                                            <b>Core Services : </b>
+                                            <span>Introduction to essential services like EC2 (Elastic Compute Cloud), S3 (Simple Storage Service) for storage, and RDS (Relational Database Service) for databases.</span>
+                                        </li>
+                                        <li>
+                                            <b>Serverless & CI/CD : </b>
+                                            <span>Building serverless applications with AWS Lambda and API Gateway, and setting up CI/CD pipelines using AWS CodeCommit, CodeBuild, and CodeDeploy.</span>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>DevOps & Tools : </b> Familiarity with essential development and operations tools:
+                                    <ul>
+                                        <li>
+                                            <b>Version Control : </b>
+                                            <span>Using <b>Git</b> and <b>GitHub</b> for source code management and collaboration.</span>
+                                        </li>
+                                        <li>
+                                            <b>Containerization : </b>
+                                            <span> Basics of <b>Docker</b> and <b>Kubernetes</b> for packaging and orchestrating applications.</span>
+                                        </li>
+                                        <li>
+                                            <b>Build Tools : </b>
+                                            <span><b>Jenkins</b>  for build automation.</span>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                        </ul>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Learning Features For CIIT's MEAN/MERN  Stack Development with AWS Training
+                            </h5>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Hands-on Projects</b> :
+                                        <span>
+                                            Learners work on real-time and capstone projects, such as building e-commerce platforms or a healthcare portal, to apply their skills in practical scenarios.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Placement Assistance</b> :
+                                        <span>
+                                            Many courses offer career support, including resume building, mock interviews, and job placement assistance to prepare for the workforce.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Industry-Recognized Certifications</b> :
+                                        <span>
+                                            Earning course completion certificates and preparing for official AWS certifications can enhance professional credibility.
+                                        </span>
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                MEAN/MERN  + AWS Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                A MEAN/MERN  full stack with AWS career path starts with foundational full-stack skills in MEAN/MERN , front-end technologies like HTML/CSS/JavaScript, and back-end frameworks like NodeJs and ExpressJs, then integrates cloud knowledge, especially AWS core services. The path progresses from junior developer to senior developer, technical lead/architect, and eventually engineering manager or CTO. Gaining certifications like AWS Certified Developer or AWS Certified Solutions Architect can accelerate advancement.
+
+                            </p>
+                            <br />
+                            <h6>High Demand and Job Opportunities</h6>
+                            <ol class="mb-4">
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Junior Full Stack Developer / Trainee</b> :
+                                        <span>
+                                            Focus on learning the basics, working on specific modules, and supporting senior team members.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Full Stack Developer</b> :
+                                        <span>
+                                            Take ownership of full features or small projects, manage both front-end and back-end integration, and work with core AWS services like EC2 and S3.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Senior Full Stack Engineer / Technical Lead</b> :
+                                        <span>
+                                            Lead complex projects, mentor junior developers, perform code reviews, and be involved in architectural decisions, potentially managing CI/CD pipelines and cloud deployments.
+
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Software Architect / Cloud Architect</b> :
+                                        <span>
+                                            Design the overall system architecture, implement scalable and secure cloud-based solutions, and define technical standards.
+                                        </span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="bi-star-fill" style="color:orange"></i>
+                                        <b>Engineering Manager / CTO</b> :
+                                        <span>
+                                            Move into a leadership role, overseeing multiple projects and teams, and driving the company's technological strategy.
+                                        </span>
+                                    </p>
+                                </li>
+
+                            </ol>
+
+                            <p>
+                                In essence, a skill set combining MEAN/MERN  and AWS allows for significant career acceleration, providing the technical foundation to work on cutting-edge projects that shape the future of technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+        </div>
+    </div>
+</div>
+
+
+
 

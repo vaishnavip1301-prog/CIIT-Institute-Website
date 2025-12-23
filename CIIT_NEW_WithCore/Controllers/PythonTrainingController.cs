@@ -14,34 +14,31 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("Python-Full-Stack-Development--With-Aws-Training-With-Live-Project")]
+        [Route("Python-Full-Stack-Development-With-Aws-Training-With-Live-Project")]
         public IActionResult PythonFullStrackDevelopomentWithAws()
         {
             return View();
         }
-        [Route("Python-Full-Stack-Development--With-Aws-Ai-Training-With-Live-Project")]
+        [Route("Python-Full-Stack-Development-With-Aws-AI-Training-With-Live-Project")]
         public IActionResult PythonFullStrackDevelopomentWithAwsAi()
         {
             return View();
         }
 
-        [Route("Python-Web-Training")]
+        [Route("Python-Django-FastApi-Trainin-For-Working-Professionals")]
         public IActionResult PythonWebTraining()
         {
             return View();
-
         }
-        [Route("Python-Dejango-Flask-Reactjs-Web-Training")]
+        [Route("Python-DJango-FastApi-With-React-Training")]
         public IActionResult DjangoFlaskReactJs()
         {
             return View();
-
         }
-        [Route("Python-Dejango-Flask-Angular-Web-Training")]
+        [Route("Python-DJango-FastApi-With-Angular-Training")]
         public IActionResult DjangoFlaskAngular()
         {
             return View();
-
         }
 
     }

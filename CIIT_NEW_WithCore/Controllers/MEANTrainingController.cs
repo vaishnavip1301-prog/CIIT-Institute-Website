@@ -4,23 +4,23 @@ namespace CIIT_NEW_WithCore.Controllers
 {
     public class MEANTrainingController : Controller
     {
-        [Route("MEAN-Stack-Training-With-Live-Project")]
+        [Route("MEARN-Stack-Training-With-Live-Project")]
         public IActionResult MEAN()
         {
             return View();
         }
-        [Route("MEAN-Full-Stack-Development-Training-With-Live-Project")]
+        [Route("MEARN-Stack-Development-Training-With-Live-Project")]
         public IActionResult MEANFullStackDevelopment()
         {
             return View();
         }
-        [Route("MEAN-Full-Stack-Development-Aws-Training-With-Live-Project")]
+        [Route("MEARN-Full-Stack-Development-With-AWS-Training-With-Live-Project")]
         public IActionResult MEANFullStackDevelopmentWithAws()
         {
             return View();
 
         }
-        [Route("MEAN-Full-Stack-Development-Aws-Ai-Training-With-Live-Project")]
+        [Route("MEARN-Full-Stack-Development-AWS-And-AI-Training-With-Live-Project")]
         public IActionResult MEANFullStackDevelopmentWithAwsAi()
         {
             return View();

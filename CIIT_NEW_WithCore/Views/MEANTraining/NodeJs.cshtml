@@ -1,8 +1,686 @@
-﻿
-@{
-    ViewData["Title"] = "NodeJs";
+﻿@{
+    ViewData["Title"] = "FullStackDevelopmentWithAzure";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>NodeJs</h1>
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest Dot Net Technology on industry oriented projects
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:4%">
+                        CIIT's Dot Net Training is ideal for both freshers and working professionals interested in building a career as a Dot Net Developer.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        NET is closely integrated, providing a comprehensive platform for building, deploying, and managing modern cloud applications. Azure is the recommended cloud platform for .NET developers due to its native support for .NET and integration with Visual Studio tools.
+                    </p>
+                    <p>
+                        CIIT's .NET Course offers an ideal opportunity for individuals passionate about building projects from the ground up. CIIT serves as an excellent platform for those aspiring for boundless opportunities in the IT industry as a Dot Net Developer.
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Course Duration:<br />
+                                        3 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="mb-3">What can you accomplish at the end of training?</h4>
+                    <h6>Unlock Career Growth with .NET Core Developer</h6>
+                    <p>
+                        <ul>
+                            <li><i class="bi-star-fill" style="color:orange"></i>  Get Hike in Your Salary up to <b>₹30 LPA</b></li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> .NET development makes you a valuable asset, more career opportunities.
+                            </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> You can transition into a variety of roles, such as a .Net Back End Engineer, .Net Developer or .Net Architect with competitive salaries.</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Fast-Track Your Career with Fortune 500+ Companies</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Build Real-world Projects  using .Net Core  </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Preparation for .NET Core Developer </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> Get Priority in job</li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        Take the next step to become a job-ready F.NET Developer with CIIT today!
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 3 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) -4 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/Courses/dotnet6.png" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h4>
+                                    <span style="color:orange">
+                                        Benefits of .NET Development
+                                    </span>
+                                </h4>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High demand for .NET developers</h6>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                In enterprise, startup, and government sectors.
+                                Opens doors to roles like Full-Stack Developer, Backend Engineer, Software Architect, and Cloud Developer.
+                                .NET skills are valued globally, especially in regions with strong Microsoft ecosystems.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Versatile Platform & Language Support</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <b> NET is cross-platform</b> : build apps for Windows, Linux, macOS, Android, and iOS.<br />
+                                <b>Supports multiple languages</b> : C#, F#, Visual Basic.<br />
+                                Ideal for building web apps, desktop software, mobile apps, games, and IoT solutions.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Rich Ecosystem & Productivity Tools</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Access to NuGet, a powerful package manager with thousands of libraries.
+                                Integration with Visual Studio and Visual Studio Code for streamlined development.
+                                Built-in support for unit testing, debugging, and deployment.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Strong Community & Learning Resources</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Backed by Microsoft and a vibrant developer community.
+                                Abundant documentation, forums, GitHub projects, and tutorials.
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Security & Performance</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                .NET offers robust security features like authentication, authorization, and data protection.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Integration and Ecosystem</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Optimized for high performance, especially with ASP.NET Core and .NET 8+.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Minimal APIs & OpenAPI Integration</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <b>Enhanced Minimal APIs</b> : These lightweight endpoints now offer better performance and more features, making microservices and REST APIs easier to build.<br />
+                                <b>Built-in OpenAPI Support</b> : Simplifies API documentation and testing without needing third-party tools
+
+                            </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="padding-left:2%;max-width:100%">
+
+
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+
+
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Salary by Experience Level (2025 Data)
+                                </h5>
+                                <h6>
+                                    Salaries for .NET developers in India generally follow these ranges based on experience:
+
+                                </h6>
+                                <p>
+                                    In India, the average salary for a .NET Azure Developer typically ranges from ₹3.0 Lakhs to ₹20.0 Lakhs per year, depending on experience and location.
+                                </p>
+                                <h6 class="card-title" style="color:orange;">Fresher / Entry-Level (0–1 yr)</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    ₹2.5 LPA – ₹5.5 LPA<br />
+                                    Up to ₹6–8 LPA with certifications (e.g., Azure)
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Junior to Mid-Level (2–5 yrs)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹6 LPA – ₹12 LPA<br />
+                                    Up to ₹10–16 LPA (e.g., with microservices/Azure experience)
+
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Senior (5–9 yrs)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹12 LPA – ₹22 LPA<br />
+                                    Up to ₹18–28 LPA (with advanced cloud/distributed systems expertise)
+                                </p>
+                                <h6 class="card-title" style="color:orange">Lead / Architect (10+ yrs)</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    ₹22 LPA – ₹35 LPA<br />
+                                    Up to ₹40 LPA+ in top product/FinTech companies
+                                </p>
+                            </div>
+
+                            <div class="mb-5">
+                                <h5 class="mb-4" style="color:orange">
+                                    Key factors in India
+                                </h5>
+
+                                <h6 class="card-title" style="color:orange;">Location</h6>
+                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                    Major IT hubs like <b>Banglore</b>, <b>Hyderabad</b>, and <b>Pune</b> generally offer higher salaries compared to other cities.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Company Type</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Product-based companies and Global Capability Centers (GCCs) typically offer better compensation than traditional IT services and consulting firms.
+                                </p>
+
+                                <h6 class="card-title" style="color:orange">Specialized Skills</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Proficiency in high-demand areas such as Azure (or other cloud platforms), microservices architecture, and full-stack development (e.g., with React or Angular) can lead to significantly higher pay.
+                                </p>
+                                <h6 class="card-title" style="color:orange">Education</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    Developers who have graduated from premier institutions may command higher starting salaries.
+                                </p>
+                                <h6 class="card-title" style="color:orange">Top Companies</h6>
+                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                    High-paying companies, particularly in algorithmic trading or top-tier product development, can offer packages well over ₹40 LPA for senior roles
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <h5 style="color:orange">Who can learn this course?</h5>
+                    <br />
+
+                    <p>
+                        Virtually anyone interested in software development can learn .NET, from absolute beginners to experienced programmers looking to expand their skills. Its open-source, cross-platform nature and comprehensive ecosystem make it a versatile choice for a wide range of applications
+
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Non IT Candidates</b> :
+                                    <span>
+                                        Our training starts from what is difference between hardware and software so anybody who know the basics of computer can learn out .net training. The tech industry values skills and a demonstrable portfolio more than formal educational background.
+                                        Many successful developers have transitioned from completely unrelated fields. The key is dedication, a structured learning approach, and consistent practice.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Beginners/Students</b> :
+                                    <span>
+                                        Individuals with a basic understanding of computer fundamentals or general programming logic will find .NET a good starting point. The primary language used in .NET, C#, is modern, object-oriented, and relatively easy to pick up with Us.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Experienced Developers</b> :
+                                    <span>
+                                        Individuals managing on-premise infrastructure can transition into cloud roles by learning Azure administration. This path is ideal for those interested in managing identities, virtual networks, storage, and security in a cloud environment.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Web Developers</b> :
+                                    <span>
+                                        Those interested in backend development can use ASP.NET Core to build fast, secure, and scalable web applications and APIs, often pairing it with front-end frameworks like React or Angular.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Enterprise Developers</b> :
+                                    <span>
+                                        Given its robust features, scalability, and seamless integration with other Microsoft products (like Azure and SQL Server), .NET is a top choice for large organizations and is widely used in finance, healthcare, and e-commerce.
+
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Mobile & Game Developers</b> :
+                                    <span>
+                                        With .NET MAUI (for cross-platform mobile and desktop apps) and the Unity game engine (which uses C#), .NET offers pathways into mobile and game development.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Cloud & IoT Developers</b> :
+                                    <span>
+                                        NET has strong support for cloud development, serverless architecture, and IoT applications, with excellent integration with platforms like Microsoft Azure and AWS
+                                    </span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </p>
+                    <br />
+                    <br />
+
+                    <h5 style="color:orange">Course Highlights:</h5>
+                    <br />
+
+                    <ul class="list-group mb-4">
+
+                        <li>
+                            <h6 style="color:orange">
+                                <i class="bi-star-fill" style="color:orange"></i> Foundational Skills
+                            </h6>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>C# Programming:</b> Mastery of the primary language used in the .NET ecosystem, covering basic syntax, data types, control structures, and loops.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Object-Oriented Programming (OOP):</b>  Deep understanding of core OOP principles such as classes, objects, inheritance, polymorphism, and encapsulation.
+
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Version Control:</b> Proficiency with tools like Git and GitHub for managing code changes, collaboration, and repository management.
+
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Debugging and Testing:</b>Essential skills for identifying and resolving issues in code using tools provided by the Visual Studio IDE, and implementing unit testing frameworks like xUnit or NUnit.
+
+                                    </p>
+                                </li>
+                            </ul>
+
+
+                        </li>
+
+                        <li>
+                            <h6 style="color:orange"><i class="bi-star-fill" style="color:orange"></i> Core .NET Concepts</h6>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>.NET Framework & .NET Core/7+:</b>Understanding the architecture, components, and evolution of the platform, including the differences and trade-offs between the older .NET Framework and the modern, cross-platform .NET Core (now simply .NET).
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Common Language Runtime (CLR):</b> Learning about the execution environment that manages code and provides services like memory management and security.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Visual Studio IDE:</b>Hands-on experience with the primary development environment for .NET applications, including project management, debugging tools, and integration with other services.
+                                    </p>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h6 style="color:orange">
+                                <i class="bi-star-fill" style="color:orange"></i> Specialized Development Areas
+                            </h6>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>Web Development (ASP.NET Core MVC/Web API):</b>Building dynamic websites and robust RESTful APIs using the Model-View-Controller (MVC) architectural pattern, handling routing, views, controllers, and middleware.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Database Management (ADO.NET & Entity Framework):</b> Integrating applications with databases (commonly SQL Server) using ADO.NET for connectivity and Entity Framework (an ORM tool) for simplified data access, including LINQ queries and database migrations.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Front-End Technologies:</b> For a full-stack experience, courses often include essential client-side scripting skills like HTML5, CSS3, JavaScript, and sometimes an introduction to modern frameworks like React or Angular.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Cloud Integration & DevOps:</b>Deploying .NET applications to cloud platforms (like Microsoft Azure), understanding serverless architecture, containerization with Docker, and Continuous Integration/Continuous Deployment (CI/CD) pipelines.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <b>Windows and Mobile Applications:</b>Developing traditional desktop applications using Windows Forms (WinForms) or cross-platform mobile and desktop apps using .NET MAUI (formerly Xamarin).
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <h6 style="color:orange">
+                                <i class="bi-star-fill" style="color:orange"></i> Project Work
+                            </h6>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <b>Web Development (ASP.NET Core MVC/Web API):</b>Building dynamic websites and robust RESTful APIs using the Model-View-Controller (MVC) architectural pattern, handling routing, views, controllers, and middleware.
+                                    </p>
+                                </li>
+                                A key highlight of most comprehensive courses is hands-on project work, where learners apply all acquired skills to build real-world, end-to-end applications from scratch, which is crucial for building a strong portfolio.
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+                    <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                        <h5 style="color:orange">
+                            Dot Net Career Path
+                        </h5>
+                        <br />
+                        <p>
+                            The career path for a .NET developer offers a clear progression from entry-level coding roles to senior technical and leadership positions. Advancement is driven by gaining experience, mastering new technologies (especially cloud and DevOps), and developing strong problem-solving and communication skills.
+
+                        </p>
+                        <br />
+                        <h6>Typical Career Progression</h6>
+                        <p>The typical career roadmap for a .NET professional looks like this:</p>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Junior .NET Developer (0–2 years experience)</b> :
+                                    <span>
+                                        <b>Focus</b>: Learning the fundamentals of C#, the .NET framework/Core, basic SQL, and version control (Git). Working under the supervision of senior developers, focusing on coding, testing, and debugging existing systems.<br />
+                                        <b>Skills to acquire</b>: C# basics, ASP.NET, SQL Server, Visual Studio, HTML/CSS/JavaScript.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Mid-Level .NET Developer (2–5 years experience)</b> :
+                                    <span>
+                                        <b>Focus</b>: Taking on more complex projects, working more independently, and understanding the full software development lifecycle (SDLC). May start mentoring junior developers.<br />
+                                        <b>Skills to acquire</b>: ASP.NET MVC/Web API, Entity Framework, RESTful APIs, unit testing (xUnit/NUnit), and Agile methodologies.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Senior .NET Developer (5–9 years experience)</b> :
+                                    <span>
+                                        <b>Focus</b>: Leading projects, making architectural decisions, performing code reviews, and providing technical guidance to the team. Responsible for ensuring application performance and security.
+                                    </span>
+                                </p>
+                            </li>
+
+
+                        </ol>
+
+                        <h6>Increased Earning Potential</h6>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <span>
+                                        The specialized nature of these skills translates into a significant salary advantage.
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Higher Salaries</b> :
+                                                    <span>
+                                                        Professionals combining .NET, Azure, and AI/ML expertise generally command higher salaries compared to developers with a single specialization.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Salary Hike Potential</b> :
+                                                    <span>
+                                                        Certifications like Azure AI Engineer or Data Scientist can often lead to a 10-25% salary increase.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Competitive Edge</b> :
+                                                    <span>
+                                                        With 95% of Fortune 500 companies using Azure, the demand for certified professionals is high, giving them a competitive advantage in the job market.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </li>
+
+
+
+                        </ol>
+
+
+                        <h6>
+                            Career Growth and Future-Proofing
+                        </h6>
+                        <ol class="mb-4">
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <span>
+                                        The rapid pace of innovation in AI and cloud computing means skills in these areas will remain relevant for the foreseeable future
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    <b>Alignment with Industry Trends</b> :
+                                                    <span>
+                                                        Learning these technologies ensures your skills align with current and future industry demands for intelligent, data-driven solutions.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Versatility</b> :
+                                                    <span>
+                                                        The ability to build, deploy, and manage applications that leverage powerful AI services (like Generative AI via Azure OpenAI, computer vision, NLP, etc.) makes a professional a valuable asset across various business functions.
+                                                    </span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <b>Global Opportunities</b> :
+                                                    <span>
+                                                        Microsoft certifications and expertise are recognized globally, potentially opening up international job opportunities and the flexibility to work in various locations and industries
+                                                    </span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </li>
+
+
+
+                        </ol>
+
+                        <p>
+                            In essence, a skill set combining .NET, Azure, and AI/ML allows for significant career acceleration, providing the technical foundation to work on cutting-edge projects that shape the future of technology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+        @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+    </div>
+</div>
+
+
+
 

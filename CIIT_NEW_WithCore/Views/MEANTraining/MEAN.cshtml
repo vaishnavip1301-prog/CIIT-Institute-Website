@@ -1,448 +1,538 @@
-﻿
-@{
-    ViewData["Title"] = "MEAN";
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
-
-    nav > .nav.nav-tabs {
-        border: none;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
     }
 
-    nav > div a.nav-item.nav-link,
-    nav > div a.nav-item.nav-link.active {
-        border: none;
-        padding: 18px 25px;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
-    }
-
-        nav > div a.nav-item.nav-link.active:after {
-            content: "";
-            position: relative;
-            bottom: -60px;
-            left: -50%;
-            border: 15px solid transparent;
-            border-top-color: #e74c3c;
-        }
-
-    .tab-content {
-        background: #fdfdfd;
-        line-height: 25px;
-        border: 1px solid #ddd;
-        border-top: 5px solid #e74c3c;
-        border-bottom: 5px solid #e74c3c;
-        padding: 30px 25px;
-    }
-
-    nav > div a.nav-item.nav-link:hover,
-    nav > div a.nav-item.nav-link:focus {
-        border: none;
-        background: #e74c3c;
-        color: #fff;
-        border-radius: 0;
-        transition: background 0.20s linear;
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
     }
 </style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
 
-<div class="container" style="padding-top:80px;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
-    <img src="~/assets/courses/MEAN1.png" style="height:280px;width:100%" />
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
 
-    <h4 style="margin-top:2%;text-align:left">
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
 
-        Annually over 600 aspiring individuals secure positions as Mean Stack Developers in the dynamic realm of the IT industry.
-    </h4>
-    <div>
-        <p>
-            Over the years MEAN stack has grown as a popular choice among full stack developers. More and more developers joined the parade mainly because MEAN is an all JavaScript stack. Apart from the easier learning and transition curves, MEAN stack also offers many advantages over other developmental stacks making it one of the most preferred and used one in recent times.
-        </p>
-        <p>
-            MEAN stack is a compilation of JavaScript-based technologies used to develop dynamic web applications and hybrid mobile apps. MEAN denotes MongoDB, ExpressJS, AngularJS, and NodeJS, the technologies used in the stack. It has gained popularity because it allows developers to use the same language for frontend development as well as backend.
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
 
-        </p>
-        <ul>
-            <li>
-                <b>MongoDB:</b> a schema-less (document-oriented) NoSQL database
-            </li>
-            <li>
-                <b>Express.js:</b> a server-side JavaScript framework running on top of Node.js
-            </li>
-            <li>
-                <b>Angular:</b> a browser-independent MVC JavaScript UI framework
-            </li>
-            <li>
-                <b>Nodejs:</b> a server-side JavaScript run-time based upon Google’s V8 JavaScript engine
-            </li>
-        </ul>
-    </div>
-    <div>
-        <h4>What makes MEAN stack popular among startups?</h4>
-        <ul>
-            <li>
-                <b>Open Source</b>
-                <p>All the MEAN stack components are open-source and regularly updated, and it allows the developers to customize the code based on their needs. Data transfer between frontend and backend happens through a JavaScript object which makes life easier for developers.</p>
-            </li>
-            <li>
-                <b>NodeJS is Superfast</b>
-                <p>
+</style>
 
-                    mainly because it is built on Google’s V8 JIT-compiled JavaScript engine which compiles and executes JavaScript code into native machine code very quickly. Node.Js also uses asynchronous programming, making processes such as I/O to network connections, file system, and database execute very fast. This nature of Node.js is termed as non-blocking IO. It follows a modular architecture which makes it easier to extend additional capabilities in future.
-                </p>
-            </li>
-            <li>
-                <b>MongoDB is a NoSQL database</b>
-                <p>
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
 
-                    inherently flexible when compared to other SQL databases. MongoDB makes it easy to make changes in the data model on the go and gives a lot of options to make the queries faster for specific result sets. For databases which need to handle huge volumes of data, MongoDB becomes an obvious choice if the system is going to be designed and built from scratch. As MongoDB stores different structured data in same document collection there is no need to worry about old data if there is any change in the data model during the development process.
-                </p>
-            </li>
-            <li>
-                <b>Supports MVC Architecture</b>
-                <p>
-
-                    AngularJS uses MVC to organize applications and thereby supports rapid and parallel development. MVC model allows multiple programmers to work on the code simultaneously. One programmer can work on the controller to create business logic and one on the view. Hence the development time can be reduced to three times.
-                </p>
-            </li>
-            <li>
-                <b>  Good community support</b>
-                <p>
-
-                    AngularJS, NodeJS, ExpressJS, and MongoDB have a good user community and good adoption rate among the leading tech brands in the world including Google and Amazon.
-                </p>
-            </li>
-            <li>
-                <b> Uses JSON</b>
-                <p>
-
-                    JSON is a JavaScript open standard file format which use human-readable text to transmit data objects. MEAN uses binary-JSON (BSON) for data everywhere, making it easier for reformatting data as it passes through different layers. MongoDB can store documents in a JSON format, ExpressJS can write queries in JSON and pass to NodeJS backend which understands JavaScript and seamlessly pass data to the AngularJS frontend.
-                </p>
-
-            </li>
-        </ul>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Why CIIT?</h4>
-        </div>
-        <ul style="font-size:14px;list-style:none;margin-top:2%">
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Latest Curriculum</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Highly Experienced Trainers</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Chance to work with our development team</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Practically Work on Projects & Case Studies</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Real time project Training</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Weekly Mock & HR Interviews </h6></li>
-            @* <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li> *@
-        </ul>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Course Curriculum</h4>
-        </div>
-
-        <p style="margin-top:2%">This comprehensive Mean Stack Development course is tailored for individuals keen on crafting projects from the ground up. CIIT stands as an exceptional platform for those aspiring to forge an unlimited career path as a Mean Stack Developer within the thriving IT industry.</p>
-    </div>
-    <div>
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
 
 
-
-        <div class="" style="text-align:justify;font-family:'Bookman Old Style'">
-            <<<<<<< HEAD
-            <h4 style="margin-top:2%">Various MEAN Stack Courses offered by CIIT Training Institute</h4>
-            =======
-            <h4 style="margin-top:2%;text-align:left">Various MEAN Stack Courses offered by CIIT Training Institute</h4>
-            >>>>>>> 31540cd491063ddadd76556de9cc75ac2c42f7d6
-
-
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 ">
-                                <nav>
-                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">MEAN Stack Development <br />With Stipend</a>
-                                        <<<<<<< HEAD
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Full Stack <br />Development</a>
-                                        =======
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Full Stack Development</a>
-                                        >>>>>>> 31540cd491063ddadd76556de9cc75ac2c42f7d6
-                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> MEAN Stack for Working <br />Professionals</a>
-                                    </div>
-                                </nav>
-                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="padding:2%">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card border-primary shadow-sm  mb-4">
-                                                    <div class="card-body">
-                                                        <h4 style="color:#e74c3c">CIIT Gaurantee for Quality Training and Live Project with 100% Job Placement</h4>
-                                                        <br />
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                        <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                        <p class="card-text" style="padding-left:10%"> 3 Months Training and gauranteed job from 5th month</p>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Projects</li>
-                                                        </ul>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular All versions</li>
-
-                                                                </ul>
-                                                                <hr />
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MongoDB</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Server Side Scripting </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> NodeJs</li>
 
 
-                                                                </ul>
-                                                                <hr />
+                <div class="col-md-8" style="padding-left:2%;">
 
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Methodologies </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Agile</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> SCRUM</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Test-Driven Development (TDD)</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> DevOps</li>
-                                                                </ul>
-                                                                <hr />
+                    <h4>
+                        Learn Latest Advance Java on job training & get placed as a Senior Java Developer
+                    </h4>
 
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 2 Real time Projects</li>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Advance Java Development Training is ideal for working professionals interested in building a career as a Senor Java Developer.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        The demand for Senior Java developers is high, particularly in enterprise environments (e.g., finance, healthcare, e-commerce) due to Java's stability, scalability, and robust ecosystem
+                    </p>
+                    <p>
 
-                                                                </ul>
-                                                                <hr />
+                        CIIT's A career in Advance Java development offers numerous benefits, primarily driven by the ability to work on all layers of a software application, from the front-end user interface to the back-end logic and databases. This comprehensive skill set makes developers highly versatile and valuable to employers.
 
-                                                            </li>
+                    </p>
 
-                                                        </ul>
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding:2%">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card border-primary shadow-sm  mb-4">
-                                                    <div class="card-body">
-                                                        <h4 style="color:#e74c3c">CIIT Gaurantee for 100% Job Assistance on industry oriented Dot Net Training with live project with </h4>
-                                                        <br />
-
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                        <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                        <p class="card-text" style="padding-left:10%"> 3 Months Training With Real time project from Industry Experts</p>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                        @* <ul style="padding-left:10%">
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Project</li>
-                                                </ul> *@
-                                                        <ul style="padding-left:10%">
-                                                            <li><i style="color:#e74c3c"></i>  100% Job Assurance</li>
-                                                        </ul>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular Latest</li>
-
-                                                                </ul>
-                                                                <hr />
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MongoDB</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Mean Stack Development </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Introduction to MEAN Stack</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MongoDB</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Integration of MEAN Stack Components</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Deployment and Hosting</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Routing in ExpressJS</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Handling Requests and Responses</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Services and Dependency Injection</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> File System Operations</li>
-
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Unit Testing</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Performance Optimization</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Security</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Integration and Deployment</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 2 Real Time Projects</li>
-
-
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                        </ul>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding:2%">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card border-primary shadow-sm  mb-4">
-                                                    <div class="card-body">
-                                                        <h4 style="color:#e74c3c">Angular Ionic</h4>
-                                                        <br />
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                        <p class="card-text" style="padding-left:10%">  Those who want to learn hybrid mobile development, who want to build robust and scalable mobile applications, who aspire to build a career in Ionic</p>
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                        <p class="card-text" style="padding-left:10%"> 1.5 Months</p>
-
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Training Topics</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> AngularJs</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular 6,7,8</li>
-
-                                                                </ul>
-                                                                <hr />
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MySQL</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MongoDB</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Server Side Scripting </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> NodeJs</li>
-
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Methodologies  </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Agile</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> SCRUM</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Test-Driven Development (TDD)</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> DevOps</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Projects </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 1 Real time Project</li>
-
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-
-                                                        </ul>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        3 Months
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
 
 
-                <div class="col-md-3">
-                    @Html.Partial("PartialView")
 
                 </div>
+
             </div>
+
         </div>
     </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Outcomes of the Advance Java Development  Training</h5>
+                    <p>
+                        <ul>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Frontend Development</b> : Proficiency in core web technologies like   JavaScript, along with modern frameworks such as React or Angular, to create dynamic, responsive, and user-friendly interfaces.</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Backend Development</b> : Expertise in  Advanced Java such as Hibernate,JPA, server-side frameworks like Spring and Spring Boot,MicroServices to build robust, scalable, and secure business logic and RESTful APIs</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Database Management</b> : Ability to design, manage, and optimize data storage solutions using both relational (e.g., MySQL, PostgreSQL, Oracle) and NoSQL (e.g., MongoDB) databases.</li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Testing and Quality Assurance</b> : Skills in debugging, writing unit tests (JUnit), and implementing automated testing to ensure the reliability and performance of applications.</li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in Java Technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 3 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 4 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Advance Java Developer?
+                                    </span>
+                                </h5>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Demand and Job Opportunities</h6>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Companies, from startups to large enterprises (like those in finance and e-commerce), actively seek developers who can manage entire projects, which translates to a high demand for skilled professionals and abundant job openings.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Versatility and Flexibility</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Senior Java developers possess a broad range of skills, allowing them to adapt to various roles and project requirements across different industries. This flexibility means more career options and the ability to work on diverse projects.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Competitive Salaries</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Due to their wide-ranging skills and ability to handle multiple tasks (potentially reducing the need to hire multiple specialists), Java full stack developers often command higher salaries compared to specialized front-end or back-end only developers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development and Troubleshooting</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                A deep understanding of the entire application lifecycle enables developers to make faster, more informed technical decisions and quickly pinpoint and resolve issues across different system layers, leading to improved project efficiency and quicker delivery times.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Complete Project Ownership and Creative Freedom</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The knowledge of both front-end and back-end aspects allows developers to take ownership of a project from design to deployment, offering significant creative control over the final product.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Strong Career Growth Potential</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The broad experience gained from working across the entire stack provides a solid foundation for career progression into leadership roles such as technical lead, software architect, or project manager.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Adaptability to New Technologies</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Senior java developers are accustomed to continuous learning across various technologies, which makes them highly adaptable to new frameworks, tools, and industry trends, future-proofing their careers.
+
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development Cycles</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                When a single developer manages both the front-end and back-end, communication gaps are reduced, and development progresses faster. This agility is beneficial in environments that require rapid delivery.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Freelance and Remote Work Options</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The ability to independently build and manage entire applications makes full stack developers well-suited for freelance opportunities and a popular choice for startups and small businesses looking for cost-effective solutions.
+                            </p>
+
+                            <p>
+                                In essence, Advance Java   development offers a dynamic and rewarding career path with high demand, strong financial prospects, and significant opportunities for personal and professional growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Java in 2026?</h5>
+                        <br />
+
+                        <p>
+                            Learning Java in 2026 is a strategic and future-proof decision due to its continued dominance in enterprise-level applications, robust ecosystem, high demand for skilled developers, and consistent evolution with modern trends like cloud computing and AI.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Enterprise Backbone</b> :
+                                    Java is the foundation of mission-critical systems in finance, banking, e-commerce, and healthcare industries. Over 90% of Fortune 500 companies use Java for their backend architecture due to its stability, security, and scalability.
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Platform Independence (WORA)</b> :
+                                    The "Write Once, Run Anywhere" principle, facilitated by the Java Virtual Machine (JVM), allows applications to run on any operating system, making it highly versatile for cross-platform development.
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>High Demand for Developers</b> :
+                                    he demand for skilled Java developers remains consistently high globally, with a projected growth in job opportunities across various sectors.
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Competitive Salaries</b> :
+                                    Due to the critical nature of the systems they build, Java developers often command competitive salaries compared to other language specialists.
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Diverse Career Paths</b> :
+                                    Proficiency in Java opens doors to a wide range of roles, including Java Developer, Android Developer, Big Data Engineer, Cloud Solutions Architect, and Full Stack Developer.
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Career Stability</b> :
+                                    Java has a proven track record and long-term support (LTS) releases (like Java 17 and 21) that ensure longevity, meaning the skills you acquire today will remain relevant for decades to come.
+                                </li>
+                            </ul>
+
+                        </p>
+                        <p>
+                            For beginners, Java is an excellent choice as it provides a strong foundation in core programming concepts like object-oriented programming (OOP), which makes learning other languages easier later on.
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Front-End Development : </b>
+                                    <span>Proficiency in client-side technologies to create dynamic and responsive user interfaces.</span>
+                                    <ul>
+
+                                        <li>
+                                            <p>
+                                                <b>Frameworks</b> :
+                                                <span>Hands-on experience with modern front-end frameworks like React.js or Angular for building scalable single-page applications (SPAs).</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Back-End Development : </b>
+                                    <span>Mastery of server-side programming using the Java ecosystem.</span>
+                                    <ul>
+
+                                        <li>
+                                            <p>
+                                                <b>Advanced Java & Frameworks</b> :
+                                                <span>In-depth coverage of advanced topics like Servlets, JSP, JDBC, and industry-standard frameworks such as Spring and Spring Boot (for microservices and RESTful APIs) and Hibernate (for Object-Relational Mapping - ORM),MicroServices.</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Database Management : </b>
+                                    <span>Knowledge of managing and interacting with various database systems.</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>SQL Databases</b> :
+                                                <span>Working with relational databases like MySQL, Oracle, MSSQL or PostgreSQL.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                <b>NoSQL Databases</b> :
+                                                <span> Introduction to NoSQL databases such as MongoDB for flexible data storage.</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>DevOps and Deployment : </b>
+                                    <span>Understanding the Version Control System including CI CD Pipeline and maintenance.</span>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <b>Tools</b> :
+                                                <span>Proficiency in version control with <b>Git</b> and <b>GitHub</b>, build automation using <b>Maven</b>, <b>continuous integration/continuous deployment (CI/CD)</b> pipelines with <b>Jenkins</b>.</span>
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Hands-on Projects & Capstone Projects : </b>
+                                    <span>The curriculum is heavily project-based, requiring learners to build several real-world applications (e.g., e-commerce platform, online banking system, food delivery app) to develop a strong professional portfolio.</span>
+
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Industry-Recognized Certifications : </b>
+                                    <span> Successful completion often results in certifications from the training provider or affiliated bodies, which enhances job prospects and credibility.</span>
+
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Placement Assistance : </b>
+                                    <span>Many programs offer dedicated career support, including resume building, mock interviews, soft skills training, and direct connections to hiring partners to facilitate job placement.</span>
+
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Expert Mentorship : </b>
+                                    <span>Learning from industry experts and professionals with real-world experience ensures the curriculum is up-to-date with current best practices and industry trends.</span>
+
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Flexible Learning Options : </b>
+                                    <span> Availability of online, offline, and hybrid learning models with flexible batch timings to accommodate students and working professionals. </span>
+
+                                </p>
+
+                            </li>
+                        </ul>
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                Our Advance Java development course is suitable for a wide range of individuals, from working professionals,  experienced professionals looking to upskill or make a career change.
+
+                            </p>
+                            <p>
+                                <ul>
+
+                                    <li>
+                                        <b>Working Professionals Seeking a Career Change</b> :
+                                        <span>
+                                            Individuals currently working in non-IT fields who are interested in the tech industry can transition into a development role by acquiring the necessary skills.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <b>Existing Programmers/Developers</b> :
+                                        <span>
+                                            Front-end or back-end developers can take this course to round out their skill set and become more versatile "full stack" professionals, which enhances their value in the job market and opens up leadership opportunities.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <b>Anyone Passionate About Coding</b> :
+                                        <span>
+                                            Individuals with a strong interest in building applications after knowing core java, problem-solving, and continuous learning are well-suited for this demanding but rewarding field.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Senior Java  Developer Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                The career path for a Advance Java  developer offers significant growth potential, typically progressing from entry-level coding roles to senior technical leadership or management positions.
+                            </p>
+                            <p>
+                                The career path generally follows a structured ladder, with increasing responsibilities and skill requirements at each stage:
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%">Stage </th>
+                                        <th style="width:10%">Years of Experience </th>
+                                        <th style="width:40%">Example Roles </th>
+                                        <th style="width:40%">Key Focus & Skills </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entry Level</td>
+                                        <td>0–2 years</td>
+                                        <td>Junior Full Stack Developer, Associate Developer, Developer Intern, Entry-Level Software Engineer</td>
+                                        <td>Focuses on learning the codebase, fixing bugs, and developing small features under mentorship. Key skills include core Java, HTML/CSS/JavaScript, version control (Git), and basic database interaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mid Level</td>
+                                        <td>3–5 years</td>
+                                        <td>Full Stack Developer, Software Engineer, Application Developer</td>
+                                        <td>Works independently on end-to-end features, participates in design and architecture, and collaborates with cross-functional teams. Expected to have proficiency in front-end frameworks like React or Angular, Java frameworks (Spring Boot, Hibernate), and API development.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior Level</td>
+                                        <td>6+ years</td>
+                                        <td>Senior Full Stack Developer, Lead Developer/Tech Lead, Software Architect</td>
+                                        <td>Leads projects or sprint modules, designs scalable and robust systems, reviews peers' code, mentors junior developers, and makes key technology decisions. Expertise in microservices architecture, cloud platforms (AWS, Azure), and DevOps tools (Docker, Kubernetes) is crucial.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leadership/Executive</td>
+                                        <td>10+ years</td>
+                                        <td>Engineering Manager, Director of Engineering, VP of Technology, Chief Technology Officer (CTO)</td>
+                                        <td>Shifts from hands-on coding to strategic planning, people management, overseeing multiple teams, and aligning technological vision with business goals.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
 </div>
+
 
 

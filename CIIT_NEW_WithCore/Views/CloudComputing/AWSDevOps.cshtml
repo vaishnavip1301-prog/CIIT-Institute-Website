@@ -1,0 +1,626 @@
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading AWS DevOps training
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's AWS DevOps provides developer services for support teams to plan work, collaborate on code development, and build and deploy applications. AWS DevOps supports a culture and set of processes that bring developers and project managers and contributors together to complete software development.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        This course covers essential DevOps tools and methodologies integrated with AWS cloud solutions to automate infrastructure, streamline development workflows, and enhance deployment efficiency.
+                    </p>
+                    <p>
+
+                        n this DevOps course, you’ll master essential practices including Continuous Integration, Continuous Delivery, and Infrastructure as Code. Learn to manage version control with Git, build CI/CD pipelines, and automate configuration using tools like Ansible and Docker. Gain expertise in container orchestration with Kubernetes, and implement monitoring and security practices. By the end, you’ll be equipped with practical skills and a portfolio of real-world projects to excel in DevOps roles.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of AWS DevOps Training
+                    </h5>
+                    <p>
+                        AWS DevOps training leads to specialized career paths in cloud-based automation, with significant salary growth and a transition toward higher-level engineering roles. As organizations prioritize digital transformation in 2025, the fusion of AWS cloud expertise and DevOps methodologies has become a critical driver for high-demand job markets.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Job Role Transition</b> :
+                                <p style="margin-left:2%">
+                                    <b>In India (2025)</b> Freshers can expect <b>₹4–12 LPA,</b> mid-level professionals ₹8–18 LPA, and senior engineers with 5+ years experience ₹18–40+ LPA.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Industry Credibility</b> :
+                                <p style="margin-left:2%">
+                                    Earning the AWS Certified DevOps Engineer – Professional validates your ability to manage complex, distributed application systems, providing a competitive edge during hiring and advancement.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Automation Mastery</b> :
+                                <p style="margin-left:2%">
+                                    Expertise in building automated CI/CD pipelines using AWS CodePipeline, CodeBuild, and CodeDeploy.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Infrastructure as Code (IaC)</b> :
+                                <p style="margin-left:2%">
+                                    Capability to define and manage infrastructure using tools like <b>AWS CloudFormation</b> and <b>Terraform</b>, ensuring consistent and repeatable deployments.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Monitoring & Reliability</b> :
+                                <p style="margin-left:2%">
+                                    Proficiency in using Amazon CloudWatch, AWS X-Ray, and AWS Config for real-time performance tracking and proactive issue resolution.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Scalability & High Availability</b> :
+                                <p style="margin-left:2%">
+                                    Skill in architecting self-healing, fault-tolerant systems using <b>Elastic Load Balancing (ELB)</b> and <b>Auto Scaling</b>.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Containerization</b> :
+                                <p style="margin-left:2%">
+                                  Advanced management of microservices using Amazon ECS and Amazon EKS (Kubernetes).
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of  AWS DevOps
+                                    </span>
+                                </h5>
+                                <p>
+                                    In 2025, AWS DevOps provides a powerful framework for organizations to leverage the scale of Amazon Web Services while maintaining high-velocity software delivery.
+                                </p>
+
+
+                            </div>
+                            <h6 class="card-title" style="color:orange;">Rapid Innovation & Deployment</h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Automated CI/CD:</b> Using AWS CodePipeline, teams automate the entire release process, reducing deployment times from weeks to minutes.
+                                    </li>
+                                    <li>
+                                        <b>High Frequency:</b> Organizations using AWS DevOps report a <b>48% increase in deployment frequency</b> compared to traditional methods, allowing for daily feature releases.
+                                    </li>
+
+                                    </ul>
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Massive Scalability & Reliability</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                 <ul>
+                                    <li>
+                                        <b>Infrastructure as Code (IaC):</b> With AWS CloudFormation or the AWS CDK, you can manage thousands of resources using code, ensuring consistent environments across dev, test, and production.
+                                    </li>
+                                    <li>
+                                        <b>Serverless Efficiency:</b> Tools like AWS Lambda allow DevOps engineers to run code without provisioning servers, automatically scaling to meet demand without manual intervention.
+                                    </li>
+
+                                    </ul>
+                            </p>
+                            <h6 class="card-title" style="color:orange">Enhanced Security (DevSecOps)</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                 <ul>
+                                    <li>
+                                        <b>Automated Governance:</b> AWS Config and AWS IAM allow for "Security as Code," where compliance checks and access policies are automatically enforced within the pipeline.
+                                    </li>
+                                    <li>
+                                        <b>Secret Management:</b> AWS Secrets Manager ensures that sensitive data (API keys, passwords) is never hardcoded, significantly reducing the risk of data breaches.
+
+                                    </li>
+
+                                    </ul>
+                            </p>
+ 
+                              <h6 class="card-title" style="color:orange">Cost Optimization (FinOps)</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                 <ul>
+                                    <li>
+                                        <b>Pay-as-you-go:</b> Unlike on-premise setups, AWS DevOps tools require no upfront investment. You only pay for the build minutes or deployment cycles you use.
+                                    </li>
+                                    <li>
+                                        <b>Resource Management:</b> Automated scaling and AWS Compute Optimizer help teams reduce cloud waste, typically saving organizations 25–30% on infrastructure costs.
+
+                                    </li>
+
+                                    </ul>
+                            </p>
+                              <h6 class="card-title" style="color:orange">Superior Observability</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                 <ul>
+                                    <li>
+                                        <b>Centralized Logging:</b> Amazon CloudWatch provides a single pane of glass for logs, metrics, and events across all applications.
+                                    </li>
+                                    <li>
+                                        <b>Proactive Remediation:</b> In 2025, AI-driven features in AWS Systems Manager can automatically detect anomalies and trigger self-healing scripts before a system failure occurs.
+
+                                    </li>
+
+                                    </ul>
+                            </p>
+                               <h6 class="card-title" style="color:orange">Industry-Leading Ecosystem</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                 <ul>
+                                    <li>
+                                        <b>Deep Integration:</b> AWS DevOps services integrate natively with the world’s most popular cloud services (S3, EC2, RDS), making it easier to build complex, data-heavy applications compared to third-party tools.
+                                    </li>
+                                    <li>
+                                        <b>Open Source Support:</b> AWS provides robust support for open-source tools like <b>Kubernetes (Amazon EKS)</b>,<b> Terraform</b>, and <b>Jenkins</b>, allowing for flexible, hybrid-cloud setups.
+
+                                    </li>
+
+                                    </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn AWS DevOps in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, learning AWS DevOps is a high-value career move as the platform continues to be a cornerstone for enterprise-level digital transformation and the rapidly growing AI-driven DevOps (AIOps) landscape.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Market Demand and Enterprise Dominance</b> :
+                                    <ul>
+                                        <li>
+                                            <b>Widespread Enterprise Use:</b>
+                                            <p style="margin-left:2%">
+                                                By 2026, over 85% of corporations are expected to adopt cloud-first models. AWS DevOps remains a top choice for Fortune 500 companies due to its superior end-to-end governance and deep integration with Microsoft ecosystems like Entra ID (formerly AWS AD).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Growing Market Value:</b>
+                                            <p style="margin-left:2%">
+                                                The global DevOps market is projected to reach approximately $15 billion by 2026, growing at a compound annual rate of over 19%.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        AI and Automation Integration (2026 Focus)
+                                    </b> :
+                                    <ul>
+                                        <li>
+                                            <b>AI-Native Engineering:</b>
+                                            <p style="margin-left:2%">
+                                                By late 2026, DevOps is evolving into AI-native engineering. Learning AWS DevOps now prepares you to work with AWS AI and Machine Learning tools that automate root cause analysis and predictive testing.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Shift to Platform Engineering:</b>
+                                            <p style="margin-left:2%">
+                                                The role is evolving from managing individual pipelines to building Internal Developer Platforms (IDPs) that empower developers to self-serve through automation.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Future-Proof Career Paths
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>Career Versatility:</b>
+                                            <p style="margin-left:2%">
+                                                Mastery of AWS DevOps serves as a gateway to high-demand roles such as Site Reliability Engineer (SRE), DevSecOps Engineer, Cloud Architect, and Platform Engineer.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Essential Skills:</b>
+                                            <p style="margin-left:2%">
+                                                Modern curricula in 2026 prioritize Infrastructure as Code (IaC) with Terraform and Bicep, Kubernetes orchestration, and FinOps for cloud cost optimization.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Competitive Salaries
+
+                                    </b>
+                                    AWS DevOps professionals command premium pay due to specialized skill shortages in 2026.
+                                    <ul>
+                                        <li>
+                                            <b>United States:</b>
+                                            <p style="margin-left:2%">
+                                                Average salaries for DevOps engineers are approximately $142,104 per year, with senior roles reaching $173,000+.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>India:</b>
+                                            <p style="margin-left:2%">
+                                                Entry-level salaries range from ₹4L to ₹8L LPA, while senior architects can earn ₹25L to ₹45L+ LPA.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </p>
+                        <p>
+                            The industry-standard credential remains the AZ-400: Designing and Implementing Microsoft DevOps Solutions, which validates the skills required to combine people, processes, and technologies in complex 2026 environments
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Foundational - Linux Administration </b> :
+                                <p style="margin-left:2%"> 
+                                    File systems, user management, and essential CLI commands.
+                                </p>
+
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Foundational - Scripting </b> :
+                                <p style="margin-left:2%">
+                                    Mastering Python (Boto3 SDK) and Bash/Shell scripting for custom automation.
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Foundational - Scripting </b> :
+                                <p style="margin-left:2%">
+                                    Mastering Python (Boto3 SDK) and Bash/Shell scripting for custom automation.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Networking Basics</b> :
+                                <p style="margin-left:2%"> SDLC, Agile/Scrum, DevOps Principles, Culture, Tools Overview.</p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>SDLC Automation (22% weight)</b> :
+                                <p style="margin-left:2%">
+                                  Building and managing end-to-end CI/CD pipelines using AWS CodePipeline, CodeBuild, CodeCommit, and CodeDeploy.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>Source Control (Git & AWS Repos)</b> :
+                                <p style="margin-left:2%">Git basics, Branching strategies (Gitflow), Pull Requests, Policies, TFVC.</p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>   <b>Infrastructure as Code (IaC)</b> :
+                                <p style="margin-left:2%">
+                                    Mastering AWS CloudFormation, AWS CDK (Cloud Development Kit), and third-party tools like Terraform for repeatable environment provisioning.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>   <b>Configuration Management</b> :
+                                <p style="margin-left:2%">
+                                    Using AWS Systems Manager and Ansible to automate server configuration and management at scale.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>   <b>Containerization & Orchestration</b> :
+                                <p style="margin-left:2%">
+                                    Deep dive into Docker, Amazon ECS (Elastic Container Service), and Amazon EKS (Elastic Kubernetes Service) for managing containerized workloads.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>Testing & Quality</b> :
+                                <p style="margin-left:2%">Automated UI Testing (Selenium), Code Scanning, Test Plans in AWS.</p>
+                            </li>
+                           
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                In 2025, an AWS DevOps course is designed for a broad range of professionals, from beginners to seasoned IT experts, who want to automate software delivery and bridge the gap between development and operations.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Students (B.Tech, BCA, MCA, etc.) can learn AWS DevOps to secure high-paying entry-level roles like Junior DevOps Engineer or Cloud Intern.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            While a technical background is helpful, individuals from non-technical fields can start with foundational courses (like AZ-900) to understand cloud basics before moving to DevOps tools.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Software Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Those looking to automate their build, test, and deployment cycles to deliver code faster.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>System & Cloud Administrators</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals wanting to transition into Infrastructure as Code (IaC) and automate environment provisioning.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>IT Operations & Release Managers</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals responsible for managing software releases, stability, and delivery pipelines.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>QA & Test Engineers</b> :
+                                        <p style="margin-left:2%">
+                                            Testers who need to integrate automated testing frameworks directly into CI/CD pipelines.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Project Managers & Scrum Masters</b> :
+                                        <p style="margin-left:2%">
+                                            Leaders who use AWS Boards to track progress, manage backlogs, and improve team collaboration
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                AWS DevOps Career Path
+                            </h5>
+                            <br />
+
+                            <p>
+                                In 2025, the AWS DevOps career path has evolved beyond simple automation into a strategic role that integrates AI (AIOps), Security (DevSecOps), and Cloud Governance.
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:35%">Role </th>
+                                        <th style="width:35%">Experience</th>
+                                        <th style="width:35%">Salary </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Junior DevOps</td>
+                                        <td>0–2 years</td>
+                                        <td>₹6L – ₹10L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DevOps Engineer</td>
+                                        <td>2–5 Years</td>
+                                        <td>	₹12L – ₹22L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior/Architect</td>
+                                        <td>5–8+ Years</td>
+                                        <td>	₹25L – ₹50L+</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
