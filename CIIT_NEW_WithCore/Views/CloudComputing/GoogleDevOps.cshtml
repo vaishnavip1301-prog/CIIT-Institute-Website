@@ -1,5 +1,698 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading GCP DevOps training
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's GCP DevOps course offers career growth (high demand, better pay), hands-on skills in CI/CD, IaC (Terraform), Kubernetes, and SRE, leading to faster, more reliable deployments, cost optimization, improved security, and global certification recognized by employers, ultimately boosting productivity and innovation for individuals and businesses.
+                    </p>
+                    <p style="text-align:center;font-size:19px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        This course covers essential DevOps tools and methodologies integrated with GCP cloud solutions to automate infrastructure, streamline development workflows, and enhance deployment efficiency.
+                    </p>
+                    <p>
+
+                        In this DevOps course, you’ll master essential practices including Continuous Integration, Continuous Delivery, and Infrastructure as Code. Learn to manage version control with Git, build CI/CD pipelines, and automate configuration using tools like Ansible and Docker. Gain expertise in container orchestration with Kubernetes, and implement monitoring and security practices. By the end, you’ll be equipped with practical skills and a portfolio of real-world projects to excel in DevOps roles.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of GCP DevOps Training
+                    </h5>
+                    <p>
+                        GCP DevOps training offers significant professional and career outcomes, including high demand for specialized skills, access to well-paying job roles like Site Reliability Engineer and Cloud DevOps Engineer, and opportunities for career advancement in a booming industry.
+
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>High Market Demand</b> :
+                                <p style="margin-left:2%">
+                                    There is a strong and growing demand for professionals skilled in cloud computing and DevOps practices, with the global DevOps market projected to reach <b>$25.5 billion by 2028</b>.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Diverse Job Opportunities</b> :
+                                <p style="margin-left:2%">
+                                    The training opens doors to various in-demand job roles across different industries (IT, FinTech, Healthcare, E-commerce) - 
+                                    <br /><b>Cloud DevOps Engineer</b><br />
+                                    <b>Site Reliability Engineer (SRE)</b><br />
+                                    <b>Cloud Architect</b><br/> 
+                                    <b>Infrastructure Engineer</b><br />
+                                    <b>Build & Release Engineer</b><br />
+                                    <b> DevOps Consultant</b>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Higher Earning Potential</b> :
+                                <p style="margin-left:2%">
+                                    GCP-certified professionals often command higher salaries compared to their non-certified counterparts, with salaries varying based on experience and location.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Career Advancement & Job Security</b> :
+                                <p style="margin-left:2%">
+                                    The specialized skills in cloud infrastructure, automation, and continuous delivery enhance job security and provide a clear path for professional growth into senior and leadership roles like Principal DevOps Engineer or Head of Cloud Operations.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Global Recognition</b> :
+                                <p style="margin-left:2%">
+                                    The Google Cloud Professional Cloud DevOps Engineer Certification is an industry-recognized credential that validates expertise and gives professionals a competitive edge in the global job market.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>CI/CD Implementation</b> :
+                                <p style="margin-left:2%">
+                                    Building and managing continuous integration and continuous delivery (CI/CD) pipelines using tools like Cloud Build and Jenkins.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Security & Compliance</b> :
+                                <p style="margin-left:2%">
+                                    Integrating security best practices and managing identity and access management (IAM) within cloud environments.
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of  GCP DevOps
+                                    </span>
+                                </h5>
+                                <p>
+                                    In 2025, Google Cloud Platform (GCP) DevOps provides a competitive advantage by combining Google’s high-performance global infrastructure with advanced automation and intelligence. Key benefits are categorized below:
+                                </p>
+
+
+                            </div>
+                            <h6 class="card-title" style="color:orange;">Seamless CI/CD Integration</h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                Tools like Cloud Build, Cloud Deploy, and Cloud Source Repositories automate development and deployment, enabling multiple releases per day.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Time-to-Market</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Organizations using GCP DevOps report significantly shorter production cycles, with high performers deploying code up to 208 times more frequently than traditional teams.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Elastic Infrastructure</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                GCP’s global fiber network ensures applications can handle massive traffic spikes automatically through services like Google Kubernetes Engine (GKE) and Cloud Run.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Proactive Observability</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                The Google Cloud Operations Suite (formerly Stackdriver) provides deep insights into application health, allowing for early detection and resolution of performance issues.
+                            </p>
+                            <h6 class="card-title" style="color:orange">AI and ML Integration</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                The use of Gemini Cloud Assist and Vertex AI can automate incident response and optimize resource allocation.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Infrastructure as Code (IaC)</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Teams can manage cloud resources using version-controlled, repeatable code with tools like Terraform and Deployment Manager, reducing manual configuration errors.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Cost Optimization</h6>
+                            <p style="text-align:left;color:black" class="mb-3">
+                                Businesses can lower operational expenses by 20–40% using GCP’s pay-as-you-go model, Sustained Use Discounts, and automated scaling that shuts down idle resources.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn GCP DevOps in 2026?</h5>
+                         
+
+                        <p>
+                            In 2026, learning GCP DevOps is a strategic career move driven by Google Cloud’s rapid growth, its leadership in AI-powered infrastructure, and a shifting industry landscape that favors "intelligent" automation.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Google Cloud's Growth</b> :
+                                    Google Cloud (GCP) is expected to have a market share of 15% by 2026.
+                                    <ul>
+                                        <li>
+                                            <p>GCP is often the platform of choice for AI and machine learning due to its Vertex AI and Gemini ecosystems.</p>
+                                        </li>
+                                        <li>
+                                            <p> Analysts predict significant revenue growth for GCP in 2026. This will increase the demand for engineers to manage its expanding infrastructure.</p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        The Shift to "Intelligent" Pipelines
+                                    </b> :
+                                    By 2026, DevOps is evolving into Platform Engineering and AI-driven automation.<br/>
+                                    <ul>
+                                        <li>
+                                            <p> DevOps will focus on "self-governing" CI/CD pipelines that use AI to predict failures and automatically revert faulty deployments.</p>
+                                        </li>
+                                        <li>
+                                            <p> Predictive troubleshooting will replace reactive troubleshooting. AI agents will analyze logs and metrics to resolve issues before they affect users.</p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Career and Financial Advantages
+
+                                    </b>:
+                                    GCP DevOps is one of the highest-paying and most stable career paths in 2026.<br />
+                                    <ul>
+                                        <li>
+                                            <b>Salaries:</b>
+                                            <p style="margin-left:2%">
+                                                <b> In India</b> Entry-level roles start at ₹6–10 LPA, while senior cloud architects and SREs often earn ₹25–45 LPA or more. Specialized Google-based roles can exceed ₹50 LPA.
+                                            </p>
+                                            <p>
+                                                <b>In the US</b> The average salary for DevOps engineers is approximately $136,000, and senior DevSecOps roles can reach up to $233,000.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Job Security:</b>
+                                            <p style="margin-left:2%">
+                                                Over 70% of businesses plan to fully integrate DevOps into their IT strategies by 2026, ensuring long-term job security
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Technical Focus in 2026 :
+
+                                    </b>
+                                    Learning GCP DevOps in 2026 requires mastering more than basic CI/CD. The key skills include:<br />
+                                    <ul>
+                                        <li>
+                                            <b>Platform Engineering:</b>
+                                            <p style="margin-left:2%">
+                                                Building self-service platforms that allow developers to deploy code without manual operations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>FinOps:</b>
+                                            <p style="margin-left:2%">
+                                                Engineers who can optimize infrastructure costs are highly valued.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Multi-Cloud Agility:</b>
+                                            <p style="margin-left:2%">
+                                                Companies are moving to a "best-fit" model (e.g., using GCP for its AI capabilities while keeping microservices on GCP)
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </p>
+                        
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            In 2026, the GCP DevOps course syllabus is primarily structured around the official Google Professional Cloud DevOps Engineer certification. It focuses on integrating Google’s Site Reliability Engineering (SRE) practices with automated deployment workflows.
+                        </p>
+                        <ul>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Site Reliability Engineering (SRE) Principles </b> :
+                                <p style="margin-left:2%">
+                                   
+                                    <ul>
+                                        <li>
+                                            <b>Reliability Metrics:</b>
+                                            <p>
+                                                Defining and managing Service Level Indicators (SLIs), Service Level Objectives (SLOs), and Service Level Agreements (SLAs).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Error Budgets:</b>
+                                            <p>
+                                                Calculating and utilizing error budgets to balance release velocity with system stability.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Toil Management:</b>
+                                            <p>
+                                                Identifying and reducing "toil" (manual, repetitive work) through automation.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Incident Response:</b>
+                                            <p>
+                                                Mastering post-mortems, blameless culture, and automated alerting.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    CI/CD Pipeline Construction
+                                </b> :
+                                <p style="margin-left:2%">
+                                   
+                                    <ul>
+                                        <li>
+                                            <b>Automated Builds:</b>
+                                            <p style="margin-left:2%">
+                                                Using Cloud Build for continuous integration and multi-environment deployment triggers.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Artifact Management:</b>
+                                            <p style="margin-left:2%">
+                                                Managing container images and language packages with Artifact Registry.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Advanced Rollouts:</b>
+                                            <p style="margin-left:2%">
+                                                Implementing sophisticated deployment strategies such as Canary, Blue-Green, and Rolling updates.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>CI/CD Security:</b>
+                                            <p style="margin-left:2%">
+                                                Integrating Binary Authorization, vulnerability scanning, and Secret Manager.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b> Infrastructure as Code (IaC) & Configuration </b> :
+                                <p style="margin-left:2%">
+                                    <ul>
+                                        <li>
+                                            <b>Terraform:</b>
+                                            <p style="margin-left:2%">
+                                                Provisioning GCP resources reproducibility using Terraform modules and state management.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Configuration Tools:</b>
+                                            <p style="margin-left:2%">
+                                                Utilizing Config Connector, Helm, and Kustomize for resource management.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>GitOps:</b>
+                                            <p style="margin-left:2%">
+                                                Managing infrastructure changes through version-controlled repositories.
+                                            </p>
+                                        </li>
+                                        </ul>
+                                </p>
+                            </li>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b> Containerization & Orchestration </b> :
+                                <p style="margin-left:2%">
+                                    <ul>
+                                        <li>
+                                            <b>Google Kubernetes Engine (GKE):</b>
+                                            <p style="margin-left:2%">
+                                                Designing and managing scalable GKE clusters, including node pools and autoscaling.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Docker:</b>
+                                            <p style="margin-left:2%">
+                                                Mastering container lifecycles, image optimization, and local development environments.
+                                            </p>
+                                        </li>
+                                       
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Observability and Monitoring </b> :
+                                <p style="margin-left:2%">
+                                    <ul>
+                                        <li>
+                                            <b>GCP Operations Suite:</b>
+                                            <p style="margin-left:2%">
+                                                Configuring <b>Cloud Monitoring</b>, <b>Cloud Logging</b>, and <b>Cloud Trace</b> for system visibility.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Dashboarding:</b>
+                                            <p style="margin-left:2%">
+                                                Creating custom dashboards and pro-active alerting policies.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Log Management:</b>
+                                            <p style="margin-left:2%">
+                                                Setting up log sinks and aggregation for centralized logging across multiple projects.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Performance & Cost Optimization
+                                </b> :
+                                <p style="margin-left:2%">
+                                    <ul>
+                                        <li>
+                                            <b>Scaling:</b>
+                                            <p style="margin-left:2%">
+                                                Implementing horizontal and vertical autoscaling for Compute Engine and GKE.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>FinOps:</b>
+                                            <p style="margin-left:2%">
+                                                managing cloud spend using budget alerts, committed-use discounts, and Spot VMs.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Latency Management:</b>
+                                            <p style="margin-left:2%">
+                                                Identifying and resolving application bottlenecks using Cloud Profiler and Cloud Debugger.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                In 2025, an GCP DevOps course is designed for a broad range of professionals, from beginners to seasoned IT experts, who want to automate software delivery and bridge the gap between development and operations.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Students (B.Tech, BCA, MCA, etc.) can learn GCP DevOps to secure high-paying entry-level roles like Junior DevOps Engineer or Cloud Intern.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            While a technical background is helpful, individuals from non-technical fields can start with foundational courses (like AZ-900) to understand cloud basics before moving to DevOps tools.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Software Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Those looking to automate their build, test, and deployment cycles to deliver code faster.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>System & Cloud Administrators</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals wanting to transition into Infrastructure as Code (IaC) and automate environment provisioning.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>IT Operations & Release Managers</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals responsible for managing software releases, stability, and delivery pipelines.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>QA & Test Engineers</b> :
+                                        <p style="margin-left:2%">
+                                            Testers who need to integrate automated testing frameworks directly into CI/CD pipelines.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Project Managers & Scrum Masters</b> :
+                                        <p style="margin-left:2%">
+                                            Leaders who use GCP Boards to track progress, manage backlogs, and improve team collaboration
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                GCP DevOps Career Path
+                            </h5>
+                            <br />
+
+                            <p>
+                                In 2025, the GCP DevOps career path has evolved beyond simple automation into a strategic role that integrates AI (AIOps), Security (DevSecOps), and Cloud Governance.
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:35%">Role </th>
+                                        <th style="width:35%">Experience</th>
+                                        <th style="width:35%">Salary </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Junior DevOps</td>
+                                        <td>0–2 years</td>
+                                        <td>₹6L – ₹10L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DevOps Engineer</td>
+                                        <td>2–5 Years</td>
+                                        <td>	₹12L – ₹22L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior/Architect</td>
+                                        <td>5–8+ Years</td>
+                                        <td>	₹25L – ₹50L+</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

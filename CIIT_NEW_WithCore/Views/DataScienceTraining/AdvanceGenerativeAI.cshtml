@@ -1,0 +1,833 @@
+﻿@{
+    ViewData["Title"] = "Data Science";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading Data Science training
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Advanced Generative AI training in 2025 and 2026 bridges the critical "talent gap" in the workforce, transitioning professionals from basic users to strategic architects of AI systems.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Advanced Generative AI training Outcomes include substantial salary premiums, access to entirely new job categories, and a shift toward higher-value strategic roles as routine tasks become automated.
+                    </p>
+                   
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of Advanced Generative AI Training
+                    </h5>
+                    <p>
+                        Advanced Generative AI training in 2025 and 2026 acts as a critical "force multiplier" for professionals, shifting their focus from manual tasks to strategic orchestration and high-level problem-solving. Outcomes include significant salary growth, access to emerging high-demand roles, and the ability to lead AI-centric business transformations.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Shift from Execution to Orchestration</b> :
+                                <p style="margin-left:2%">
+                                    Professionals move beyond "manual pixel pushing" or boilerplate coding to become AI-driven strategists and architects who direct AI systems to handle repetitive tasks while they focus on high-level design.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Validated Technical Credibility</b> :
+                                <p style="margin-left:2%">
+                                    Advanced certifications from globally recognized bodies (e.g., Google Cloud, Microsoft, or GSDC) validate skills in <b>LLM fine-tuning, RAG (Retrieval-Augmented Generation),</b> and <b>MLOps,</b> which are increasingly required for production-level AI.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Enhanced Strategic Decision-Making</b> :
+                                <p style="margin-left:2%">
+                                    Experts use AI to process massive datasets rapidly, spotting hidden patterns and modeling complex scenarios that would take human analysts weeks to complete.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Generative AI Architect/Engineer</b> :
+                                <p style="margin-left:2%">
+                                    Designing and deploying end-to-end AI systems, APIs, and platforms.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>AI Product Manager</b> :
+                                <p style="margin-left:2%">
+                                    Managing the lifecycle of AI-driven products, from defining vision and cross-functional roadmaps to ensuring market alignment.
+                                </p>
+                            </li>
+                           
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>AI Ethics & Governance Specialist</b> :
+                                <p style="margin-left:2%">
+                                    Ensuring responsible AI use by developing frameworks for bias mitigation, transparency, and compliance with regulations like the EU AI Act.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Agentic AI Specialist</b> :
+                                <p style="margin-left:2%">
+                                    A rapidly emerging 2026 role focused on designing autonomous AI systems capable of executing multi-step tasks independently.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Domain-Specific Specialists</b> :
+                                <p style="margin-left:2%">
+                                    Roles such as AI Learning Architects (Education), AI-Enhanced Analysts (Finance), and AI-Art Directors (Creative).
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Advanced Generative AI
+                                    </span>
+                                </h5>
+                                In 2025 and 2026, advanced Generative AI (GenAI) training has transitioned from a niche technical skill to a mandatory professional asset across nearly all sectors. Professionals with these skills can expect significant salary premiums, access to newly created job roles, and a shift toward high-value strategic work.
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Salary Premiums</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Professionals with GenAI skills earn an average of 18% more than their general tech peers. In some sectors, such as marketing, finance, and business operations, the salary boost can reach up to 47%.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Access to Emerging Roles</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Advanced training qualifies individuals for new 2026 roles such as <b>AI Prompt Engineer, Agentic AI Specialist, AI Solutions Architect,</b> and AI <b>Ethicist</b>.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Role Transformation</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Routine tasks (like manual data cleaning or basic reporting) are being automated, shifting the human role to orchestration and management of AI "co-workers".
+                            </p>
+                            <h6 class="card-title" style="color:orange">Increased Job Competitiveness</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                The global nature of data science often allows for remote or hybrid work environments, which is increasingly viewed as a top professional perk in 2025.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Predictive and Real-Time Insights</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Businesses can forecast market trends, demand spikes, and equipment failures before they happen. Real-time analytics allow for instant price adjustments in retail or immediate fraud detection in banking.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Operational Efficiency & Automation</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Demand for GenAI skills is surging—job postings referencing AI attract significantly more candidates, and 73% of employers now prioritize these skills in their hiring.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Agentic AI & Orchestration</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Learning to build autonomous AI agents that can independently plan and execute multi-step workflows across different platforms (e.g., ERP, CRM).
+                            </p>
+                            <h6 class="card-title" style="color:orange">Hyper-Personalization</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Ability to use GenAI to create real-time, tailored customer experiences in e-commerce, gaming, and marketing.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Operational Efficiency</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Automating high-volume, data-heavy work in finance (fraud detection) and healthcare (diagnostic accuracy) can reduce operational costs by billions.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Synthetic Data Generation</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Developing privacy-compliant synthetic datasets to train models in highly regulated industries like banking and healthcare.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Ethics & Governance</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Understanding how to identify bias, implement security guardrails, and ensure compliance with emerging 2026 AI regulations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Advanced Generative AI training in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, advanced Generative AI (GenAI) training is a mandatory professional asset as the technology moves from experimental pilots to full-scale enterprise deployment. Professionals are transitioning from using AI as a basic assistant to acting as executive managers who orchestrate "swarms" of specialized AI co-workers.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Extreme Market Demand & Talent Gap</b> :
+                                    <ul>
+                                        <li>
+                                            <b>Massive Job Growth:</b>
+                                            <p style="margin-left:2%">
+                                                The global AI market is projected to surpass <b>$800 billion by 2026</b>. In India alone, the sector is expected to reach <b>$118.7 billion</b>, creating millions of opportunities.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Critical Skill Shortage:</b>
+                                            <p style="margin-left:2%">
+                                                Despite high demand, a <b>60% talent gap</b> exists in AI domains. Employers are prioritizing "AI-savvy" candidates, and job postings referencing AI skills attract significantly more applicants.
+                                            </p>
+                                        </li>
+                                        
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Significant Salary Premiums
+                                    </b> :
+                                    Advanced AI proficiency is a major differentiator in compensation, with certified professionals often commanding packages competitive with senior cloud or cybersecurity roles.
+                                    <ul>
+                                        <li>
+                                            <b>Wage Premiums:</b>
+                                            <p style="margin-left:2%">
+                                                Workers with advanced AI skills can earn up to 56% more than peers in identical roles without those skills.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>2026 Salary Projections (India):</b>
+                                            <p style="margin-left:2%">
+                                                <b>Freshers (0–2 years):</b> ₹7L – ₹12L LPA.
+                                            </p>
+                                            <p style="margin-left:2%">
+                                                <b>Mid-Level (3–5 years):</b> ₹12L – ₹25L LPA.
+                                            </p>
+                                            <p style="margin-left:2%">
+                                                <b>Senior/Leadership:</b> ₹25L – ₹50L+ LPA, with principal engineers at top firms exceeding ₹1 Crore.
+                                            </p>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Emergence of Next-Gen Specialized Roles
+                                    </b>
+                                   <p>
+                                        Training in 2026 prepares you for roles that did not exist five years ago:
+                                   </p>
+                                    <ul>
+                                        <li>
+                                            <b>Agentic AI Specialist:</b>
+                                            <p style="margin-left:2%">
+                                                Designing autonomous agents that independently plan and execute multi-step workflows.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Multimodal AI Architect:</b>
+                                            <p style="margin-left:2%">
+                                                Building systems that process text, image, audio, and video simultaneously.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Ethicist & Compliance Officer:</b>
+                                            <p style="margin-left:2%">
+                                                Ensuring AI systems adhere to new global regulations like the EU AI Act.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Workflow Designer:</b>
+                                            <p style="margin-left:2%">
+                                                Redesigning organizational processes to integrate AI agents into the value chain.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Mastery of the 2026 Technical Stack
+
+
+                                    </b>
+                                    Advanced training provides the hands-on expertise required for production-level AI:
+
+                                    <ul>
+                                        <li>
+                                            <b>Agentic Frameworks:</b>
+                                            <p style="margin-left:2%">
+                                                Proficiency in <b>LangChain, AutoGen</b>, and <b>LangGraph</b> for building autonomous agent teams.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Enterprise Integration:</b>
+                                            <p style="margin-left:2%">
+                                                Learning to deploy domain-specific models on cloud platforms <b>(AWS, Azure, Google Cloud)</b> and the <b>Edge</b> (local devices) for privacy and speed.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Advanced Techniques:</b>
+                                            <p style="margin-left:2%">
+                                                Mastery of Retrieval-Augmented Generation (RAG), vector databases, and model fine-tuning (e.g., LoRA) for specific industries like finance or healthcare.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Future-Proofing & Strategic Advantage
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>Management Revolution:</b>
+                                            <p style="margin-left:2%">
+                                                Successful organizations in 2026 treat AI as a management overhaul, not just a tech race. Training empowers you to lead this change.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Human-AI Collaboration:</b>
+                                            <p style="margin-left:2%">
+                                                As AI handles routine analytical tasks, "human-centric" skills—<b>critical thinking, emotional intelligence,</b> and <b>complex problem-solving</b> become higher-value differentiators.
+                                            </p>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </p>
+                       
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            In 2025 and 2026, Generative AI (GenAI) course syllabi have evolved to bridge the gap between basic content generation and the development of enterprise-grade, autonomous AI systems. Curricula now emphasize "Agentic AI," where AI independently executes multi-step workflows.
+                        </p>
+                        <ul>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Foundational Skills  
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Modern courses begin by ensuring technical readiness, as most AI frameworks (like PyTorch and TensorFlow) are built on these principles.
+                                    <ul>
+                                        <li>
+                                            <b>Python for AI:</b>
+                                            <p style="margin-left:2%">
+                                                Variables, control flow, functions, and Object-Oriented Programming (OOP).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Data Handling Libraries:</b>
+                                            <p style="margin-left:2%">
+                                                Mastery of NumPy (numerical operations), Pandas (data cleaning), and Matplotlib/Seaborn (visualization).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Mathematics for AI:</b>
+                                            <p style="margin-left:2%">
+                                                Calculus (gradients, backpropagation), linear algebra (vectors, matrices), and probability (Bayes' theorem).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Machine Learning (ML) Essentials:</b>
+                                            <p style="margin-left:2%">
+                                                Supervised and unsupervised learning, regression, classification, and clustering.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Core Generative Models
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                    This module moves from traditional predictive AI to models that "create".
+                                    <ul>
+                                        <li>
+                                            <b>Transformer Architecture:</b>
+                                            <p style="margin-left:2%">
+                                                Deep dive into encoders, decoders, and attention mechanisms.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Large Language Models (LLMs):</b>
+                                            <p style="margin-left:2%">
+                                                Understanding tokenization, embeddings, and pre-training mechanics.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Image & Video Models:</b>
+                                            <p style="margin-left:2%">
+                                                Mechanics of Diffusion Models (Stable Diffusion) and GANs (Generative Adversarial Networks).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Prompt Engineering:</b>
+                                            <p style="margin-left:2%">
+                                                Advanced patterns (zero-shot, few-shot, role prompting) and safety guardrails.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Applied AI Engineering & Advanced Topics
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Focus shifts to customizing models for specific business needs.
+                                    <ul>
+                                        <li>
+                                            <b>Fine-Tuning:</b>
+                                            <p style="margin-left:2%">
+                                                Techniques like LoRA and QLoRA for training domain-specific models (e.g., for legal or medical use).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Retrieval-Augmented Generation (RAG):</b>
+                                            <p style="margin-left:2%">
+                                                Building systems that reference private data using <b>Vector Databases</b> (Pinecone, ChromaDB) to reduce hallucinations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Agentic AI:</b>
+                                            <p style="margin-left:2%">
+                                                Designing autonomous agents capable of independent planning and tool-calling.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>MLOps & Deployment:</b>
+                                            <p style="margin-left:2%">
+                                                Serving models via <b>FastAPI</b>, containerization with Docker, and scaling on cloud platforms like <b>AWS Bedrock</b> or <b>Azure OpenAI</b>.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Ethics, Safety, and Compliance
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Critical for 2026 enterprise roles, this module covers responsible AI frameworks.
+                                    <ul>
+                                        <li>
+                                            <b>Bias & Fairness:</b>
+                                            <p style="margin-left:2%">
+                                                Detecting and mitigating algorithmic bias.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Security:</b>
+                                            <p style="margin-left:2%">
+                                                Protecting against prompt injection attacks and ensuring data privacy (GDPR/DPDP compliance).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Governance:</b>
+                                            <p style="margin-left:2%">
+                                                Best practices for transparent and accountable AI development.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Capstone Portfolio Projects
+                                </b> :
+                                <p style="margin-left:2%">
+                                    To be job-ready in 2026, students must build end-to-end applications.
+                                    <ul>
+                                        <li>
+                                            <b>RAG-Powered Chatbot:</b>
+                                            <p style="margin-left:2%">
+                                                An AI assistant that answers questions using uploaded private documents.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Multimodal App: </b>
+                                            <p style="margin-left:2%">
+                                                A tool that integrates vision (image analysis) with NLP (text generation).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Workflow Automator:</b>
+                                            <p style="margin-left:2%">
+                                                Using LLMs to automate business processes from end to end.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+                            <p>
+                                In 2025 and 2026, Generative AI courses have become highly accessible, with pathways designed for both technical experts and complete beginners. Eligibility is increasingly based on interest and logic rather than just a computer science degree.
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Business Leaders & Managers</b> :
+                                        <p style="margin-left:2%">
+                                            Ideal for those wanting to automate workflows, manage AI projects, or develop AI-driven business strategies.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Creative Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Artists, designers, writers, and marketers can learn to use GenAI to boost productivity, generate content, and automate creative production.
+                                        </p>
+                                    </li>
+                                   
+                                    <li>
+                                        <b>Commerce & Humanities Students</b> :
+                                        <p style="margin-left:2%">
+                                            Students from non-science backgrounds (e.g., B.Com, BA, BBA) are eligible for many programs, as commerce skills in statistics and economics are valuable for AI-driven business intelligence.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Developers & Engineers</b> :
+                                        <p style="margin-left:2%">
+                                            Software engineers and data professionals (Data Scientists, Machine Learning Engineers) can upskill in LLM architecture, fine-tuning, and Agentic AI.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Cloud & DevOps Experts</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals with experience in AWS, Azure, or Google Cloud can take specialized certifications to learn to deploy production-ready AI solutions.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>For Beginner/Non-Coding Tracks</b> :
+                                        <p style="margin-left:2%">
+                                            Often no prior knowledge or coding skills are required. Courses like "Generative AI for Everyone" are designed for a general audience
+                                        </p>
+                                    </li>
+                                    
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Generative AI Course  Career Path
+                            </h5>
+                            In 2025,2026, the data science career path has evolved into a highly specialized and interdisciplinary journey, heavily influenced by the rise of Generative AI and MLOps.
+
+                            <ul>
+                                <li>
+
+                                    <h6 style="color:orange"> Entry-Level (0–2 Years)</h6>
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                AI Content/Prompt Specialist
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Designing high-quality prompts and managing basic AI-generated workflows.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹6L – ₹10L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Mid-Level (2–5 Years)
+                                    </h6>
+                                   
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                GenAI / LLM Engineer
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Fine-tuning models (LoRA/QLoRA) and building RAG-based knowledge systems.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Specialization Areas</b>:
+                                            <p style="margin-left:2%">
+                                                Many choose to specialize in high-demand fields like Natural Language Processing (NLP), Computer Vision, or Generative AI Engineering.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹15L – ₹35L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Specialized
+                                    </h6>
+                                   
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Agentic AI Specialist
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Designing autonomous agents that independently complete multi-step business tasks.
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹25L – ₹45L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Senior/Lead
+                                    </h6>
+
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                AI Solutions Architect
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Designing the end-to-end AI infrastructure (Cloud, Security, and LLM Ops).
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹40L – ₹80L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

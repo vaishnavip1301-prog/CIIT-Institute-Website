@@ -1,0 +1,756 @@
+﻿@{
+    ViewData["Title"] = "Data Science";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading Data Science training
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Data Science provides developer services for support teams to plan work, collaborate on code development, and build and deploy applications. 
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        In 2026, Data Science is no longer just about analyzing spreadsheets; it has evolved into an AI-first discipline centered on real-time intelligence and autonomous workflows
+                    </p>
+                    <p>
+                        In 2026, Data Science courses have transitioned from basic analytics to AI-integrated disciplines, prioritizing Generative AI, MLOps, and cloud-native automation. These programs focus on "Agentic Analytics," where professionals build semi-autonomous AI systems to handle data cleaning and modeling.
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of Data Science Training
+                    </h5>
+                    <p>
+                        In 2025 & 2026, data science training is designed to bridge the gap between technical expertise and strategic business value. The professional and career outcomes of such training focus on producing "future-proof" specialists capable of navigating an economy increasingly centered on AI, big data, and automation.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Programming Mastery</b> :
+                                <p style="margin-left:2%">
+                               
+                                    Proficiency in programming languages like Python, R, or SQL to process and analyze data effectively.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>AI & Machine Learning Integration</b> :
+                                <p style="margin-left:2%">
+                                    Graduates can design, build, and deploy predictive models using modern frameworks like TensorFlow and PyTorch.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Data Storytelling</b> :
+                                <p style="margin-left:2%">
+                                    The ability to translate complex statistical findings into actionable narratives for non-technical stakeholders is now a primary expected outcome.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Ethical Oversight</b> :
+                                <p style="margin-left:2%">
+                                    In 2025, professionals are trained to build ethical frameworks for data privacy, ensuring transparency in AI algorithms.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Professional Identity Shift</b> :
+                                <p style="margin-left:2%">
+                                    The training evolves a practitioner's mindset from purely technical execution to strategic problem-solving, making them ready for leadership and architectural positions.
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of  Data Science
+                                    </span>
+                                </h5>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Demand and Job Security</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Data science roles are projected to grow by approximately <b>35–36%</b> through 2032, far outpacing the average for other tech sectors.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Top-Tier Compensation</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                In 2025, data scientists remain among the highest-paid professionals. In India, entry-level salaries typically range from <b>₹5L</b> to <b>₹12L</b> while senior roles can exceed <b>₹48L</b>
+                            </p>
+                            <h6 class="card-title" style="color:orange">Versatility Across Industries</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Skills in Python, SQL, and AI are universally applicable. Professionals can transition between finance, healthcare, e-commerce, and even government policy.
+                            </p>
+                            <h6 class="card-title" style="color:orange">RData-Driven Decision Making</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                The global nature of data science often allows for remote or hybrid work environments, which is increasingly viewed as a top professional perk in 2025.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Predictive and Real-Time Insights</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Businesses can forecast market trends, demand spikes, and equipment failures before they happen. Real-time analytics allow for instant price adjustments in retail or immediate fraud detection in banking.
+                            </p>
+                            <h5 class="card-title" style="color:orange">Operational Efficiency & Automation</h5>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Automating repetitive tasks—such as inventory management or quality checks—reduces human error and operational costs by up to 20% in some sectors.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Enhanced Customer Experience</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                By analyzing behavioral patterns, companies provide hyper-personalized recommendations (similar to Netflix or Amazon), which significantly boosts customer retention and loyalty.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Risk Mitigation & Cybersecurity</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Machine learning models identify anomalies in network traffic and financial transactions, acting as a "Data-Driven Defense" against advanced cyberattacks and money laundering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Data Science in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2025 and 2026, learning data science is a strategic career move because it bridges the gap between historical analysis and future prediction. While data analytics focuses on "what happened," data science uses machine learning (ML) and artificial intelligence (AI) to forecast "what will happen" and automate complex decision-making
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>High Demand and Job Security</b> :
+                                    <ul>
+                                        <li>
+                                            <b>Millions of Openings:</b>
+                                            <p style="margin-left:2%">
+                                                Projections indicate approximately <b>11.5 million</b> job openings globally in data-related roles by 2026.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Growth Trajectory:</b>
+                                            <p style="margin-left:2%">
+                                                The demand for data scientists is expected to grow by <b>34-36%</b> through 2034, significantly faster than the average for most occupations.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>India as a Hub:</b>
+                                            <p style="margin-left:2%">
+                                                India is emerging as the second-largest global hub for data science, with an estimated need for over <b>1 million professionals</b> by 2026.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Specialized Roles Beyond "Generalist" Data Science
+                                    </b> :
+                                    <ul>
+                                        <li>
+                                            <b>Generative AI (GenAI) Engineer:</b>
+                                            <p style="margin-left:2%">
+                                                Focused on building and fine-tuning Large Language Models (LLMs) and agentic systems.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>MLOps & AI Ops:</b>
+                                            <p style="margin-left:2%">
+                                                Specialists who deploy, monitor, and scale AI models in production environments.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Product Data Scientist:</b>
+                                            <p style="margin-left:2%">
+                                                Professionals who bridge the gap between user behavior data and business growth strategies.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Ethicist / Governance:</b>
+                                            <p style="margin-left:2%">
+                                                Roles dedicated to ensuring AI systems are transparent, fair, and compliant with new global regulations like the EU AI Act
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Transformation of the "Data Scientist" Role
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>Human-Centric Skills:</b>
+                                            <p style="margin-left:2%">
+                                                As AI automates boilerplate code, value is shifting toward <b>analytical thinking, domain expertise, and causal inference</b>—the ability to explain why something is happening, not just that it is.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Agentic AI Collaboration:</b>
+                                            <p style="margin-left:2%">
+                                                Professionals in 2026 act as "managers" of AI workers, overseeing autonomous systems that handle routine data cleaning and reporting.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        Cross-Industry Versatility
+
+
+                                    </b>
+                                    
+                                    <ul>
+                                        <li>
+                                            <b>Healthcare:</b>
+                                            <p style="margin-left:2%">
+                                                Predictive diagnostics and personalized treatment plans.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Finance:</b>
+                                            <p style="margin-left:2%">
+                                                Real-time fraud detection and high-speed algorithmic trading.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Manufacturing:</b>
+                                            <p style="margin-left:2%">
+                                                Predictive maintenance and supply chain optimization using Edge AI
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Retail:</b>
+                                            <p style="margin-left:2%">
+                                                Hyper-personalization and dynamic pricing that adjusts instantly to market trends.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </p>
+                        <p>
+                            In 2026, learning data science is a strategic career move driven by the global shift from experimenting with Artificial Intelligence (AI) to fully integrating it into core business operations.
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            In 2025 and 2026, the Data Science course syllabus has evolved from traditional analytical modeling to an AI-first curriculum. Modern programs now integrate Generative AI, MLOps, and cloud-native automation as core pillars rather than electives.
+                        </p>
+                        <ul>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Foundations & Mathematics
+                                </b> :
+                                <p style="margin-left:2%">
+                                    This module establishes the logic required to understand complex machine learning architectures
+                                    <ul>
+                                        <li>
+                                            <b>Linear Algebra:</b>
+                                            <p style="margin-left:2%">
+                                                Vectors, matrices, eigenvalues, and Singular Value Decomposition (SVD).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Statistics & Probability:</b>
+                                            <p style="margin-left:2%">
+                                                Hypothesis testing (z-test, t-test), Bayes’ theorem, and probability distributions (Normal, Poisson, Binomial).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Calculus & Optimization:</b>
+                                            <p style="margin-left:2%">
+                                                Derivatives, partial derivatives, and Gradient Descent algorithms.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Programming & Data Toolkit
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Python remains the primary language, often used alongside SQL for data retrieval.
+                                    <ul>
+                                        <li>
+                                            <b>Languages:</b>
+                                            <p style="margin-left:2%">
+                                                Python (most widely used), R (statistical analysis), and SQL (essential for database querying).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Core Libraries:</b>
+                                            <p style="margin-left:2%">
+                                                NumPy (numerical computing), Pandas (data wrangling), and Matplotlib/Seaborn (static visualization).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Database Management:</b>
+                                            <p style="margin-left:2%">
+                                                Relational databases (MySQL, PostgreSQL) and Big Data technologies like Apache Spark and Hadoop.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Machine Learning (ML) & AI
+                                </b> :
+                                <p style="margin-left:2%">
+                                    This core section focuses on algorithms that enable predictive modeling.
+                                    <ul>
+                                        <li>
+                                            <b>Supervised Learning:</b>
+                                            <p style="margin-left:2%">
+                                                Linear/Logistic Regression, Decision Trees, Random Forests, and Support Vector Machines (SVM).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Unsupervised Learning:</b>
+                                            <p style="margin-left:2%">
+                                                NumPy (numerical computing), Pandas (data wrangling), and Matplotlib/Seaborn (static visualization).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Database Management:</b>
+                                            <p style="margin-left:2%">
+                                                Relational databases (MySQL, PostgreSQL) and Big Data technologies like Apache Spark and Hadoop.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Advanced Topics and Emerging AI
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Modern 2025 curricula emphasize deep learning and generative models.
+                                    <ul>
+                                        <li>
+                                            <b>Deep Learning:</b>
+                                            <p style="margin-left:2%">
+                                                Neural Networks, including <b>CNNs</b> for images and <b>RNNs/Transformers</b> for text.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Generative AI:</b>
+                                            <p style="margin-left:2%">
+                                                Introduction to Large Language Models (LLMs) and Prompt Engineering.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Natural Language Processing (NLP):</b>
+                                            <p style="margin-left:2%">
+                                                Sentiment analysis, tokenization, and named entity recognition.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Big Data Tools:</b>
+                                            <p style="margin-left:2%">
+                                                Managing large-scale data with Apache Spark, Hadoop, and Kafka.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Data Visualization and Business Ethics
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Focuses on communicating insights and ensuring responsible practice.
+                                    <ul>
+                                        <li>
+                                            <b>Visualization Tools:</b>
+                                            <p style="margin-left:2%">
+                                                <b>Tableau, Power BI, and Python libraries </b>  like <b>Matplotlib/Seaborn</b>.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Generative AI:</b>
+                                            <p style="margin-left:2%">
+                                                Introduction to Large Language Models (LLMs) and Prompt Engineering.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Natural Language Processing (NLP):</b>
+                                            <p style="margin-left:2%">
+                                                Sentiment analysis, tokenization, and named entity recognition.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Big Data Tools:</b>
+                                            <p style="margin-left:2%">
+                                                Managing large-scale data with Apache Spark, Hadoop, and Kafka.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                Data science courses are open to a wide range of individuals, from students fresh out of high school to working professionals looking to switch careers. While a background in STEM (Science, Technology, Engineering, and Mathematics) is traditionally preferred, modern programs and certifications are designed to accommodate diverse academic backgrounds.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Science Stream</b> :
+                                        <p style="margin-left:2%">
+                                            Students with Physics, Chemistry, and Mathematics (PCM) are most eligible for technical degrees like B.Tech in Data Science.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Commerce/Arts Streams</b> :
+                                        <p style="margin-left:2%">
+                                            Students from these backgrounds can pursue BCA (Data Science) or B.Sc. programs that focus on application rather than pure engineering.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Key Requirements</b> :
+                                        <p style="margin-left:2%">
+                                            Most universities require a minimum of 50–60% aggregate marks in the 12th board exams.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Relevant Degrees</b> :
+                                        <p style="margin-left:2%">
+                                            Graduates in Computer Science, Statistics, Mathematics, Physics, or Economics are preferred for advanced Master's programs like M.Sc. or M.Tech in Data Science.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-Technical Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with degrees in Business, Marketing, or Humanities can enroll in Postgraduate Diplomas or Professional Certificates. Some universities also offer "bridge programs" to help non-tech graduates learn the necessary math and coding basics.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Software engineers and database administrators often transition into data science by taking short-term Certification Courses or Bootcamps.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals in finance, healthcare, or retail can use domain expertise alongside new data skills to move into specialized analytics roles.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Data Science Career Path
+                            </h5>
+                            In 2025,2026, the data science career path has evolved into a highly specialized and interdisciplinary journey, heavily influenced by the rise of Generative AI and MLOps.
+
+                            <ul>
+                                <li>
+                                   
+                                    <h6 style="color:orange"> Entry-Level (0–2 Years)</h6>
+                                     
+                                        <ul>
+                                            <li>
+                                                <b>Common Roles</b>:
+                                                <p style="margin-left:2%">Data Analyst, Junior Data Scientist, Business Intelligence (BI) Analyst, Data Engineer (Entry-level).</p>
+                                            </li>
+                                            <li>
+                                                <b>Key Tasks</b>:
+                                                <p style="margin-left:2%">
+                                                    Data cleaning (wrangling), exploratory data analysis (EDA), building simple dashboards, and assisting in basic model training.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Salary Range (India)</b>:
+                                                <p style="margin-left:2%">
+                                                    ₹3.5 Lakhs to ₹8 Lakhs per annum (LPA).
+                                                </p>
+                                            </li>
+                                        </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Mid-Level (2–5 Years)
+                                    </h6>
+                                    At this stage, you transition from executing tasks to owning end-to-end projects.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Data Scientist, Machine Learning (ML) Engineer, AI Specialist, Data Architect.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Designing and deploying complex predictive models, optimizing algorithms, and managing data pipelines.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Specialization Areas</b>:
+                                            <p style="margin-left:2%">
+                                                Many choose to specialize in high-demand fields like Natural Language Processing (NLP), Computer Vision, or Generative AI Engineering.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹10 Lakhs to ₹22 LPA.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Senior-Level (5+ Years)
+                                    </h6>
+                                    Senior roles focus on leadership, strategy, and mentoring.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Senior Data Scientist, Lead Data Scientist, Data Science Manager, Principal Data Scientist.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Leading cross-functional teams, making high-level architectural decisions, and bridging the gap between technical findings and business ROI.
+                                            </p>
+                                        </li>
+                                        
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹20 Lakhs to ₹45+ LPA.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
