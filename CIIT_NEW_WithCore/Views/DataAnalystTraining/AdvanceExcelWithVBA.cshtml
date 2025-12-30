@@ -1,0 +1,772 @@
+﻿@{
+    ViewData["Title"] = "Data Science";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading Advanced Excel with VBA training
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Mastering advanced Excel with VBA provides significant career advantages in 2025 by bridging the gap between standard office work and specialized data automation.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        In 2025 and 2026, the career scope for Advanced Excel with VBA remains robust, particularly as a critical tool for "last-mile" data automation and internal business logic.
+                    </p>
+
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of Advance Excel with VBA Training
+                    </h5>
+                    <p>
+                        In 2025 and 2026, completing advanced Excel with VBA training transitions a professional from a manual "spreadsheet user" to a "data automation specialist". The training focuses on developing a technical edge that significantly reduces the manual workload while increasing the strategic value of the output.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Increased Earning Potential</b> :
+                                <p style="margin-left:2%">
+                                    Advanced users command a salary premium of <b>5%</b> to <b>25%</b> over basic users, particularly in finance and data-heavy roles.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Job Market Competitive Edge</b> :
+                                <p style="margin-left:2%">
+                                    Proficiency is a prerequisite for high-paying roles such as <b>Financial Modeler, MIS Executive, and Business Intelligence Specialist</b>.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Foundation for AI Integration</b> :
+                                <p style="margin-left:2%">
+                                    In 2025, VBA training serves as a logical bridge to modern tools like <b> Python, SQL</b>, and <b>AI-driven Copilot</b> features.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Significant Time Savings</b> :
+                                <p style="margin-left:2%">
+                                    Graduates often save <b>5–10 hours per week</b>  by automating tasks that previously required manual copy-pasting or re-formatting.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>VBA Programming</b> :
+                                <p style="margin-left:2%">
+                                    Proficiency in the Visual Basic for Applications language, including using loops (For/Next, Do While), logical operators (If/Else, Select Case), and variables to build complex logic.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Macro Development</b> :
+                                <p style="margin-left:2%">
+                                    Ability to record, write, and edit custom macros to automate routine reports and formatting.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Custom Functions (UDFs)</b> :
+                                <p style="margin-left:2%">
+                                    Creating unique formulas tailored to specific business needs that do not exist in standard Excel.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Object-Oriented Automation</b> :
+                                <p style="margin-left:2%">
+                                    Managing Excel objects (workbooks, ranges, cells) and integrating them with other Office apps like Outlook for automated email generation.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>User Interface Design</b> :
+                                <p style="margin-left:2%">
+                                    Building custom User Forms with buttons, textboxes, and dropdowns to create professional, interactive applications for non-technical users.
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of  Advance Excel & VBA Training
+                                    </span>
+                                </h5>
+                                In 2025 and 2026, Advanced Excel with VBA training provides critical technical skills that directly impact career trajectory, productivity, and organizational efficiency. This training bridges the gap between basic spreadsheet usage and high-level strategic data management.
+                            </div>
+                         
+                            <h6 class="card-title" style="color:orange"> Significant Career and Financial Growth</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Higher Earning Potential:</b> Professionals with advanced Excel skills earn 5–15% more on average than those with basic proficiency. In specialized roles like finance or data analysis, this premium can reach <b>20–25%</b>.
+                                    </li>
+                                    <li>
+                                        <b>Access to Specialized Roles:</b> Training qualifies individuals for lucrative roles such as <b>Financial Modeler</b> (avg. $95,000/year), <b>Data Analyst</b> (avg. $80,000/year), and MIS Executive.
+                                    </li>
+                                    <li>
+                                        <b>Industry Demand:</b> Over <b>80% of middle-to-senior job postings</b> in sectors like finance and marketing explicitly require advanced Excel capabilities.
+                                    </li>
+                                </ul>
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange"> Career and Financial Growth</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Salary Premiums:</b> 
+                                        <p style="margin-left:2%">
+
+                                        Professionals with advanced Excel skills typically earn <b>5%</b> to <b>15%</b> more than basic users, with this differential reaching <b>20%</b> to <b>25%</b> in analytical or financial roles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Average Earnings (India):</b> 
+                                        <p style="margin-left:2%">
+
+                                            In late 2025, employees proficient in VBA earn an average of <b>₹20.2 lakhs</b>, with top performers exceeding <b>₹30 lakhs</b> per year.
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <b>Lucrative Roles:</b> 
+                                        <p style="margin-left:2%">
+
+                                            This training is a prerequisite for high-paying positions such as <b>Financial Modeler ($95k+/year), Data Analyst ($80k+/year)</b>, and MIS Executive.
+                                        </p>
+                                        </li>
+                                </ul>
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Massive Productivity Gains via Automation</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Time Savings:</b>
+                                        <p style="margin-left:2%">
+
+                                        Automating repetitive tasks with VBA and macros can save an average of <b>5–10 hours per week </b>(roughly 200+ hours annually).
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Error Reduction:</b> 
+                                        <p style="margin-left:2%">
+
+                                            Automated workflows eliminate manual entry errors, which can prevent revenue losses that reach up to 20% due to inaccurate data.
+                                            </p>
+                                    </li>
+                                    <li>
+                                        <b>Consistency:</b>
+                                        <p style="margin-left:2%">
+
+                                            VBA programs perform tasks with complete consistency, ensuring that reports are standardized every time they are generated.
+                                            </p>
+                                    </li>
+                                </ul>
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange"> Advanced Data Mastery</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Complex Data Management:</b>
+                                        <p style="margin-left:2%">
+
+                                        Training enables users to handle massive datasets using <b>Power Query</b> and <b>Power Pivot</b>, effectively turning Excel into a mini Business Intelligence (BI) platform.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Actionable Insights:</b> 
+                                        <p style="margin-left:2%">
+
+                                            Mastering advanced formulas (XLOOKUP, INDEX-MATCH) and dynamic dashboards allows professionals to translate raw data into strategic business decisions.
+                                            </p>
+                                    </li>
+                                    <li>
+                                        <b>Simulation & Forecasting:</b>
+                                        <p style="margin-left:2%">
+
+                                            Advanced users can perform "What-If" analysis and build predictive models to anticipate market trends.
+                                            </p>
+                                    </li>
+                                </ul>
+
+                            </p>
+                            <h6 class="card-title" style="color:orange">Credibility and Future-Proofing</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Professional Credibility:</b>
+                                        <p style="margin-left:2%">
+
+                                        Earning a certification, such as the Microsoft Office Specialist (MOS) Expert, can boost salaries by up to 12% compared to non-certified peers.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Stepping Stone to Advanced Tech:</b>  
+                                        <p style="margin-left:2%">
+
+                                            Proficiency in Excel logic and VBA serves as a foundational bridge to learning programming languages like Python or database management with SQL.
+                                            </p>
+                                    </li>
+                                    <li>
+                                        <b>Independence:</b> 
+                                        <p style="margin-left:2%">
+
+                                            Training makes professionals self-reliant, reducing dependency on IT support for custom reporting solutions.
+                                            </p>
+                                    </li>
+                                </ul>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Advance Excel with VBA in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, learning Advanced Excel with VBA remains a strategic career move because it bridges the gap between traditional data management and modern AI-driven automation. Despite the rise of other tools, Excel is still the primary language of business.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>High Job Demand</b> :
+
+                                    <p style="margin-left:2%">
+                                        Over 82% of middle-to-senior level job postings in business functions explicitly prefer candidates with advanced Excel and automation skills.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>AI Integration:</b>
+                                    <p style="margin-left:2%">
+                                        In 2026, professionals use VBA alongside AI-assisted coding tools like Excel Copilot and GitHub Copilot to write more efficient scripts faster, finding a competitive edge over those who only use standard features.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Non-Technical Friendly Entry:</b>
+                                    <p style="margin-left:2%">
+                                        It remains one of the few high-paying IT fields that does not require heavy coding or a CS degree. Career switchers can become job-ready in 3–6 months with foundational knowledge of logic, business thinking, and core tools.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Salary Premium:</b>
+                                    <p style="margin-left:2%">
+                                        Mastery of advanced Excel and VBA typically leads to a 5–15% salary increase, reaching up to 25% for specialized quantitative roles.
+                                    </p>
+                                </li>
+
+                                
+
+
+                            </ul>
+
+                        </p>
+
+                        <br />
+
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            In 2025, Advanced Excel with VBA training focuses on bridging standard data analysis with high-level automation and strategic decision-making. Modern courses increasingly integrate AI tools like Excel Copilot and specialized AI-driven data insights alongside traditional programming.
+                        </p>
+                        <ul>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Core Training Modules
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Most industry-standard courses are divided into several key sections:
+                                    <ul>
+                                        <li>
+                                            <b>Advanced Formulas & Data Analysis:</b>
+                                            <p style="margin-left:2%">
+                                                Mastery of logical (Nested IF, IFS), lookup (XLOOKUP, INDEX-MATCH), and mathematical functions.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>VBA Programming Foundations:</b>
+                                            <p style="margin-left:2%">
+                                                Introduction to the Visual Basic Editor (VBE), understanding syntax, declaring variables, and using data types.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Automation with Macros:</b>
+                                            <p style="margin-left:2%">
+                                                Recording and editing macros to automate multi-step repetitive tasks and cleaning large datasets.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Control Structures:</b>
+                                            <p style="margin-left:2%">
+                                                Implementing logic using "If-Then" statements, loops (For-Next, Do-While), and "Select Case" to manage program flow.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>User Interface (UI) Design:</b>
+                                            <p style="margin-left:2%">
+                                                Creating custom UserForms with buttons, text boxes, and dropdowns to build professional-grade applications within Excel.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Interactive Dashboards:</b>
+                                            <p style="margin-left:2%">
+                                                Building dynamic reporting tools using Pivot Tables, Slicers, and advanced charting linked to VBA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Specialized 2025 Features
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                     
+                                    <ul>
+                                        <li>
+                                            <b>AI Integration:</b>
+                                            <p style="margin-left:2%">
+                                                Use of AI tools, such as Excel Copilot, ChatGPT, or Gemini, for advanced data transformation and insight generation.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Power Tools:</b>
+                                            <p style="margin-left:2%">
+                                                Combining VBA with Power Query for complex data cleaning and Power Pivot for advanced data modeling.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Cross-Application Integration:</b>
+                                            <p style="margin-left:2%">
+                                                Automating tasks across other MS Office apps, including auto-sending emails via Outlook or generating Word reports.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Career-Focused Highlights
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                     
+                                    <ul>
+                                        <li>
+                                            <b>Real-World Case Studies:</b>
+                                            <p style="margin-left:2%">
+                                                Practical exercises in financial modeling, supply chain optimization, and retail sales tracking.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Soft Skills & Storytelling:</b>
+                                            <p style="margin-left:2%">
+                                                Training on how to translate complex technical findings into actionable business recommendations for non-technical stakeholders.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Placement Support:</b>
+                                            <p style="margin-left:2%">
+                                                We offer unlimited mock interviews, resume building, and access to a network of hiring partners
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+                            <p>
+                                In 2025 and 2026, Advance Excel with VBA has become one of the most accessible high-growth career fields. Because it prioritizes logic and business understanding over heavy coding, it is open to a wide range of individuals across different educational and professional backgrounds.
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Any Degree Holder</b> :
+                                        <p style="margin-left:2%">
+                                            While a background in Mathematics, Statistics, Computer Science, or Economics is often preferred, graduates from <b> Commerce (b.com), Arts (BA),</b>  and <b>Science (B.Sc)</b> streams are eligible for most courses and roles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Final Year Students</b> :
+                                        <p style="margin-left:2%">
+                                            Many institutes allow students in their final year of graduation to enroll in certification programs to become job-ready by the time they graduate
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>12th Pass Candidates</b> :
+                                        <p style="margin-left:2%">
+                                            You can begin your journey immediately after school by pursuing short-term certifications or diplomas.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Industry Experts</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals from <b>Marketing, Finance, Healthcare,</b> or <b>HR</b> can transition by leveraging their "domain knowledge"—knowing the specific business problems their data needs to solve.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Management Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            MBA graduates often move into Business Intelligence (BI) or Analytics Manager roles where the focus is more on decision-making than backend coding.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Age Flexibility</b> :
+                                        <p style="margin-left:2%">
+                                            The field is welcoming to career switchers in their 30s and 40s, as their prior professional experience is a valuable asset in interpreting business data.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals in finance, healthcare, or retail can use domain expertise alongside new data skills to move into specialized analytics roles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>The "Non-Coder" or Beginner</b> :
+                                        <p style="margin-left:2%">
+                                            <b>No Prior Coding Experience:</b>
+                                            <span>You do not need to be a programmer to start. Most entry-level Advance Excel & VBA courses teach essential tools like SQL and Python from scratch.</span>
+                                        </p>
+                                        <p style="margin-left:2%">
+                                            <b>Low-Code/No-Code Enthusiasts:</b>
+                                            <span>Those who prefer visual tools can focus on Excel, Tableau, or Power BI, which rely more on "drag-and-drop" interfaces and logical formulas than complex scripts. </span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Advance Excel & VBA Career Path
+                            </h5>
+                            The Advance Excel & VBA career path in 2025 and 2026 offers a highly structured yet flexible progression from technical execution to high-level strategic leadership. Driven by nearly 27% annual growth in the industry, this path is increasingly welcoming to professionals from diverse backgrounds who master core technical tools like SQL, Python, and data visualization.
+                            <br />
+                            <br />
+                            <ul>
+                                <li>
+
+                                    <h6 style="color:orange"> Entry-Level (0–2 Years)</h6>
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Junior Analyst, Reporting Analyst
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Data cleaning, basic SQL queries, building simple reports
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹4L – ₹7L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Mid-Level (2–5 Years)
+                                    </h6>
+                                    At this stage, you transition from executing tasks to owning end-to-end projects.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Data Analyst, BI Analyst
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                End-to-end analysis, business insights, advanced dashboards
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹8L – ₹15L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Senior-Level (5+ Years)
+                                    </h6>
+                                    Senior roles focus on leadership, strategy, and mentoring.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Senior Analyst, Analytics Engineer
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Mentorship, complex data pipelines, A/B testing, automation
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹18L – ₹28L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Leadership (8+ yrs)
+                                    </h6>
+
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Analytics Manager, Director, CDO
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Team strategy, data governance, long-term business goals
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹30L – ₹70L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

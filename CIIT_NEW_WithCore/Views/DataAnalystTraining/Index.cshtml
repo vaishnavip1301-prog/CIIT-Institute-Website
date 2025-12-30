@@ -1,449 +1,665 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "Data Science";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <style>
-
-    nav > .nav.nav-tabs {
-        border: none;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
     }
 
-    nav > div a.nav-item.nav-link,
-    nav > div a.nav-item.nav-link.active {
-        border: none;
-        padding: 18px 25px;
-        color: #fff;
-        background: #272e38;
-        border-radius: 0;
-    }
-
-        nav > div a.nav-item.nav-link.active:after {
-            content: "";
-            position: relative;
-            bottom: -60px;
-            left: -50%;
-            border: 15px solid transparent;
-            border-top-color: #e74c3c;
-        }
-
-    .tab-content {
-        background: #fdfdfd;
-        line-height: 25px;
-        border: 1px solid #ddd;
-        border-top: 5px solid #e74c3c;
-        border-bottom: 5px solid #e74c3c;
-        padding: 30px 25px;
-    }
-
-    nav > div a.nav-item.nav-link:hover,
-    nav > div a.nav-item.nav-link:focus {
-        border: none;
-        background: #e74c3c;
-        color: #fff;
-        border-radius: 0;
-        transition: background 0.20s linear;
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
     }
 </style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
 
-<div class="container" style="padding-top: 80px; text-align: justify; font-size: 14px; font-family: 'Bookman Old Style'">
-    <img src="~/assets/courses/Data Analyst.jpg" style="height:300px;width:100%" />
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
 
-    <h4 style="margin-top:2%">
-        Every year over 700 talented individuals secure promising positions as Data Analytics professionals in the dynamic landscape of the IT industry.
-    </h4>
-    <div>
-        <p>
-            Data analysis is the process of examining, filtering, adapting, and modeling data to help solve problems. Data analysis helps determine what is and isn't working, so you can make the changes needed to achieve your business goals.
-        </p>
-        <p>
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
 
-            Data Analytics relied on manual data recording and collation as technological progress was slow. Before we had flashy hard drives and cloud storage, data was stored on physical hardware and could only be handled by a specialized machine. Businesses rarely stored non-essential data, let alone analyze it! However, when IBM invented the hard disk in 1956 (which held a measly 5MB of data), Data Analytics became more feasible for enterprises. Yet, Data Analytics as a business function took off only in the 1970s, when Mr. Edgar F. Codd invented relational databases for computers to store data in Sequel (SQL), which could be retrieved and analyzed swiftly.
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
 
-        </p>
-        <p>
-            In simpler words, Data Analytics is the science of making sense of raw datasets to identify trends and common patterns to come to a business decision or prove a hypothesis. For businesses, Data analysis is all about using data to build logical reasoning to make informed business decisions.
-        </p>
-        <p>
-            While businesses have been analyzing data since forever, the emergence of the field of Data Analytics can be dated back to the 1880s. Here's how the field has evolved since.
-        </p>
-    </div>
-    <div>
-        <p>
-            CIIT Training Institute offers comprehensive Data Analytics training tailored for both freshers and seasoned professionals. With a track record of empowering over 10,000 students, many have realized their aspirations by landing coveted positions in leading companies as proficient Data Analysts
-        </p>
-        <p>We offer Data Analytics training with a cutting-edge curriculum, focusing on hands-on experience with live projects. Our guarantee is that upon completion of the course, students will master project development independently. Equipped with this expertise, they can confidently showcase their skills in the professional arena.</p>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Why CIIT?</h4>
-        </div>
-        <ul style="font-size:14px;list-style:none;margin-top:2%">
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Latest Curriculum</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Highly Experienced Trainers</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Chance to work with our development team</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Practically Work on Projects & Case Studies</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Real time project Training</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li>
-            <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> Weekly Mock & HR Interviews </h6></li>
-            @* <li><h6><i class="fas fa-arrow-right" style="color:#e74c3c"></i> 100% Job assurance</h6></li> *@
-        </ul>
-    </div>
-    <div>
-        <div style="height:30px;width:100%;background-color:#007bff;color:white;text-align:center">
-            <h4>Course Curriculum</h4>
-        </div>
+</style>
 
-        <p style="margin-top:2%">This Data Analytics course is ideal for anyone with an interest in creating their own projects from scratch,CIIT is a good platform for those people who want to do limitless career as a Data Analytics in IT Industry. </p>
-    </div>
-    <div>
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
 
 
-
-        <div class="" style="text-align:justify;font-family:'Bookman Old Style'">
-            <h4 style="margin-top:2%"> Data Analytics Course offered by CIIT Training Institute</h4>
-
-
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 ">
-                                <nav>
-                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Data Analytics for Working Professionals</a>
-                                        @* <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Data Analytics</a> *@
-                                        @* <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Data Analytics for Working Professionals</a> *@
-                                    </div>
-                                </nav>
-                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="padding:2%">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card border-primary shadow-sm  mb-4">
-                                                    <div class="card-body">
-                                                        <h4 style="color:#e74c3c">CIIT Gaurantee for Quality Training and Live Project with 100% Job Placement</h4>
-                                                        <br />
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                        <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                        <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                        <p class="card-text" style="padding-left:10%"> 4 Months Training and gauranteed job from 5th month</p>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                            <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 1 Real Time Industry Project</li>
-                                                        </ul>
-                                                        <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                        <ul style="padding-left:10%">
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> TypeScript</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular Latest/ReactJs Latest</li>
-
-                                                                </ul>
-                                                                <hr />
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Oracle</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> MS SQL Server</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Data Analyst </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Collection and Preprocessing</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Exploratory Data Analysis (EDA)</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning Basics</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Mining Techniques</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Big Data Analytics</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Visualization and Communication</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Ethical and Legal Issues in Data Analysis</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Practical Applications and Case Studies</li>
 
 
-                                                                </ul>
-                                                                <hr />
+                <div class="col-md-8" style="padding-left:2%;">
 
-                                                            </li>
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Collection</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Cleaning</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Exploration</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Preprocessing</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning</li>
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Visualization Validation and Iteration</li>
-                                                                </ul>
-                                                                <hr />
-
-                                                            </li>
-
-                                                            <li>
-                                                                <h6><i class="fas fa-book" style="color:#e74c3c"></i> Project </h6>
-                                                                <ul style="padding-left:10%">
-                                                                    <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> 1 Real Time Project</li>
+                    <h4>
+                        Get Job-Ready with  Industry-Leading Data Analytics training
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Data Analytics training transforms professionals into data-driven decision-makers, offering diverse roles and significant growth in a globally in-demand field.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Data analytics training opens doors to high-demand roles (Data Analyst, BI Analyst, Data Scientist, Engineer) with strong salary growth, cross-industry applicability (Finance, Health, Tech), and enhanced critical thinking skills, offering clear career paths from entry-level analysis to senior management or specialized AI/ML roles, making professionals valuable assets for data-driven decisions and innovation.
+                    </p>
 
 
-                                                                </ul>
-                                                                <hr />
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
 
-                                                            </li>
-
-                                                            @*  <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i>  Data Analytics </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Power BI</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> UsePowerBIMobileApps</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Textfunctions</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> UsePowerBI Desktop</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Tableau</li> *@
-                                                            @*  <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Excel</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Excel Basic – Advanced Excel</li> *@
-
-                                                            @* 
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Mining Techniques:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Big Data Analytics:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Visualization and Communication:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Ethical and Legal Issues in Data Analysis:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Practical Applications and Case Studies:</li>
- *@
-                                                            @* 
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li> *@
-                                                            @* <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CorePython</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Advance Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Numpy</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Pandas</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Matplotlib</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Visualization Validation and Iteration</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li> *@
-
-                                                        </ul>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @* <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="padding:2%">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card border-primary shadow-sm  mb-4">
-                                            <div class="card-body">
-                                                <h4 style="color:#e74c3c">CIIT Gaurantee for 100% Job Assistance on industry oriented Data Analyst Training with live project with </h4>
-                                                <br />
-
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                <p class="card-text" style="padding-left:10%"> Any Graduate ,Non IT / IT professionals</p>
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                <p class="card-text" style="padding-left:10%"> 6 Months Training With Real time project from Industry Experts</p>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Freshers</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews will be conducted 2 days a week</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Best Platform for freshers to get their dream job in IT Industry</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls </li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Project</li>
-                                                </ul>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Angular Latest/ReactJs Latest</li>
-
-                                                        </ul>
-                                                        <hr />
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Microsoft Sql Server 2022</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i>  Data Analytics</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Collection and Preprocessing</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Exploratory Data Analysis (EDA)</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning Basics:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Mining Techniques:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Big Data Analytics:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Visualization and Communication:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Ethical and Legal Issues in Data Analysis:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Practical Applications and Case Studies:</li>
-
-
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Collection</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Cleaning</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Exploration</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Preprocessing</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Visualization Validation and Iteration</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div> *@
-
-                                    @* <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" style="padding:2%">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card border-primary shadow-sm  mb-4">
-                                            <div class="card-body">
-                                                <h4 style="color:#e74c3c">CIIT Gaurantee for real time industry  training with live project</h4>
-                                                <br />
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Who can do this course</h5>
-                                                <p class="card-text" style="padding-left:10%">  IT professionals</p>
-                                                <h5 class="card-title"><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Total Duration</h5>
-                                                <p class="card-text" style="padding-left:10%"> 2-3 Months</p>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Key Points for Working Professionals</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  100% Real time Project Training</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Training will be provided by Industry experts</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Mock Interviews </li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  We love to help working professionals in their current project</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Weekly Assessment</li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  Unlimited Job Calls for switch from current job </li>
-                                                    <li><i class="fas fa-arrow-right" style="color:#e74c3c"></i>  10+ Mini Projects and 2 Real Time Industry Project</li>
-                                                </ul>
-                                                <h5><i class="fas fa-star" style="color:#e74c3c;font-size:15px"></i> Course Contents</h5>
-                                                <ul style="padding-left:10%">
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Front End</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Html,Html5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> CSS,CSS3</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Bootstrap 5</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JavaScript</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> JQuery</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Python</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> R language</li>
-
-                                                        </ul>
-                                                        <hr />
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> RDBMS</h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Microsoft Sql Server 2022</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> Data Analyst </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Collection and Preprocessing</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Exploratory Data Analysis (EDA)</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning Basics:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Mining Techniques:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Big Data Analytics:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Visualization and Communication:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Ethical and Legal Issues in Data Analysis:</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Practical Applications and Case Studies:</li>
-                                                            
-
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-                                                    <li>
-                                                        <h6><i class="fas fa-book" style="color:#e74c3c"></i> More Important Topics </h6>
-                                                        <ul style="padding-left:10%">
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Collection</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Cleaning</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Exploration</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Data Preprocessing</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Statistical Analysis</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i> Machine Learning</li>
-                                                            <li><i class="fas fa-chevron-circle-right" style="color:#e74c3c"></i>Data Visualization Validation and Iteration</li>
-                                                        </ul>
-                                                        <hr />
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> *@
-
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
 
-                <div class="col-md-3">
-                    @Html.Partial("PartialView")
+
 
                 </div>
-                </<div></div>
-            </div>
-        </div>
 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of Data Science Training
+                    </h5>
+                    <p>
+                        Data analytics training in 2025 significantly enhances career trajectories by bridging the gap between raw data skills and strategic business impact. Professionals who undergo this training typically experience faster promotions, access to specialized roles, and higher earning potential across a variety of industries
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Enhanced Job Readiness</b> :
+                                <p style="margin-left:2%">
+                                    Training provides hands-on experience with industry-standard tools like <b> SQL, Python, Tableau, and Power BI</b>.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Credibility & Recognition</b> :
+                                <p style="margin-left:2%">
+                                    Globally recognized certifications (e.g., Microsoft Certified: Data Analyst Associate, Google Data Analytics Certificate, or IABAC) validate your expertise to potential employers.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Strategic Decision-Making</b> :
+                                <p style="margin-left:2%">
+                                    Professionals learn to move beyond descriptive analytics (what happened) to predictive and prescriptive analytics (what will happen and what to do), making them essential to business leadership.
+                                </p>
+                            </li>
+                            <li>
+
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of  Data Analytics
+                                    </span>
+                                </h5>
+                                Enrolling in a data analytics course in 2025 offers a wide range of career and practical advantages, from mastering technical tools like SQL and Python to gaining high-demand strategic skills that drive business growth.
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Market Demand</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Companies are increasingly reliant on data-driven decisions, with a projected 26.5% year-on-year growth in the data analytics industry. In India alone, an estimated 11 million job openings for data professionals are expected by 2026.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Attractive Salaries</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Professionals in this field command competitive pay. In 2025, entry-level data analysts in India can earn between <b>₹4.5L</b> and <b>₹7L LPA</b>, while senior-level roles can exceed <b>₹18L</b> to <b>₹28L LPA</b>.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Diverse Career Paths</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                <ul>
+                                    <li>
+                                        <b>Data Analyst:</b> Turning raw data into meaningful insights.
+                                    </li>
+                                    <li>
+                                        <b>Business Intelligence (BI) Analyst:</b> Bridging the gap between data and business strategy.
+                                    </li>
+                                    <li>
+                                        <b>Data Scientist:</b> Using advanced ML and predictive modeling to identify future trends.
+                                    </li>
+                                    <li>
+                                        <b>Specialized Roles:</b> Opportunities as Financial, Healthcare, Marketing, or Operations Analysts.
+                                    </li>
+                                </ul>
+
+                            </p>
+                            <h6 class="card-title" style="color:orange">Tools & Languages</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Proficiency in SQL (foundational for database querying), Python/R (for statistical analysis and automation), and Excel.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Data Visualization</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Skills in Tableau and Power BI to build interactive dashboards and communicate complex findings to non-technical stakeholders.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Analytical Mindset</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Training goes beyond numbers to develop critical thinking, problem-solving, and data storytelling, which are essential for influencing business decisions.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Emerging Tech</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Modern courses often include basics in Machine Learning (ML) and Artificial Intelligence (AI), which are increasingly vital as organizations automate data processes.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Data Analytics in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, data analytics remains a top-tier career choice as organizations fully transition from digital adoption to total digital integration. With global data generation projected to exceed 180 zettabytes, companies are shifting away from intuition-based decisions toward mandatory, real-time insights powered by data.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Massive Job Openings</b> :
+
+                                    <p style="margin-left:2%">
+                                        The data analytics industry in India is projected to reach $118.7 billion by 2026, creating more than 11 million job opportunities. Globally, data-related roles are expected to grow by 36% through 2031.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>AI Orchestration Skills:</b>
+                                    <p style="margin-left:2%">
+                                        While AI automates routine tasks like manual data cleaning, it cannot replace strategic decision-making. 2026 marks the rise of "Data Analyst 2.0," professionals who lead specialized teams using AI tools (e.g., Power BI Copilot) to generate higher-value insights.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Non-Technical Friendly Entry:</b>
+                                    <p style="margin-left:2%">
+                                        It remains one of the few high-paying IT fields that does not require heavy coding or a CS degree. Career switchers can become job-ready in 3–6 months with foundational knowledge of logic, business thinking, and core tools.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Competitive Salary Growth:</b>
+                                    <p style="margin-left:2%">
+                                        Salaries continue to rise due to a significant skill gap. In 2026, freshers in India can expect ₹4L–₹7L LPA, while senior roles with over 5 years of experience can command ₹18L to ₹30L+ LPA.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>
+                                        In-Demand Specialized Roles for 2026
+                                    </b> :
+                                    <ul>
+                                        <li>
+                                            <b>AI/LLM Analyst:</b>
+                                            <p style="margin-left:2%">
+                                                Specializes in interpreting AI-generated models and fine-tuning prompts for business intelligence.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Healthcare/BioTech Analyst:</b>
+                                            <p style="margin-left:2%">
+                                                Focuses on disease prediction and personalized treatment plans, one of the fastest-growing sectors in 2026.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Sustainability Analyst:</b>
+                                            <p style="margin-left:2%">
+                                                Professionals who bridge the gap between user behavior data and business growth strategies.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>AI Ethicist / Governance:</b>
+                                            <p style="margin-left:2%">
+                                                Leverages data for renewable energy and ESG (Environmental, Social, and Governance) reporting.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Product Analytics Manager:</b>
+                                            <p style="margin-left:2%">
+                                                Directs data-driven growth strategies for startups and digital platforms.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+
+                        </p>
+
+                        <br />
+
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            In 2025 and 2026, data analytics courses are evolving to bridge the gap between traditional data management and AI-integrated workflows. The key highlights of these programs typically include a combination of technical mastery, hands-on project work, and specialized AI training.
+                        </p>
+                        <ul>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Core Technical Curriculum
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Modern courses focus on a "foundational four" toolset essential for professional readiness
+                                    <ul>
+                                        <li>
+                                            <b>Excel (Basic & Advanced):</b>
+                                            <p style="margin-left:2%">
+                                                Vectors, matrices, eigenvalues, and Singular Value Decomposition (SVD).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>SQL (Mandatory):</b>
+                                            <p style="margin-left:2%">
+                                                Mastering database querying, complex joins, subqueries, and window functions.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Python/R:</b>
+                                            <p style="margin-left:2%">
+                                                Learning programming specifically for data manipulation (using libraries like Pandas and NumPy) and statistical modeling.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Visualization Tools:</b>
+                                            <p style="margin-left:2%">
+                                                Hands-on training in <b>Tableau</b> or <b>Power BI</b> to build interactive business dashboards and practice data storytelling.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    AI and Emerging Tech Integration
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                    Reflecting 2026 trends, top-tier courses now include "Data Analyst 2.0" skills:
+                                    <ul>
+                                        <li>
+                                            <b>Generative AI for Analytics:</b>
+                                            <p style="margin-left:2%">
+                                                Using tools like ChatGPT or Power BI Copilot to automate data cleaning, write complex SQL queries, and generate insights.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Machine Learning Basics:</b>
+                                            <p style="margin-left:2%">
+                                                Introduction to predictive modeling, clustering, and regression to move from descriptive to predictive analysis.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Big Data & Cloud:</b>
+                                            <p style="margin-left:2%">
+                                                Exposure to cloud environments like AWS or Azure and big data frameworks like Hadoop or Spark.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Practical & Career-Oriented Features
+
+                                </b> :
+                                <p style="margin-left:2%">
+                                    To ensure job readiness, courses prioritize application over theory:
+
+                                    <ul>
+                                        <li>
+                                            <b>Capstone Projects:</b>
+                                            <p style="margin-left:2%">
+                                                Building a portfolio with 3–5 real-world projects, such as Sales Performance Analysis, Customer Churn Prediction, or Marketing ROI Dashboards.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Soft Skills & Storytelling:</b>
+                                            <p style="margin-left:2%">
+                                                Training on how to translate complex technical findings into actionable business recommendations for non-technical stakeholders.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Placement Support:</b>
+                                            <p style="margin-left:2%">
+                                                Many institutes offer unlimited mock interviews, resume building, and access to a network of hiring partners
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+
+                        </ul>
+
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+                            <p>
+                                In 2025 and 2026, data analytics has become one of the most accessible high-growth career fields. Because it prioritizes logic and business understanding over heavy coding, it is open to a wide range of individuals across different educational and professional backgrounds.
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Any Degree Holder</b> :
+                                        <p style="margin-left:2%">
+                                            While a background in Mathematics, Statistics, Computer Science, or Economics is often preferred, graduates from <b> Commerce (b.com), Arts (BA),</b>  and <b>Science (B.Sc)</b> streams are eligible for most courses and roles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Final Year Students</b> :
+                                        <p style="margin-left:2%">
+                                            Many institutes allow students in their final year of graduation to enroll in certification programs to become job-ready by the time they graduate
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>12th Pass Candidates</b> :
+                                        <p style="margin-left:2%">
+                                            You can begin your journey immediately after school by pursuing short-term certifications or diplomas.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Industry Experts</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals from <b>Marketing, Finance, Healthcare,</b> or <b>HR</b> can transition by leveraging their "domain knowledge"—knowing the specific business problems their data needs to solve.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Management Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            MBA graduates often move into Business Intelligence (BI) or Analytics Manager roles where the focus is more on decision-making than backend coding.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Age Flexibility</b> :
+                                        <p style="margin-left:2%">
+                                            The field is welcoming to career switchers in their 30s and 40s, as their prior professional experience is a valuable asset in interpreting business data.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals in finance, healthcare, or retail can use domain expertise alongside new data skills to move into specialized analytics roles.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>The "Non-Coder" or Beginner</b> :
+                                        <p style="margin-left:2%">
+                                            <b>No Prior Coding Experience:</b>
+                                            <span>You do not need to be a programmer to start. Most entry-level data analytics courses teach essential tools like SQL and Python from scratch.</span>
+                                        </p>
+                                        <p style="margin-left:2%">
+                                            <b>Low-Code/No-Code Enthusiasts:</b>
+                                            <span>Those who prefer visual tools can focus on Excel, Tableau, or Power BI, which rely more on "drag-and-drop" interfaces and logical formulas than complex scripts. </span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Data Analytics Career Path
+                            </h5>
+                            The data analytics career path in 2025 and 2026 offers a highly structured yet flexible progression from technical execution to high-level strategic leadership. Driven by nearly 27% annual growth in the industry, this path is increasingly welcoming to professionals from diverse backgrounds who master core technical tools like SQL, Python, and data visualization.
+                            <br />
+                            <br />
+                            <ul>
+                                <li>
+
+                                    <h6 style="color:orange"> Entry-Level (0–2 Years)</h6>
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Junior Analyst, Reporting Analyst
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Data cleaning, basic SQL queries, building simple reports
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹4L – ₹7L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Mid-Level (2–5 Years)
+                                    </h6>
+                                    At this stage, you transition from executing tasks to owning end-to-end projects.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Data Analyst, BI Analyst
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                End-to-end analysis, business insights, advanced dashboards
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹8L – ₹15L LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Senior-Level (5+ Years)
+                                    </h6>
+                                    Senior roles focus on leadership, strategy, and mentoring.
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Senior Analyst, Analytics Engineer
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Mentorship, complex data pipelines, A/B testing, automation
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹18L – ₹28L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <h6 style="color:orange">
+                                        Leadership (8+ yrs)
+                                    </h6>
+
+
+                                    <ul>
+                                        <li>
+                                            <b>Common Roles</b>:
+                                            <p style="margin-left:2%">
+                                                Analytics Manager, Director, CDO
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Tasks</b>:
+                                            <p style="margin-left:2%">
+                                                Team strategy, data governance, long-term business goals
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Salary Range (India)</b>:
+                                            <p style="margin-left:2%">
+                                                ₹30L – ₹70L+ LPA
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+        </div>
     </div>
 </div>
-
