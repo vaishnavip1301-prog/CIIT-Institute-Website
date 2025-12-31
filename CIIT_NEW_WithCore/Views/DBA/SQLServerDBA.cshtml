@@ -1,0 +1,729 @@
+﻿@{
+    ViewData["Title"] = "Data Science";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Get Job-Ready with  Industry-Leading Oracle DBA training
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's SQL Server Database Administrator (DBA) courses are designed to transition students from basic SQL knowledge to expert-level server management.In 2025 and 2026, the SQL Server DBA career path has transitioned from a purely administrative role into a strategic position blending Cloud Architecture, Automation (DevOps), and AI Operations.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 2 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        The future scope for a SQL Server Database Administrator (DBA) course is exceptionally strong through 2030, driven by a global transition toward hybrid-cloud environments and the integration of Artificial Intelligence (AI) into database operations.
+                    </p>
+
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        What are the Benefits of Oracle DBA Training
+                    </h5>
+                    <p>
+                        In 2026, SQL Server DBA training offers critical advantages for both individual career growth and organizational stability. As companies increasingly rely on data for AI and real-time analytics, these programs provide the specialized skills needed to manage complex modern environments.
+                    </p>
+                    <p>
+
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>High Market Demand</b> :
+                                <p style="margin-left:2%">
+                                    SQL Server remains a standard language for relational databases across industries like finance, healthcare, and e-commerce, ensuring a steady demand for skilled administrators through 2033.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Increased Earning Potential</b> :
+                                <p style="margin-left:2%">
+                                    Certified DBAs in India typically earn an average annual salary ranging from <b>₹6.8 Lakhs</b> to <b>₹7.5 Lakhs</b>, with senior or specialized roles (like Azure SQL DBA) reaching up to <b>₹15–₹25 Lakhs</b>.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Career Advancement</b> :
+                                <p style="margin-left:2%">
+                                    Training opens doors to prestigious roles beyond standard administration, including <b>Database Architect, Data Engineer, and Cloud Database Administrator</b>.
+                                </p>
+                            </li>
+                            <li>
+
+
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>AI Integration</b> :
+                                <p style="margin-left:2%">
+                                    New 2025 curricula include training on vector data types and vector search to support AI and Large Language Model (LLM) applications within SQL Server.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Automation</b> :
+                                <p style="margin-left:2%">
+                                    Training equips DBAs with the ability to use <b>PowerShell</b> and <b>AI-powered</b> tools to automate routine maintenance, reducing human error and freeing up time for strategic tasks.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Performance Optimization</b> :
+                                <p style="margin-left:2%">
+                                    Trained DBAs can perform deep query tuning, index management, and resource allocation to ensure systems operate at peak speed.
+                                </p>
+                            </li>
+                             
+                        </ul>
+                    </p>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Outcomes of Sql Server DBA training
+                                    </span>
+                                </h5>
+                                A SQL Server DBA course offers significant career benefits, including high demand, better salaries, and clear growth paths, by providing crucial skills in installation, security, performance tuning, backup/recovery, and high availability, validating expertise with certifications, and offering hands-on experience for managing complex database environments across industries.
+                            </div>
+                            <h6 class="card-title" style="color:orange;">Career Advancement</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Opens doors to high-demand roles in IT, finance, healthcare, and e-commerce with attractive salary potential.
+                            </p>
+                            <h6 class="card-title" style="color:orange;">In-Depth Expertise</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Develops comprehensive knowledge in database management, including installation, maintenance, security, and troubleshooting.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Performance Optimization</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Teaches query tuning, indexing, and monitoring to ensure efficient database performance.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Data Security & Recovery</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Covers implementing security best practices and mastering backup, restore, and disaster recovery strategies.
+                            </p>
+                            <h6 class="card-title" style="color:orange">High Availability</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Provides skills to configure and manage high-availability and disaster recovery (HA/DR) solutions.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Hands-On Experience</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Offers practical skills through labs and real-world scenarios, essential for job readiness.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Cloud Skills</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Prepares you to work with modern, cloud-based database solutions, including Microsoft Azure.
+                            </p>
+                            <h6 class="card-title" style="color:orange">Networking & Support</h6>
+                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                                Connects you with peers and experts, often with ongoing mentorship and career support.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Sql Server DBA in 2026?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, the SQL Server Database Administrator (DBA) role will transition from a traditional "custodian" to a strategic "orchestrator," driven by the integration of AI, hybrid cloud dominance, and a significant talent shortage
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>SQL Server 2026 Features</b> :
+
+                                    <p style="margin-left:2%">
+                                        Modern DBAs must master new functionalities like vector search, which allows them to manipulate AI embeddings directly within queries for applications such as retrieval-augmented generation (RAG).
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>AI-Powered Automation:</b>
+                                    <p style="margin-left:2%">
+                                        Tools like Microsoft Copilot now assist in generating T-SQL for query optimization and index fragmentation estimation, shifting the DBA's focus from manual scripting to strategic oversight.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Predictive Maintenance:</b>
+                                    <p style="margin-left:2%">
+                                        DBAs are increasingly using AI to proactively monitor Always On clusters, potentially reducing downtime by up to 40% by predicting failures before they occur.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>Job Security:</b>
+                                    <p style="margin-left:2%">
+                                        DBA jobs are projected to grow faster than the average for all occupations, with specific high demand in mission-critical sectors like finance, healthcare, and government.
+                                    </p>
+                                </li>
+                                <li>
+                                    <b>High Demand:</b>
+                                    <p style="margin-left:2%">
+                                        The demand for SQL Server DBAs is projected to grow by 18–22% through 2030, significantly outpacing the general IT growth rate.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <b>Earning Potential:</b>
+                                    <p style="margin-left:2%">
+                                        In 2026, Sql Server DBAs remain among the highest-paid database professionals. In India, leadership-level salaries can exceed ₹40,00,000+, while the median pay in the U.S. is approximately $144,500.
+                                    </p>
+                                </li>
+
+
+
+
+
+
+                            </ul>
+
+                        </p>
+
+                        <br />
+
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+                        <p>
+                            A comprehensive SQL Server Database Administrator (DBA) course for 2025–2026 covers on-premises administration, performance optimization, and modern AI and cloud integration.
+                        </p>
+                        <ul>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Introduction & Architecture
+
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>SQL Server Ecosystem:</b>
+                                            <p style="margin-left:2%">
+                                                Evolution of SQL Server (2012 to 2025 RTM), editions, and instance types.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Engine Architecture:</b>
+                                            <p style="margin-left:2%">
+                                                Relational vs. storage engine, buffer pool, and query processing lifecycle.
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <b>Installation:</b>
+                                            <p style="margin-left:2%">
+                                                Standalone and named instances, post-installation best practices, and memory/port configuration
+                                            </p>
+                                        </li>
+                                        
+                                    </ul>
+                                </p>
+                            </li>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Core Database Management
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>Storage Internals:</b>
+                                            <p style="margin-left:2%">
+                                                Pages, extents, and handling large databases (VLDB); managing system databases (Master, TempDB, MSDB).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Data Protection:</b>
+                                            <p style="margin-left:2%">
+                                                Backup types (Full, Differential, Transaction Log), recovery models (Full, Simple, Bulk Logged), and point-in-time recovery.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Security:</b>
+                                            <p style="margin-left:2%">
+                                                Authentication modes, Orphan user resolution, Transparent Data Encryption (TDE), and Row-Level Security (RLS).
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    High Availability & Disaster Recovery (HADR)
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>Always On Availability Groups:</b>
+                                            <p style="margin-left:2%">
+                                                Primary HADR solution for mission-critical apps, including setup and failover testing.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Alternative Solutions:</b>
+                                            <p style="margin-left:2%">
+                                                Log Shipping, Database Mirroring (deprecated but often taught for legacy), and Failover Clustering.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Alternative Replication:</b>
+                                            <p style="margin-left:2%">
+                                                Snapshot, Transactional, and Merge replication for distributed data.
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Performance Tuning & Monitoring
+
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>Query Optimization:</b>
+                                            <p style="margin-left:2%">
+                                                Execution plans, Query Store, and using Dynamic Management Views (DMVs) for bottleneck identification.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Index Management:</b>
+                                            <p style="margin-left:2%">
+                                                Clustered, Non-clustered, and Columnstore indexes; rebuilding vs. reorganizing to fix fragmentation.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Locking & Concurrency:</b>
+                                            <p style="margin-left:2%">
+                                                Identifying and resolving blockings, deadlocks, and isolation level issues.
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Modern Innovations (2025–2026 Focus)
+
+
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>AI Integration:</b>
+                                            <p style="margin-left:2%">
+                                                Execution plans, Query Store, and using Dynamic Management Views (DMVs) for bottleneck identification.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Cloud Hybridity:</b>
+                                            <p style="margin-left:2%">
+                                                Migrating on-premises databases to Azure SQL using the Data Migration Assistant (DMA) and managing Azure SQL Managed Instances
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Intelligent Database:</b>
+                                            <p style="margin-left:2%">
+                                                Using AI-based performance tuning and semantic search within the SQL engine.
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Automation & Troubleshooting
+                                </b> :
+                                <p style="margin-left:2%">
+
+                                    <ul>
+                                        <li>
+                                            <b>Maintenance Plans:</b>
+                                            <p style="margin-left:2%">
+                                                Automated scheduling for backups, index rebuilds, and integrity checks.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Agent & PowerShell:</b>
+                                            <p style="margin-left:2%">
+                                                Implementing SQL Server Agent jobs and using PowerShell for large-scale administrative automation.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Emergency DBA Tasks:</b>
+                                            <p style="margin-left:2%">
+                                                Rebuilding system databases, resolving "Suspect" mode, and advanced troubleshooting using the DAC
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+                            <p>
+                                The SQL Server DBA (Database Administrator) course is designed for a broad audience, ranging from absolute beginners to experienced IT professionals. In 2025, the role has expanded to include cloud and AI-driven data management, making it accessible to those with diverse technical backgrounds.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Students & Recent Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with a degree in Computer Science, Information Technology, Engineering, or Mathematics are typical candidates.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-CS Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Many programs are designed to teach from scratch, meaning students from other streams can enter the field if they are willing to learn database fundamentals.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Career Changers</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals from non-technical fields who wish to pivot into the high-demand IT sector.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Software Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Programmers who want to understand the backend better or move into a specialized data role to improve application performance.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>System Administrators</b> :
+                                        <p style="margin-left:2%">
+                                            "Sysadmins" often manage the underlying servers and can upgrade their careers by learning to administer the databases running on those servers.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Manual & Software Testers</b> :
+                                        <p style="margin-left:2%">
+                                            Professionals who already use basic SQL for data validation and want to transition into core administration
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Data Analysts & BI Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Those who want to move beyond data reporting to managing the entire data lifecycle, including security and optimization.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Project Managers</b> :
+                                        <p style="margin-left:2%">
+                                            Senior leaders needing technical oversight to better manage database-centric projects and budgets.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Entrepreneurs</b> :
+                                        <p style="margin-left:2%">
+                                            Business owners who manage significant data assets and want to leverage AI and cloud scaling for their ventures.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Sql Server DBA Career Path
+                            </h5>
+                            In 2025 and 2026, the SQL Server DBA career path has transitioned from a purely administrative role into a strategic position blending Cloud Architecture, Automation (DevOps), and AI Operations.
+
+                            <br />
+                            <br />
+                            <ul>
+                                <li>
+                                    <h6 style="color:orange">Junior SQL DBA / Associate (0–3 Years)</h6>
+                                    <ul>
+                                        <li>
+                                            <b>Primary Tasks</b>
+                                            <p>
+                                                Installing SQL Server instances, managing user permissions, performing basic backups/restores, and monitoring server health.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Skills</b>
+                                            <p>
+                                                T-SQL fundamentals, SQL Server Management Studio (SSMS), and basic troubleshooting.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Average Salary (India)</b>
+                                            <p>
+                                                ₹4.5 LPA – ₹7.5 LPA.
+                                            </p>
+                                        </li>
+                                         
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h6 style="color:orange">Production / Senior DBA (3–7 Years)</h6>
+                                    <ul>
+                                        <li>
+                                            <b>Primary Tasks</b>
+                                            <p>
+                                                Managing Always On Availability Groups, performance tuning (indexing and query optimization), and disaster recovery planning.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Skills</b>
+                                            <p>
+                                                Automating patching and maintenance using PowerShell and Azure Automation.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Average Salary (India)</b>
+                                            <p>
+                                                ₹12 LPA – ₹18 LPA.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h6 style="color:orange">Cloud DBA / Database Engineer (5–10 Years)</h6>
+                                    <ul>
+                                        <li>
+                                            <b>Primary Tasks</b>
+                                            <p>
+                                                Migrating on-premises databases to Azure SQL Database or Managed Instances. Managing hybrid-cloud data fleets and cost optimization (FinOps).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Skills</b>
+                                            <p>
+                                                Utilizing Microsoft Copilot for database monitoring and implementing Vector Search capabilities for AI-driven applications.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Average Salary (India)</b>
+                                            <p>
+                                                ₹18 LPA – ₹28 LPA.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h6 style="color:orange">Cloud DBA / Database Engineer (5–10 Years)</h6>
+                                    <ul>
+                                        <li>
+                                            <b>Primary Tasks</b>
+                                            <p>
+                                                Designing the entire data infrastructure for high scalability and security. Setting corporate data governance and zero-trust security policies.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Key Skills</b>
+                                            <p>
+                                                Leading digital transformation projects and moving legacy systems to modern, cloud-native architectures.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Average Salary (India)</b>
+                                            <p>
+                                                ₹30 LPA – ₹55+ LPA.
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+        </div>
+    </div>
+</div>
