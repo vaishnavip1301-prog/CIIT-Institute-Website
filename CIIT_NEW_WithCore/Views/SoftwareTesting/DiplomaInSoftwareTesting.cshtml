@@ -1,0 +1,736 @@
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest Python on job training & get placed as a Python Full Stack Developer
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Diploma in Software Testing is a focused program teaching manual/automation skills (Selenium, Java), SDLC/STLC concepts, bug tracking (JIRA), database testing (SQL), and Agile/DevOps, preparing individuals for QA roles by mastering test design, execution, and quality assurance within the software development lifecycle, with options for online/in-person learning.
+                    </p>
+                    <p style="text-align:center;font-size:24px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        A Diploma in Software Testing is a professional credential designed to provide foundational and advanced skills in quality assurance (QA). These programs typically cover both manual and automated testing, preparing students for roles such as QA Analyst, Automation Engineer, or Test Lead
+                    </p>
+                     
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Outcomes of Diploma in Software Testing Training</h5>
+                    <p>
+                        The outcome of a Diploma in Software Testing in 2026 is the mastery of modern quality engineering skills, significantly enhanced employability, and a clear path to high-paying specialized roles.
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Professional Competencies Gained
+                                </b>
+                                <p style="margin-left:2%">
+                                <ul>
+
+                              
+                                    <li>
+                                        <b>
+                                            Modern Skill Stack
+                                        </b> :
+                                        <p style="margin-left:2%">
+                                            Beyond traditional testing, you'll gain expertise in API testing (using Postman/REST Assured), SQL for database validation, and Git/DevOps for CI/CD integration.
+                                        </p>
+                                    </li>
+                                    <li>
+                                      <b>
+                                            AI Integration
+                                        </b> :
+                                        <p style="margin-left:2%">
+                                            You will learn to use AI-assisted testing tools for generating test cases, identifying defect patterns, and maintaining "self-healing" automation scripts.
+                                        </p>
+                                    </li>
+                                    <li>
+                                     <b>
+                                            Strategic Thinking
+                                        </b> :
+                                        <p style="margin-left:2%">
+                                            Training equips you with "Product Thinking," allowing you to identify risks early in the design phase rather than just finding bugs at the end.
+                                        </p>
+                                    </li>
+
+                               
+                                </ul>
+                                </p>
+                            </li>
+
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Career Progression & Job Roles
+                                </b>
+
+                                <p style="margin-left:2%">
+                                    Graduates are eligible for a variety of roles in the 2026 tech market:
+                                    <ul>
+
+
+                                        <li>
+                                            <b>
+                                                Entry-Level
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                Manual QA Tester, QA Intern, or Junior Software Tester.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>
+                                                Mid-Level Roles
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                Automation Test Engineer, API Specialist, or SDET (Software Development Engineer in Test).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>
+                                                Leadership Roles
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                QA Lead, Test Manager, or Test Architect
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>
+                                    Strategic Advantages
+                                </b>
+
+                                <p style="margin-left:2%">
+                                    <ul>
+
+
+                                        <li>
+                                            <b>
+                                                Globally Recognized Certification
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                Our Testing Diploma course prepare you for ISTQB (Foundation & Advanced), which remains the gold standard for global employability in 2026.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>
+                                                Portfolio Ready
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                You will emerge with a GitHub portfolio featuring real-world projects (e.g., e-commerce automation, API validation), which is now more critical than a degree for landing top-tier jobs.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>
+                                                Future-Proofing
+                                            </b> :
+                                            <p style="margin-left:2%">
+                                                By learning to test AI models and cloud-native systems, you remain relevant in a market where 70% of enterprises are adopting AI-powered QA by 2025/2026.
+                                            </p>
+                                        </li>
+
+
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in Python Technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the  Benefits of Diploma in Software Testing Training?
+                                    </span>
+                                </h5>
+                                <p>
+                                    In 2026, a Diploma in Software Testing provides high-value benefits by shifting a professional's role from a basic "bug finder" to a high-demand Quality Engineer capable of managing AI-driven and cloud-native systems.
+                                </p>
+                            </div>
+                            <h6 class="card-title" style="color:orange;"> Rapid Career Entry & Future-Proofing</h6>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Accessibility</b> It remains one of the most accessible entry points into the tech industry, often not requiring a formal Computer Science degree.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>AI Integration</b> Modern 2026 curricula focus on AI-first quality, teaching you to use AI agents for test case generation and to test complex AI/LLM features like chatbots and recommendation engines.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Stability</b> As digital transformation deepens, testers are essential across all sectors, including fintech, healthcare, and e-commerce, ensuring strong job security.
+                            </p>
+                           
+
+                            <h6 class="card-title" style="color:orange">
+                                Mastery of High-Demand Technical Skills
+                            </h6>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Automation Proficiency</b>: Training provides hands-on experience with industry-standard tools like Selenium, Playwright, and Cypress, allowing you to automate repetitive tasks.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Specialized Domain Knowledge</b>: Graduates gain expertise in mandatory 2026 skills like API testing (using Postman), Security Testing (OWASP basics), and Mobile Testing.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>DevOps Integration</b>:  You learn to integrate testing into CI/CD pipelines, making you indispensable for teams aiming for rapid release cycles.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">
+                                Enhanced Employability & Global Recognition
+                            </h6>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Industry Credentials</b>: Our Diploma prepare you for globally recognized certifications like ISTQB, which employers use to verify a candidate's structured knowledge.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Portfolio Building</b>: Most programs focus on project-based learning, helping you build a GitHub portfolio that demonstrates real-world competence to recruiters.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Competitive Edge</b>:  Certified testers are often placed in high-demand roles significantly faster (estimated 90% placement rate) compared to non-certified peers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">
+                                Financial & Professional Growth
+                            </h6>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Salary Potential</b>:  In 2026, testers with automation and niche skills (like AI or Cloud) command significantly higher packages.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Remote & Freelance Opportunities</b>: The skill set is ideal for remote work, with experienced testers on platforms like Upwork earning between $20–$50 per hour.
+                            </p>
+                            <p style="text-align:left;color:black;padding-left:2%" class="mb-3">
+                                <b>Clear Career Path</b>:  Training paves the way for progression from Junior QA to advanced roles like <b>Test Architect, QA Lead, or DevOps Engineer</b>.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why learn Diploma in Software Testing Training?</h5>
+                        <br />
+
+                        <p>
+                            In 2026, a Diploma in Software Testing is a highly strategic choice because it serves as an accelerated, skill-focused gateway into the tech industry. It bridges the gap between traditional education and the high-demand requirements of modern "AI-first" software companies.
+
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b> Rapid Career Transition & Accessibility</b> :
+                                    <p style="margin-left:2%">
+                                        <b>Low Barrier to Entry</b>: It is one of the most accessible entry points into IT, often open to freshers, graduates from non-technical backgrounds, or professionals switching careers.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Skill vs. Degree</b>: Employers in 2026 increasingly prioritize verifiable expertise (portfolios and certifications) over traditional four-year degrees.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Short Duration</b>: Most diploma programs can be completed in <b>2 to 6 months</b> allowing for a faster transition into the workforce compared to traditional degrees.
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Mastery of 2026 High-Demand Skills</b> :
+                                    <p style="margin-left:2%">
+                                        <b>AI-Assisted Testing</b>: You will learn to use AI agents to generate test cases, analyze logs, and maintain self-healing automation scripts.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Automation Engineering</b>: Mastery of tools like <b>Selenium, Playwright, and Cypress</b> is essential, as 75% of companies now prefer testers who can automate regression suites.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>API & Mobile Testing</b>: With 95% of companies expecting API knowledge, a diploma ensures you are proficient in tools like <b>Postman</b> and <b>Appium</b> for mobile-first environments.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b> Enhanced Financial & Career Growth</b> :
+                                    <p style="margin-left:2%">
+                                        <b>Competitive Salaries</b>: Testers with automation and specialized skills often earn 30–50% more than manual testers.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Clear Progression</b>: The training prepares you for a direct path from Junior QA to high-value roles like <b>Test Architect, QA Lead</b>, or <b>DevOps Engineer</b>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b> Global Job Security & Flexibility</b> :
+                                    <p style="margin-left:2%">
+                                        <b>Recession-Proof Demand</b>: Every digital product requires testing before release, ensuring steady demand across diverse industries like fintech, healthcare, and e-commerce.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Remote Work Potential</b>:  Software testing is uniquely suited for remote and freelance work, with skilled testers on platforms like Upwork earning between <b>$20</b> and <b>$50</b> per hour.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Recognized Credibility</b>: Our Diplomas often align with global standards like ISTQB, which acts as an international passport for testing roles in the U.S., Europe, and Asia.
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </p>
+                        
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights</h5>
+                        <br />
+                        In 2026, a comprehensive Diploma in Software Testing syllabus is structured to transition students from manual testing fundamentals to advanced AI-driven automation and DevOps integration.
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Manual Testing Fundamentals </b>
+                                <ul>
+                                    <li>
+
+                                            <b>Concepts</b> :
+                                        <p style="margin-left:2%">
+                                                SDLC (Waterfall, V-Model, Agile/Scrum), STLC, and bug life cycle.
+                                        </p>
+                                    </li>
+                                    <li>
+
+                                        <b>Test Design</b> :
+                                        <p style="margin-left:2%">
+                                                Boundary Value Analysis (BVA), Equivalence Partitioning (EP), and decision tables.
+                                        </p>
+                                    </li>
+                                        <li>
+
+                                            <b>Execution</b> :
+                                            <p style="margin-left:2%">
+                                                Functional, unit, integration, system, regression, and user acceptance testing (UAT)
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Documentation</b> :
+                                            <p style="margin-left:2%">
+                                                Preparing test plans, strategy documents, test cases, and requirement traceability matrices (RTM)
+                                            </p>
+                                        </li>
+                                </ul>
+                                </p>
+
+                            </li>
+                         
+
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>
+                                        Automation Testing (Selenium & Beyond)
+                                    </b>
+                                    <ul>
+                                        <li>
+
+                                            <b>Selenium Suite</b> :
+                                            <p style="margin-left:2%">
+                                                Architecture, WebDriver, Grid, and IDE.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Frameworks</b> :
+                                            <p style="margin-left:2%">
+                                                Developing Page Object Model (POM), Data-Driven, Keyword-Driven, and Hybrid frameworks.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Next-Gen Tools</b> :
+                                            <p style="margin-left:2%">
+                                                Introduction to Playwright and Cypress for faster web automation.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Mobile Testing</b> :
+                                            <p style="margin-left:2%">
+                                                Fundamentals of Appium for Android and iOS application automation.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>
+                                        Technical Essentials (Programming & SQL)
+
+                                    </b>
+                                    <ul>
+                                        <li>
+
+                                            <b>Languages</b> :
+                                            <p style="margin-left:2%">
+                                                Core Java (OOPs, Exception Handling, Collections) or Python basics for scripting.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Database Testing</b> :
+                                            <p style="margin-left:2%">
+                                                SQL commands (DDL, DML), joins, subqueries, and validating data integrity.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>Web Technologies</b> :
+                                            <p style="margin-left:2%">
+                                                Navigating the DOM using HTML, CSS, and advanced XPath or CSS selectors.
+                                            </p>
+                                        </li>
+                                        
+                                    </ul>
+                                </p>
+
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>
+                                        Specialized Testing & Modern Trends (2026)
+                                    </b>
+                                    <ul>
+                                        <li>
+
+                                            <b>API Testing</b> :
+                                            <p style="margin-left:2%">
+                                                Manual and automated testing using Postman, REST Assured, and Swagger.
+                                            </p>
+                                        </li>
+                                        <li>
+
+                                            <b>AI in Testing</b> :
+                                            <p style="margin-left:2%">
+                                                Using Generative AI for test case generation, self-healing scripts, and log analysis.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Performance & Security</b> :
+                                            <p style="margin-left:2%">
+                                                Load testing with JMeter and basic security compliance (OWASP).
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>DevOps & CI/CD</b> :
+                                            <p style="margin-left:2%">
+                                                Integrating tests with Jenkins, Docker, and Kubernetes; version control with Git/GitHub.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>
+                                        Project & Professional Development
+                                    </b>
+                                    <ul>
+                                        <li>
+                                            <b>Capstone Project</b> :
+                                            <p style="margin-left:2%">
+                                                Real-world application testing covering both manual and automated suites.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Certifications</b> :
+                                            <p style="margin-left:2%">
+                                                Preparation for ISTQB Foundation (CTFL) and specialized AI/Automation exams.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <b>Career Readiness</b> :
+                                            <p style="margin-left:2%">
+                                                Resume building, mock interviews, and creating a GitHub portfolio.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                Our Python full stack development course is suitable for a wide range of individuals, from beginners with no prior coding experience to experienced professionals looking to upskill or make a career change.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Aspiring Developers and Fresh Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Students from various academic backgrounds (B.E./B.Tech, BCA, B.Sc. IT, B.Com, Arts, etc.) can enroll. Many programs are designed for absolute beginners and require only basic computer literacy and logical thinking skills to start.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Working Professionals Seeking a Career Change</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals currently working in non-IT fields who are interested in the tech industry can transition into a development role by acquiring the necessary skills.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Existing Programmers/Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Front-end or back-end developers can take this course to round out their skill set and become more versatile "full stack" professionals, which enhances their value in the job market and opens up leadership opportunities.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i>   <b>Anyone Passionate About Coding</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with a strong interest in building applications from start to finish, problem-solving, and continuous learning are well-suited for this demanding but rewarding field.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Python Full Stack Developer Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                The career path for a Python full stack developer offers significant growth potential, typically progressing from entry-level coding roles to senior technical leadership or management positions.
+                            </p>
+                            <p>
+                                The career path generally follows a structured ladder, with increasing responsibilities and skill requirements at each stage:
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%">Stage </th>
+                                        <th style="width:10%">Years of Experience </th>
+                                        <th style="width:40%">Example Roles </th>
+                                        <th style="width:40%">Key Focus & Skills </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entry Level</td>
+                                        <td>0–2 years</td>
+                                        <td>Junior Full Stack Developer, Associate Developer, Developer Intern, Entry-Level Software Engineer</td>
+                                        <td>Focuses on learning the codebase, fixing bugs, and developing small features under mentorship. Key skills include core Python, HTML/CSS/JavaScript, version control (Git), and basic database interaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mid Level</td>
+                                        <td>3–5 years</td>
+                                        <td>Full Stack Developer, Software Engineer, Application Developer</td>
+                                        <td>Works independently on end-to-end features, participates in design and architecture, and collaborates with cross-functional teams. Expected to have proficiency in front-end frameworks like React or Angular, Python frameworks (DJango, ORM), and API development.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior Level</td>
+                                        <td>6+ years</td>
+                                        <td>Senior Full Stack Developer, Lead Developer/Tech Lead, Software Architect</td>
+                                        <td>Leads projects or sprint modules, designs scalable and robust systems, reviews peers' code, mentors junior developers, and makes key technology decisions. Expertise in microservices architecture, cloud platforms (AWS, Azure), and DevOps tools (Docker, Kubernetes) is crucial.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leadership/Executive</td>
+                                        <td>10+ years</td>
+                                        <td>Engineering Manager, Director of Engineering, VP of Technology, Chief Technology Officer (CTO)</td>
+                                        <td>Shifts from hands-on coding to strategic planning, people management, overseeing multiple teams, and aligning technological vision with business goals.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
