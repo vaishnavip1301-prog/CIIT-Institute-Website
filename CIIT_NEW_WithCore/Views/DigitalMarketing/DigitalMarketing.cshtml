@@ -1,0 +1,623 @@
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest Digital Marketing on job training & get placed as a Digital Marketer
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        In 2026, CIIT's  Digital Marketing training has shifted from basic channel management to mastering AI-integrated ecosystems and human-centric storytelling. 
+                        Modern training focuses on staying relevant in an environment where AI handles routine optimization, while humans drive creative strategy and ethical oversight.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        Our Digital Marketing course syllabus covers core areas like SEO, Social Media Marketing, Content Marketing, PPC (Pay-Per-Click), Email Marketing, and Web Analytics, alongside foundational topics such as introduction to digital channels, website basics (WordPress), keyword research, and strategy development, often including practical tools (Google Analytics, Ads, SEMrush) and emerging trends like AI
+                    </p>
+                    <p>
+
+                       We mainly focus on organic growth (SEO), paid acquisition (PPC), audience engagement (Social Media, Email), performance measurement (Analytics), and content creation, preparing learners for data-driven campaigns across various platforms.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Outcomes of the Digital Marketing Training</h5>
+                    <p>
+                        <ul>
+                           
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Salary Growth</b> :
+                                <p style="margin-left:2%">
+                                    Professionals with updated AI and data skills in 2026 typically see a 20%–30% higher starting salary than those with traditional training.
+                                    <ul>
+                                        <li>
+                                            <b>Fresher</b> : ₹3–₹6 LPA.
+                                        </li>
+                                        <li>
+                                            <b>Mid-Level (2–5 years)</b>: ₹6–₹14 LPA.
+                                        </li>
+                                        <li>
+                                            <b>Senior/Specialist</b>: ₹15–₹30+ LPA.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Skill-Based Advancement</b> :
+                                <p style="margin-left:2%">
+                                    A degree is often less critical than a portfolio of results. Professionals with specialized skills in AI Prompt Engineering, Predictive Analytics, and Generative Engine Optimization (GEO) earn 25–40% higher packages than generalists.
+                                </p>
+                            </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Future-Proofing</b> : 
+                                <p style="margin-left:2%">
+                                    By mastering Prompt Engineering, AI-driven SEO (AEO), and Predictive Analytics, graduates remain relevant as AI takes over manual execution tasks, allowing them to focus on high-level strategy and creative oversight
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Generative Engine Optimization (GEO)</b> :
+                                <p style="margin-left:2%">
+                                    Optimize brand visibility for AI-driven search summaries and conversational assistants, not just traditional Google rankings.
+                                </p></li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Performance Marketing</b> :  
+                                <p style="margin-left:2%">
+                                Master automated ad platforms like Meta Advantage+ and Google Ads AI Bidding to manage large budgets with high ROI.
+                    </p>
+                    </li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in Python Technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Digital Marketing?
+                                    </span>
+                                </h5>
+                                <p>
+                                    Digital marketing in 2026 has transitioned from an optional support tool to the primary engine for business survival and growth. Its benefits range from extreme cost efficiency to hyper-personalized customer engagement, largely driven by advancements in Artificial Intelligence (AI) and data analytics
+                                </p>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">Career and Entrepreneurial Growth</h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                The rapid expansion of the digital economy has created massive opportunities for individuals.
+                                <ul>
+                                    <li>
+                                        <b>High Demand</b>: By 2026, the industry is expected to generate over 20 million new global jobs.
+                                    </li>
+                                    <li>
+                                        <b>Flexibility</b>: The field offers diverse career paths (SEO, Paid Ads, Content Strategy) and prominent remote work or freelancing opportunities.
+                                    </li>
+                                    <li>
+                                        <b>Skill-First Entry</b>: Most roles prioritize practical skills and certifications over formal degrees, making it accessible to students and career-switchers
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <h6 class="card-title" style="color:orange;">Superior Cost Efficiency and Scalability</h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                Digital marketing is significantly more affordable than traditional media, allowing businesses of all sizes to compete on a level playing field.
+                                <ul>
+                                    <li>
+                                        <b> Low Entry Cost</b>: Campaigns can start with as little as ₹100/day on platforms like Facebook.
+                                    </li>
+                                    <li>
+                                        <b>Zero-Cost Organic Strategies</b>: Methods like SEO, organic social media, and content marketing require time and talent rather than high financial investment.
+                                    </li>
+                                    <li>
+                                        <b>Full Budget Control</b>: Marketers can pause, scale up, or adjust budgets in real-time based on campaign performance, preventing wasted spend.
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <h6 class="card-title" style="color:orange;">Hyper-Precision Targeting and Personalization </h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                In 2026, targeting has evolved from broad segments to "one-to-one" communication.
+                                <ul>
+                                    <li>
+                                        <b>Advanced Segmentation</b>: AI-driven tools analyze real-time behavior (browsing speed, purchase history, interests) to deliver unique messages to individual users.
+                                    </li>
+                                    <li>
+                                        <b>Higher Conversion Rates</b>: By delivering relevant content at the optimal time, digital marketing achieves lead-to-close rates nearly 6x higher than traditional methods (approximately 9.9% vs. 1.7%).
+                                    </li>
+                                    <li>
+                                        <b>Geographic Flexibility</b>: Small businesses can zero in on specific neighborhoods through local SEO or expand globally in minutes.
+                                    </li>
+                                </ul>
+                            </p>
+                            <h6 class="card-title" style="color:orange;">Real-Time Measurability and High ROI </h6>
+                            <p style="text-align:left;color:black;" class="mb-3">
+                                Digital marketing offers a "comprehensive dashboard" that provides 100% transparency on performance.
+                                <ul>
+                                    <li>
+                                        <b>Accurate ROI Tracking</b>: Every click, purchase, and ad-generated revenue point is trackable.
+                                    </li>
+                                    <li>
+                                        <b>Email Marketing</b>: Consistently delivers the highest returns, averaging $36–$42 for every $1 spent.
+                                    </li>
+                                    <li>
+                                        <b>Google Ads (PPC)</b>: Typically yields an average ROI of 200% ($2 for every $1 spent).
+                                    </li>
+                                    <li>
+                                        <b>SEO</b>: Offers the highest long-term returns (ratios between 5:1 to 10:1) due to compounding organic traffic.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Digital Marketing in 2026?</h5>
+                        <br />
+
+                        <p>
+                            Learn digital marketing in 2026 for high demand, strong career growth (especially with AI/data skills), job flexibility (freelance/remote), entrepreneurial success, and future-proof relevance as businesses increasingly go online, offering strong earning potential and easy entry for beginners. It's a necessity, not an option, for anyone wanting to succeed in the modern economy, allowing you to master skills in SEO, content, AI, and analytics.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Career & Job Market Benefits
+</b> :
+                                    <p style="margin-left:2%">
+                                        <b>High Demand & Security</b>: Businesses need skilled marketers to compete online, leading to growing job opportunities.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Future-Proof Skills</b>: With AI and data analytics integration, digital marketing skills remain relevant and valuable.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Strong Earning Potential</b>: Offers competitive salaries, with data/AI roles often commanding higher pay.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Flexibility</b>: Enables remote work, freelancing, or starting your own business.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Easy Entry</b>: Beginners can start quickly, focusing on skills rather than extensive experience.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Business & Entrepreneurial Advantages</b> :
+                                    <p style="margin-left:2%">
+                                        <b>Compete with Big Brands</b>: Level the playing field for small businesses.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Targeted & Cost-Effective Ads</b>: Reach specific audiences with tailored campaigns.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Data-Driven Decisions</b>: Use consumer data for better strategy and ROI.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Global Reach</b>: Expand your business worldwide with ease.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Evolving Landscape in 2026</b> :
+                                    <p style="margin-left:2%">
+                                        <b>AI Integration</b>: Focus on AI tools, automation, and machine learning for personalized experiences.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Data Analytics</b>: Master data to understand audiences and automate campaigns.
+                                    </p>
+                                    <p style="margin-left:2%">
+                                        <b>Content Strategy</b>: Create engaging content that converts across multiple platforms.
+                                    </p>
+                                </li>
+                                 
+                            </ul>
+
+                        </p>
+                        <p>
+                            In short, learning digital marketing in 2026 equips you with essential, high-demand skills for career growth, security, and entrepreneurial success in a rapidly digitizing world, especially if you embrace AI and data.
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Fundamentals of Digital Marketing: </b>
+                                <p style="margin-left:2%">
+                                    <b> Core Concepts</b>: Traditional vs. digital marketing, consumer decision journeys, and the POEM Framework (Paid, Owned, Earned Media).
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Market Research</b>: Understanding audience segmentation, value proposition creation, and competitor analysis
+                                </p>
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i><b>Search Engine Optimization (SEO): </b>
+                                <p style="margin-left:2%">
+                                    Keyword research, on-page/off-page SEO, technical SEO, algorithms, local SEO.
+                                </p>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Website Planning and Creation: </b>
+                                <p style="margin-left:2%">
+                                    <b>Platform Setup</b>: Building websites using Content Management Systems (CMS) like WordPress or Shopify.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Technical Essentials</b>: Domain and web hosting management, website architecture, and UI/UX design principles.
+                                </p>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>
+                                    Search Engine Optimization (SEO):
+                                </b>
+                                <p style="margin-left:2%">
+                                    <b>On-Page SEO</b>: Keyword research, meta tags, header tags, and content optimization.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Off-Page SEO</b>: Link building strategies, guest posting, and domain authority.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Technical SEO</b>: Site speed, mobile-friendliness, XML sitemaps, and robots.txt
+                                </p>
+
+
+
+
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Search Engine Marketing (SEM) & Paid Advertising: </b>
+                                <p style="margin-left:2%">
+                                    <b>Google Ads (PPC)</b>: Campaign types (Search, Display, Video, Shopping), bidding strategies, and Quality Score optimization.
+                                </p>
+                                 <p style="margin-left:2%">
+                                    <b>Social Media Advertising</b>: Managing paid campaigns via Meta Business Suite (Facebook/Instagram), LinkedIn Ads, and YouTube Ads.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Retargeting</b>: Setting up pixels and remarketing tags to re-engage past visitors
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>
+                                    Social Media Marketing (SMM):
+                                </b>
+                                <p style="margin-left:2%"> 
+                                    <b>Organic Strategy</b>: Content planning, branding, and community management on platforms like X, LinkedIn, and Instagram.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Viral Marketing</b>: Leveraging hashtags, reels, and short-form video strategies.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Content & Email Marketing: </b>
+                                <p style="margin-left:2%">
+                                    <b>Content Strategy</b>: Storytelling, blogging, and video script creation to drive engagement.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Email Campaigns</b>: List building, segmentation, automation/drip campaigns, and A/B testing.
+                                </p>
+
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>
+                                    Web Analytics and Reporting:
+                                </b>
+                                <p style="margin-left:2%">
+                                    <b>Google Analytics 4 (GA4)</b>: Tracking traffic sources, user behavior, and conversion goals.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Tools</b>: Using Google Search Console for indexing and Looker Studio for data visualization.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>E-commerce Marketing: </b>
+                                <p style="margin-left:2%">Platform sales (Amazon, Shopify), strategies. </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Advanced & Emerging Topics (2025-2026 Trends): </b>
+                                <p style="margin-left:2%">
+                                    <b>AI in Marketing</b>: Leveraging AI for content creation, personalization, and predictive analytics.
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>E-commerce & D2C</b>: Setting up online stores, Amazon advertising, and conversion rate optimization (CRO).
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Automation</b> Workflow automation using tools like HubSpot, Mailchimp, and Zapier
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Industry Standard Tools Covered: </b>
+                                 
+                                <p style="margin-left:2%">
+                                    <b>Ads/Social</b>: Google Ads, Meta Ads Manager, LinkedIn Insights
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Design/Content</b> Canva, Adobe Express
+                                </p>
+                                <p style="margin-left:2%">
+                                    <b>Analytics</b> Google Analytics 4, Google Tag Manager
+                                </p>
+                            </li>
+                        </ul>
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                Our Python full stack development course is suitable for a wide range of individuals, from beginners with no prior coding experience to experienced professionals looking to upskill or make a career change.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Aspiring Developers and Fresh Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Students from various academic backgrounds (B.E./B.Tech, BCA, B.Sc. IT, B.Com, Arts, etc.) can enroll. Many programs are designed for absolute beginners and require only basic computer literacy and logical thinking skills to start.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Working Professionals Seeking a Career Change</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals currently working in non-IT fields who are interested in the tech industry can transition into a development role by acquiring the necessary skills.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Existing Programmers/Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Front-end or back-end developers can take this course to round out their skill set and become more versatile "full stack" professionals, which enhances their value in the job market and opens up leadership opportunities.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i>   <b>Anyone Passionate About Coding</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with a strong interest in building applications from start to finish, problem-solving, and continuous learning are well-suited for this demanding but rewarding field.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                               Digital Marketing Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                The career path for digital marketing in 2026 is highly structured, offering diverse specializations and clear progression from entry-level execution to senior strategic leadership.
+                            </p>
+                            <p>
+                                The career path generally follows a structured ladder, with increasing responsibilities and skill requirements at each stage:
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%">Stage </th>
+                                        <th style="width:10%">Years of Experience </th>
+                                         
+                                        <th style="width:40%">Key Focus & Skills </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entry Level</td>
+                                        <td>0–2 years</td>
+                                        <td>Focuses on executing daily tasks under supervision. Common roles include Digital Marketing Intern, Assistant, or Executive.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mid Level</td>
+                                        <td>2–5 years</td>
+                                        <td>Professionals often choose a specialization and work more independently, owning specific campaigns and proving ROI.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior Level</td>
+                                        <td>5–10 years</td>
+                                        <td>Roles like Digital Marketing Manager or Senior Specialist involve leading teams, managing large budgets, and setting high-level channel strategies.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leadership/Executive</td>
+                                        <td>10+ years</td>
+                                        <td>Executive roles such as Director of Digital Marketing, VP of Marketing, or Chief Marketing Officer (CMO) focus on overall business growth and long-term brand vision. </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

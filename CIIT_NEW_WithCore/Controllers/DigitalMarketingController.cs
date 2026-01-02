@@ -4,8 +4,13 @@ namespace CIIT_NEW_WithCore.Controllers
 {
     public class DigitalMarketingController : Controller
     {
-        [Route("Digital-Marketing-Training-With-Live-Project")]
-        public IActionResult Index()
+        [Route("Diploma-In-Digital-Marketing-With-Live-Project")]
+        public IActionResult DigitalMarketing()
+        {
+            return View();
+        }
+        [Route("Graphic-Designing")]
+        public IActionResult GraphicsDesign()
         {
             return View();
         }

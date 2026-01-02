@@ -1,0 +1,566 @@
+﻿@{
+    ViewData["Title"] = "FullStackDevelopment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn Latest Python on job training & get placed as a Python Full Stack Developer
+                    </h4>
+
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        CIIT's Python Full Stack Development Training is ideal for both freshers and working professionals interested in building a career as a Python full stack developer.
+                    </p>
+                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</p>
+                    <p style="line-height: 1.7;margin-top:2%">
+                        The demand for Python full stack developers is high, particularly in enterprise environments (e.g., finance, healthcare, e-commerce) due to Python's stability, scalability, and robust ecosystem
+                    </p>
+                    <p>
+
+                        CIIT's A career in Python full stack development offers numerous benefits, primarily driven by the ability to work on all layers of a software application, from the front-end user interface to the back-end logic and databases. This comprehensive skill set makes developers highly versatile and valuable to employers.
+
+                    </p>
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        4 Months
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Outcomes of the Python Full Stack Training</h5>
+                    <p>
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Frontend Development</b> :
+                                <p style="margin-left:2%">Proficiency in core web technologies like HTML, CSS, and JavaScript, along with modern frameworks such as React or Angular, to create dynamic, responsive, and user-friendly interfaces.</p>
+                            </li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Backend Development</b> : <p style="margin-left:2%"> Expertise in Core and Advanced Python (OOP concepts, multithreading, exception handling) and server-side frameworks like DJango and FastApi Boot to build robust, scalable, and secure business logic and RESTful APIs</p></li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Database Management</b> :  <p style="margin-left:2%">Ability to design, manage, and optimize data storage solutions using both relational (e.g., MySQL, PostgreSQL, Oracle) and NoSQL (e.g., MongoDB) databases.</p></li>
+                            <li><i class="bi-star-fill" style="color:orange"></i> <b>Testing and Quality Assurance</b> :  <p style="margin-left:2%">Skills in debugging, writing unit tests (JUnit), and implementing automated testing to ensure the reliability and performance of applications.</p></li>
+                        </ul>
+                    </p>
+                    <br />
+                    <p>
+                        With flexible learning options—both online and offline—you will receive expert-led instruction, job assistance, and certification guidance to fast-track your career in Python Technology.
+                    </p>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-5">
+                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h5>
+                                    <span style="color:orange">
+                                        What are the Benefits of Full Stack Python Full Stack Developer?
+                                    </span>
+                                </h5>
+                            </div>
+                            <h6 class="card-title" style="color:orange;">High Demand and Job Opportunities</h6>
+                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                Companies, from startups to large enterprises (like those in finance and e-commerce), actively seek developers who can manage entire projects, which translates to a high demand for skilled professionals and abundant job openings.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Versatility and Flexibility</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Full stack developers possess a broad range of skills, allowing them to adapt to various roles and project requirements across different industries. This flexibility means more career options and the ability to work on diverse projects.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Competitive Salaries</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Due to their wide-ranging skills and ability to handle multiple tasks (potentially reducing the need to hire multiple specialists), Python full stack developers often command higher salaries compared to specialized front-end or back-end only developers.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development and Troubleshooting</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                A deep understanding of the entire application lifecycle enables developers to make faster, more informed technical decisions and quickly pinpoint and resolve issues across different system layers, leading to improved project efficiency and quicker delivery times.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Complete Project Ownership and Creative Freedom</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The knowledge of both front-end and back-end aspects allows developers to take ownership of a project from design to deployment, offering significant creative control over the final product.
+                            </p>
+
+                            <h5 class="card-title" style="color:orange">Strong Career Growth Potential</h5>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The broad experience gained from working across the entire stack provides a solid foundation for career progression into leadership roles such as technical lead, software architect, or project manager.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Adaptability to New Technologies</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                Full stack developers are accustomed to continuous learning across various technologies, which makes them highly adaptable to new frameworks, tools, and industry trends, future-proofing their careers.
+
+
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Faster Development Cycles</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                When a single developer manages both the front-end and back-end, communication gaps are reduced, and development progresses faster. This agility is beneficial in environments that require rapid delivery.
+                            </p>
+
+                            <h6 class="card-title" style="color:orange">Freelance and Remote Work Options</h6>
+                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                                The ability to independently build and manage entire applications makes full stack developers well-suited for freelance opportunities and a popular choice for startups and small businesses looking for cost-effective solutions.
+                            </p>
+
+                            <p>
+                                In essence, Python full stack development offers a dynamic and rewarding career path with high demand, strong financial prospects, and significant opportunities for personal and professional growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h5 style="color:orange">Why Learn Python in 2025?</h5>
+                        <br />
+
+                        <p>
+                            Learning Python in 2025 is a strategic and future-proof decision due to its continued dominance in enterprise-level applications, robust ecosystem, high demand for skilled developers, and consistent evolution with modern trends like cloud computing and AI.
+
+                            <ul>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Enterprise Backbone</b> :
+                                    <p style="margin-left:2%">
+                                        Python is the foundation of mission-critical systems in finance, banking, e-commerce, and healthcare industries. Over 90% of Fortune 500 companies use Python for their backend architecture due to its stability, security, and scalability.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Platform Independence (WORA)</b> :
+                                    <p style="margin-left:2%">
+                                        The "Write Once, Run Anywhere" principle, facilitated by the Python Virtual Machine (JVM), allows applications to run on any operating system, making it highly versatile for cross-platform development.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>High Demand for Developers</b> :
+                                    <p style="margin-left:2%">
+                                        The demand for skilled Python developers remains consistently high globally, with a projected growth in job opportunities across various sectors.
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Competitive Salaries</b> :
+                                    <p style="margin-left:2%">  Due to the critical nature of the systems they build, Python developers often command competitive salaries compared to other language specialists.</p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Diverse Career Paths</b> :
+                                    <p style="margin-left:2%">  Proficiency in Python opens doors to a wide range of roles, including Python Developer, Android Developer, Big Data Engineer, Cloud Solutions Architect, and Full Stack Developer.</p>
+                                </li>
+                                <li>
+                                    <i class="bi-star-fill" style="color:orange"></i>
+                                    <b>Career Stability</b> :
+                                    <p style="margin-left:2%">  Python has a proven track record and long-term support (LTS) releases (like Python 17 and 21) that ensure longevity, meaning the skills you acquire today will remain relevant for decades to come.</p>
+                                </li>
+                            </ul>
+
+                        </p>
+                        <p>
+                            For beginners, Python is an excellent choice as it provides a strong foundation in core programming concepts like object-oriented programming (OOP), which makes learning other languages easier later on.
+                        </p>
+                        <br />
+                        <br />
+
+                        <h5 style="color:orange">Course Highlights:</h5>
+                        <br />
+
+                        <ul>
+                            <li>
+                                <p>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Front-End Development : </b>
+                                <p style="margin-left:2%">Proficiency in client-side technologies to create dynamic and responsive user interfaces.</p>
+                                <ul>
+                                    <li>
+
+                                        <b>Fundamentals</b> :
+                                        <p style="margin-left:2%">
+                                            HTML5, CSS3 (including Flexbox, CSS Grid, and Bootstrap for responsive design), and JavaScript (ES6+ features, DOM manipulation, event handling).
+                                        </p>
+                                    </li>
+                                    <li>
+
+                                        <b>Frameworks</b> :
+                                        <p style="margin-left:2%">
+                                            Hands-on experience with modern front-end frameworks like React.js or Angular for building scalable single-page applications (SPAs).
+                                        </p>
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>Back-End Development : </b>
+                                <p style="margin-left:2%">Mastery of server-side programming using the Python ecosystem.</p>
+                                <ul>
+                                    <li>
+
+                                        <b>Core Python & OOP</b> :
+                                        <p style="margin-left:2%">Strong foundation in Python fundamentals, object-oriented programming (OOP) principles (Inheritance, Polymorphism, Encapsulation, Abstraction), data structures, and algorithms.</p>
+
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <b>Advanced Python & Frameworks</b> :
+                                        <p style="margin-left:2%">In-depth coverage of advanced topics like Python, OOPS, Web Apis, Orm  and industry-standard frameworks such as DJango and FastApi (for microservices and RESTful APIs) and Hibernate (for Object-Relational Mapping - ORM).</p>
+                                        </p>
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>   <b>Database Management : </b>
+                                <p style="margin-left:2%">Knowledge of managing and interacting with various database systems.</p>
+                                <ul>
+                                    <li>
+
+                                        <b>SQL Databases</b> :
+                                        <p style="margin-left:2%">Working with relational databases like MySQL, Oracle, MSSQL or PostgreSQL.</p>
+
+                                    </li>
+                                    <li>
+
+                                        <b>NoSQL Databases</b> :
+                                        <p style="margin-left:2%"> Introduction to NoSQL databases such as MongoDB for flexible data storage.</p>
+
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>DevOps and Deployment : </b>
+                                <p style="margin-left:2%">Understanding the full software development lifecycle, including deployment and maintenance.</p>
+                                <ul>
+                                    <li>
+
+                                        <b>Tools</b> :
+                                        <p style="margin-left:2%">Proficiency in version control with <b>Git</b> and <b>GitHub</b>, build automation using <b>Maven</b>, <b>continuous integration/continuous deployment (CI/CD)</b> pipelines with <b>Jenkins</b>, and containerization using <b>Docker</b>.</p>
+
+                                    </li>
+                                    <li>
+
+                                        <b>Cloud Platforms</b> :
+                                        <p style="margin-left:2%">Exposure to deploying applications on cloud services like AWS or Azure. </p>
+
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>   <b>Hands-on Projects & Capstone Projects : </b>
+                                <p style="margin-left:2%">The curriculum is heavily project-based, requiring learners to build several real-world applications (e.g., e-commerce platform, online banking system, food delivery app) to develop a strong professional portfolio.</p>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Industry-Recognized Certifications : </b>
+                                <p style="margin-left:2%"> Successful completion often results in certifications from the training provider or affiliated bodies, which enhances job prospects and credibility.</p>
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>  <b>Placement Assistance : </b>
+                                <p style="margin-left:2%">Many programs offer dedicated career support, including resume building, mock interviews, soft skills training, and direct connections to hiring partners to facilitate job placement.</p>
+
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Expert Mentorship : </b>
+                                <p style="margin-left:2%">Learning from industry experts and professionals with real-world experience ensures the curriculum is up-to-date with current best practices and industry trends.</p>
+
+
+
+                            </li>
+                            <li>
+
+                                <i class="bi-star-fill" style="color:orange"></i>    <b>Flexible Learning Options : </b>
+                                <p style="margin-left:2%"> Availability of online, offline, and hybrid learning models with flexible batch timings to accommodate students and working professionals. </p>
+
+
+                            </li>
+                        </ul>
+
+
+
+                        <div style="margin-top:2%">
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+
+                            <p>
+                                Our Python full stack development course is suitable for a wide range of individuals, from beginners with no prior coding experience to experienced professionals looking to upskill or make a career change.
+
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Aspiring Developers and Fresh Graduates</b> :
+                                        <p style="margin-left:2%">
+                                            Students from various academic backgrounds (B.E./B.Tech, BCA, B.Sc. IT, B.Com, Arts, etc.) can enroll. Many programs are designed for absolute beginners and require only basic computer literacy and logical thinking skills to start.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Working Professionals Seeking a Career Change</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals currently working in non-IT fields who are interested in the tech industry can transition into a development role by acquiring the necessary skills.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i> <b>Existing Programmers/Developers</b> :
+                                        <p style="margin-left:2%">
+                                            Front-end or back-end developers can take this course to round out their skill set and become more versatile "full stack" professionals, which enhances their value in the job market and opens up leadership opportunities.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="bi-star-fill" style="color:orange"></i>   <b>Anyone Passionate About Coding</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with a strong interest in building applications from start to finish, problem-solving, and continuous learning are well-suited for this demanding but rewarding field.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+                            <h5 style="color:orange">
+                                Python Full Stack Developer Career Path
+                            </h5>
+                            <br />
+                            <p>
+                                The career path for a Python full stack developer offers significant growth potential, typically progressing from entry-level coding roles to senior technical leadership or management positions.
+                            </p>
+                            <p>
+                                The career path generally follows a structured ladder, with increasing responsibilities and skill requirements at each stage:
+                            </p>
+                            <br />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%">Stage </th>
+                                        <th style="width:10%">Years of Experience </th>
+                                        <th style="width:40%">Example Roles </th>
+                                        <th style="width:40%">Key Focus & Skills </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Entry Level</td>
+                                        <td>0–2 years</td>
+                                        <td>Junior Full Stack Developer, Associate Developer, Developer Intern, Entry-Level Software Engineer</td>
+                                        <td>Focuses on learning the codebase, fixing bugs, and developing small features under mentorship. Key skills include core Python, HTML/CSS/JavaScript, version control (Git), and basic database interaction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mid Level</td>
+                                        <td>3–5 years</td>
+                                        <td>Full Stack Developer, Software Engineer, Application Developer</td>
+                                        <td>Works independently on end-to-end features, participates in design and architecture, and collaborates with cross-functional teams. Expected to have proficiency in front-end frameworks like React or Angular, Python frameworks (DJango, ORM), and API development.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior Level</td>
+                                        <td>6+ years</td>
+                                        <td>Senior Full Stack Developer, Lead Developer/Tech Lead, Software Architect</td>
+                                        <td>Leads projects or sprint modules, designs scalable and robust systems, reviews peers' code, mentors junior developers, and makes key technology decisions. Expertise in microservices architecture, cloud platforms (AWS, Azure), and DevOps tools (Docker, Kubernetes) is crucial.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leadership/Executive</td>
+                                        <td>10+ years</td>
+                                        <td>Engineering Manager, Director of Engineering, VP of Technology, Chief Technology Officer (CTO)</td>
+                                        <td>Shifts from hands-on coding to strategic planning, people management, overseeing multiple teams, and aligning technological vision with business goals.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

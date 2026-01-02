@@ -1,0 +1,428 @@
+﻿@{
+    ViewData["Title"] = "Data Science";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom style */
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+</style>
+<style>
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .accordion-button i {
+            margin-right: 10px; /* Adjust spacing as needed */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
+        }
+
+        /* Optional: Style for the plus/minus icons if not using Font Awesome */
+        .accordion-button.collapsed i::before {
+            content: "+";
+        }
+
+        .accordion-button:not(.collapsed) i::before {
+            content: "-";
+        }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+      $('.accordion-button').on('click', function() {
+        let icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+          icon.removeClass('fa-minus').addClass('fa-plus');
+        } else {
+          icon.removeClass('fa-plus').addClass('fa-minus');
+        }
+      });
+
+      // Set initial icon state for any initially open accordion items
+      $('.accordion-collapse.show').each(function() {
+        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
+      });
+    });
+</script>
+
+
+<div style="height:auto;background-color:white;">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+
+
+                <div class="col-md-8" style="padding-left:2%;">
+
+                    <h4>
+                        Learn  CPP Training with 100% practically
+                    </h4>
+                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                        A C++ training course teaches programming fundamentals, data structures, OOP, and advanced features like STL
+                    </p>
+
+
+
+                    <div class="row" style="margin-top:7%;padding-bottom:2%;">
+
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Course Duration:<br />
+                                        1 Month
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                        Training Mode:<br />
+                                        Classroom & Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Batches Available:<br />
+                                        Weekdays/Weekends
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="width:auto;">
+                            <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
+                                <div class="card-body">
+                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+
+                                        Language:<br />
+                                        English , Hindi, Marathi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="" style="height:auto;width:100%;padding-top:1%;text-align:justify;font-size:14px;font-family:'Bookman Old Style'">
+        <div class="container" style="padding-left:2%;max-width:100%">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>
+                        Professional & Career Outcomes of CPP Language Training
+                    </h5>
+                    <p>
+                        In 2026, C++ remains a cornerstone of high-performance computing, driving professional opportunities in fields where speed and low-level resource control are paramount, such as Gaming, Finance, and Systems Engineering
+                        <ul>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Foundation for Mastery:</b> :
+                                <p style="margin-left:2%">
+                                    C++ provides a deep understanding of memory management and computer architecture, which accelerates the learning of other languages like Java and Python.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Performance Expertise</b> :
+                                <p style="margin-left:2%">
+                                    Professionals gain specialized skills in writing ultra-efficient code, essential for real-time systems like high-frequency trading platforms and autonomous vehicles.
+                                </p>
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Domain Versatility</b> :
+                                <p style="margin-left:2%">
+                                    Expertise allows transitions into diverse high-demand sectors, including:
+                                <ul>
+                                    <li>
+                                            <b>Systems Programming</b>: Developing OS kernels (Windows, Linux) and drivers.
+                                    </li>
+                                        <li>
+                                            <b>Game Development</b>: Building engines like Unreal Engine and AAA game titles.
+                                        </li>
+                                        <li>
+                                            <b>Embedded Systems</b>: Working on firmware for IoT, automotive, and medical devices.
+                                        </li>
+                                        <li>
+                                            <b>Cloud & AI Infrastructure</b>: Optimizing back-end services and GPU workloads for AI model inference.
+                                        </li>
+
+                                </ul>
+                                </p>
+                                
+                            </li>
+                            <li>
+                                <i class="bi-star-fill" style="color:orange"></i> <b>Career Outcomes & Salaries (2026 Estimates)</b> :
+                                <p style="margin-left:2%">
+                                    C++ developers continue to command some of the highest salaries in the IT sector due to the niche nature of their skills.
+                                <table class="table">
+                                 <thead>
+                                            <tr>
+                                                <th>Experience Level </th>
+                                                <th>	Average Salary </th>
+                                            </tr>
+                                        </thead>  
+                                        <tbody>
+                                            <tr>
+                                                <td>Fresher (0–2 years)</td>
+                                                <td>₹3.4 LPA – ₹6.0 LPA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mid-Level (3–6 years)</td>
+                                                <td>₹6.0 LPA – ₹12.0 LPA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senior (7–10+ years)</td>
+                                                <td>	₹13.0 LPA – ₹25.0+ LPA</td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+                                </p>
+
+                            </li>
+                            
+
+                        </ul>
+                   
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h1><i class="bi-clock-fill" style="color:orange"></i></h1>
+
+                        </div>
+                        <div class="col-md-4">
+                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p>
+                                Weekends (Sat & Sun) - 7 Months
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <i class="bi-star-fill" style="color:orange"></i>
+                            <span>(5/5 Rating)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
+                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <br />
+                    <h4> Course Information</h4>
+                    <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
+                    <p> <i class="bi-bookmark-heart-fill" style="color:orange"></i> <b>Training Mode:</b> Classroom & Online</p>
+                    <p> <i class="bi-bell-fill" style="color:orange"></i> <b>Language:</b> English, Hindi, Marathi</p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
+            @Html.Partial("~/Views/Shared/Companies.cshtml")
+
+
+            @Html.Partial("~/Views/Shared/KEYFeatures.cshtml")
+
+            <div class="container" style="padding-left:2%;max-width:100%">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+
+
+                            <h5 style="color:orange">Course Highlights:</h5>
+                            <br />
+
+                            <ul>
+
+                                <li>
+
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>
+                                        Core Training Modules
+                                    </b> :
+                                    <p style="margin-left:2%">
+                                        A standard C training program typically covers these essential modules:
+                                        <ul>
+                                            <li>
+                                                <b>Fundamentals:</b>
+                                                <p style="margin-left:2%">
+                                                    Syntax, 32 reserved keywords, data types (int, float, char), and basic input/output using printf and scanf.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Control Flow:</b>
+                                                <p style="margin-left:2%">
+                                                    Decision-making (if-else, switch) and loops (for, while, do-while).
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Automation with Macros:</b>
+                                                <p style="margin-left:2%">
+                                                    Recording and editing macros to automate multi-step repetitive tasks and cleaning large datasets.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Functions & Scope:</b>
+                                                <p style="margin-left:2%">
+                                                    Defining reusable code blocks, recursion, and parameter passing (Call by Value vs. Call by Address).
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Pointers & Memory:</b>
+                                                <p style="margin-left:2%">
+                                                    The most critical advanced topic, covering memory addresses, the stack vs. heap, and dynamic allocation using malloc and free.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Functions & Memory:</b>
+                                                <p style="margin-left:2%">
+                                                    Function overloading, recursion, and inline functions. Pointers, references, and dynamic memory allocation (new, delete).
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>File Handling:</b>
+                                                <p style="margin-left:2%">
+                                                    Creating, reading, and writing to text and binary files.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Object-Oriented Programming (OOP):</b>
+                                                <p style="margin-left:2%">
+                                                    Classes, objects, constructors/destructors, inheritance (multiple, multilevel), and polymorphism (virtual functions, operator overloading).
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>Advanced Topics:</b>
+                                                <p style="margin-left:2%">
+                                                    Templates (function and class), Exception Handling (try, catch), File Handling, and the Standard Template Library (STL) (vectors, maps, sets, and algorithms).
+                                                </p>
+                                            </li>
+                                          
+                                            <li>
+                                                <b>Practical Skills:</b>
+                                                <p style="margin-left:2%">
+                                                    Memory management, algorithms, debugging, system-level programming.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </p>
+
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+
+                            <h5 style="color:orange">
+                                Who can do?
+                                <br />
+                            </h5>
+                            <br />
+                            <p>
+                                In 2026, C language training is accessible to a wide audience, ranging from absolute beginners to specialized engineering professionals. Because C serves as the "systems layer" foundation for modern technology, it is a recommended starting point for anyone looking to understand how software interacts with hardware.
+                            </p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Absolute Beginners</b> :
+                                        <p style="margin-left:2%">
+                                            Individuals with no prior coding experience can learn C to build a strong foundation in logic, syntax, and memory management before moving to higher-level languages like Python or Java.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Students</b> :
+                                        <p style="margin-left:2%">
+                                            Undergraduates in Computer Science, IT, or Electrical Engineering typically use C training to master core principles like algorithms and computer architecture.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>IT Professionals</b> :
+                                        <p style="margin-left:2%">
+                                            Developers looking to transition into high-performance fields—such as system programming, kernel development, or building core database engines—enroll in C courses to gain low-level systems expertise.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Non-Engineering Backgrounds</b> :
+                                        <p style="margin-left:2%">
+                                            Anyone from a non-IT background can join C training. Many courses are designed for "everybody" and only require basic computer knowledge and logical thinking.
+
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Aspiring Specialists</b> :
+                                        <p style="margin-left:2%">
+                                            Those targeting careers in specific "high-impact" industries where C remains indispensable, including:
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                <b>Embedded Systems</b>: Automotive, aerospace, and consumer electronics.
+                                            </li>
+                                            <li>
+                                                <b>Internet of Things (IoT)</b>: Programming sensors and microcontrollers.
+                                            </li>
+                                            <li>
+                                                <b>Game Development</b>: Designing high-performance game engines.
+                                            </li>
+                                            <li>
+                                                <b>Robotics & AI</b>: Developing the underlying firmware and performance-heavy modules for AI libraries.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @Html.Partial("~/Views/Shared/Feedbacks.cshtml")
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
