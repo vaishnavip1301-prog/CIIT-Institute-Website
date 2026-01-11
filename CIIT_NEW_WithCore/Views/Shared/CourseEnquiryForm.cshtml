@@ -3,29 +3,30 @@
         <h5 style="text-align:center">Enquiry <span style="color:orange">Now</span></h5>
     </div>
     <div class="card-body">
+      
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
                     <label style="font-size:12px;"> Name : </label>
-                    <input type="text" class="form-control" placeholder="Name" style="font-size:12px;" />
+                    <input type="text" class="form-control" placeholder="Name" id="candidate_name" name="candidate_name" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label style="font-size:12px;"> Contact : </label>
-                    <input type="text" class="form-control" placeholder="Contact" style="font-size:12px;" />
+                    <input type="text" class="form-control" placeholder="Contact" id="contact_number" name="contact_number" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label style="font-size:12px;"> Email : </label>
-                    <input type="text" class="form-control" placeholder="Email" style="font-size:12px;" />
+                    <input type="text" class="form-control" placeholder="Email" id="email_address" name="email_address" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label style="font-size:12px;"> Training Type : </label>
-                    <select class="form-control" style="text-align:left;font-size:12px;">
+                    <select class="form-control" id="training_type" name="training_type" style="text-align:left;font-size:12px;">
                         <option selected disabled style="font-size:12px;">Training Type</option>
                         <option value="Online Training" style="font-size:12px;">Online Training</option>
                         <option value="Offline Training" style="font-size:12px;">Offline Training</option>
@@ -35,12 +36,63 @@
             <div class="col-md-12">
                 <div class="mb-3">
                     <label style="font-size:12px;"> Description : </label>
-                    <textarea class="form-control" style="font-size:12px;" placeholder="enter your enquiry here"></textarea>
+                    <textarea class="form-control" id="description" name="description" style="font-size:12px;" placeholder="enter your enquiry here"></textarea>
                 </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="alert alert-success alert-dismissible fade show" id="dvalert" hidden="hidden">
+                <strong>Success!</strong> Thank you for submitting your enquiry.We would like to help you.Our representative you call you in a while.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         </div>
     </div>
     <div class="card-footer">
-        <input type="button" value="Submit" class="btn" style="background-color:orange;color:white;font-weight:bold" />
+        <input type="button" value="Submit" id="btnsubmit" onclick="SubmitEnquiry()" class="btn" style="background-color:orange;color:white;font-weight:bold" />
+ 
     </div>
 </div>
+<script>
+    const SubmitEnquiry=async()=>{
+        var candidate_name=document.getElementById("candidate_name").value;
+        var contact_number=document.getElementById("contact_number").value;
+        var email_address=document.getElementById("email_address").value;
+        var training_type=document.getElementById("training_type").value;
+        var description=document.getElementById("description").value;
+      var st={
+                      "candidate_name":candidate_name,
+                      "mobile_number":contact_number,
+                      "email_address":email_address,
+                      "training_type":training_type,
+                      "description":description
+             };
+          const response=await fetch("/Lead/AddLeadSource",{
+              method:"post",
+              body:JSON.stringify(st),
+              headers:{
+                  "content-type":"application/json"
+              }
+          });
+        const msg=await response.text();
+        
+        ClearData();
+               document.getElementById("dvalert").removeAttribute("hidden");
+                setTimeout(function(){
+                document.getElementById("dvalert").setAttribute("hidden","hidden");
+
+        },4000);
+      }
+      const ClearData=()=>{
+          document.getElementById("candidate_name").value="";
+          document.getElementById("contact_number").value="";
+          document.getElementById("email_address").value="";
+          document.getElementById("training_type").value="";
+          document.getElementById("description").value="";
+      }
+      // const FetchLeads=async()=>{
+      //       const response=await fetch("/Lead/GetLeads");
+      //       const leads=await response.json();
+
+      // }
+</script>

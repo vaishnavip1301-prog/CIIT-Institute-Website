@@ -1,51 +1,1185 @@
 ﻿ 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/ChangedLayout.cshtml";
 }
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
 
-<div class="container" style="padding-top:80px;text-align:justify; font-size:16px; font-family:'Bookman Old Style'">
-    <div class="row">
-        <img src="~/assets/training.png" style="height:300px; width:100%;border-radius:10px;" />
-    </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3">
-                <nav class="nav nav-pills nav-fill">
-                    <a href="#DotNet" class="nav-item nav-link active" data-bs-toggle="tab">Dot Net</a>
-                    <a href="#Java" class="nav-item nav-link" data-bs-toggle="tab">Java</a>
-                    <a href="#Python" class="nav-item nav-link" data-bs-toggle="tab">Python</a>
-                    <a href="#PHP" class="nav-item nav-link" data-bs-toggle="tab">Php</a>
-                    <a href="#MEARN" class="nav-item nav-link" data-bs-toggle="tab">MEAN/MERN</a>
-                    <a href="#DevOps" class="nav-item nav-link" data-bs-toggle="tab">DevOps Engineering</a>
-                    <a href="#DataScience" class="nav-item nav-link" data-bs-toggle="tab">Data Science</a>
-
-                </nav>
-        </div>
-        <div class="col-md-9">
-                <div class="tab-content">
-                    <div class="tab-pane fade show active mt-3" id="DotNet">
-                        <h2>Dot Net Courses</h2>
-                        <div id="DotNet" class="tabcontent">
-                            <h5 style="text-align:center">Dot Net</h5>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-Training-With-Live-Project">Full Stack Development</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Training-With-Live-Project">Full Stack Development With Azure</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project">Full Stack Development With Azure + AI</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Training">Dot Net Training</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Advance-Dot-Net-Full-Training">Advance Dot Net Training</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-Angular-Training">Dot Net Core + Angular</a></div>
-                            <div><a class="dropdown-item" style="color:black;font-size:12px;" href="/Dot-Net-Full-React-Training">Dot Net Core + React</a></div>
-
+<div class="container-fluid" style="text-align:justify; font-size:16px; font-family:'Bookman Old Style'">
+    <div class="row" style="height:auto;width:100%;background-image:url('..//background.gif')">
+               <div class="col-md-8">
+                    <h1 style="color:white;text-align:center" class="pt-5">
+                        Learn from Experts, Grow in Your Career
+                    </h1>
+            <h1 style="color:white;text-align:center" class="pt-2">
+                Limitless Learning Guarnatee
+            </h1>
+                    <p class="m-3" style="color:white;text-align:center">
+                        CIIT is a global leader in software training, aligning academic learning with industry needs. <br />We empower aspiring professionals to build successful careers worldwide.
+                    </p>
+                    <div   style="color:white;text-align:center">
+                        <div class="shadow-lg p-3 m-5 bg-body rounded">
+                            <h5 style="color:orange">
+                                10000+ Students Placed Till Date <b style="color:green">Be The Next!</b>
+                            </h5>
                         </div>
                     </div>
-                    <div class="tab-pane fade show mt-3" id="Java">
-                        <h2>All Deleted Batches</h2>
+                    <div>
+                <div class="row p-3 ms-lg-5">
+                            <div class="col-md-3">
+                                <div class="card bg-transparent  border-white h-100">
+                                    <div class="card-body">
+                                <p class="card-text" style="color:white;">
+                                    Job
+                                    Guaranteed
+                                    Training
+                                </p>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="col-md-3">
+                        <div class="card bg-transparent  border-white  h-100">
+                            <div class="card-body">
+                                <p class="card-text" style="color:white;">
+                                    Training
+                                    on Live
+                                    Project
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-transparent  border-white  h-100">
+                            <div class="card-body" style="text-align:left">
+                                <p class="card-text" style="color:white;">
+                                    14+ Years
+                                    Experienced
+                                    Trainers
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-transparent  border-white  h-100">
+                            <div class="card-body">
+                                <p class="card-text" style="color:white;">
+                                    20000+
+                                    Students
+                                    Trained
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+        </div>
+               <div class="col-md-4 mt-3">
+                    @Html.Partial("~/Views/Shared/CourseEnquiryForm.cshtml")
+
+                </div>
+           </div>
+    
+    <div class="row">
+        <h2 class="m-2" style="text-align:center">
+            <span style="color:orange">Our Alumini works at Top MNCs & Indian Companies. So Can You!</span>
+        </h2>
+        <div class="row m-4">
+            
+              <div class="row">
+                    <div class="col-md-1 mb-3">
+                    <img style="height:80px;width:100%;" src="~/companies/1.png" class="img-thumbnail bg-body rounded" />
+                    </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/2.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/3.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/4.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/5.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/6.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/7.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>   
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/8.jpg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/9.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/10.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/11.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                  <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/12.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/13.jpg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/14.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/15.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/16.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/17.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/18.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/19.jpg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/20.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/22.jpg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/23.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1  mb-3">
+                    <img style="height:80px;width:100%;" src="~/companies/24.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/25.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>
+               @*  <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/26.png" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/27.jpeg" class="img-thumbnail bg-body rounded" />
+                </div>
+                <div class="col-md-1">
+                    <img style="height:80px;width:100%;" src="~/companies/28.jpg" class="img-thumbnail bg-body rounded" />
+                </div> *@
+            </div>
+                  
+            </div>
+        </div>
+     
+    <div class="row">
+        <div style="height:auto;width:100%;padding-top:2%;text-align:justify;font-size:14px;font-family:'Bookman Old Style';">
+            <div class="" style="max-width:100%">
+                <div>
+                    <div class="shadow-lg p-3 bg-body rounded">
+                        <div class="card text-white mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                  
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <nav class="nav nav-pills " style="display:block">
+
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DotNet1" class="nav-item nav-link active" style="" data-bs-toggle="tab">Dot Net</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#Java1" class="nav-item nav-link" style="" data-bs-toggle="tab">Java</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#Python1" class="nav-item nav-link" style="" data-bs-toggle="tab">Python</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#MEARN1" class="nav-item nav-link" style="" data-bs-toggle="tab">MEAN/MERN Stack</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DevOps1" class="nav-item nav-link" style="" data-bs-toggle="tab">Cloud Computing</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DataScience1" class="nav-item nav-link" style="" data-bs-toggle="tab">Data Science</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DataAnalytics1" class="nav-item nav-link" style="" data-bs-toggle="tab">Data Analytics</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#Testing1" class="nav-item nav-link" style="" data-bs-toggle="tab">Software Testing</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DBA1" class="nav-item nav-link" style="" data-bs-toggle="tab">DBA</a>
+                                            </div>
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#DigitalMarketing1" class="nav-item nav-link" style="" data-bs-toggle="tab">Digital Marketing</a>
+                                            </div>
+
+                                            <div class="card bg-dark-secondary text-white m-2">
+                                                <a href="#ShortTerm1" class="nav-item nav-link" style="" data-bs-toggle="tab">Short Term Courses</a>
+                                            </div>
+
+                                        </nav>
+
+                                    </div>
+                                    <div class="col-md-9 p-2" style="border-left:2px solid orange;font:small">
+                                        <div class="tab-content">
+                                            <h2 class="m-2" style="text-align:center">
+                                                <span style="color:orange">Explore Our Programs</span>
+                                            </h2>
+                                            <div class="tab-pane fade show active" style="width:100%" id="DotNet1">
+                                                <h4 style="color:orange;text-align:center">Dot Net</h4>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development with DevOps And AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">Best Course is designed for Freshers, Experienced candidates & non IT professionals  </p>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project" class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                   </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Dot-Net-Full-Strack-Development-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development</h6>
+
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">This Course is designed for IT Freshers & non IT professionals  </p>
+
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Advance-Dot-Net-Full-Training-For-Professionals" style="">
+                                                                    <h6 class="text-white">Dot Net Core Training For working Professionals</h6>
+
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">This course is mainly designed for .NET developers who want to upgrade their skills. and want to switch their job as a Full Stack Developer </p>
+
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Dot-Net-Full-Strack-Development-With-Azure-Ai-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">.Net Core with Micro Services</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">
+                                                                    .NET Core microservices courses are primarily designed for developers and IT professionals
+                                                                </p>
+
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Dot-Net-With-Angular-Training" style="">
+                                                                    <h6 class="text-white">.Net Core With Angular</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">
+                                                                    .Net Core With Angular course specifically designed for individuals & working professionals aiming to become Full-Stack Developers
+                                                                </p>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Dot-Net-With-React-Training" style="">
+                                                                    <h6 class="text-white">.Net Core With React</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                                <p class="text-white mt-5">
+                                                                    .Net Core With Angular course specifically designed for individuals & working professionals aiming to become Full-Stack Developers
+                                                                </p>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                                  
+                                                </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="Java1">
+                                                <h4 style="color:orange;text-align:center">Java</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Java-Full-Strack-Development-With-Aws-Ai-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development with DevOps And AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Java-Full-Strack-Development-With-Aws-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development with AWS DevOps</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Java-Full-Strack-Development-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Java Full Stack Development</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Advance-Java-Training-For-Professionals" style="">
+                                                                    <h6 class="text-white">Advance Java Training For working Professionals</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Spring-Boot-With-ReactJs-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Spring Boot With React</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Spring-Boot-With-Angular-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Spring Boot With Angular</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="Python1">
+                                                <h4 style="color:orange;text-align:center">Python</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-Full-Stack-Development-With-Aws-AI-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development with DevOps And AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-Full-Stack-Development-With-Aws-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Full Stack Development with AWS DevOps</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-Full-Stack-Development-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Python Full Stack Development</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-Django-FastApi-Training-For-Working-Professionals" style="">
+                                                                    <h6 class="text-white">Django+ FastApi Training For Working Professionals</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-DJango-FastApi-With-React-Training" style="">
+                                                                    <h6 class="text-white">Django+ FastApi With React</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Python-DJango-FastApi-With-Angular-Training" style="">
+                                                                    <h6 class="text-white">Django+ FastApi With Angular</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="MEARN1">
+                                                <h4 style="color:orange;text-align:center">MEARN Stack</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/MEARN-Full-Stack-Development-AWS-And-AI-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">MEARN Stack Development with AWS DevOps And AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/MEARN-Stack-Development-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">MEARN Stack Development with Live Project</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/NodeJs-Training-With-Live-Project" style="">
+                                                                    <h6 class="text-white">NodeJs Training For working Professionals</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="DevOps1">
+                                                <h4 style="color:orange;text-align:center">DevOps</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Azure-DevOps-Engineering" style="">
+                                                                    <h6 class="text-white">Azure DevOps Engineering</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/AWS-DevOps-Engineering" style="">
+                                                                    <h6 class="text-white">AWS DevOps Engineering</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Google-DevOps-Engineering" style="">
+                                                                    <h6 class="text-white">GCP DevOps Engineering</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="DataScience1">
+                                                <h4 style="color:orange;text-align:center">Data Science</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Data-Science-With-100%-Job-Assistance" style="">
+                                                                    <h6 class="text-white">Data Science</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Data-Analytics-With-100%-Job-Assistance" style="">
+                                                                    <h6 class="text-white">Data Analytics</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Project-Based-Advanced-Generative-Training" style="">
+                                                                    <h6 class="text-white">Advanced Generative AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="#" style="">
+                                                                    <h6 class="text-white">Machine Learning</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="#" style="">
+                                                                    <h6 class="text-white">Data Engineering</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="#" style="">
+                                                                    <h6 class="text-white">Business Analytics</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane fade show" style="width:100%" id="DataAnalytics1">
+                                                <h4 style="color:orange;text-align:center">Data Analytics</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Data-Analytics-With-100%-Job-Assistance" style="">
+                                                                    <h6 class="text-white">Data Analytics For Freshers & Working Professionals</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="#" style="">
+                                                                    <h6 class="text-white">Data Analytics for Working Professionals</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/advance-excel-with-vba" style="">
+                                                                    <h6 class="text-white">Advance Excel With VBA</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                           <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/power-bi" style="">
+                                                                    <h6 class="text-white">Power BI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                  
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane fade show" style="width:100%" id="Testing1">
+                                                <h4 style="color:orange;text-align:center">Software Testing</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/diploma-in-software-testing" style="">
+                                                                    <h6 class="text-white">Diploma in Software Testing</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/selenium-testing-with-ai-and-devops" style="">
+                                                                    <h6 class="text-white">Selenium Automation Testing With DevOps + AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/playwright-testing-with-ai-and-devops" style="">
+                                                                    <h6 class="text-white">Playwright Automation Testing With DevOps  + AI</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/manual-testing" style="">
+                                                                    <h6 class="text-white">Manual Testing</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="DBA1">
+                                                <h4 style="color:orange;text-align:center">Database Administrator</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/oracle-dba" style="">
+                                                                    <h6 class="text-white">Oracle DBA</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/sql-server-dba" style="">
+                                                                    <h6 class="text-white">Sql Server DBA</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="#" style="">
+                                                                    <h6 class="text-white">SSRS</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="DigitalMarketing1">
+                                                <h4 style="color:orange;text-align:center">Digital Marketing</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Diploma-In-Digital-Marketing-With-Live-Project" style="">
+                                                                    <h6 class="text-white">Digital Marketing</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Graphic-Designing" style="">
+                                                                    <h6 class="text-white">Graphic Design</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show" style="width:100%" id="ShortTerm1">
+                                                <h4 style="color:orange;text-align:center">Short Term Courses</h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black   mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/C-Language-Training" style="">
+                                                                    <h6 class="text-white">C Language</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn bg-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm" style="color:white;text-shadow: 1px 1px 4px black">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/CPP-Language-Training" style="">
+                                                                    <h6 class="text-white">CPP Language</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/DSA-Training" style="">
+                                                                    <h6 class="text-white">Data Structure & Algorithms(DSA)</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Oracle-Database-Training" style="">
+                                                                    <h6 class="text-white">Oracle Sql</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Sql-Server-Database-Training" style="">
+                                                                    <h6 class="text-white">Microsoft Sql Server</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Core-Java-Training" style="">
+                                                                    <h6 class="text-white">Core Java</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card text-black mb-4  h-100" style="background-image: linear-gradient(50deg, #0f70f7fa 5%, #800080cf);">
+                                                            <div class="card-body text-white" style="text-align:center">
+                                                                <a href="/Core-Python-Training" style="">
+                                                                    <h6 class="text-white">Core Python</h6>
+                                                                </a>
+                                                                <br />
+                                                                Duration: <span>6 Months</span>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a class="btn btn-warning text-white btn-sm">Know More</a>
+                                                                <a class="btn btn-warning text-white btn-sm">Enroll Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style="height:auto;width:100%;text-align:justify;font-size:14px;font-family:'Bookman Old Style';">
+            <div class="shadow-lg p-3 mb-1 bg-body rounded">
+                <div class="card text-white">
+                    <div class="card-body">
+
+                      <div class="row">
+                            <div class="col-md-12 m-1 center">
+                                <h4 style="color:orange">Our Branches</h4>
+                            </div>
+                            <div class="col-md-4">
+                            
+                                   <div class="card m-3">
+                                       <div class="card-body">
+                                            <h4 class="text-primary center">Hadapsar</h4>
+                                            <p style="color:black">
+                                                Office no.2, 1st Floor, Manisha Blitz, near shankar math, Above Vodaphone Showroom, Hadapsar, Pune-411028
+                                                Contact- 7028565830 / 9975751649
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-6 pt-2">
+                                                <p style="color:black">
+                                                    <b> enquiry@ciitinstitute.com</b>
+                                                </p>
+                                                
+                                                </div>
+                                            <div class="col-md-6 pt-2">
+                                                
+                                                <p style="color:black">
+                                                    <b> hr@ciitinstitute.com</b>
+
+                                                </p>
+                                            </div>
+                                            </div>
+                                       </div>
+                                   </div>
+                                
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card m-3">
+                                    <div class="card-body">
+                                        <h4 class="text-primary center">Viman Nagar</h4>
+                                        <p style="color:black">
+                                            Office no 3A,1st floor, PRAKASH developers, near hotel rasika, pune nagar road, Vadgaon Sheri,Pune -411014
+                                            Contact- 7028561830 / 9975751649
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 pt-2">
+                                                <p style="color:black">
+                                                    <b>enquiry@ciitinstitute.com</b>
+                                                </p>
+
+                                            </div>
+                                            <div class="col-md-6 pt-2">
+
+                                                <p style="color:black">
+                                                    <b>hr@ciitinstitute.com</b>
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card m-3 bg-dark text-white">
+                                    <div class="card-body">
+                                        <h4 class="text-white center">Baramati</h4>
+                                        <p  >
+                                            Najmi Complex.Opposite Bus Stand,Indapur Road. Baramati-413102 Vadgaon Sheri,Pune -411014
+                                            Contact- 7028561830 / 9975751649
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 pt-2">
+                                                <p  >
+                                                    <b>enquiry@ciitinstitute.com</b>
+                                                </p>
+
+                                            </div>
+                                            <div class="col-md-6 pt-2">
+
+                                                <p>
+                                                    <b>hr@ciitinstitute.com</b>
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
 
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
-  
-   
     </div>
 </div>
 
+ 

@@ -1,4 +1,7 @@
 using CIIT_NEW_WithCore.Models;
+using ERP_Services.Implementations;
+using ERP_Services.Interfaces;
+
 //using ERP_Services.Implementations;
 //using ERP_Services.Interfaces;
 
@@ -17,7 +20,7 @@ builder.Services.AddControllersWithViews();
 
  
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-//builder.Services.AddTransient<IEnquiryService, EnquiryService>();
+ builder.Services.AddTransient<ILeadSource, LeadServices>();
 //builder.Services.AddTransient<IMasterService, MasterService>();
 //builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 //builder.Services.AddTransient<IExtraService, ExtraService>();
@@ -83,7 +86,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
-    //pattern: "{controller=Main}/{action=Index}/{id?}");
-    pattern: "{controller=Test}/{action=TabDemo}/{id?}");
-
+// pattern: "{controller=Main}/{action=Index}/{id?}");
+ pattern: "{controller=Test}/{action=TabDemo}/{id?}");
 app.Run();
