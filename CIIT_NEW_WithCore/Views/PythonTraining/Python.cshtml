@@ -3,70 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
+ 
 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
 
                 <div class="col-md-8" style="padding-left:2%;">
 
-                    <h2>
+                    <h5>
                         Python Full Stack Development with Industry-Ready Skills with CIIT
-                    </h2>
+                    </h5>
 
                     <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
                         CIIT's Python Full Stack Developer Training is ideal for both freshers and working professionals interested in building a career as a Python full stack developer.
@@ -239,7 +188,7 @@
                                         <div class="col">
                                             <h2 style="color:orange"> 100% Money Back Guarantee </h2>
 
-                                            <p class="card-text" style="color:#007CC3">
+                                            <p class="card-text" style="color:black">
                                                 <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
                                             </p>
                                         </div>
@@ -266,34 +215,34 @@
                                 </h2>
                             </div>
                             <h5 class="card-title" style="color:orange;">Easy to Learn</h5>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 Python is an easy language to master. This is chiefly because of its resemblance to the English language. Python’s syntax is characterized by very few rules and special cases. It’s safe to say that in Python the focus is on what you want to do with the code, not on language intricacies. Anybody can master Python easily. With practice, newbies can build a basic game in mere days using python. Another attractive aspect of this programming language is its efficiency and readability.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Cross-Platform and Open Source</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 It’s been more than 20 years since this language has been running cross-platform and open source. Be it Linux, Windows or MacOS, Python code works on every platform. Another remarkable thing about Python is that it’s supported by decades of bug-squashing and kink-straightening which ensures that its code works as intended whenever the user runs it.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Versatile Language and Platform</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Python remains very relevant today as it can be used in any operations scenario or software development, be it in managing local and cloud infrastructure, working against a SQL database, developing a custom function for Hive & Pig, supporting object-oriented design or even developing a small tool for the user.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Vast Libraries</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Python is supported by PyPI which has 85,000+ python scripts and modules accessible to the user. These modules provide pre-packaged functionality available to the users in their local Python environment. It can solve diverse problems such as executing advanced data analytics like developing REStful web services or sentiment analysis and establishing computer vision.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Career Growth Opportunities</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Flexibility</h5>
-                            <p style="text-align:left;color:#007CC3">
+                            <p style="text-align:left;color:black">
                                 Python has several powerful applications integrated with other programming languages. Details about these are given as follows:
-                                <ul style="text-align:left;color:#007CC3" class="mb-3">
+                                <ul style="text-align:left;color:black" class="mb-3">
                                     <li>.Net and C# compatible: IronPython</li>
                                     <li>A version with C: CPython</li>
                                     <li>Python combined with Ruby: RubyPython</li>
@@ -303,17 +252,17 @@
                             </p>
 
                             <h5 class="card-title" style="color:orange">High Salary</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 The salary of Python engineers is comparatively higher as compared to others in the industry. In the United States, a Python developer earns an average of $116,028 per year. This high earning potential is a result of Python's widespread adoption across various industries, including finance, technology, healthcare, and more.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Scripting and Automation</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 What most people don’t know about Python is that it can be used as a scripting language. In scripting, the code is written in script form and gets executed. So the code is read and interpreted by the machine and errors are checked during runtime. After the code is checked, it can be used many times. It is also possible to automate specific tasks in a problem by automation.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Artificial Intelligence</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Artificial Intelligence (AI) is a pivotal domain where Python shines. Python's libraries like TensorFlow and Keras enable the implementation of complex machine learning and deep learning algorithms. These libraries are widely used in AI applications such as natural language processing (NLP), where Python's NLTK and spaCy excel in tasks like sentiment analysis and language translation. In computer vision, Python's OpenCV library is a go-to tool for tasks like image recognition and object detection.
                             </p>
                         </div>

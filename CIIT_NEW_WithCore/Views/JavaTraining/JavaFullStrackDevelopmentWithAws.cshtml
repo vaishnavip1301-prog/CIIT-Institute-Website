@@ -3,60 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
-
+ 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'" ">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
@@ -67,10 +16,10 @@
                         Learn Latest Java Full Stack Developer With AWS DevOps
                     </h4>
 
-                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
                         CIIT's Java Full Stack Development with AWS Training with Live Project is designed to equip individuals with the skills needed to become a full-stack Java developer, with a specific focus on integrating and deploying applications on Amazon Web Services (AWS) cloud platform, and including practical experience through a live project.
                     </p>
-                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</h4>
                     <p style="line-height: 1.7;margin-top:2%">
                       Our Full Stack with AWS training aims to prepare individuals for roles as Full Stack Java Developers with cloud expertise, enabling them to design, develop, deploy, and maintain robust and scalable applications on the AWS platform.
                     </p>
@@ -276,64 +225,64 @@
                               
                             </div>
                             <h6 class="card-title" style="color:orange;">High Demand and Job Opportunities</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 Companies across industries (finance, healthcare, e-commerce) actively seek professionals who can manage the entire application lifecycle, from front-end design to cloud deployment.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Increased Versatility</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 You become an "all-rounder" capable of working on any part of a project, reducing a company's reliance on multiple specialized developers.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Competitive Salaries</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Due to their wide-ranging skills and ability to handle multiple tasks (potentially reducing the need to hire multiple specialists), Java full stack developers with AWS often command higher salaries compared to specialized only front-end , back-end or only full stack developers.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Career Growth</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 This comprehensive skill set provides a strong foundation for advancement into leadership roles like Technical Lead, Software Architect, or DevOps Engineer.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Job Security and Flexibility</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Java is a stable, widely used enterprise language, and cloud computing is the industry standard, making this a future-proof skill set. Expertise also opens up a wide range of remote work and freelance opportunities.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Industry Credibility</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Obtaining an AWS Certified Developer – Associate certification validates your expertise and makes you a more attractive candidate to employers.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Adaptability to New Technologies</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Full stack developers are accustomed to continuous learning across various technologies, which makes them highly adaptable to new frameworks, tools, and industry trends, future-proofing their careers.
 
 
                             </p>
                             <h6 class="card-title" style="color:orange">End-to-End Project Ownership</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 You gain complete creative control and a holistic understanding of the project's architecture, allowing you to make faster, more informed technical decisions and manage the entire workflow efficiently.
                             </p>
                             <h6 class="card-title" style="color:orange">Scalability and Performance</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 You gain complete creative control and a holistic understanding of the project's architecture, allowing you to make faster, more informed technical decisions and manage the entire workflow efficiently.
                             </p>
                             <h6 class="card-title" style="color:orange">Cost Efficiency</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 By utilizing the AWS "pay-as-you-go" model and services like AWS Lambda (serverless computing), you can optimize infrastructure costs by paying only for the resources you consume.
                             </p>
                             <h6 class="card-title" style="color:orange">Streamlined Development (DevOps)</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 You learn to implement efficient CI/CD pipelines using AWS tools like CodePipeline and CodeBuild, enabling automated testing and deployment, which speeds up the development lifecycle.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Freelance and Remote Work Options</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 The ability to independently build and manage entire applications makes full stack developers well-suited for freelance opportunities and a popular choice for startups and small businesses looking for cost-effective solutions.
                             </p>
 
-                            <p style ="text-align:left;color:#007CC3">
+                            <p style ="text-align:left;color:black">
                                 Combining Java Full Stack development skills with Amazon Web Services (AWS) expertise offers significant benefits, including enhanced career opportunities, higher earning potential, and the ability to build, deploy, and manage highly scalable, reliable, and cost-effective cloud-based applications.
                             </p>
                         </div>
@@ -354,17 +303,17 @@
                                 <p>In the U.S., the combination of Java and AWS is highly valued, leading to substantial compensation. </p>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     $70,000 - $90,000  
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-6 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $90,000 - $150,000  
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $150,000 - $250,000+
                                 </p>
 
@@ -378,17 +327,17 @@
                                 </h5>
                               
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹3 - ₹8 LPA (Lakhs per Annum)
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-6 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹8 - ₹20 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (6+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹25 - ₹50+ LPA, potentially up to ₹1 Crore in top companies
                                 </p>
 
@@ -399,26 +348,26 @@
                                     Key factors in India
                                 </h5>
                                 <h6 class="card-title" style="color:orange;">Experience Level</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Salaries increase with more years of experience. Entry-level positions will naturally offer lower compensation than senior or lead roles.
                                 </p>
                                 <h6 class="card-title" style="color:orange;">Location</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Cities like Bangalore, Pune, and Hyderabad are major tech centers with competitive salaries.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Size and Type</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Large corporations or tech giants may offer higher salaries and more comprehensive benefits packages than smaller companies or startups.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Specific AWS Skills</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Proficiency in advanced AWS services (e.g., Lambda, Kubernetes, advanced security services) can command higher salaries.
 
                                 </p>
                                 <h6 class="card-title" style="color:orange">Additional Skills</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Expertise in other relevant technologies like microservices, containerization (Docker), and specific frontend frameworks (React, Angular) can also increase earning potential.
                                 </p>
                             </div>

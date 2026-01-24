@@ -4,75 +4,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
+ 
 
 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
 
                 <div class="col-md-8" style="padding-left:2%;">
 
-                    <h4>
-                        Learn Latest Dotnet & get placed as a Dot Net Full Stack Developer
-                    </h4>
+                    <h5>
+                        Learn Latest Dot Net & get placed as a Dot Net Full Stack Developer
+                    </h5>
 
-                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
-                        CIIT's Dotnet Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer.
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
+                        CIIT's Dot Net Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer.
                     </p>
-                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
-                    <p style="line-height: 1.7;margin-top:2%">
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</h4>
+                    <p class="mb-3" style="line-height: 1.7;margin-top:2%">
                         .NET Core is a free, open-source, and cross-platform software framework developed by Microsoft for building modern modern, high-performance applications. It represents a significant evolution of the earlier. NET Core, designed to be more lightweight, modular, and flexible. .NET is in demand due to its versatility, performance, and continued support from Microsoft. It is used across many industries, including finance, healthcare, and e-commerce, to build secure and scalable applications, with strong job growth in areas like cloud-based solutions (Azure) and cross-platform mobile development (.NET MAUI).
                     </p>
                     <p>
@@ -238,49 +189,49 @@
                                 </h5>
                             </div>
                             <h6 class="card-title" style="color:orange;">All-Round Technical Proficiency</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 A full stack .NET developer possesses knowledge of both user interface technologies (like HTML, CSS, JavaScript, Blazor) and server-side frameworks (such as ASP.NET Core, C#). This combination allows them to independently build and manage complete applications
                             </p>
 
                             <h6 class="card-title" style="color:orange">High Employability and Demand</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Organizations prefer professionals who can manage end-to-end software development. Full stack developers reduce the need for large teams by managing both front-end and back-end tasks, making them a top choice in hiring decisions.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Better Compensation</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Because of their wide skill set, full stack .NET developers often earn higher salaries than developers who specialize in only one part of the tech stack. Their ability to handle diverse responsibilities adds to their overall market value.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Greater Project Ownership</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 They are capable of understanding and managing every layer of a software project, from designing the user interface to integrating with databases and deploying to servers. This leads to better control and deeper involvement in projects.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Career Growth Opportunities</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Improved Problem Solving</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Full stack .NET developers can quickly identify and fix issues as they arise in both client and server components. This ability to see the bigger picture helps streamline development and reduce downtime.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Ideal for Freelance and Startups</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Since full stack .NET developers can manage full project cycles alone, they’re well-suited for freelance work and early-stage startups where teams are small but projects are still demanding.
 
 
                             </p>
 
                             <h6 class="card-title" style="color:orange">Faster Development Cycles</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 When a single developer manages both the front-end and back-end, communication gaps are reduced, and development progresses faster. This agility is beneficial in environments that require rapid delivery.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Broad Technology Exposure</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Working across the stack introduces developers to a wide range of tools and frameworks such as Visual Studio, Entity Framework, LINQ, Azure DevOps, SQL Server, and REST APIs—building a rich and varied skill set.
                             </p>
                         </div>

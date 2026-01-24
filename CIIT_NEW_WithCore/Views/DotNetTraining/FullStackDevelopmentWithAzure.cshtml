@@ -2,76 +2,25 @@
     ViewData["Title"] = "FullStackDevelopmentWithAzure";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
+ 
 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'" ">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
 
                 <div class="col-md-8" style="padding-left:2%;">
 
-                    <h4>
+                    <h5>
                         Learn Latest Dot Net Full Stack Developer With Azure DevOps 
-                    </h4>
+                    </h5>
 
-                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
                         CIIT's Dot Net with Azure DevOps Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer With Azure as well as Azure DevOps.
                     </p>
-                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
-                    <p style="line-height: 1.7;margin-top:2%">
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</h4>
+                    <p class="mb-3" style="line-height: 1.7;margin-top:2%">
                         NET and Azure are closely integrated, providing a comprehensive platform for building, deploying, and managing modern cloud applications. Azure is the recommended cloud platform for .NET developers due to its native support for .NET and integration with Visual Studio tools.
                     </p>
                     <p>
@@ -237,34 +186,34 @@
                                 </h5>
                             </div>
                             <h6 class="card-title" style="color:orange;">Scalability and Reliability</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 Azure provides robust infrastructure for building highly scalable and available applications.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Increased Productivity</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 .NET and Azure offer a comprehensive ecosystem with tools and services that streamline development and deployment.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Seamless Cloud Integration</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 .NET Core is cloud-native, designed to integrate effortlessly with Azure services. This simplifies deployment, management, and monitoring of AI solutions in the cloud or at the edge.
                             </p>
                             <h6 class="card-title" style="color:orange">Greater Project Ownership</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Leverage Azure's cloud-native services for features like serverless computing, microservices, and managed databases.
                             </p>
                             <h6 class="card-title" style="color:orange">Career Growth Opportunities</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
                             </p>
                             <h6 class="card-title" style="color:orange">Integration and Ecosystem</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Seamless integration between .NET applications and various Azure services.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Security and Compliance</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Azure offers extensive security features and compliance certifications.
                             </p>
                         </div>
@@ -284,17 +233,17 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     $80,000 - $100,000+
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $120,000 - $160,000
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $150,000 - $250,000+
                                 </p>
                                
@@ -310,17 +259,17 @@
                                     In India, the average salary for a .NET Azure Developer typically ranges from ₹3.0 Lakhs to ₹20.0 Lakhs per year, depending on experience and location.
                                 </p>
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹3 - ₹7 LPA (Lakhs per Annum)
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹7 - ₹20 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (5+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹25 - ₹50+ LPA, potentially up to ₹1 Crore in top companies
                                 </p>
                                
@@ -332,17 +281,17 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Location</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Cities like Bangalore, Pune, and Hyderabad are major tech centers with competitive salaries.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Type</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Product-based companies and large consulting firms often pay significantly more than smaller IT services firms. For instance, the average salary for a full stack developer at Microsoft India is much higher than the national average.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Certifications</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Having an Azure certification can boost a developer's salary potential, with certified professionals often commanding higher pay.
                                 </p>
                                

@@ -32,7 +32,7 @@
             });
         });
     </script>
-   <style>
+    <style>
         .select2-container .select2-selection--single {
             height: 34px !important;
         }
@@ -52,15 +52,17 @@
             width: 0%;
         }
 
-        .nav-link{
-            font-size:12px;
+        .nav-link {
+            /* font-size: var(--bs-nav-link-font-size); */
+            /* color:white; */
         }
-        body{
-            font-size:12px;
-        }
-    </style>  
 
-  
+     /*    body {
+            font-size: 12px;
+        } */
+    </style>
+
+
 </head>
 <body>
     <div class="whatsapp-icon" style="margin-left:15px">
@@ -75,14 +77,11 @@
     <marquee style="background-color:#223d50">
         <h4 style="color:white">Welcome To CIIT Training Institute</h4>
     </marquee>
-
     <div class="container-fluid mb-4">
-            @Html.Partial("~/Views/Shared/NavbarView.cshtml")
 
+        @Html.Partial("~/Views/Shared/Navbar2.cshtml")
     </div>
-
-
-    <div class="container-fluid">
+    <div class="">
         @RenderBody()
     </div>
     <div class="space"></div>
@@ -108,7 +107,7 @@
                             <b>Vimannagar</b>
                             <div>
                                 Office no 3A, 1st floor, Prakash Developers, Near Hotel Rasika, Pune Nagar Road, Vadgaon Sheri, Pune -411014<br />
-                             +91-7028561830<br>
+                                +91-7028561830<br>
                                 +91-7028565830<br>
                             </div>
                         </div>
@@ -229,16 +228,16 @@
                         <li><a href="/Account/Register" target="_blank" style="text-decoration:none;color:white">Student Registration</a></li>
                     </ul>
                 </div>
-                
+
             </div>
         </div>
     </footer>
 
     <div class="copy">
         <div class="container">
-            <a href="https://ciitinstitute.com" >@DateTime.Now.Year &copy; All Rights Reserved | Designed and Developed by CIIT Training Institute</a>
-           <a>|</a>
-            <a href="/privacy-policy" >Privacy Policy</a>
+            <a href="https://ciitinstitute.com">@DateTime.Now.Year &copy; All Rights Reserved | Designed and Developed by CIIT Training Institute</a>
+            <a>|</a>
+            <a href="/privacy-policy">Privacy Policy</a>
 
             <span>
                 <a href="https://github.com/yuvrajgadadare/"><i class="fab fa-github"></i></a>

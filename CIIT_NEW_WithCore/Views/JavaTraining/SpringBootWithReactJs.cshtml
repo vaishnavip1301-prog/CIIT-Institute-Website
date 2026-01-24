@@ -2,67 +2,18 @@
     ViewData["Title"] = "FullStackDevelopment";
     Layout = "~/Views/Shared/_Layout.cshtml";
  }
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
 <div style="height:auto;background-color:white;">
-    <div class="mt-5 pt-3" style="height:auto;width:100%;background-color:#007CC3;color:white;text-align:justify;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;padding-top:2%;color:white;text-align:justify;font-family:'Bookman Old Style'" ">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
                 <div class="col-md-8" style="padding-left:2%;">
                     <h5>
                         Learn Latest Spring Boot with React & get placed as a Java Full Stack Developer
                     </h5>
-                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
                         CIIT's Spring Boot + React Training is ideal for both freshers and working professionals interested in building a career as a Java full stack developer.
                     </p>
-                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 3 Months</p>
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 3 Months</h4>
                     <p style="line-height: 1.7;margin-top:2%">
                         The combination of Spring Boot for backend development and React for frontend development remains a highly sought-after skill set in the software industry, offering numerous opportunities across various sectors.
                     </p>
@@ -203,24 +154,24 @@
                                 </h5>
                             </div>
                             <h6 class="card-title" style="color:orange;">In-Demand Skill Set</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 Both Spring Boot and ReactJS are widely adopted by large enterprises and startups, ensuring consistent job demand in the market.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Full-Stack Opportunities</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Learning both technologies qualifies you for versatile "full-stack developer" roles, where professionals manage both frontend and backend development, significantly broadening job prospects.
                             </p>
                             <h6 class="card-title" style="color:orange">Global Company Adoption</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Major companies like Netflix, Amazon, Google Cloud, and many e-commerce and fintech platforms rely on this stack for their scalable systems, which means these skills are relevant in diverse industries globally.
                             </p>
                             <h6 class="card-title" style="color:orange">Job Security</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Given that many large organizations have substantial existing systems built on Java and Spring, expertise in this area provides long-term job security and numerous opportunities for maintenance and enhancement projects.
                             </p>
                             <h6 class="card-title" style="color:orange">High Performance</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 React uses a Virtual DOM (Document Object Model) to optimize UI rendering and update only necessary parts, leading to faster and smoother user experiences. Spring Boot provides an efficient, multithreaded backend with fast server responses.
                             </p>
                         </div>
@@ -242,26 +193,26 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     $85,000 - $115,000+
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $120,000 - $145,000+
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $150,000 - $200,000+ (and above)
                                 </p>
                                 <h6>Specific roles leveraging these skills include:</h6>
                                 <h6 class="card-title" style="color:orange">Azure AI Engineer</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Average salaries can range from $140,000 to over $212,500 annually, especially in tech hubs like San Francisco or New York.
                                 </p>
                                 <h6 class="card-title" style="color:orange">AI Architect</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     These leadership roles often command the highest pay, with potential to exceed $250,000 annually, depending on the company and location.
                                 </p>
                             </div>
@@ -276,17 +227,17 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹4 - ₹7 Lakhs per year
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-5 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹8 - ₹15 Lakhs per year
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (5+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹16 - ₹30 Lakhs+ per year
                                 </p>
                                  
@@ -302,12 +253,12 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Location</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Cities like Bangalore, Hyderabad, and Pune generally offer more competitive salaries due to high tech demand.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Size/Industry</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Large enterprises and high-growth industries like Fintech and E-commerce tend to offer higher packages.
                                 </p>
                             </div>

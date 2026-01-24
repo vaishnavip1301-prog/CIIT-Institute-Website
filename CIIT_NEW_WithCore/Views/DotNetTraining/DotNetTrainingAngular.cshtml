@@ -2,68 +2,20 @@
     ViewData["Title"] = "FullStackDevelopment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
+ 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
                 <div class="col-md-8" style="padding-left:2%;">
                     <h5>
                         Learn Latest Dotnet & get placed as a Dot Net Full Stack Developer
                     </h5>
-                    <p style="font-weight:bold; line-height: 1.5;margin-top:4%">
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
                         CIIT's Dotnet Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer.
                     </p>
-                    <p style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</p>
-                    <p style="line-height: 1.7;margin-top:2%">
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 6 Months</h4>
+                    <p class="mb-3" style="line-height: 1.7;margin-top:2%">
                         The combination of .NET Core for backend development and Angular for frontend development remains a highly sought-after skill set in the software industry, offering numerous opportunities across various sectors.
                     </p>
                     <p>
@@ -200,24 +152,24 @@
                                 </h5>
                             </div>
                             <h5 class="card-title" style="color:orange;">Longevity and Stability</h5>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 Both .NET Core (now unified as .NET) and Angular are continuously supported and updated by Microsoft and Google, respectively, ensuring their long-term viability. Companies with existing, large-scale applications will continue to need skilled developers for maintenance and upgrades.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Competitive Salaries</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Developers proficient in this robust stack can expect competitive compensation packages, with full-stack experts often commanding higher salaries.
                             </p>
                             <h5 class="card-title" style="color:orange">Focus on Modern Practices:</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 The future involves leveraging new features and updates, such as modern .NET versions, cloud-native solutions, and advanced front-end techniques (e.g., performance improvements in Angular).
                             </p>
                             <h5 class="card-title" style="color:orange">Adaptability is Key</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 While the stack is stable, the market favors "Developers" or "Engineers" who are adaptable and continuously learn new technologies, rather than focusing solely on one framework.
                             </p>
                             <h5 class="card-title" style="color:orange">Ideal for Freelance and Startups</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Since full stack .NET developers can manage full project cycles alone, they’re well-suited for freelance work and early-stage startups where teams are small but projects are still demanding.
                             </p>
                         </div>
@@ -239,26 +191,26 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     $80,000 - $120,000+
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $120,000 - $180,000
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $150,000 - $250,000+
                                 </p>
                                 <h6>Specific roles leveraging these skills include:</h6>
                                 <h6 class="card-title" style="color:orange">Azure AI Engineer</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Average salaries can range from $140,000 to over $212,500 annually, especially in tech hubs like San Francisco or New York.
                                 </p>
                                 <h6 class="card-title" style="color:orange">AI Architect</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     These leadership roles often command the highest pay, with potential to exceed $250,000 annually, depending on the company and location.
                                 </p>
                             </div>
@@ -273,30 +225,30 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹6 - ₹12 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-5 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹12 - ₹25 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (5+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹25 - ₹50+ LPA, potentially up to ₹1 Crore in top companies
                                 </p>
                                 <h6>Specific roles include:</h6>
                                 <h6 class="card-title" style="color:orange">Azure ML specialist</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Employees with this skill average around ₹20.9 LPA, with top earners reaching over ₹36 LPA.
                                 </p>
                                 <h6 class="card-title" style="color:orange">AI Developer</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     The average salary is approximately ₹29.1 LPA, ranging from ₹18.2 LPA to over ₹66 LPA for top performers.
                                 </p>
                                 <h6 class="card-title" style="color:orange">AI Architect</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Can earn between ₹25 LPA and ₹60 LPA or more.
                                 </p>
                             </div>
@@ -311,21 +263,21 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Specific AI/ML skills</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Expertise in high-demand areas like Generative AI, Large Language Models (LLMs), MLOps, and NLP can significantly boost earning potential.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Certifications</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Obtaining certifications such as the <b>Microsoft Certified: Azure AI Engineer Associate </b> can increase salaries by an estimated 10-20%.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Type</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Product-based tech giants (like Microsoft or Amazon) and large consulting firms often offer significantly higher salaries and additional benefits (stock options, bonuses) compared to smaller service-based companies.
                                 </p>
                                 <h6 class="card-title" style="color:orange">Location</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Major tech hubs (e.g., San Francisco, Seattle, London, Bangalore, Pune) consistently offer higher salaries due to increased demand and cost of living.
                                 </p>
                             </div>

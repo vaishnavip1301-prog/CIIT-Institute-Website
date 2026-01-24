@@ -3,74 +3,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
+ 
 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
 
                 <div class="col-md-8" style="padding-left:2%;">
 
-                    <h4>
+                    <h5>
                         Learn Latest Dot Net Technology on industry oriented projects
-                    </h4>
+                    </h5>
 
-                    <p style="font-weight:bold;  line-height: 1.5;margin-top:4%">
+                    <p class="mb-3 mt-3" style="line-height: 1.5;">
                         CIIT's Dot Net Training is ideal for both freshers and working professionals interested in building a career as a Dot Net Developer.
                     </p>
-                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</p>
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 4 Months</h4>
                     <p style="line-height: 1.7;margin-top:2%">
                         NET is closely integrated, providing a comprehensive platform for building, deploying, and managing modern cloud applications. Azure is the recommended cloud platform for .NET developers due to its native support for .NET and integration with Visual Studio tools.
                     </p>
@@ -213,44 +163,44 @@
                                 </h4>
                             </div>
                             <h6 class="card-title" style="color:orange;">High demand for .NET developers</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 In enterprise, startup, and government sectors.
                                 Opens doors to roles like Full-Stack Developer, Backend Engineer, Software Architect, and Cloud Developer.
                                 .NET skills are valued globally, especially in regions with strong Microsoft ecosystems.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Versatile Platform & Language Support</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 <b> NET is cross-platform</b> : build apps for Windows, Linux, macOS, Android, and iOS.<br />
                                 <b>Supports multiple languages</b> : C#, F#, Visual Basic.<br />
                                 Ideal for building web apps, desktop software, mobile apps, games, and IoT solutions.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Rich Ecosystem & Productivity Tools</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Access to NuGet, a powerful package manager with thousands of libraries.
                                 Integration with Visual Studio and Visual Studio Code for streamlined development.
                                 Built-in support for unit testing, debugging, and deployment.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Strong Community & Learning Resources</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Backed by Microsoft and a vibrant developer community.
                                 Abundant documentation, forums, GitHub projects, and tutorials.
 
                             </p>
 
                             <h6 class="card-title" style="color:orange">Security & Performance</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 .NET offers robust security features like authentication, authorization, and data protection.
                             </p>
                             <h6 class="card-title" style="color:orange">Integration and Ecosystem</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Optimized for high performance, especially with ASP.NET Core and .NET 8+.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Minimal APIs & OpenAPI Integration</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 <b>Enhanced Minimal APIs</b> : These lightweight endpoints now offer better performance and more features, making microservices and REST APIs easier to build.<br />
                                 <b>Built-in OpenAPI Support</b> : Simplifies API documentation and testing without needing third-party tools
 
@@ -282,25 +232,25 @@
                                     In India, the average salary for a .NET Azure Developer typically ranges from ₹3.0 Lakhs to ₹20.0 Lakhs per year, depending on experience and location.
                                 </p>
                                 <h6 class="card-title" style="color:orange;">Fresher / Entry-Level (0–1 yr)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹2.5 LPA – ₹5.5 LPA<br />
                                     Up to ₹6–8 LPA with certifications (e.g., Azure)
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Junior to Mid-Level (2–5 yrs)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹6 LPA – ₹12 LPA<br />
                                     Up to ₹10–16 LPA (e.g., with microservices/Azure experience)
 
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior (5–9 yrs)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹12 LPA – ₹22 LPA<br />
                                     Up to ₹18–28 LPA (with advanced cloud/distributed systems expertise)
                                 </p>
                                 <h6 class="card-title" style="color:orange">Lead / Architect (10+ yrs)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹22 LPA – ₹35 LPA<br />
                                     Up to ₹40 LPA+ in top product/FinTech companies
                                 </p>
@@ -312,25 +262,25 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Location</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Major IT hubs like <b>Banglore</b>, <b>Hyderabad</b>, and <b>Pune</b> generally offer higher salaries compared to other cities.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Type</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Product-based companies and Global Capability Centers (GCCs) typically offer better compensation than traditional IT services and consulting firms.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Specialized Skills</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Proficiency in high-demand areas such as Azure (or other cloud platforms), microservices architecture, and full-stack development (e.g., with React or Angular) can lead to significantly higher pay.
                                 </p>
                                 <h6 class="card-title" style="color:orange">Education</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Developers who have graduated from premier institutions may command higher starting salaries.
                                 </p>
                                 <h6 class="card-title" style="color:orange">Top Companies</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     High-paying companies, particularly in algorithmic trading or top-tier product development, can offer packages well over ₹40 LPA for senior roles
                                 </p>
 

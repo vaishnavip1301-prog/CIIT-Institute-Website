@@ -2,70 +2,19 @@
     ViewData["Title"] = "FullStackDevelopmentWithAzure";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
+ 
 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-family:'Bookman Old Style'">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
 
 
                 <div class="col-md-8" style="padding-left:2%;">
 
-                    <h3 style="color:orange">
+                    <h5 style="color:orange">
                         Learn Latest Python Full Stack Developer With AWS DevOps & AI Integration
-                    </h3>
+                    </h5>
 
                     <p style="font-weight:bold;  line-height: 1.5;margin-top:4%">
                         Skilled developers who combine full-stack Python expertise with cloud (AWS) and AI integration are in high demand, with strong career prospects and competitive salaries. This combined skill set enables professionals to build modern, scalable, and intelligent applications.
@@ -151,7 +100,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Develop Scalable Web Applications: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     You will be able to design, develop, and deploy robust, high-performance, full-stack web applications from scratch, using Python for the back-end and modern front-end frameworks (like React or Angular).
                                 </p>
 
@@ -159,7 +108,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Deploy on the Cloud: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     You can leverage AWS services (EC2, S3, RDS, Lambda) to deploy, manage, and scale applications reliably in a cloud environment.
                                 </p>
 
@@ -167,7 +116,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Integrate AI/ML Capabilities: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     You will be proficient in incorporating AI features—such as chatbots, data analytics, and search functionality—into your Python applications using AI APIs and relevant frameworks.
                                 </p>
 
@@ -175,7 +124,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Implement DevOps Practices: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     You will understand how to use tools like Docker, Jenkins, and AWS services (e.g., CodePipeline) to build efficient Continuous Integration and Continuous Deployment (CI/CD) pipelines.
                                 </p>
 
@@ -183,7 +132,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> An E-commerce Platform: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     A fully functional e-commerce site with product listings, a shopping cart, payment integration, and possibly an AI-powered recommendation engine.
 
                                 </p>
@@ -191,7 +140,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Job Readiness: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     You will be prepared for roles such as a Full Stack Python Developer, Cloud Engineer, Software Architect, or AI Integrator.
 
                                 </p>
@@ -199,7 +148,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Portfolio Building: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     The projects completed during the course will form a robust professional portfolio to showcase your skills to potential employers.
 
                                 </p>
@@ -207,7 +156,7 @@
                             <li>
 
                                 <b><i class="bi-star-fill" style="color:orange"></i> Certification: </b>
-                                <p style="margin-left:2%;color:#007CC3;">
+                                <p style="margin-left:2%;color:black;">
                                     Many courses prepare you for industry certifications, such as the AWS Certified Developer – Associate or Python certifications, enhancing your credentials.
 
                                 </p>
@@ -216,7 +165,7 @@
                         </ul>
                     </p>
                     <br />
-                    <p style="color:#007CC3;">
+                    <p style="color:black;">
                         Take the next step to become a job-ready Full-Stack Python Full Stack Developer with AWS and AI ML today!
                     </p>
                     <br />
@@ -275,59 +224,59 @@
                                 </span>
                             </div>
                             <h6 class="card-title" style="color:orange;">High Demand and Job Security</h6>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 The demand for professionals skilled in AI/ML is growing rapidly across all sectors, including healthcare, finance, and e-commerce. The ability to integrate AI solutions with established enterprise systems (often built with Python) and deploy them on the leading cloud platform (AWS) makes this skill combination highly valuable to employers.
                             </p>
 
                             <h6 class="card-title" style="color:orange">High Earning Potential</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Professionals with this integrated skill set can expect premium salaries. AI/ML specialists often earn 30-50% more than traditional software developers, and cloud AI specialists command significant compensation due to the specialized nature of their expertise.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Versatile Opportunities and Global Relevance</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 These skills open doors to a wide range of roles and industries, including:
                             </p>
                             <ul>
                                 <li>
                                     <b style="color:orange">AI/ML Engineer on AWS : </b>
-                                    <span style="color:#007CC3">Designing, building, training, and deploying intelligent systems on the cloud using tools like Amazon SageMaker and Amazon Bedrock.</span>
+                                    <span style="color:black">Designing, building, training, and deploying intelligent systems on the cloud using tools like Amazon SageMaker and Amazon Bedrock.</span>
                                 </li>
                                 <li>
                                     <b style="color:orange">Enterprise Software Architect : </b>
-                                    <span style="color:#007CC3">Modernizing large-scale Python-based enterprise systems by migrating them to AWS and integrating predictive analytics or automation using AI/ML.</span>
+                                    <span style="color:black">Modernizing large-scale Python-based enterprise systems by migrating them to AWS and integrating predictive analytics or automation using AI/ML.</span>
                                 </li>
                                 <li>
                                     <b style="color:orange">MLOps Engineer : </b>
-                                    <span style="color:#007CC3">Ensuring smooth production deployment and monitoring of ML models within an AWS cloud environment.</span>
+                                    <span style="color:black">Ensuring smooth production deployment and monitoring of ML models within an AWS cloud environment.</span>
                                 </li>
                                 <li>
                                     <b style="color:orange">Data Scientist/Engineer : </b>
-                                    <span style="color:#007CC3">Analyzing large datasets to uncover insights and building the necessary data pipelines on AWS for AI applications.</span>
+                                    <span style="color:black">Analyzing large datasets to uncover insights and building the necessary data pipelines on AWS for AI applications.</span>
                                 </li>
                             </ul>
 
                             <h6 class="card-title" style="color:orange">Innovation at Scale</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Professionals work at the forefront of technological transformation, contributing to cutting-edge innovations like self-driving cars, voice assistants, fraud detection systems, and personalized recommendation engines.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Robust Ecosystem and Resources</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Python's extensive libraries (like Python-ML and Weka) and strong compatibility with big data technologies complement AWS's comprehensive suite of AI/ML services and infrastructure, providing a powerful toolkit for building complex solutions.
                             </p>
                             <h6 class="card-title" style="color:orange">Future-Proofing Your Skills</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 The ongoing integration of AI and cloud technologies ensures that these skills remain relevant and in demand as technology evolves, providing long-term career stability.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Faster Development Cycles</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 A developer who can seamlessly switch between tasks and manage the entire process reduces communication gaps and dependencies, leading to quicker project delivery and a faster time-to-market.
                             </p>
 
                             <h6 class="card-title" style="color:orange">Intelligent Automation</h6>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 AI automates repetitive tasks in the development lifecycle (e.g., code generation, testing, documentation), allowing development teams to focus on innovative problem-solving and architectural design.
                             </p>
 
@@ -352,26 +301,26 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (0-2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     $75,000 – $95,000
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $120,000 - $180,000
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years, Architect roles)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     $100,000 – $130,000
                                 </p>
                                 <h6>Specific roles leveraging these skills include:</h6>
                                 <h5 class="card-title" style="color:orange">AWS AI Engineer</h5>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Average salaries can range from $140,000 to over $212,500 annually, especially in tech hubs like San Francisco or New York.
                                 </p>
                                 <h6 class="card-title" style="color:orange">AI Architect</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     These leadership roles often command the highest pay, with potential to exceed $250,000 annually, depending on the company and location.
                                 </p>
                             </div>
@@ -386,17 +335,17 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Entry-Level (< 2 years)</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     ₹6 LPA - ₹12 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Mid-Level (3-7 years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹12 LPA - ₹25 LPA
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Senior/Lead (7+ years)</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     ₹25 LPA - ₹50 LPA+
                                 </p>
 
@@ -412,20 +361,20 @@
                                 </h5>
 
                                 <h6 class="card-title" style="color:orange;">Certifications</h6>
-                                <p style="text-align:left;color:#007CC3;" class="mb-3">
+                                <p style="text-align:left;color:black;" class="mb-3">
                                     Holding relevant certifications such as the AWS Certified Machine Learning - Specialty can significantly boost earning potential.
                                 </p>
 
                                 <h6 class="card-title" style="color:orange">Company Type</h6>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Product-based companies (like Amazon, Google) typically offer higher salaries than service-based IT firms.
                                 </p>
                                 <h5 class="card-title" style="color:orange">Location</h5>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Major tech cities consistently offer higher salaries than other regions.
                                 </p>
                                 <h5 class="card-title" style="color:orange">Hands-on Project Experience</h5>
-                                <p style="text-align:left;color:#007CC3" class="mb-3">
+                                <p style="text-align:left;color:black" class="mb-3">
                                     Employers highly value practical experience in building and deploying complex solutions over just academic knowledge.
                                 </p>
                             </div>

@@ -4,71 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
-
+ 
 <div style="height:auto;background-color:white;">
-    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:100px;text-align:justify;font-size:18px;font-family:'Bookman Old Style'" ">
+    <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-size:18px;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
-
-
                 <div class="col-md-8" style="padding-left:2%;">
-
                     <h2>
                         Learn Latest Dotnet & get placed as a Dot Net Full Stack Developer
                     </h2>
-
                     <p style="font-weight:bold;font-size:20px;  line-height: 1.5;margin-top:4%">
                         CIIT's Dotnet Training is ideal for both freshers and working professionals interested in building a career as a Dot Net full stack developer.
                     </p>
@@ -77,13 +21,9 @@
                         .NET Core is a free, open-source, and cross-platform software framework developed by Microsoft for building modern modern, high-performance applications. It represents a significant evolution of the earlier. NET Core, designed to be more lightweight, modular, and flexible. .NET is in demand due to its versatility, performance, and continued support from Microsoft. It is used across many industries, including finance, healthcare, and e-commerce, to build secure and scalable applications, with strong job growth in areas like cloud-based solutions (Azure) and cross-platform mobile development (.NET MAUI).
                     </p>
                     <p>
-
                         CIIT's .NET Full Stack Development course offers an ideal opportunity for individuals passionate about building projects from the ground up. CIIT serves as an excellent platform for those aspiring for boundless opportunities in the IT industry as a Dot Net Full Stack Developer.
-
                     </p>
-
                     <div class="row" style="margin-top:7%;padding-bottom:2%;">
-
                         <div class="col-md-3" style="width:auto;">
                             <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
                                 <div class="card-body">
@@ -239,7 +179,7 @@
                                         <div class="col">
                                             <h2 style="color:orange"> 100% Money Back Guarantee </h2>
 
-                                            <p class="card-text" style="color:#007CC3">
+                                            <p class="card-text" style="color:black">
                                                 <b>5-Day Money-Back Guarantee</b> : Till date We have trained 10000+ candidates including under graduates,fresheres and working professionals with expert knowledge. All are satiesfied with our training quality. So we are giving guarantee to all those who want to join our institute that  if you're disappointed for whatever reason, you'll get your 100% refund. We won't make you  invoke any  rules or conditions – if you're not satisfied within your first 5 days then we'll refund you without any excuse.
                                             </p>
                                         </div>
@@ -266,49 +206,49 @@
                                 </h2>
                             </div>
                             <h5 class="card-title" style="color:orange;">All-Round Technical Proficiency</h5>
-                            <p style="text-align:left;color:#007CC3;" class="mb-3">
+                            <p style="text-align:left;color:black;" class="mb-3">
                                 A full stack .NET developer possesses knowledge of both user interface technologies (like HTML, CSS, JavaScript, Blazor) and server-side frameworks (such as ASP.NET Core, C#). This combination allows them to independently build and manage complete applications
                             </p>
 
                             <h5 class="card-title" style="color:orange">High Employability and Demand</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Organizations prefer professionals who can manage end-to-end software development. Full stack developers reduce the need for large teams by managing both front-end and back-end tasks, making them a top choice in hiring decisions.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Better Compensation</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Because of their wide skill set, full stack .NET developers often earn higher salaries than developers who specialize in only one part of the tech stack. Their ability to handle diverse responsibilities adds to their overall market value.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Greater Project Ownership</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 They are capable of understanding and managing every layer of a software project, from designing the user interface to integrating with databases and deploying to servers. This leads to better control and deeper involvement in projects.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Career Growth Opportunities</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Having expertise across various technologies opens up several career paths, including roles like Software Architect, Tech Lead, or Solution Engineer. Over time, they can even move into leadership or consulting positions.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Improved Problem Solving</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Full stack .NET developers can quickly identify and fix issues as they arise in both client and server components. This ability to see the bigger picture helps streamline development and reduce downtime.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Ideal for Freelance and Startups</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Since full stack .NET developers can manage full project cycles alone, they’re well-suited for freelance work and early-stage startups where teams are small but projects are still demanding.
 
 
                             </p>
 
                             <h5 class="card-title" style="color:orange">Faster Development Cycles</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 When a single developer manages both the front-end and back-end, communication gaps are reduced, and development progresses faster. This agility is beneficial in environments that require rapid delivery.
                             </p>
 
                             <h5 class="card-title" style="color:orange">Broad Technology Exposure</h5>
-                            <p style="text-align:left;color:#007CC3" class="mb-3">
+                            <p style="text-align:left;color:black" class="mb-3">
                                 Working across the stack introduces developers to a wide range of tools and frameworks such as Visual Studio, Entity Framework, LINQ, Azure DevOps, SQL Server, and REST APIs—building a rich and varied skill set.
                             </p>
                         </div>
@@ -519,7 +459,7 @@
 
             <div class="col-md-12" style="text-align:center">
                 <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;max-width:100%">
-                    @* <h3><span style="color:#007CC3">Join</span>. <span style="color:orange">Learn</span>. <span style="color:green">Succeed</span>.</h3> *@
+                    @* <h3><span style="color:black">Join</span>. <span style="color:orange">Learn</span>. <span style="color:green">Succeed</span>.</h3> *@
                     <h2>
                         <span style="color:orange">Our Success Lies In Our Learner's, Success Stories</span>
                     </h2>
@@ -540,7 +480,7 @@
                                         One off the best institutes then other training institutions and specially for those students who wants to start their career for IT. i hope everyone can join with us Ciit training institute, recently I have placed so special thanks to all CIIT TEAM always support, gaide and give 🙏
 
                                     </p>
-                                    <a href="https://share.google/pAHN0VDrJdXHvgIsN" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/pAHN0VDrJdXHvgIsN" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -559,7 +499,7 @@
                                         Learning at CIIT  has been a truly rewarding experience. Trainers are very good — knowledgeable, approachable, and always ready to help. Each topic is explained clearly, and special attention is given to doubt-solving, which really helps in building a strong foundation.
 
                                     </p>
-                                    <a href="https://share.google/bjQseEXwoBLIhvkQs" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/bjQseEXwoBLIhvkQs" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -578,7 +518,7 @@
                                     <p style="padding:7px;text-align:justify;color:black">
                                         I recently completed the .NET Full Stack Developer course at CIIT Training Institute, and it was an excellent experience! The course content was practical and well-organized, helping me build strong development skills and real-time project
                                     </p>
-                                    <a href="https://share.google/t4ZUPeWZBXPRk8KIh" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/t4ZUPeWZBXPRk8KIh" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -597,7 +537,7 @@
                                     <p style="padding:7px;text-align:justify;color:black">
                                         I’m truly grateful for your mentorship throughout my journey with Python Selenium automation. Your deep expertise, structured guidance, and hands-on approach made complex concepts easy to understand. You not only helped me strengthen my technical skills ...
                                     </p>
-                                    <a href="https://share.google/UZ0Su5d5xR6B1cZKu" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/UZ0Su5d5xR6B1cZKu" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -620,7 +560,7 @@
 
                                         Mocks interview, topic revison, conceptual and practical approach with one to one doubt solving of mentors are really admirable.
                                     </p>
-                                    <a href="https://share.google/Pbg3OONFQwAMrtvQJ" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/Pbg3OONFQwAMrtvQJ" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -639,7 +579,7 @@
                                     <p style="padding:7px;text-align:justify;color:black">
                                         I had an excellent experience at CIIT Training Institute. The .NET Full Stack Developer course with React was comprehensive and well-structured. Special thanks to Leena Ma'am and Yuvaraj Sir for their expert guidance and hands-on approach...
                                     </p>
-                                    <a href="https://share.google/eonYQfEOuKpExsM8X" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/eonYQfEOuKpExsM8X" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -658,7 +598,7 @@
                                     <p style="padding:7px;text-align:justify;color:black">
                                         As a Full Stack Development student at CIIT Training Institute, I can confidently say they provide excellent training from basics to advanced levels. With hands-on projects and internship opportunities, it's a great place to start your career in top companies.
                                     </p>
-                                    <a href="https://share.google/LwEbn4Zm9mJaKeBmm" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/LwEbn4Zm9mJaKeBmm" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -678,7 +618,7 @@
                                         CIIT Training Institute is a great place to learn and grow, especially for those who want to start from basic to advance .
                                         they focus on providing best quality knowledge on the courses you choose with hands-on on projects and internship opportunities that helps to build real-world skills
                                     </p>
-                                    <a href="https://share.google/t82AZdm7dlXxhp7Yw" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/t82AZdm7dlXxhp7Yw" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -700,7 +640,7 @@
                                         CIIT Training Institute offers excellent training in .NET Full-Stack Development. The instructors are knowledgeable and have designed a curriculum that covers everything from the basics to advanced topics. The hands-on projects are great for building practical skills...
 
                                     </p>
-                                    <a href="https://share.google/ES8DGk5a1H40IGEF6" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/ES8DGk5a1H40IGEF6" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -720,7 +660,7 @@
                                         CIIT Training Institute is one of its kind.
                                         There are well trained and qualified trainers who give in depth explanation about topics . Hands on experience and practical knowledge and information is also provided by the trainers.The training is given keeping...
                                     </p>
-                                    <a href="https://share.google/uruGlBaHkSo1H2bnA" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/uruGlBaHkSo1H2bnA" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -740,7 +680,7 @@
                                         Great Place for learning! Best corporate training institute... Convenient batches are provided.... You will get to learn from scratch and the best thing is you can reach out to staff at any time if you have any doubts... Weekly mocks helps out to decide on what topics to emphasize more...
 
                                     </p>
-                                    <a href="https://share.google/EgZJz6gQOVsYmzWWe" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/EgZJz6gQOVsYmzWWe" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
@@ -762,7 +702,7 @@
                                         It has a great experience of learning with CIIT Training Institute . Special thanks to Swapnil sir who has taught us from basic .the way of his teaching is simple so that I can understand everything easily . Also thanks to yuvraj sir who gave more knowledge about current...
                                     </p>
 
-                                    <a href="https://share.google/9oPIwzqEDgswI421J" target="_blank" style="color:#007CC3">Read Complete Feedback</a>
+                                    <a href="https://share.google/9oPIwzqEDgswI421J" target="_blank" style="color:black">Read Complete Feedback</a>
 
                                 </div>
                             </div>
