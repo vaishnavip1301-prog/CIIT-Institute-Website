@@ -63,6 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\assets\NewFolder\" />
     <Folder Include="wwwroot\images\Students\" />
     <Folder Include="wwwroot\Videos\" />
   </ItemGroup>

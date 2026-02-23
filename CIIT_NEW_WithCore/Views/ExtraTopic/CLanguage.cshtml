@@ -4,57 +4,10 @@
 }
 
 <style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    p,li {
+        color: black;
     }
 </style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
-
 <div style="height:auto;background-color:white;">
     <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
         <div class="container" style="padding-left:2%;max-width:100%">
@@ -64,22 +17,19 @@
                 <div class="col-md-8" style="padding-left:2%;">
 
                     <h4>
-                       Learn C,CPP Training with 100% practically   
+                       Learn C Training with 100% practically   
                     </h4>
-                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                    <p style="line-height: 1.5;margin-top:2%;color:white">
                         Training for the C programming language in 2026 focuses on building a foundation for system-level development, embedded systems, and high-performance software. As of January 2026, various online and specialized platforms offer curricula ranging from absolute beginner basics to advanced memory management and parallel programming.
                     </p>
-                     
-
-
                     <div class="row" style="margin-top:7%;padding-bottom:2%;">
 
                         <div class="col-md-3" style="width:auto;">
                             <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
                                 <div class="card-body">
-                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                    <a href="#" style="color:white;text-align:center;">
                                         Course Duration:<br />
-                                        1 Month
+                                        1.5 Months
                                     </a>
                                 </div>
                             </div>
@@ -87,7 +37,7 @@
                         <div class="col-md-3" style="width:auto;">
                             <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
                                 <div class="card-body">
-                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                    <a href="#" style="color:white;text-align:center;">
                                         Training Mode:<br />
                                         Classroom & Online
                                     </a>
@@ -97,7 +47,7 @@
                         <div class="col-md-3" style="width:auto;">
                             <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
                                 <div class="card-body">
-                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                    <a href="#" style="color:white;text-align:center;">
 
                                         Batches Available:<br />
                                         Weekdays/Weekends
@@ -108,7 +58,7 @@
                         <div class="col-md-3" style="width:auto;">
                             <div class="card text-white mb-3" style="background-color:orange;color:white;border-radius:20px 20px 20px 20px">
                                 <div class="card-body">
-                                    <a href="#" style="color:white;text-align:center;font-size:12px;">
+                                    <a href="#" style="color:white;text-align:center;">
 
                                         Language:<br />
                                         English , Hindi, Marathi
@@ -137,43 +87,43 @@
         <div class="container" style="padding-left:2%;max-width:100%">
             <div class="row">
                 <div class="col-md-8">
-                    <h5>
+                    <h5 class="mb-3">
                         Professional & Career Outcomes of C Language Training
                     </h5>
-                    <p>
+                    <p class="mb-3">
                         The C programming language offers numerous benefits, primarily stemming from its efficiency, speed, and low-level hardware control, making it a foundational and powerful tool for system-level programming and an excellent language for learning core computer science concepts.
                         <ul>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>High Performance and Efficiency </b> :
-                                <p style="margin-left:2%">
+                                <p  style="margin-left:2%">
                                     C programs compile into optimized machine code, resulting in very fast execution speeds. This efficiency makes it the language of choice for performance-critical applications like operating systems, database engines (such as MySQL), and game engines.
                                 </p>
                             </li>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Low-Level Hardware Access</b> :
                                 <p style="margin-left:2%">
                                     As a middle-level language, C allows developers to interact directly with system resources and memory using features like pointers and memory management functions (e.g., malloc and free). This granular control is essential for developing device drivers, operating system kernels (like UNIX and Linux), and embedded systems (e.g., in microcontrollers, automotive systems, and IoT devices).
                                 </p>
                             </li>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Portability</b> :
                                 <p style="margin-left:2%">
                                     C is a highly portable language, meaning that C programs can be compiled and run on a vast range of hardware platforms and operating systems (Windows, Linux, macOS, etc.) with little or no modification. When new CPU architectures are developed, the first available compiler is almost always a C compiler.
                                 </p>
                             </li>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Foundation for Learning</b> :
                                 <p style="margin-left:2%">
                                     C forces programmers to manage memory and resources manually, which builds a deep understanding of how computers work "under the hood". The syntax and core concepts of C have influenced many other popular languages (C++, C#, Java, Python, JavaScript, etc.), making it easier to learn other programming languages once C is mastered.
                                 </p>
                             </li>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Structured Programming </b> :
                                 <p style="margin-left:2%">
                                     C is a structured language that encourages breaking down complex programs into simpler, reusable functions or modules, which makes code easier to test, maintain, and understand.
                                 </p>
                             </li>
-                            <li>
+                            <li class="mb-3">
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Rich Library and Extensibility</b> :
                                 <p style="margin-left:2%">
                                     C has a comprehensive standard library with a large number of built-in functions for various tasks, and it is highly extensible, allowing developers to add their own functions to libraries.
@@ -193,9 +143,9 @@
 
                         </div>
                         <div class="col-md-4">
-                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p style="">Weekdays (Mon-Fri) - 1.5 Months </p>
                             <p>
-                                Weekends (Sat & Sun) - 7 Months
+                                Weekends (Sat & Sun) - 2 Months
                             </p>
                         </div>
                         <div class="col-md-4">
@@ -211,7 +161,7 @@
 
                 </div>
                 <div class="col-md-4" style="padding-left:2%;padding-bottom:2%">
-                    <img src="/assets/technologies/dotnet2.jpg" style="height:300px;width:100%" alt="devops" />
+                    <img src="/assets/Courses/CLanguage.png" style="height:300px;width:100%" alt="devops" />
                     <br />
                     <h4> Course Information</h4>
                     <p> <i class="bi bi-person-fill" style="color:orange"></i> <b>Batches Available:</b> Weekdays/Weekends</p>
@@ -248,7 +198,8 @@
                                 </b> :
                                 <p style="margin-left:2%">
                                     A standard C training program typically covers these essential modules:
-                                    <ul>
+                                    </p>
+                                    <ul class="p-4">
                                         <li>
                                             <b>Fundamentals:</b>
                                             <p style="margin-left:2%">
@@ -286,7 +237,7 @@
                                             </p>
                                         </li>
                                     </ul>
-                                </p>
+                                 
 
                             </li>
                          

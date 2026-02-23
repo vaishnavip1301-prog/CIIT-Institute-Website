@@ -9,11 +9,11 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("Data-Analytics-With-100%-Job-Assistance")]
-        public IActionResult DataAnalytics()
-        {
-            return View();
-        }
+        //[Route("Data-Analytics-With-100%-Job-Assistance")]
+        //public IActionResult DataAnalytics()
+        //{
+        //    return View();
+        //}
         [Route("Project-Based-Advanced-Generative-Training")]
         public IActionResult AdvanceGenerativeAI()
         {
