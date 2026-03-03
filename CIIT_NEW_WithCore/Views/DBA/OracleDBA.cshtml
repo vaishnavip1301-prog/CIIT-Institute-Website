@@ -3,57 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    /* Custom style */
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-        transform: scale(.7) !important;
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
-    }
-</style>
-<style>
-    .accordion-button {
-        display: flex;
-        align-items: center;
-    }
-
-        .accordion-button i {
-            margin-right: 10px; /* Adjust spacing as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for icon change */
-        }
-
-        /* Optional: Style for the plus/minus icons if not using Font Awesome */
-        .accordion-button.collapsed i::before {
-            content: "+";
-        }
-
-        .accordion-button:not(.collapsed) i::before {
-            content: "-";
-        }
-
-</style>
-
-<script>
-        $(document).ready(function() {
-      $('.accordion-button').on('click', function() {
-        let icon = $(this).find('i');
-        if ($(this).hasClass('collapsed')) {
-          icon.removeClass('fa-minus').addClass('fa-plus');
-        } else {
-          icon.removeClass('fa-plus').addClass('fa-minus');
-        }
-      });
-
-      // Set initial icon state for any initially open accordion items
-      $('.accordion-collapse.show').each(function() {
-        $(this).prev('.accordion-header').find('.accordion-button i').removeClass('fa-plus').addClass('fa-minus');
-      });
-    });
-</script>
-
+ 
 
 <div style="height:auto;background-color:white;">
     <div class="" style="height:auto;width:100%;background-color:#007CC3;color:white;padding-top:2%;text-align:justify;font-family:'Bookman Old Style'">
@@ -66,12 +16,12 @@
                     <h4>
                         Get Job-Ready with  Industry-Leading Oracle DBA training
                     </h4>
-                    <p style="font-weight:bold;  line-height: 1.5;margin-top:2%">
+                    <p style=" line-height: 1.5;margin-top:2%">
                         CIIT's An Oracle DBA (Database Administrator) course teaches you to install, manage, secure, and tune Oracle databases, covering core topics like architecture (SGA, PGA, Processes), storage (Tablespaces, Segments), user/security management, SQL, Backup & Recovery (RMAN), Performance Tuning (AWR, ADDM), High Availability (Data Guard, RAC), and patching, with modern courses focusing on 19c/21c Multi-Tenancy and Cloud integration for freshers to experienced IT pros
                     </p>
-                    <p style="text-align:center;font-size:14px;font-weight:bold;color:orange">Get Your Dream IT Job Just in 2 Months</p>
+                    <h4 style="text-align:center;font-weight:bold;color:orange">Get Your Dream IT Job Just in 2 Months</h4>
                     <p style="line-height: 1.7;margin-top:2%">
-                        In 2025,2026 mastering this tool is increasingly valuable as organizations transition toward data-driven cultures.
+                        In 2026 mastering this tool is increasingly valuable as organizations transition toward data-driven cultures.
                     </p>
 
 
@@ -82,7 +32,7 @@
                                 <div class="card-body">
                                     <a href="#" style="color:white;text-align:center;font-size:12px;">
                                         Course Duration:<br />
-                                        4 Months
+                                        5 Months
                                     </a>
                                 </div>
                             </div>
@@ -143,27 +93,27 @@
                     <h5>
                         What are the Benefits of Oracle DBA Training
                     </h5>
-                    <p>
-                        In 2026, completing an Oracle Database Administration (DBA) course offers significant professional advantages as organizations increasingly integrate AI, multitenant architectures, and cloud solutions.
-                    </p>
-                    <p>
+                    <div class="mb-3">
+                        In 2026 completing an Oracle Database Administration (DBA) course offers significant professional advantages as organizations increasingly integrate AI, multitenant architectures, and cloud solutions.
+                    </div>
+                    <div class="mb-3">
 
                         <ul>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Lucrative Salary</b> :
-                                <p style="margin-left:2%">
-                                    Oracle-certified DBAs are among the top-paid tech professionals. In 2025,2026, the average salary for an Oracle DBA in India is approximately <b>₹9,00,000 per year</b>, while global averages reach <b>$95,000/year</b>.
+                                <p class="mb-3" style="margin-left:2%">
+                                    Oracle-certified DBAs are among the top-paid tech professionals. In 2026 the average salary for an Oracle DBA in India is approximately <b>₹9,00,000 per year</b>, while global averages reach <b>$95,000/year</b>.
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>High Demand & Job Stability</b> :
-                                <p style="margin-left:2%">
-                                    There is a persistent shortage of certified Oracle professionals. This demand-supply gap makes it a "jobseeker's market" in 2025.
+                                <p class="mb-3" style="margin-left:2%">
+                                    There is a persistent shortage of certified Oracle professionals. This demand-supply gap makes it a "jobseeker's market" in 2026.
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Promotion Prospects</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     Obtaining certification often leads to immediate career milestones, with some professionals reporting up to a 20% salary increase within a year.
                                 </p>
                             </li>
@@ -172,42 +122,42 @@
 
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Advanced Architecture</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     You gain deep expertise in current standards, specifically Oracle 19c and 23ai, including mandatory multitenant (CDB/PDB) management.
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>AI Integration</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     Modern courses cover AI Vector Search, teaching you how to manage unstructured data for AI-driven enterprise applications.
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Critical Operations</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     Access up-to-date information from various sources (Excel, SQL, web).
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Security Enforcement</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     You learn to implement Transparent Data Encryption (TDE) and unified auditing, essential for meeting global compliance standards like GDPR.
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Hybrid & Multicloud Skills</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     Training prepares you to manage databases on Oracle Cloud Infrastructure (OCI) and hybrid environments, covering critical skills like Zero Downtime Migration (ZDM).
                                 </p>
                             </li>
                             <li>
                                 <i class="bi-star-fill" style="color:orange"></i> <b>Autonomous Database</b> :
-                                <p style="margin-left:2%">
+                                <p class="mb-3" style="margin-left:2%">
                                     You learn to provision and manage self-driving databases, reducing manual labor and focusing on more strategic data management.
                                 </p>
                             </li>
                         </ul>
-                    </p>
+                    </div>
 
                     <br />
                     <div class="row">
@@ -216,7 +166,7 @@
 
                         </div>
                         <div class="col-md-4">
-                            <p style="">Weekdays (Mon-Fri) - 6 Months </p>
+                            <p style="">Weekdays (Mon-Fri) - 5 Months </p>
                             <p>
                                 Weekends (Sat & Sun) - 7 Months
                             </p>
@@ -247,48 +197,48 @@
             </div>
             @Html.Partial("~/Views/Shared/MoneyBackGuarantee.cshtml")
             @Html.Partial("~/Views/Shared/Companies.cshtml")
-            <div class="container" style="padding-left:2%;max-width:100%">
-                <div class="col-md-12 mb-5">
-                    <div class="card mb-4" style="padding-left:2%;max-width:100%">
+            <div class="container mb-3" style="padding-left:2%;max-width:100%">
+                <div class="col-md-12 mb-3">
+                    <div class="card mb-4" style="max-width:100%">
                         <div class="card-body">
-                            <div class="mb-5">
+                            <div class="mb-3">
                                 <h5>
                                     <span style="color:orange">
                                         What are the Outcomes of Oracle DBA training
                                     </span>
                                 </h5>
-                                In 2025, Oracle DBA training is designed to produce professionals capable of managing high-availability, AI-integrated, and cloud-hybrid database environments. The outcomes are categorized into core technical capabilities and professional career growth.
+                                In  Oracle DBA training is designed to produce professionals capable of managing high-availability, AI-integrated, and cloud-hybrid database environments. The outcomes are categorized into core technical capabilities and professional career growth.
                             </div>
-                            <h6 class="card-title" style="color:orange;">Salary & Roles</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
-                                Completion typically qualifies individuals for high-paying roles such as Cloud DBA, Database Architect, or Performance Tuning Engineer, with 2025 average salaries for certified DBAs reaching approximately ₹9,00,000/year in India and $95,000/year globally.
+                            <i class="bi-star-fill" style="color:orange"></i> <b class="card-title">Salary & Roles</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
+                                Completion typically qualifies individuals for high-paying roles such as Cloud DBA, Database Architect, or Performance Tuning Engineer, in 2026 average salaries for certified DBAs reaching approximately ₹9,00,000/year in India and $95,000/year globally.
                             </p>
-                            <h6 class="card-title" style="color:orange;">Multitenant Mastery</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i> <b class="card-title">Multitenant Mastery</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Proficiency in the "Multitenant" architecture (default in 23ai), enabling the management of multiple Pluggable Databases (PDBs) within a single Container Database (CDB) for better resource efficiency.
                             </p>
-                            <h6 class="card-title" style="color:orange">AI and Vector Management</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>  <b class="card-title">AI and Vector Management</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Ability to implement Oracle AI Vector Search, allowing the database to handle unstructured data (like images and documents) for modern AI-driven enterprise applications.
                             </p>
-                            <h6 class="card-title" style="color:orange">Zero-Downtime Operations</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>  <b class="card-title">Zero-Downtime Operations</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Expertise in high-availability tools like Oracle Data Guard and RAC (Real Application Clusters) to ensure business continuity and near-zero downtime.
                             </p>
-                            <h6 class="card-title" style="color:orange">Advanced Recovery</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>   <b class="card-title">Advanced Recovery</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Mastery of RMAN (Recovery Manager) for automated, incremental-forever backups and Flashback technology for point-in-time data recovery.
                             </p>
-                            <h6 class="card-title" style="color:orange">Performance Engineering</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>  <b class="card-title">Performance Engineering</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Skill in proactive tuning using AWR (Automatic Workload Repository) and ASH (Active Session History) to identify and resolve CPU, memory, or I/O bottlenecks.
                             </p>
-                            <h6 class="card-title" style="color:orange">Cross-Cloud Architecture</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>  <b class="card-title">Cross-Cloud Architecture</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 New certifications (e.g., Oracle Database@AWS Architect Professional) now train DBAs to manage Oracle databases specifically within AWS and Google Cloud environments.
                             </p>
-                            <h6 class="card-title" style="color:orange">Industry Certification</h6>
-                            <p style="text-align:left;color:black;margin-left:2%" class="mb-3">
+                            <i class="bi-star-fill" style="color:orange"></i>   <b class="card-title">Industry Certification</b>
+                            <p style="text-align:left;margin-left:2%" class="mb-3">
                                 Preparation for the Oracle Database Administration Certified Professional (OCP) credential, which is a global benchmark for technical expertise.
                             </p>
                         </div>
@@ -302,71 +252,71 @@
                 <div class="row">
 
                     <div class="col-md-12">
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
 
                         <h5 style="color:orange">Why Learn Oracle DBA in 2026?</h5>
                         <br />
 
-                        <p>
-                            In 2026, learning Oracle Database Administration (DBA) is a strategic move driven by Oracle's strongest growth phase in two decades. The role is shifting from manual maintenance to high-level data orchestration, fueled by the integration of AI and multi-cloud availability.
+                        <div class="mb-3">
+                            In 2026 learning Oracle Database Administration (DBA) is a strategic move driven by Oracle's strongest growth phase in two decades. The role is shifting from manual maintenance to high-level data orchestration, fueled by the integration of AI and multi-cloud availability.
+                            </div>
+
+                            
+                            <div class="mb-3">
 
                             <ul>
                                 <li>
                                     <i class="bi-star-fill" style="color:orange"></i>
-                                    <b>AI Vector Search</b> :
+                                    <b>AI Vector Search</b>:
 
-                                    <p style="margin-left:2%">
+                                    <p class="mb-3" style="margin-left:2%">
                                         You will manage unstructured data (images, documents) directly within the database using AI vectors, enabling more accurate results for Large Language Models (LLMs).
                                     </p>
                                 </li>
                                 <li>
-                                    <b>Autonomous Operations:</b>
-                                    <p style="margin-left:2%">
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Autonomous Operations</b>:
+                                    <p class="mb-3" style="margin-left:2%">
                                         Features like self-patching, self-tuning, and self-repairing are becoming standard. Instead of routine tasks, DBAs in 2026 focus on intelligent oversight and cost optimization.
                                     </p>
                                 </li>
                                 <li>
-                                    <b>Rapid Growth Phase:</b>
-                                    <p style="margin-left:2%">
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Rapid Growth Phase</b>:
+                                    <p class="mb-3" style="margin-left:2%">
                                         Oracle projects its cloud infrastructure revenue to grow from $18 billion in 2026 to $144 billion by 2030. This rapid scaling is creating an urgent need for skilled professionals.
                                     </p>
                                 </li>
                                 <li>
-                                    <b>Job Security:</b>
-                                    <p style="margin-left:2%">
+                                    <i class="bi-star-fill" style="color:orange"></i> <b>Job Security</b>:
+                                    <p class="mb-3" style="margin-left:2%">
                                         DBA jobs are projected to grow faster than the average for all occupations, with specific high demand in mission-critical sectors like finance, healthcare, and government.
                                     </p>
                                 </li>
                                  <li>
-                                     <b>Widespread Adoption:</b>
-                                     <p style="margin-left:2%">
+                                    <i class="bi-star-fill" style="color:orange"></i>   <b>Widespread Adoption</b>:
+                                    <p class="mb-3" style="margin-left:2%">
                                          Over <b>97% of Fortune 500 companies</b> use the tool, creating a vast job market.
                                      </p>
                                  </li>
                                   
                                 <li>
-                                    <b>Earning Potential:</b>
-                                    <p style="margin-left:2%">
-                                        In 2026, Oracle DBAs remain among the highest-paid database professionals. In India, leadership-level salaries can exceed ₹40,00,000+, while the median pay in the U.S. is approximately $144,500.
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Earning Potential</b>:
+                                    <p class="mb-3" style="margin-left:2%">
+                                        In 2026 Oracle DBAs remain among the highest-paid database professionals. In India, leadership-level salaries can exceed ₹40,00,000+, while the median pay in the U.S. is approximately $144,500.
                                     </p>
                                 </li>
+                                </ul>
+                        </div>
+                        </div>
+                       
 
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
 
-
-
-
-
-                            </ul>
-
-                        </p>
-
+                        <h5 style="color:orange">Course Highlights</h5>
                         <br />
-
-
-                        <h5 style="color:orange">Course Highlights:</h5>
-                        <br />
-                        <p>
+                        <div class="mb-3">
                             Our Oracle DBA course syllabus covers core database concepts, installation, architecture, storage (tablespaces, datafiles, ASM), user/security management, networking, performance tuning (SQL, AWR/ADDM), and critical backup/recovery using RMAN, often including advanced topics like Data Guard, Oracle Multitenant (CDB/PDB), Oracle RAC, and patching/upgrades, all built upon a foundation of SQL and Linux fundamentals.
-                        </p>
+                        </div>
+                        <div class="mb-3">
                         <ul>
 
                             <li>
@@ -374,54 +324,54 @@
                                 <i class="bi-star-fill" style="color:orange"></i> <b>
                                     Core Modules
                                 </b> :
-                                <p style="margin-left:2%">
+                                <div class="mb-3" style="margin-left:2%">
 
                                     <ul>
                                         <li>
                                             <b>Introduction & Architecture:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Role of DBA, Oracle Database Architecture (Processes, Memory, Storage), Installation (OUI), DBCA.
                                             </p>
                                         </li>
                                         <li>
                                             <b>SQL & PL/SQL Fundamentals:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 DDL/DML, Constraints, Joins, Views, Indexes, Procedures, Functions, Triggers.
                                             </p>
                                         </li>
 
                                         <li>
                                             <b>Instance Management:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Starting/Stopping, PFILE/SPFILE, Alert Log, EM, Dynamic Performance Views.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Storage Management:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Tablespaces, Datafiles, OMF, Segments, Extents, Undo/Redo Logs, ASM.
                                             </p>
                                         </li>
                                         <li>
                                             <b>User & Security Management:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 User Creation, Roles, Privileges, Auditing.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Networking:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Listeners, TNSNAMES, Database Links, Materialized Views.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Backup & Recovery:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Logical (EXPDP/IMPDP) & Physical (RMAN, Cold/Hot) Backups, Recovery Scenarios, RMAN Configuration.
                                             </p>
                                         </li>
                                     </ul>
-                                </p>
+                                </div>
                             </li>
 
                             <li>
@@ -429,67 +379,67 @@
                                 <i class="bi-star-fill" style="color:orange"></i> <b>
                                     Advanced & Specialized Topics
                                 </b> :
-                                <p style="margin-left:2%">
+                                <div class="mb-3" style="margin-left:2%">
 
                                     <ul>
                                         <li>
                                             <b>Performance Tuning:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 SQL Tuning, AWR/ADDM/ASH Reports, Index Tuning, SGA Tuning.
                                             </p>
                                         </li>
                                         <li>
                                             <b>High Availability:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Data Guard (Standby Databases, Failover), Introduction to RAC.
                                             </p>
                                         </li>
 
                                         <li>
                                             <b>Oracle Multitenant (12c+):</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 CDBs & PDBs, Container Databases.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Patching & Upgrades:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Patch Management, Database Upgrades (e.g., 10g to 11g, 19c).
                                             </p>
                                         </li>
                                         <li>
                                             <b>Cloning:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Cold, Hot, RMAN, Transportable Tablespace Cloning.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Utilities:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 SQL*Loader, External Tables, LogMiner.  
                                             </p>
                                         </li>
                                        
                                     </ul>
-                                </p>
+                                </div>
                             </li>
                             <li>
 
                                 <i class="bi-star-fill" style="color:orange"></i> <b>
                                     Practical Skills
                                 </b> :
-                                <p style="margin-left:2%">
+                                <div class="mb-3" style="margin-left:2%">
 
                                     <ul>
                                         <li>
                                             <b>Linux:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Basic commands, file management, user management, scripting.
                                             </p>
                                         </li>
                                         <li>
                                             <b>Hands-on Labs:</b>
-                                            <p style="margin-left:2%">
+                                                <p class="mb-3" style="margin-left:2%">
                                                 Real-time scenarios, projects, and mock interviews.
                                             </p>
                                         </li>
@@ -497,65 +447,71 @@
                                         
 
                                     </ul>
-                                </p>
+                                </div>
                             </li>
 
                         </ul>
-                        <div style="margin-top:2%">
+                        </div>
+                        </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
+
                             <h5 style="color:orange">
                                 Who can do?
                                 <br />
                             </h5>
                             <br />
                             <p>
-                                Becoming an Oracle Database Administrator (DBA) is a career path open to individuals with a mix of technical educational backgrounds and specific practical skills. As of 2025, 2026, the role is shifting from traditional on-premise maintenance to managing cloud-based and autonomous database systems.
+                                Becoming an Oracle Database Administrator (DBA) is a career path open to individuals with a mix of technical educational backgrounds and specific practical skills. As of  2026 the role is shifting from traditional on-premise maintenance to managing cloud-based and autonomous database systems.
                             </p>
-                            <p>
+                            <div class="mb-3">
                                 <ul>
                                     <li>
-                                        <b>Education Background</b> :
-                                        <p style="margin-left:2%">
+                                        <i class="bi-star-fill" style="color:orange"></i>  <b>Education Background</b> :
+                                        <p class="mb-3" style="margin-left:2%">
                                             Most entry-level positions require a <b>Bachelor’s degree</b> in Computer Science, Information Technology, Information Systems, or a related engineering field. Some candidates with degrees in Mathematics or Physics also transition successfully due to the analytical nature of the work.
                                         </p>
                                     </li>
                                     <li>
-                                        <b>Career Switchers</b> :
-                                        <p style="margin-left:2%">
+                                        <i class="bi-star-fill" style="color:orange"></i>   <b>Career Switchers</b> :
+                                        <p class="mb-3" style="margin-left:2%">
                                             Professionals already working in IT roles—such as <b>System Administrators, IT Support, or Software Developers</b> — can transition by gaining hands-on database experience.
                                         </p>
                                     </li>
                                     <li>
-                                        <b>Freshers</b> :
-                                        <p style="margin-left:2%">
+                                        <i class="bi-star-fill" style="color:orange"></i>   <b>Freshers</b> :
+                                        <p class="mb-3" style="margin-left:2%">
                                             Graduates can enter the field by starting in junior positions like <b>Junior DBA </b>or <b>Data Analyst</b> and obtaining vendor-specific certifications to validate their skills.
                                         </p>
                                     </li>
                                     
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                         <div class="shadow-lg p-3 mb-5 bg-body rounded" style="padding-left:2%;margin-top:2% ;max-width:100%">
                             <h5 style="color:orange">
                               Oracle Database Administrator (DBA)  Career Path
                             </h5>
-                          The career path for an Oracle Database Administrator (DBA) in 2025,2026 is undergoing a major shift from traditional on-premise maintenance to high-level architecture and cloud management. As automation and AI (like Oracle 23ai) take over routine tasks such as patching and indexing, DBAs are increasingly evolving into Database Reliability Engineers (DRE) or Data Architects
-                            <br />
-                            <br />
+                          The career path for an Oracle Database Administrator (DBA) in 2026 is undergoing a major shift from traditional on-premise maintenance to high-level architecture and cloud management. As automation and AI (like Oracle 23ai) take over routine tasks such as patching and indexing, DBAs are increasingly evolving into Database Reliability Engineers (DRE) or Data Architects
+                           
                             <ul>
                                 <li>
-                                    <h6 style="color:orange"> Junior Oracle DBA (0–2 years)</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i> <b> Junior Oracle DBA (0–2 years)</b>
+                                    <div class="mb-3" style="padding-left:2%">
                                     <ul>
                                         <li>
                                          
-                                            <p>
+                                            <p class="mb-3">
                                                 Focuses on monitoring, basic troubleshooting, user management, and regular backups.
                                             </p>
                                         </li>
                                         
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">Oracle DBA (2–5 years)</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Oracle DBA (2–5 years)</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -565,9 +521,12 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">Senior Oracle DBA (5+ years)</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Senior Oracle DBA (5+ years)</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -577,9 +536,12 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">Database Manager / Lead</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>  <b>Database Manager / Lead</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -589,9 +551,12 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">Database Architect</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>   <b>Database Architect</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -601,9 +566,12 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">Chief Data Officer (CDO)</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>   <b>Chief Data Officer (CDO)</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -613,9 +581,12 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                                 <li>
-                                    <h6 style="color:orange">2026 Salary Expectations</h6>
+                                    <i class="bi-star-fill" style="color:orange"></i>   <b>2026 Salary Expectations</b>
+                                    <div class="mb-3" style="padding-left:2%">
+
                                     <ul>
                                         <li>
 
@@ -633,6 +604,7 @@
                                         </li>
 
                                     </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
