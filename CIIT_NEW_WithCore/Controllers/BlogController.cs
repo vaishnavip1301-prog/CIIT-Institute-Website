@@ -7,7 +7,9 @@ namespace CIIT_NEW_WithCore.Controllers
         [Route("ciit-blogs")]
         public IActionResult Index()
         {
+
             return View();
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace CIIT_NEW_WithCore.Controllers
             return View();
         }
 
-        [Route("Python-Django-FastApi-Trainin-For-Working-Professionals")]
+        [Route("Python-Django-FastApi-Training-For-Working-Professionals")]
         public IActionResult PythonWebTraining()
         {
             return View();
