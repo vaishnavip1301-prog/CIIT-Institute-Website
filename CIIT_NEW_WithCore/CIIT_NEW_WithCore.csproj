@@ -68,10 +68,4 @@
     <Folder Include="wwwroot\Videos\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Models\ERP_Models.csproj" />
-    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ERP_Services\ERP_Services.csproj" />
-    <ProjectReference Include="E:\Study Material\Core MVC Evening Projects\CoreIdentityExample\ExamModels\ExamModels.csproj" />
-  </ItemGroup>
-
 </Project>
