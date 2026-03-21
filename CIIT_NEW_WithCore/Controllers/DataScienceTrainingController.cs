@@ -19,5 +19,20 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
+        [Route("Machine-Learning-Training")]
+        public IActionResult MachineLearning()
+        {
+            return View();
+        }
+        [Route("Data-Engineering-Training")]
+        public IActionResult DataEngineeringTraining()
+        {
+            return View();
+        }
+        [Route("Business-Analytics-Training")]
+        public IActionResult BusinessAnalytics()
+        {
+            return View();
+        }
     }
 }

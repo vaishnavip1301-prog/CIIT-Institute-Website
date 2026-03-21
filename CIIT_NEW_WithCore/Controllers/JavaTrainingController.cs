@@ -9,17 +9,17 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
-        [Route("Java-Full-Strack-Development-Training-With-Live-Project")]
+        [Route("Java-Full-Stack-Development-Training-With-Live-Project")]
         public IActionResult JavaFullStrackDevelopment()
         {
             return View();
         }
-        [Route("Java-Full-Strack-Development-With-Aws-Training-With-Live-Project")]
+        [Route("Java-Full-Stack-Development-With-Aws-Training-With-Live-Project")]
         public IActionResult JavaFullStrackDevelopmentWithAws()
         {
             return View();
         }
-        [Route("Java-Full-Strack-Development-With-Aws-Ai-Training-With-Live-Project")]
+        [Route("Java-Full-Stack-Development-With-Aws-Ai-Training-With-Live-Project")]
         public IActionResult JavaFullStrackDevelopmentWithAwsAi()
         {
             return View();

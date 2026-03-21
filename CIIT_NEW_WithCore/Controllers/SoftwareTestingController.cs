@@ -4,7 +4,7 @@ namespace CIIT_NEW_WithCore.Controllers
 {
     public class SoftwareTestingController : Controller
     {
-        [Route("diploman-in-software-testing")]
+        [Route("diploma-in-software-testing")]
         public IActionResult DiplomaInSoftwareTesting()
         {
             return View();
@@ -17,6 +17,12 @@ namespace CIIT_NEW_WithCore.Controllers
         [Route("playwright-testing-with-ai-and-devops")]
 
         public IActionResult PlaywrightTestingWithAIAndDevOps()
+        {
+            return View();
+        }
+        [Route("manual-testing")]
+
+        public IActionResult ManualTesting()
         {
             return View();
         }
