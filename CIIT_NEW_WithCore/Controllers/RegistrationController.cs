@@ -13,13 +13,13 @@
 //        IStudentService studentService;
 //        ICourseService courseService;
 //        IExtraService extraService;
-      
+
 //        IEmailService emailService;
 
 
 //        private IWebHostEnvironment environment;
 
-//        public RegistrationController(IStudentService studentService,  IWebHostEnvironment environment, IExtraService extraService, ICourseService courseService, IEmailService emailService)
+//        public RegistrationController(IStudentService studentService, IWebHostEnvironment environment, IExtraService extraService, ICourseService courseService, IEmailService emailService)
 //        {
 //            this.studentService = studentService;
 //            this.environment = environment;
@@ -338,6 +338,6 @@
 //        //    ViewBag.students =  studentService.GetStudentRegistrations();
 //        //    return View();
 //        //}
-//    //}
-//}
+//        //}
+//    }
 //}

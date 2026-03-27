@@ -1,4 +1,4 @@
-﻿ @* @model ERP_Models.EnquiryModel *@
+﻿  @model ERP_Models.EnquiryModel  
 @{
     ViewData["Title"] = "Enquiry Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -55,68 +55,58 @@
                         <div class="mb-3">
                             
                                 <label>Enquiry Date:</label>
-                                @* @Html.TextBoxFor(e => e.enquiry_date, new { @type = "date", @class = "form-control" }) *@
-
-                         
+                                  @Html.TextBoxFor(e => e.enquiry_date, new { @type = "date", @class = "form-control" })  
                         </div>
                         <div class="mb-3">
-                          
                                 <label>Branch Name:</label>
-                                @* @Html.DropDownListFor(e => e.branch_id, ViewBag.branches as SelectList, "Select Branch", new { @class = "form-control" }) *@
-                            @* @Html.DropDownListFor(e => e.branch_id, new SelectList((System.Collections.IEnumerable)ViewData["branches"], "branch_id", "branch_name"), "Select Branch", new { @class = "form-control" }) *@
-
-                          
+                            @* @Html.DropDownListFor(e => e.branch_id, ViewBag.branches as SelectList, "Select Branch", new { @class = "form-control" })  *@
+                            @Html.DropDownListFor(e => e.branch_id, new SelectList((System.Collections.IEnumerable)ViewData["branches"], "branch_id", "branch_name"), "Select Branch", new { @class = "form-control" }) 
                         </div>
                         <div class="mb-3">
-                           
                                 <label>Candidate Name:</label>
-                                @* @Html.TextBoxFor(e => e.candidate_name, new { @class = "form-control" }) *@
-
-                            
+                                 @Html.TextBoxFor(e => e.candidate_name, new { @class = "form-control" })  
                         </div>
                         <div class="mb-3">
-
                             <label>Gender:</label>
-
-@*                            @Html.RadioButtonFor(e => e.gender, "Male") <span>Male</span>
+                             @Html.RadioButtonFor(e => e.gender, "Male") <span>Male</span>
                             @Html.RadioButtonFor(e => e.gender, "Female") <span>Female</span>
- *@  
+ 
 
                         </div>
 
                         <div class="mb-3">
                          
                                 <label>Local Address:</label>
-                                @* @Html.TextBoxFor(e => e.local_address, new { @class = "form-control" })   *@
+                                  @Html.TextBoxFor(e => e.local_address, new { @class = "form-control" })   
 
                              
                         </div>
                         <div class="mb-3">
                            
                                 <label>Email Address:</label>
-                                 @* @Html.TextBoxFor(e => e.email_address, new { @class = "form-control" })   *@
+                                  @Html.TextBoxFor(e => e.email_address, new { @class = "form-control" })    
                              
                         </div>
 
                         <div class="mb-3">
                             
                                 <label>Mobile Number:</label>
-                                 @* @Html.TextBoxFor(e => e.mobile_number, new { @class = "form-control" })  *@
+                                 @Html.TextBoxFor(e => e.mobile_number, new { @class = "form-control" })   
                              
                         </div>
 
                         <div class="mb-3">
                             
                                 <label>Birth Date:</label>
-                               @* @Html.TextBoxFor(e => e.birth_date, new { @type = "date", @class = "form-control" })   *@
+                             @Html.TextBoxFor(e => e.birth_date, new { @type = "date", @class = "form-control" })    
                              
                         </div>
 
                         <div class="mb-3">
                             
                                 <label>Qualification:</label>
-                                @* @Html.DropDownListFor(e => e.qualification, ViewBag.qualifications as SelectList, "Select Qualification", new { @class = "form-control" }) *@
-                             @* @Html.DropDownListFor(e => e.qualification, new SelectList((System.Collections.IEnumerable)ViewData["qualifications"], "qualification", "qualification"), "Select Qualification", new { @class = "form-control" })   *@
+                            @* @Html.DropDownListFor(e => e.qualification, ViewBag.qualifications as SelectList, "Select Qualification", new { @class = "form-control" })  *@
+                              @Html.DropDownListFor(e => e.qualification, new SelectList((System.Collections.IEnumerable)ViewData["qualifications"], "qualification", "qualification"), "Select Qualification", new { @class = "form-control" })   
 
                         </div>
 
@@ -132,14 +122,14 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        @* @for (int i = 0; i < Model.enquiry_forList.Count(); i++) *@
+                                        @for (int i = 0; i < Model.enquiry_forList.Count(); i++)  
                                         {
                                             <div class="col-md-3">
                                                 <div class="mb-1">
-@*                                                      @Html.CheckBoxFor(e => Model.enquiry_forList[i].is_selected) <span>@Model.enquiry_forList[i].enquiry_for</span>
+                                                       @Html.CheckBoxFor(e => Model.enquiry_forList[i].is_selected) <span>@Model.enquiry_forList[i].enquiry_for</span>
                                                     @Html.HiddenFor(e => Model.enquiry_forList[i].enquiry_for_id)
                                                     @Html.HiddenFor(e => Model.enquiry_forList[i].enquiry_for)
- *@  
+  
                                                 </div>
                                             </div>
                                         }
@@ -158,7 +148,7 @@
                                     <div class="row">
 
 
-@*                                         @for (int i = 0; i < Model.lead_sourceList.Count(); i++)
+                                          @for (int i = 0; i < Model.lead_sourceList.Count(); i++)
                                         {
                                             <div class="col-md-3">
                                                 <div class="mb-1">
@@ -168,7 +158,7 @@
                                                 </div>
                                             </div>
                                         }
- *@                                    </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +171,7 @@
 
                                     <div class="row" style="height:220px;overflow:scroll">
 
-@*                                         @for (int i = 0; i < Model.topicList.Count(); i++)
+                                          @for (int i = 0; i < Model.topicList.Count(); i++)
                                         {
                                             <div class="col-md-3">
                                                 <div class="mb-1">
@@ -192,7 +182,7 @@
                                             </div>
                                         }
 
- *@                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
