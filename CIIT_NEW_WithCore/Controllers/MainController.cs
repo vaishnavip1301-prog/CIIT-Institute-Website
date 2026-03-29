@@ -20,6 +20,10 @@ namespace CIIT_NEW_WithCore.Controllers
         {
             return View();
         }
+        public IActionResult Menus()
+        {
+            return View();
+        }
 
         public IActionResult DropdownDemo()
         {
