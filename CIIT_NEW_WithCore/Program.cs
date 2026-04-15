@@ -1,3 +1,4 @@
+using AspNetCore.SEOHelper;
 using CIIT_NEW_WithCore.Models;
 using ERP_Models;
 using ERP_Services.Implementations;
@@ -84,6 +85,9 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseXMLSitemap(builder.Environment.ContentRootPath);
+app.UseRouting();
+//app.UseEndpoints(endpoints => { endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}"); });
 app.MapControllerRoute(
     name: "default",
  pattern: "{controller=Main}/{action=Index}/{id?}");
