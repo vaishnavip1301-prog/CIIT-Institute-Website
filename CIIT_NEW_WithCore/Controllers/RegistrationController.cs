@@ -49,80 +49,80 @@
 //            ViewBag.students = await Task.Run(() => studentService.GetStudentRegistrations());
 //            return View();
 //        }
-//        [HttpPost]
-//        public async Task<IActionResult> Index(RegistrationModel r, IFormFile photo)
-//        {
+[HttpPost]
+public async Task<IActionResult> Index(RegistrationModel r, IFormFile photo)
+{
 
-//            //TblstudentDetail sdmob = studentService.GetStudentDetails().FirstOrDefault(e => e.MobileNumber.Equals(r.MobileNumber) );
-//            //TblstudentDetail sdemail = studentService.GetStudentDetails().FirstOrDefault(e =>  e.EmailAddress.Equals(r.EmailAddress));
-//            if (await studentService.IsMobileExist(r.MobileNumber))
-//            {
-//                ViewBag.courses = GetCourses();
-//                ViewBag.students = studentService.GetStudentRegistrations();
-//                ViewBag.msg = "Mobile Number  is already exist";
+    //TblstudentDetail sdmob = studentService.GetStudentDetails().FirstOrDefault(e => e.MobileNumber.Equals(r.MobileNumber) );
+    //TblstudentDetail sdemail = studentService.GetStudentDetails().FirstOrDefault(e =>  e.EmailAddress.Equals(r.EmailAddress));
+    if (await studentService.IsMobileExist(r.MobileNumber))
+    {
+        ViewBag.courses = GetCourses();
+        ViewBag.students = studentService.GetStudentRegistrations();
+        ViewBag.msg = "Mobile Number  is already exist";
 
-//                return View();
-//            }
-//            else if (await studentService.IsEmailExist(r.EmailAddress))
-//            {
+        return View();
+    }
+    else if (await studentService.IsEmailExist(r.EmailAddress))
+    {
 
-//                ViewBag.courses = GetCourses();
-//                ViewBag.students = studentService.GetStudentRegistrations();
-//                ViewBag.msg = "Email address is already exist";
-//                return View();
-
-
-//            }
-//            else
-//            {
-//                if (photo != null)
-//                {
-
-//                    string imgname = r.StudentName + Path.GetExtension(photo.FileName);
-//                    string imgpath = environment.WebRootPath + "/images/Students/" + imgname;
-//                    FileStream fs = new FileStream(imgpath, FileMode.Create, FileAccess.Write);
-//                    photo.CopyTo(fs);
-//                    r.ProfilePhoto = imgname;
-//                }
-//                string password = await Task.Run(() => extraService.GetRandomPassword(10));
-//                r.Password = password;
-//                HttpContext.Session.SetString("registration", JsonConvert.SerializeObject(r));
-//                //ViewBag.courses = GetCourses();
-//                //ViewBag.students = studentService.GetStudentRegistrations();
+        ViewBag.courses = GetCourses();
+        ViewBag.students = studentService.GetStudentRegistrations();
+        ViewBag.msg = "Email address is already exist";
+        return View();
 
 
-//                Random randomObj = new Random();
-//                string transactionId = randomObj.Next(10000000, 100000000).ToString();
+    }
+    else
+    {
+        if (photo != null)
+        {
 
-//                Razorpay.Api.RazorpayClient client = new Razorpay.Api.RazorpayClient("rzp_live_2YNZNBy4uflUsd", "HgPEeHOX2u1cChdZMPRHVdM4");
-//                Dictionary<string, object> options = new Dictionary<string, object>();
-//                options.Add("amount", r.RegistrationAmount * 100);  // Amount will in paise
-//                options.Add("receipt", transactionId);
-//                options.Add("currency", "INR");
-//                options.Add("payment_capture", "0"); // 1 - automatic  , 0 - manual
-//                Razorpay.Api.Order orderResponse = client.Order.Create(options);
-//                string orderId = orderResponse["id"].ToString();
-//                MerchantOrder orderModel = new MerchantOrder
-//                {
-//                    OrderId = orderResponse.Attributes["id"],
-//                    RazorpayKey = "rzp_live_2YNZNBy4uflUsd",
-//                    Amount = (float)r.RegistrationAmount * 100,
-//                    Currency = "INR",
-//                    Name = r.StudentName,
-//                    Email = r.EmailAddress,
-//                    PhoneNumber = r.MobileNumber,
-//                    Address = r.Address,
-//                    Description = "Registration For CIIT Training Institute"
-//                };
+            string imgname = r.StudentName + Path.GetExtension(photo.FileName);
+            string imgpath = environment.WebRootPath + "/images/Students/" + imgname;
+            FileStream fs = new FileStream(imgpath, FileMode.Create, FileAccess.Write);
+            photo.CopyTo(fs);
+            r.ProfilePhoto = imgname;
+        }
+        string password = await Task.Run(() => extraService.GetRandomPassword(10));
+        r.Password = password;
+        HttpContext.Session.SetString("registration", JsonConvert.SerializeObject(r));
+        //ViewBag.courses = GetCourses();
+        //ViewBag.students = studentService.GetStudentRegistrations();
 
-//                //db.tblcollege_student_details.Add(st);
-//                //db.SaveChanges();
-//                //ViewBag.msg = "Thank you for submitting your information successfully.Our representative will connect you by call or email.";
-//                //ViewBag.topics = GetTrainings();
-//                //return RedirectToAction("Payment");
-//                return View("PaymentPage", orderModel);
-//            }
-//        }
+
+        Random randomObj = new Random();
+        string transactionId = randomObj.Next(10000000, 100000000).ToString();
+
+        Razorpay.Api.RazorpayClient client = new Razorpay.Api.RazorpayClient("rzp_live_2YNZNBy4uflUsd", "HgPEeHOX2u1cChdZMPRHVdM4");
+        Dictionary<string, object> options = new Dictionary<string, object>();
+        options.Add("amount", r.RegistrationAmount * 100);  // Amount will in paise
+        options.Add("receipt", transactionId);
+        options.Add("currency", "INR");
+        options.Add("payment_capture", "0"); // 1 - automatic  , 0 - manual
+        Razorpay.Api.Order orderResponse = client.Order.Create(options);
+        string orderId = orderResponse["id"].ToString();
+        MerchantOrder orderModel = new MerchantOrder
+        {
+            OrderId = orderResponse.Attributes["id"],
+            RazorpayKey = "rzp_live_2YNZNBy4uflUsd",
+            Amount = (float)r.RegistrationAmount * 100,
+            Currency = "INR",
+            Name = r.StudentName,
+            Email = r.EmailAddress,
+            PhoneNumber = r.MobileNumber,
+            Address = r.Address,
+            Description = "Registration For CIIT Training Institute"
+        };
+
+        //db.tblcollege_student_details.Add(st);
+        //db.SaveChanges();
+        //ViewBag.msg = "Thank you for submitting your information successfully.Our representative will connect you by call or email.";
+        //ViewBag.topics = GetTrainings();
+        //return RedirectToAction("Payment");
+        return View("PaymentPage", orderModel);
+    }
+}
 
 
 //        [HttpPost]
