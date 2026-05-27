@@ -21,6 +21,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddScoped<ICacheService, CacheService>();
 builder.Services.AddTransient<ILeadSource, LeadServices>();
 builder.Services.AddTransient<IMasterService, MasterService>();
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
