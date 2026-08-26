@@ -1,31 +1,59 @@
-﻿<div class="card" style="background-color:white;height:auto">
+﻿   <style>
+        /* The actual spinner */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px 0;
+}
+
+/* Rotating animation */
+@Html.Raw("@")keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Helper class to hide the loader */
+.hidden {
+  display: none;
+}
+
+    .error-border {
+        border: 1px solid red !important;
+        outline: none; /* Prevents the browser's default focus ring from hiding the red border */
+    }
+
+    </style>
+<div class="card" style="background-color:white;height:auto">
     <div class="card-header">
         <h5 style="text-align:center">Enquiry <span style="color:orange">Now</span></h5>
     </div>
     <div class="card-body">
-      
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label style="font-size:12px;"> Name : </label>
+                    <label style="font-size:12px;"> Name : </label> <span class="text-danger" id="sperror_candidate_name">error</span>
                     <input type="text" class="form-control" placeholder="Name" id="candidate_name" name="candidate_name" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label style="font-size:12px;"> Contact : </label>
+                    <label style="font-size:12px;"> Contact : </label> <span class="text-danger" id="sperror_contact_number">error</span>
                     <input type="text" class="form-control" placeholder="Contact" id="contact_number" name="contact_number" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label style="font-size:12px;"> Email : </label>
+                    <label style="font-size:12px;"> Email : </label> <span class="text-danger" id="sperror_email_address">error</span>
                     <input type="text" class="form-control" placeholder="Email" id="email_address" name="email_address" style="font-size:12px;" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label style="font-size:12px;"> Training Type : </label>
+                    <label style="font-size:12px;"> Training Type : </label> <span class="text-danger" id="sperror_training_type">error</span>
                     <select class="form-control" id="training_type" name="training_type" style="text-align:left;font-size:12px;">
                         <option selected disabled style="font-size:12px;">Training Type</option>
                         <option value="Online Training" style="font-size:12px;">Online Training</option>
@@ -35,7 +63,7 @@
             </div>
             <div class="col-md-12">
                 <div class="mb-3">
-                    <label style="font-size:12px;"> Description : </label>
+                    <label style="font-size:12px;"> Description : </label> <span class="text-danger" id="sperror_description">error</span>
                     <textarea class="form-control" id="description" name="description" style="font-size:12px;" placeholder="enter your enquiry here"></textarea>
                 </div>
             </div>
@@ -50,49 +78,7 @@
     </div>
     <div class="card-footer">
         <input type="button" value="Submit" id="btnsubmit" onclick="SubmitEnquiry()" class="btn" style="background-color:orange;color:white;font-weight:bold" />
- 
+        <div id="loader" class="loader hidden"></div>
     </div>
 </div>
-<script>
-    const SubmitEnquiry=async()=>{
-        var candidate_name=document.getElementById("candidate_name").value;
-        var contact_number=document.getElementById("contact_number").value;
-        var email_address=document.getElementById("email_address").value;
-        var training_type=document.getElementById("training_type").value;
-        var description=document.getElementById("description").value;
-      var st={
-                      "candidate_name":candidate_name,
-                      "mobile_number":contact_number,
-                      "email_address":email_address,
-                      "training_type":training_type,
-                      "description":description
-             };
-          const response=await fetch("/Lead/AddLeadSource",{
-              method:"post",
-              body:JSON.stringify(st),
-              headers:{
-                  "content-type":"application/json"
-              }
-          });
-        const msg=await response.text();
-        
-        ClearData();
-               document.getElementById("dvalert").removeAttribute("hidden");
-                setTimeout(function(){
-                document.getElementById("dvalert").setAttribute("hidden","hidden");
-
-        },4000);
-      }
-      const ClearData=()=>{
-          document.getElementById("candidate_name").value="";
-          document.getElementById("contact_number").value="";
-          document.getElementById("email_address").value="";
-          document.getElementById("training_type").value="";
-          document.getElementById("description").value="";
-      }
-      // const FetchLeads=async()=>{
-      //       const response=await fetch("/Lead/GetLeads");
-      //       const leads=await response.json();
-
-      // }
-</script>
+<script src="~/enquiryform.js"></script>
